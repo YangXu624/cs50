@@ -7,7 +7,7 @@ int mod(int a)
 
     for (int i = 0; i < SOME NUMBER; i++)
     {
-        p = a %
+        p = a % 10 ** i
     }
 }
 
