@@ -2,15 +2,9 @@
 #include <stdio.h>
 #include <math.h>
 
-int mod(int a)
+int rmd(int a)
 {
-    int p;
-    int q;
-    for (int i = 0; i < SOME NUMBER; i++)
-    {
-        p = a % pow(10,2*i)
-
-    }
+    
 }
 
 int main(void)
