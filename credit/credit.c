@@ -1,7 +1,15 @@
 #include <cs50.h>
 #include <stdio.h>
 
+int mod(int a)
+{
+    int p;
 
+    for (int i = 0; i < SOME NUMBER; i++)
+    {
+        p = a %
+    }
+}
 
 int main(void)
 {
