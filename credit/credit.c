@@ -8,7 +8,7 @@ long pw(long a, long b)
     {
         c = c * a;
     }
-    return(c)
+    return(c);
 }
 
 int main (void)
@@ -19,7 +19,7 @@ int main (void)
     int k = 0;
     for (int i = 0; i < 9; i++)
     {
-        k = k + (c - (c % pw(10, 16 - 2*i)))/pw(10, 2*i)
+        k = k + (cn - (cn % pw(10, 16 - 2*i)))/pw(10, 2*i);
     }
     printf("%i\n", k);
 }
