@@ -8,8 +8,8 @@ int mod(int a)
     int q;
     for (int i = 0; i < SOME NUMBER; i++)
     {
-        p = a % pow(10,i)
-        
+        p = a % pow(10,2*i)
+
     }
 }
 
