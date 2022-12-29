@@ -5,13 +5,10 @@ int main(void)
 {
     int a = get_int ("a: ");
     int b = get_int ("b: ");
-}
-int pow(int a, int b)
-{
     int c = 1;
-    for (i = 0; i < b; i++)
+    for (int i = 0; i < b; i++)
     {
-        c = c * a
+        c = c * a;
     }
-    printf("%i\n", c)
+    printf("%i\n", c);
 }
