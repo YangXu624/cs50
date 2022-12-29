@@ -16,7 +16,18 @@ int main (void)
     //Ask for input of credit card number
     long cn = get_long ("Number:");
 
-    if cn
+    if (cn/pow(10,14) < 1);
+    {
+        int k = 0;
+        for (int i = 0; i < 6; i++)
+        {
+            k = k + (2 * (cn - (cn % pw(10, 13 - 2*i)))/pw(10, 13 - 2*i));
+            printf("%i\n", k);
+        }
+    }
+    else if (cn/pow(10,16) < 1);
+
+    else;
 
     int k = 0;
     for (int i = 0; i < 9; i++)
