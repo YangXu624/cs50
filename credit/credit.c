@@ -8,7 +8,7 @@ int main (void)
 
     for (int i = 0; i < 9; i++)
     {
-        float a = (c - (c % pow(10,(16 - 2*i))))/pow(10, 2 * i)
+        float a;
         printf("%f\n", a);
     }
 }
