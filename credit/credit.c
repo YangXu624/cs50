@@ -16,6 +16,8 @@ int main (void)
     //Ask for input of credit card number
     long cn = get_long ("Number:");
 
+    if cn
+
     int k = 0;
     for (int i = 0; i < 9; i++)
     {
