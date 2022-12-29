@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <math.h>
 
 int mod(int a)
 {
@@ -7,7 +8,7 @@ int mod(int a)
 
     for (int i = 0; i < SOME NUMBER; i++)
     {
-        p = a % 10 ** i
+        p = a % pow(10,i)
     }
 }
 
