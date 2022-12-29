@@ -5,10 +5,11 @@
 int mod(int a)
 {
     int p;
-
+    int q;
     for (int i = 0; i < SOME NUMBER; i++)
     {
         p = a % pow(10,i)
+        
     }
 }
 
