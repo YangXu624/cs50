@@ -19,7 +19,7 @@ int main (void)
     int k = 0;
     for (int i = 0; i < 9; i++)
     {
-        k = k + (cn - (cn % pw(10, 2*i)))/pw(10, 2*i);
+        k = k + (2 * (cn - (cn % pw(10, 2*i)))/pw(10, 2*i));
         printf("%i\n", k);
     }
     printf("%i\n", k);
