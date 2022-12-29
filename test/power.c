@@ -1,8 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 
-int a = get_int("a:")
-int b = get_int("b:")
+int a = get_int("a: ")
+int b = get_int("b: ")
 
 int pow(int a, int b)
 {
