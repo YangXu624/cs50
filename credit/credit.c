@@ -9,6 +9,6 @@ int main (void)
 
     for (int i = 0; i < 9; i++)
     {
-        float a = 
+        float a = c/pow(10,2*i)
     }
 }
