@@ -3,5 +3,5 @@
 
 int main(void)
 {
-    long card_no = get_long("Number:");
+    long c = get_long("Number:");
 }
