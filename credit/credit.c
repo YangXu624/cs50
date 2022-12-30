@@ -84,10 +84,18 @@ int main (void)
     if (u == 0)
     {
         if (cn/pw(10,12) < 4)
-        printf("INVALID\n");
+        {
+            printf("INVALID\n");
+        }
 
         else if (4 <= cn/pw(10,12) < 5)
-        printf("VISA\n");
+        {
+            printf("VISA\n");
+        }
 
+        else if (34 <= cn/pw(10,13) < 35 || 37 <= cn/pw(10,13) < 38)
+        {
+            printf("AMEX\n");
+        }
     }
 }
