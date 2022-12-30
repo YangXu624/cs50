@@ -48,7 +48,7 @@ int main (void)
         printf("%li\n", s);
     }
 
-    long t=0;
+    long t = 0;
     //Odd-positioned digits
     for (int i = 1; i < 9; i++)
     {
