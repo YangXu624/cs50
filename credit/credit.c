@@ -19,6 +19,7 @@ int main (void)
     long p;
     long q;
     long r;
+    long s = 0;
     for (int i = 1; i < 9; i++)
     {
         p = (cn % pw(10,2*i));
