@@ -25,6 +25,15 @@ int main (void)
         p = (cn % pw(10,2*i));
         q = p - (p % pw(10,2*i - 1));
         r = q / pw(10,2*i - 1);
-        printf("%li\n", r);
+        printf("%li", r);
+        if (r > 4)
+        {
+            s = s + r - 9;
+        }
+        else
+        {
+            s = s + r;
+        }
+        printf("%li\n", s);
     }
 }
