@@ -17,9 +17,11 @@ int main (void)
     long cn = get_long ("Number:");
 
     long p;
+    long q;
     for (int i = 1; i < 9; i++)
     {
-        p = (cn % pw(10,2*i) - (cn % pw(10,2*i)) % pw(10,2*i - 1))/pw(10,2*i);
+        p = (cn % pw(10,2*i)) - (cn % pw(10,2*i)) % pw(10,2*i - 1))/pw(10,2*i);
+        q = p - (p % pw(10,2*i - 1))
         printf("%li\n", p);
     }
 }
