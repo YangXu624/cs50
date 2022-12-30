@@ -22,19 +22,30 @@ int main (void)
     long s = 0;
     for (int i = 1; i < 9; i++)
     {
-        //p represents 
+        //p represents an integer with k digits, we will vary k to cover all even-positioned digits
         p = (cn % pw(10,2*i));
+
+        //By subtracting the rightmost k-1 digits, we obtain q, which has the same 'k'th digit as p, followed by a chain of k-1 '0's
         q = p - (p % pw(10,2*i - 1));
+
+        //By dividing with an appropriate power of 10, we can obtain the specific 'k'th digit as a single digit number
         r = q / pw(10,2*i - 1);
+
+        //Print to check
         printf("%li", r);
+
+        //Processing of the sum of the sum of double the even-positioned digits. Note that if r is an integer between 0 and 4 inclusive,
+        //double of r would still be single-digit, meaning that the sum of digits of 2r would be equal to 2r
         if (r > 4)
         {
-            s = s + r - 9;
+            s = s + 2*r - 9;
         }
         else
         {
-            s = s + r;
+            s = s + 2*r;
         }
-        printf("%li\n", s);
+
+        //Print to check
+        printf(", %li\n", s);
     }
 }
