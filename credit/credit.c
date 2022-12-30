@@ -18,10 +18,12 @@ int main (void)
 
     long p;
     long q;
+    long r;
     for (int i = 1; i < 9; i++)
     {
-        p = (cn % pw(10,2*i)) - (cn % pw(10,2*i)) % pw(10,2*i - 1))/pw(10,2*i);
-        q = p - (p % pw(10,2*i - 1))
-        printf("%li\n", p);
+        p = (cn % pw(10,2*i));
+        q = p - (p % pw(10,2*i - 1));
+        r = q / pw(10,2*i - 1);
+        printf("%li\n", r);
     }
 }
