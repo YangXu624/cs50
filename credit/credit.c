@@ -83,6 +83,7 @@ int main (void)
 
     if (u == 0)
     {
-        if (cn/pw(10,12) < 4  )
+        if (cn/pw(10,12) < 4)
+        printf("INVALID\n");
     }
 }
