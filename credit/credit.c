@@ -83,6 +83,6 @@ int main (void)
 
     if (u == 0)
     {
-        printf("")
+        if (cn/pw(10,12) < 4  )
     }
 }
