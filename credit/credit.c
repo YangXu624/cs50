@@ -13,6 +13,8 @@ long pw(long a, long b)
 
 int main (void)
 {
+    do
+    {
     //Ask for input of credit card number
     long cn = get_long ("Number:");
 
