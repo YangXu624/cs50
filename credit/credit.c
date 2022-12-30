@@ -81,22 +81,22 @@ int main (void)
 
     if (v == 0)
     {
-        if (4 <= cn/pw(10,12) < 5)
+        if (4 <= cn/pw(10,12) && cn/pw(10,12) < 5)
         {
             printf("VISA\n");
         }
 
-        else if (34 <= cn/pw(10,13) < 35 || 37 <= cn/pw(10,13) < 38)
+        else if ((34 <= cn/pw(10,13) && cn/pw(10,13) < 35) || (37 <= cn/pw(10,13) && cn/pw(10,13) < 38))
         {
             printf("AMEX\n");
         }
 
-        else if (4 <= cn/pw(10,15) < 5)
+        else if (4 <= cn/pw(10,15) && cn/pw(10,15) < 5)
         {
             printf("VISA\n");
         }
 
-        else if (51 <= cn/pw(10,14) < 56)
+        else if (51 <= cn/pw(10,14) && cn/pw(10,14) < 56)
         {
             printf("MASTERCARD\n");
         }
