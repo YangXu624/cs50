@@ -51,7 +51,7 @@ int main (void)
 
     for (int i = 1; i < 9; i++)
     {
-        //p represents an integer with k digits, we will vary k to cover all even-positioned digits
+        //p represents an integer with k digits, we will vary k to cover all odd-positioned digits
         p = (cn % pw(10,2*i - 1));
 
         //By subtracting the rightmost k-1 digits, we obtain q, which has the same 'k'th digit as p, followed by a chain of k-1 '0's
