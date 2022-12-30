@@ -33,6 +33,10 @@ int main (void)
         //By dividing with an appropriate power of 10, we can obtain the specific 'k'th digit as a single digit number
         r = q / pw(10,2*i - 1);
 
+
+        //Print to check
+        printf("%li", r);
+
         //Processing of the sum of the sum of double the even-positioned digits. Note that if r is an integer between 0 and 4 inclusive,
         //double of r would still be single-digit, meaning that the sum of digits of 2r would be equal to 2r
         if (r > 4)
@@ -45,8 +49,11 @@ int main (void)
         }
 
         //Print to check
-        printf("%li\n", s);
+        printf(", %li\n", s);
     }
+
+    //DIVIDER
+    printf("--------------\n");
 
     long t = 0;
     //Odd-positioned digits
@@ -105,5 +112,10 @@ int main (void)
         {
             printf("INVALID\n");
         }
+    }
+
+    else
+    {
+        printf("INVALID\n");
     }
 }
