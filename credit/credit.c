@@ -80,15 +80,11 @@ int main (void)
     printf(", %li\n", u);
 
     long v = u % 10
+    printf("%li\n", v)
 
-    if (u == 0)
+    if (v == 0)
     {
-        if (cn/pw(10,12) < 4)
-        {
-            printf("INVALID\n");
-        }
-
-        else if (4 <= cn/pw(10,12) < 5)
+        if (4 <= cn/pw(10,12) < 5)
         {
             printf("VISA\n");
         }
@@ -96,6 +92,21 @@ int main (void)
         else if (34 <= cn/pw(10,13) < 35 || 37 <= cn/pw(10,13) < 38)
         {
             printf("AMEX\n");
+        }
+
+        else if (4 <= cn/pw(10,15) < 5)
+        {
+            printf("VISA\n");
+        }
+
+        else if (51 <= cn/pw(10,14) < 56)
+        {
+            printf("MASTERCARD\n");
+        }
+
+        else
+        {
+            printf("INVALID\n")
         }
     }
 }
