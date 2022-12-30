@@ -13,8 +13,6 @@ long pw(long a, long b)
 
 int main (void)
 {
-    do
-    {
     //Ask for input of credit card number
     long cn = get_long ("Number:");
 
@@ -22,6 +20,8 @@ int main (void)
     long q;
     long r;
     long s = 0;
+
+    //Even-positioned digits first
     for (int i = 1; i < 9; i++)
     {
         //p represents an integer with k digits, we will vary k to cover all even-positioned digits
@@ -51,6 +51,8 @@ int main (void)
         printf(", %li\n", s);
     }
 
+    long t=0;
+    //Odd-positioned digits
     for (int i = 1; i < 9; i++)
     {
         //p represents an integer with k digits, we will vary k to cover all odd-positioned digits
@@ -65,18 +67,22 @@ int main (void)
         //Print to check
         printf("%li", r);
 
-        //Processing of the sum of the sum of double the even-positioned digits. Note that if r is an integer between 0 and 4 inclusive,
-        //double of r would still be single-digit, meaning that the sum of digits of 2r would be equal to 2r
-        if (r > 4)
-        {
-            s = s + 2*r - 9;
-        }
-        else
-        {
-            s = s + 2*r;
-        }
+        //Summing up of odd-positioned digits
+        t = t + r;
 
         //Print to check
-        printf(", %li\n", s);
+        printf(", %li\n", t);
+    }
+
+    //Add the even-digits part and the odd-digits part together
+    long u = s + t;
+
+    printf(", %li\n", u);
+
+    long v = u % 10
+
+    if (u == 0)
+    {
+        printf("")
     }
 }
