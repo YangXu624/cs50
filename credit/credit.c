@@ -71,7 +71,7 @@ int main (void)
         t = t + r;
 
         //Print to check
-        printf(", %li\n", t);
+        printf(", %li", t);
     }
 
     //Add the even-digits part and the odd-digits part together
@@ -80,7 +80,7 @@ int main (void)
     printf(", %li\n", u);
 
     long v = u % 10
-    printf("%li\n", v)
+    printf(", %li\n", v);
 
     if (v == 0)
     {
