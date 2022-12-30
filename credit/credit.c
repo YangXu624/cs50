@@ -22,6 +22,7 @@ int main (void)
     long s = 0;
     for (int i = 1; i < 9; i++)
     {
+        //p represents 
         p = (cn % pw(10,2*i));
         q = p - (p % pw(10,2*i - 1));
         r = q / pw(10,2*i - 1);
