@@ -9,8 +9,8 @@ int main(void)
 {
     string tx = get_string("Text: ");
 
-    float x = (count_letters(tx)/count_words(tx)) * 100.0;
-    float y = (count_sentences(tx)/count_words(tx)) * 100.0;
+    float x = (count_letters(tx) / count_words(tx)) * 100.0;
+    float y = (count_sentences(tx) / count_words(tx)) * 100.0;
     //Pre-processed index
     float index1 = 0.0588 * x - 0.296 * y - 15.8;
     //Rounding up of index if it is .5 or more, instead of blindly taking floor function
