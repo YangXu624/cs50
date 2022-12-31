@@ -9,30 +9,16 @@ int main(int argc, string argv[])
         printf("Valid\n");
 
         string s = argv[1];
-        string st = abcdefghijklmnopqrstuvwxyz;
+        string st = "abcdefghijklmnopqrstuvwxyz";
 
         int diff[26];
 
         for (int i = 0; i < 26; i++)
-        {
-            diff[i] = st[i] - s[i]
-        }
-
-        string in = get_string("plaintext: \n")
-        int out[26];
-
-        for (int j = 0; j < strlen(in); j++)
-        {
-            for (int k = 0; k < 26; k++)
-            {
-                if (in[j] == st[k])
-                {
-                    out[j] = st[k] - diff[k]
-                    printf("%c\n", out[j])
+                    printf("%c\n", out[j]);
                 }
                 else
                 {
-                    printf("%c\n", in[j])
+                    printf("%c\n", in[j]);
                 }
             }
         }
