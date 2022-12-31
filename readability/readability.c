@@ -3,7 +3,8 @@
 
 int count_letters(string tx)
 {
-    for (int i = 0; )
+    int i = 0;
+    if (tx[i] )
 }
 
 int main(void)
