@@ -9,7 +9,17 @@ int main(int argc, string argv[])
         printf("Valid\n");
 
         string s = argv[1];
-        string st = 
+        string st = abcdefghijklmnopqrstuvwxyz;
+
+        int diff[26];
+
+        for (int i = 0; i < 26; i++)
+        {
+            diff[i] = s[i] - st[i]
+        }
+
+        string in = get_string("plaintext\n")
+        if 
     }
     else if (argc == 0 || argv[2] != NULL)
     {
