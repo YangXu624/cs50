@@ -12,6 +12,9 @@ int main(void)
     float x = (count_letters(tx)/count_words(tx)) * 100;
     float y = (count_sentences(tx)/count_words(tx)) * 100;
 
+    printf("%f\n", x);
+    printf("%f\n", y);
+
     //Pre-processed index
     float index1 = 0.0588 * x - 0.296 * y - 15.8;
 
