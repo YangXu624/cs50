@@ -4,7 +4,10 @@
 int count_letters(string tx)
 {
     int i = 0;
-    if (tx[i] != )
+    if ((64 < tx[i] && tx[i] < 91)|| (96 < tx[i] && tx[i] < 123))
+    {
+        
+    }
 }
 
 int main(void)
