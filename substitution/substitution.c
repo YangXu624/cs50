@@ -15,7 +15,7 @@ int main(int argc, string argv[])
 
         for (int i = 0; i < 26; i++)
         {
-            diff[i] = s[i] - st[i]
+            diff[i] = st[i] - s[i]
         }
 
         string in = get_string("plaintext: \n")
@@ -25,9 +25,9 @@ int main(int argc, string argv[])
         {
             for (int k = 0; k < 26; k++)
             {
-                if (in[j] == s[k])
+                if (in[j] == st[k])
                 {
-                    out[j] = s[k] - diff[k]
+                    out[j] = st[k] - diff[k]
                     printf("%c\n", out[j])
                 }
                 else
