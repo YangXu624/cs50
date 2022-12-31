@@ -50,6 +50,7 @@ int count_words(string tx)
         {
             s = s + 0;
         }
+        j = j + 1;
     }
     while (tx[j] != '\0');
     //Accounting for + 1, since there will be one more word than there are spaces
