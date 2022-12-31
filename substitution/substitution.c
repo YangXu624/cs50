@@ -18,8 +18,18 @@ int main(int argc, string argv[])
             diff[i] = s[i] - st[i]
         }
 
-        string in = get_string("plaintext\n")
-        if 
+        string in = get_string("plaintext: \n")
+
+        for (int j = 0; j < strlen(in); j++)
+        {
+            for (int k = 0; k < 26; k++)
+            {
+                if (in[j] == s[k])
+                {
+                    
+                }
+            }
+        }
     }
     else if (argc == 0 || argv[2] != NULL)
     {
