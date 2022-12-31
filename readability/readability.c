@@ -3,12 +3,14 @@
 
 int count_letters(string tx);
 int count_words(string tx);
+int count_sentences(string tx);
 
 int main(void)
 {
     string tx = get_string("Text: ");
     printf("%i\n", count_letters(tx));
     printf("%i\n", count_words(tx));
+    printf("%i\n", count_sentences(tx));
 }
 
 int count_letters(string tx)
@@ -27,6 +29,7 @@ int count_letters(string tx)
         {
             c = c + 0;
         }
+        //Proceed to next character
         i = i + 1;
     }
     //Repeat until the end of the entire string
@@ -42,7 +45,7 @@ int count_words(string tx)
     {
         //If the 'j'th character is a space, add 1 to counter 's'
         //Note: We do this because (number of words = number of spaces + 1)
-        if(tx[j] == 32)
+        if (tx[j] == 32)
         {
             s = s + 1;
         }
@@ -50,10 +53,35 @@ int count_words(string tx)
         {
             s = s + 0;
         }
+        //Proceed to next character
         j = j + 1;
     }
     while (tx[j] != '\0');
     //Accounting for + 1, since there will be one more word than there are spaces
     s = s + 1;
     return s;
+}
+
+int count_sentences(string tx)
+{
+    int k = 0;
+    int t = 0;
+    do
+    {
+        //If the 'k'th character is a '.', '!', or '?', add 1 to counter 'k'
+        //Note that (number of above punctation = number of sentences)
+        if (tx[k] == 46 || tx[k] == 33 || tx[k] == 63)
+        {
+            t = t + 1;
+        }
+        else
+        {
+            t = t + 0;
+        }
+        //Proceed to next character
+        k = k + 1;
+    }
+    while (tx[k] != '\0');
+
+    return t;
 }
