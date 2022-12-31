@@ -7,6 +7,8 @@ int main(int argc, string argv[])
     if (argc == 2 && strlen(argv[1]) == 26)
     {
         printf("Valid\n");
+
+        string s = argv[1]
     }
     else if (argc == 0 || argv[2] != NULL)
     {
