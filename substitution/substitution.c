@@ -9,7 +9,7 @@ int main(int argc, string argv[])
         printf("Valid\n");
 
         string s = argv[1];
-        
+        string st = 
     }
     else if (argc == 0 || argv[2] != NULL)
     {
