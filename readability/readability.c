@@ -44,15 +44,15 @@ int count_words(string tx)
         //Note: We do this because (number of words = number of spaces + 1)
         if(tx[j] == 32)
         {
-            j = j + 1;
+            s = s + 1;
         }
         else
         {
-            j = j + 0;
+            s = s + 0;
         }
     }
     while (tx[j] != '\0');
     //Accounting for + 1, since there will be one more word than there are spaces
-    j = j + 1;
-    return j;
+    s = s + 1;
+    return s;
 }
