@@ -14,16 +14,6 @@ int main(int argc, string argv[])
     }
     else
     {
-        for (int i = 0; i < 26; i++)
-        {
-            if (strtoll(argv[i]) < 65)
-            {
-                printf("Usage: ./substitution key\n");
-            }
-        }
-            else
-            {
-            printf("Key must contain 26 characters.\n");
-            }
+        printf("Key must contain 26 characters.\n");
     }
 }
