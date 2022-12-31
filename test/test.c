@@ -5,5 +5,5 @@ int main(void)
 {
     string s = get_string("Input: ");
 
-    printf("%c\n", s[3]);
+    printf("%c\n", s[3] - 1);
 }
