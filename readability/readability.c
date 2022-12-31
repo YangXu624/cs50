@@ -1,6 +1,16 @@
 #include <cs50.h>
 #include <stdio.h>
 
+int count_letters(string tx);
+int count_words(string tx);
+
+int main(void)
+{
+    string tx = get_string("Text: ");
+    printf("%i\n", count_letters(tx));
+    printf("%i\n", count_words(tx));
+}
+
 int count_letters(string tx)
 {
     int i = 0;
@@ -45,10 +55,4 @@ int count_words(string tx)
     //Accounting for + 1, since there will be one more word than there are spaces
     j = j + 1;
     return j;
-}
-
-int main(void)
-{
-    string tx = get_string("Text: ");
-    printf("%i\n", count_letters(tx));
 }
