@@ -3,6 +3,7 @@
 
 int main(void)
 {
-    char a = '\0';
-    printf("%c\n", a + 1);
+    string s = get_string("Input: ");
+
+    printf("%c\n", s[3]);
 }
