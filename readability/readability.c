@@ -4,7 +4,7 @@
 int count_letters(string tx)
 {
     int i = 0;
-    if (tx[i] )
+    if (tx[i] != )
 }
 
 int main(void)
