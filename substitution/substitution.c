@@ -8,7 +8,9 @@ int main(int argc, string argv[])
     {
         printf("Valid\n");
 
-        string s = argv[1]
+        string s = argv[1];
+
+        printf("%s\n", s);
     }
     else if (argc == 0 || argv[2] != NULL)
     {
