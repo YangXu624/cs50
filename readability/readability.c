@@ -9,6 +9,8 @@ int main(void)
 {
     string tx = get_string("Text: ");
 
+    printf("%i\n", x);
+
     float x = (count_letters(tx)/count_words(tx)) * 100;
     float y = (count_sentences(tx)/count_words(tx)) * 100;
 
