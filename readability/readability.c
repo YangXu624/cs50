@@ -11,7 +11,7 @@ int count_letters(string tx)
             i = i + 1
         }
     }
-    while tx[i]
+    while tx[i] != '0
 }
 
 int main(void)
