@@ -16,7 +16,7 @@ int main(int argc, string argv[])
     {
         for (int i = 0; i < 26; i++)
         {
-            if (argv[i] < 65)
+            if (int argv[i] < 65)
             {
                 printf("Usage: ./substitution key\n");
             }
