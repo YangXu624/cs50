@@ -14,8 +14,10 @@ int main(void)
 
     //Pre-processed index
     float index1 = 0.0588 * x - 0.296 * y - 15.8;
-    //To round up anything that is above .5, instead of taking the floor function
-    int index = index1 + 0.5;
+
+    printf("%f\n", index1);
+
+    int index = index1;
 
     if (index < 1)
     {
