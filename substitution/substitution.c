@@ -19,7 +19,7 @@ int main(int argc, string argv[])
         }
 
         string in = get_string("plaintext: ");
-        int out[26];
+        int out[strlen(in)];
 
         for (int j = 0; j < strlen(in); j++)
         {
