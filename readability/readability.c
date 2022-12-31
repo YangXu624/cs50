@@ -1,18 +1,16 @@
 #include <cs50.h>
 #include <stdio.h>
 
-int count_letters(string tx);
-int count_words(string tx);
-int count_sentences(string tx);
+float count_letters(string tx);
+float count_words(string tx);
+float count_sentences(string tx);
 
 int main(void)
 {
     string tx = get_string("Text: ");
 
-    printf("%i\n", x);
-
-    float x = (count_letters(tx)/count_words(tx)) * 100;
-    float y = (count_sentences(tx)/count_words(tx)) * 100;
+    float x = (count_letters(tx)/count_words(tx)) * 100.0;
+    float y = (count_sentences(tx)/count_words(tx)) * 100.0;
 
     printf("%f\n", x);
     printf("%f\n", y);
@@ -22,7 +20,7 @@ int main(void)
 
     printf("%f\n", index1);
 
-    int index = index1;
+    int index = index1 + 0.5;
 
     if (index < 1)
     {
@@ -38,10 +36,10 @@ int main(void)
     }
 }
 
-int count_letters(string tx)
+float count_letters(string tx)
 {
     int i = 0;
-    int c = 0;
+    float c = 0;
     do
     {
         //If the 'i'th character is an alphabet, add 1 to counter 'c'
@@ -62,10 +60,10 @@ int count_letters(string tx)
     return c;
 }
 
-int count_words(string tx)
+float count_words(string tx)
 {
-    int s = 0;
     int j = 0;
+    float s = 0;
     do
     {
         //If the 'j'th character is a space, add 1 to counter 's'
@@ -87,10 +85,10 @@ int count_words(string tx)
     return s;
 }
 
-int count_sentences(string tx)
+float count_sentences(string tx)
 {
     int k = 0;
-    int t = 0;
+    float t = 0;
     do
     {
         //If the 'k'th character is a '.', '!', or '?', add 1 to counter 'k'
