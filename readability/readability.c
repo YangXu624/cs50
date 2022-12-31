@@ -8,9 +8,13 @@ int count_sentences(string tx);
 int main(void)
 {
     string tx = get_string("Text: ");
-    printf("%i\n", count_letters(tx));
-    printf("%i\n", count_words(tx));
-    printf("%i\n", count_sentences(tx));
+
+    float x = (count_letters(tx)/count_words(tx)) * 100;
+    float y = (count_words(tx)/count_sentences(tx)) * 100;
+
+    int index = 0.0588 * x - 0.296 * y - 15.8;
+
+    printf("Grade %i\n", index);
 }
 
 int count_letters(string tx)
