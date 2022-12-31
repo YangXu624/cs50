@@ -8,7 +8,7 @@ int main(int argc, string argv[])
     {
         printf("Valid\n");
     }
-    else if (argc == 0 || argv[] < 65)
+    else if (argc == 0 || argv[1] != NULL)
     {
         printf("Usage: ./substitution key\n");
     }
