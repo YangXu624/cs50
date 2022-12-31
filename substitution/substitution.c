@@ -6,6 +6,10 @@ int main(int argc, string argv[])
 {
     if (argc == 26)
     {
+
+    }
+    else if ()
+    {
         
     }
     else
