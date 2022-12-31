@@ -14,14 +14,29 @@ int main(int argc, string argv[])
         int diff[26];
 
         for (int i = 0; i < 26; i++)
-                    printf("%c\n", out[j]);
+        {
+            diff[i] = st[i] - s[i];
+        }
+
+        string in = get_string("plaintext: ");
+        int out[26];
+
+        for (int j = 0; j < strlen(in); j++)
+        {
+            for (int k = 0; k < 26; k++)
+            {
+                if (in[j] == st[k])
+                {
+                    out[j] = st[k] - diff[k];
                 }
                 else
                 {
-                    printf("%c\n", in[j]);
+                    out[j] = out[j] + 0;
                 }
             }
+            printf("%c", out[j]);
         }
+        printf("\n");
     }
     else if (argc == 0 || argv[2] != NULL)
     {
