@@ -19,6 +19,7 @@ int main(int argc, string argv[])
         }
 
         string in = get_string("plaintext: \n")
+        int out[26];
 
         for (int j = 0; j < strlen(in); j++)
         {
@@ -26,7 +27,12 @@ int main(int argc, string argv[])
             {
                 if (in[j] == s[k])
                 {
-                    
+                    out[j] = s[k] - diff[k]
+                    printf("%c\n", out[j])
+                }
+                else
+                {
+                    printf("%c\n", in[j])
                 }
             }
         }
