@@ -1,6 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
 int main(int argc, string argv[])
 {
@@ -16,7 +16,7 @@ int main(int argc, string argv[])
     {
         for (int i = 0; i < 26; i++)
         {
-            if (argv[i] < 65)
+            if (strtol(argv[i]) < 65)
             {
                 printf("Usage: ./substitution key\n");
             }
