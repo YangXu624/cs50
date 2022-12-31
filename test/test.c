@@ -3,5 +3,6 @@
 
 int main(void)
 {
-    printf("%i\n", a - c);
+    char a = '\0';
+    printf("%c\n", a + 1);
 }
