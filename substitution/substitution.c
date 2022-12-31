@@ -8,12 +8,22 @@ int main(int argc, string argv[])
     {
         printf("Valid\n");
     }
-    else if (argc == 0 || for (int i = 0; i < 26; i++){argv[i] < 65})
+    else if (argc == 0)
     {
         printf("Usage: ./substitution key\n");
     }
     else
     {
-        printf("Key must contain 26 characters.\n");
+        for (int i = 0; i < 26; i++)
+        {
+            if (argv[i] < 65)
+            {
+                printf("Usage: ./substitution key\n");
+            }
+        }
+            else
+            {
+            printf("Key must contain 26 characters.\n");
+            }
     }
 }
