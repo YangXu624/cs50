@@ -9,19 +9,20 @@ int count_letters(string tx)
         int c = 0;
         if ((64 < tx[i] && tx[i] < 91) || (96 < tx[i] && tx[i] < 123))
         {
-            c = c + 1
+            c = c + 1;
         }
         else
         {
-            c = c
+            c = c + 0;
         }
-        i = i + 1
+        i = i + 1;
     }
-    while tx[i] != '0\'
+    while (tx[i] != '0\')
+    return c;
 }
 
 int main(void)
 {
     string tx = get_string("Text: ");
-
+    printf("%i\n", count_letters(tx))
 }
