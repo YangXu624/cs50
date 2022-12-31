@@ -10,7 +10,7 @@ int main(void)
     string tx = get_string("Text: ");
 
     float x = (count_letters(tx)/count_words(tx)) * 100;
-    float y = (count_words(tx)/count_sentences(tx)) * 100;
+    float y = (count_sentences(tx)/count_words(tx)) * 100;
 
     int index = 0.0588 * x - 0.296 * y - 15.8;
 
