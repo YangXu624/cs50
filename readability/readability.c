@@ -6,10 +6,16 @@ int count_letters(string tx)
     do
     {
         int i = 0;
+        int c = 0;
         if ((64 < tx[i] && tx[i] < 91) || (96 < tx[i] && tx[i] < 123))
         {
-            i = i + 1
+            c = c + 1
         }
+        else
+        {
+            c = c
+        }
+        i = i + 1
     }
     while tx[i] != '0\'
 }
