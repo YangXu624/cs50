@@ -37,13 +37,13 @@ int compute_score(string word)
 {
     // TODO: Compute and return score for string
     int ALPHABET[26];
+    char word_lower[strlen(word)];
     for (int m = 0; m < 26; m++)
     {
-        ALPHABET[m] = m + 97
+        ALPHABET[m] = m + 97;
     }
     for (int i = 0; i < strlen(word); i++)
     {
-        char word_lower[strlen(word)]
         if (isupper(word[i]))
         {
             word_lower[i] = tolower(word[i]);
