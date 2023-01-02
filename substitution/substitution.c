@@ -12,20 +12,13 @@ int main(int argc, string argv[])
         string st = "abcdefghijklmnopqrstuvwxyz";
         string stt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-        int diff[26];
+        int diff_lower[26];
+        int diff_upper[26];
 
         for (int i = 0; i < 26; i++)
         {
-            //If lower case alphabet
-            if (96 < in[j] && in[j] < 123)
-            {
-                diff[i] = st[i] - s[i];
-            }
-            //If upper case alphabet
-            else if (64 < in[j] && in[j] < 91)
-            {
-                diff[i] = stt[i] - s[i];
-            }
+                diff_lower[i] = st[i] - s[i];
+                diff_upper[i] = stt[i] - s[i];
         }
 
         string in = get_string("plaintext: ");
@@ -40,8 +33,16 @@ int main(int argc, string argv[])
                 {
                     if (in[j] == st[k])
                     {
-                        out[j] = st[k] - diff[k];
-                        printf("%c", out[j]);
+                        if (64 < in[j] && in[j] < 91)
+                        {
+                            out[j] = st[k] - diff_lower[k];
+                            printf("%c", out[j]);
+                        }
+                        else
+                        {
+                            out[j] = stt[k] - diff_upper[k];
+                            printf("%c", out[j]);
+                        }
                     }
                     else
                     {}
