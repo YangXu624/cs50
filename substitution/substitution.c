@@ -35,19 +35,14 @@ int main(int argc, string argv[])
                 {
                     if (in[j] == st[k])
                     {
-                        if (64 < in[j] && in[j] < 91)
-                        {
-                            out[j] = st[k] - diff_lower[k];
-                            printf("%c", out[j]);
-                        }
-                        else
-                        {
-                            out[j] = stt[k] - diff_upper[k];
-                            printf("%c", out[j]);
-                        }
+                        out[j] = st[k] - diff_lower[k];
+                        printf("%c", out[j]);
                     }
-                    else
-                    {}
+                    else if (in[j] == stt[k])
+                    {
+                        out[j] = stt[k] - diff_upper[k];
+                        printf("%c", out[j]);
+                    }
                 }
             }
             else
