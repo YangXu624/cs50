@@ -52,10 +52,6 @@ int main(int argc, string argv[])
                         printf("%c", isupper(out[j]));
                     }
                 }
-                else
-                {
-                    printf("%c", in[j]);
-                }
             }
         }
         printf("\n");
