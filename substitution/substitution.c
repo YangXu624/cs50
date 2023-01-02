@@ -9,6 +9,8 @@ int main(int argc, string argv[])
     {
         string s = argv[1];
         char ss[26];
+
+        //Filtering out invalid characters in key, and transforming all of the key into lower case for ease of programming
         for (int m = 0; m < 26; m++)
             if (isupper(s[m]))
             {
@@ -23,6 +25,19 @@ int main(int argc, string argv[])
                 printf("Usage: ./substitution key\n");
                 return 1;
             }
+
+        //Filtering out duplicate characters in key
+        for (int q = 0; q < 26; q++)
+        {
+            for (int r = 0; r < 26; r++)
+            {
+                if (ss[q] == ss[r])
+                {
+                    printf("Usage: ./substitution key\n");
+                    return 1;
+                }
+            }
+        }
 
         string st = "abcdefghijklmnopqrstuvwxyz";
 
