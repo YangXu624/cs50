@@ -25,7 +25,7 @@ int main(int argc, string argv[])
         {
             for (int k = 0; k < 26; k++)
             {
-                if (in[j] == st[k])
+                if (((64 < in[j] && in[j] < 91) || (96 < in[j] && in[j] < 123)) && (in[j] == st[k]))
                 {
                     out[j] = st[k] - diff[k];
                     printf(" %i %i ", j, k);
@@ -34,7 +34,7 @@ int main(int argc, string argv[])
                 {
                     printf("");
                 }
-                else 
+                else
             }
             printf("%c\n", out[j]);
         }
