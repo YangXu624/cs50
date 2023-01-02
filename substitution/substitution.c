@@ -32,6 +32,7 @@ int main(int argc, string argv[])
                 }
                 else
                 {
+                    out[j] = in[j];
                 }
             }
             printf("%c\n", out[j]);
