@@ -10,19 +10,24 @@ int main(int argc, string argv[])
         printf("Valid\n");
 
         string s = argv[1];
-        for (int m = 0; m < strlen(s))
+        char ss[26];
+        for (int m = 0; m < 26; m++)
             if (isupper(s[m]))
             {
-                tolower(s[m])
+                ss[m] = tolower(s[m]);
+            }
+            else
+            {
+                ss[m] = s[m];
             }
 
         string st = "abcdefghijklmnopqrstuvwxyz";
 
-        int diff
+        int diff;
 
         for (int i = 0; i < 26; i++)
         {
-                diff[i] = st[i] - s[i];
+                diff[i] = st[i] - ss[i];
         }
 
         string in = get_string("plaintext: ");
@@ -32,26 +37,15 @@ int main(int argc, string argv[])
 
         for (int j = 0; j < strlen(in); j++)
         {
-            //If the 'j'th character is an alphabet, regardless of case
-            if (((64 < in[j] && in[j] < 91) || (96 < in[j] && in[j] < 123)))
+            if (islower(in[j]))
             {
-                for (int k = 0; k < 26; k++)
-                {
-                    if (in[j] == st[k])
-                    {
-                        out[j] = st[k] - diff_lower[k];
-                        printf("%c", out[j]);
-                    }
-                    else if (in[j] == stt[k])
-                    {
-                        out[j] = stt[k] - diff_upper[k];
-                        printf("%c", out[j]);
-                    }
-                }
+                out[j] = st[k] - diff[k];
+                printf("%c", out[j]);
             }
-            else
+            else if (isupper(in[j]))
             {
-                printf("%c", in[j]);
+                out[j] = st[k] - diff[k];
+                printf("%c", isupper(out[j]));
             }
         }
         printf("\n");
