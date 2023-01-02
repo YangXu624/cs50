@@ -120,9 +120,9 @@ string get_guess(int wordsize)
     // TODO #3
     do
     {
-        get_string("Input ")
+        get_string("Input a %i-letter guess: ")
     }
-    while (strlen(guess) = wordsize)
+    while (strlen(guess) != wordsize)
 
     return guess;
 }
