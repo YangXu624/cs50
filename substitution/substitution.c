@@ -10,12 +10,22 @@ int main(int argc, string argv[])
 
         string s = argv[1];
         string st = "abcdefghijklmnopqrstuvwxyz";
+        string stt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
         int diff[26];
 
         for (int i = 0; i < 26; i++)
         {
-            diff[i] = st[i] - s[i];
+            //If lower case alphabet
+            if (96 < in[j] && in[j] < 123)
+            {
+                diff[i] = st[i] - s[i];
+            }
+            //If upper case alphabet
+            else if (64 < in[j] && in[j] < 91)
+            {
+                diff[i] = stt[i] - s[i];
+            }
         }
 
         string in = get_string("plaintext: ");
@@ -23,7 +33,7 @@ int main(int argc, string argv[])
 
         for (int j = 0; j < strlen(in); j++)
         {
-            //If the 'j'th character is an alphabet
+            //If the 'j'th character is an alphabet, regardless of case
             if (((64 < in[j] && in[j] < 91) || (96 < in[j] && in[j] < 123)))
             {
                 for (int k = 0; k < 26; k++)
@@ -46,7 +56,7 @@ int main(int argc, string argv[])
     }
 
 
-    
+
     else if (argc == 0 || argv[2] != NULL)
     {
         printf("Usage: ./substitution key\n");
