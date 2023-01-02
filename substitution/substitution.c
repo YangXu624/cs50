@@ -23,18 +23,17 @@ int main(int argc, string argv[])
 
         for (int j = 0; j < strlen(in); j++)
         {
-            for (int k = 0; k < 26; k++)
+            if (((64 < in[j] && in[j] < 91) || (96 < in[j] && in[j] < 123)))
             {
-                if (((64 < in[j] && in[j] < 91) || (96 < in[j] && in[j] < 123)) && (in[j] == st[k]))
+                for (int k = 0; k < 26; k++)
                 {
-                    out[j] = st[k] - diff[k];
-                    printf(" %i %i ", j, k);
+                    if (in[j] == st[k])
+                    {
+                        out[j] = st[k] - diff[k];
+                        printf(" %i %i ", j, k);
+                    }
+                    
                 }
-                else if (k < 26)
-                {
-                    printf("");
-                }
-                else
             }
             printf("%c\n", out[j]);
         }
