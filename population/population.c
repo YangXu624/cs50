@@ -21,10 +21,7 @@ int main(void)
     int c = -1;
     for (int i = p; i <= e;)
     {
-        int a = i / 3;
-        int b = i / 4;
-
-        i = i + a - b;
+        i = i + (float) (i / 3) - (float) (i / 4);
         c = c + 1;
     }
     // TODO: Print number of years
