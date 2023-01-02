@@ -36,8 +36,8 @@ int main(void)
 int compute_score(string word)
 {
     // TODO: Compute and return score for string
-    int ALPHABET[];
-    for int (m = 0; m < 26; m++)
+    int ALPHABET[26];
+    for (int m = 0; m < 26; m++)
     {
         ALPHABET[m] = m + 97
     }
