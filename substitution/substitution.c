@@ -50,21 +50,28 @@ int main(int argc, string argv[])
 
         for (int j = 0; j < strlen(in); j++)
         {
-            for (int k = 0; k < 26; k++)
+            if (islower(in[j]) || isupper(in[j]))
             {
-                if (in_lower[j] == st[k])
+                for (int k = 0; k < 26; k++)
                 {
-                    if (islower(in[j]))
+                    if (in_lower[j] == st[k])
                     {
-                        out[j] = st[k] - diff[k];
-                        printf("%c", out[j]);
-                    }
-                    else if (isupper(in[j]))
-                    {
-                        out[j] = st[k] - diff[k];
-                        printf("%c", isupper(out[j]));
+                        if (islower(in[j]))
+                        {
+                            out[j] = st[k] - diff[k];
+                            printf("%c", out[j]);
+                        }
+                        else if (isupper(in[j]))
+                        {
+                            out[j] = st[k] - diff[k];
+                            printf("%c", isupper(out[j]));
+                        }
                     }
                 }
+            }
+            else
+            {
+                printf("%c", in[j])
             }
         }
         printf("\n");
