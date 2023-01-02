@@ -20,7 +20,8 @@ int main(int argc, string argv[])
             }
             else
             {
-                printf("")
+                printf("Usage: ./substitution key\n");
+                return 1;
             }
 
         string st = "abcdefghijklmnopqrstuvwxyz";
