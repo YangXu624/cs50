@@ -28,6 +28,7 @@ int main(int argc, string argv[])
                 if (in[j] == st[k])
                 {
                     out[j] = st[k] - diff[k];
+                    printf("%i%i\n", j, k)
                 }
                 else
                 {
