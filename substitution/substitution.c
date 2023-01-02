@@ -22,6 +22,8 @@ int main(int argc, string argv[])
         }
 
         string in = get_string("plaintext: ");
+        printf("ciphertext: ");
+
         int out[strlen(in)];
 
         for (int j = 0; j < strlen(in); j++)
