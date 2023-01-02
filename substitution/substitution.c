@@ -68,6 +68,7 @@ int main(int argc, string argv[])
         int out[strlen(in)];
         for (int j = 0; j < strlen(in); j++)
         {
+            //If the 'j'th character of plain text input is an alphabet, translate it according to key
             if (islower(in[j]) || isupper(in[j]))
             {
                 for (int k = 0; k < 26; k++)
@@ -79,6 +80,7 @@ int main(int argc, string argv[])
                             out[j] = st[k] - diff[k];
                             printf("%c", out[j]);
                         }
+                        //If originally upper case, revert back to upper case to print out
                         else if (isupper(in[j]))
                         {
                             out[j] = st[k] - diff[k];
@@ -87,6 +89,7 @@ int main(int argc, string argv[])
                     }
                 }
             }
+            //If the 'j'th character of plain text input is not an alphabet, print it as it is
             else
             {
                 printf("%c", in[j]);
@@ -96,7 +99,7 @@ int main(int argc, string argv[])
         return 0;
     }
 
-
+    //Invalid keys
     else if (argc == 0 || argv[2] != NULL)
     {
         printf("Usage: ./substitution key\n");
