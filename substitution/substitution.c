@@ -23,7 +23,7 @@ int main(int argc, string argv[])
 
         string st = "abcdefghijklmnopqrstuvwxyz";
 
-        int diff;
+        int diff[26];
 
         for (int i = 0; i < 26; i++)
         {
@@ -37,15 +37,18 @@ int main(int argc, string argv[])
 
         for (int j = 0; j < strlen(in); j++)
         {
-            if (islower(in[j]))
+            for (int k = 0; k < 26; k++)
             {
-                out[j] = st[k] - diff[k];
-                printf("%c", out[j]);
-            }
-            else if (isupper(in[j]))
-            {
-                out[j] = st[k] - diff[k];
-                printf("%c", isupper(out[j]));
+                if (islower(in[j]))
+                {
+                    out[j] = st[k] - diff[k];
+                    printf("%c", out[j]);
+                }
+                else if (isupper(in[j]))
+                {
+                    out[j] = st[k] - diff[k];
+                    printf("%c", isupper(out[j]));
+                }
             }
         }
         printf("\n");
