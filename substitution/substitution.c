@@ -64,10 +64,8 @@ int main(int argc, string argv[])
                         else if (isupper(in[j]))
                         {
                             out[j] = st[k] - diff[k];
-                            printf("%c", isupper(out[j]));
+                            printf("%c", toupper(out[j]));
                         }
-                        else
-                        {}
                     }
                 }
             }
