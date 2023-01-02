@@ -31,6 +31,19 @@ int main(int argc, string argv[])
         }
 
         string in = get_string("plaintext: ");
+        char in_lower[strlen(in)];
+        for (int p = 0; p < strlen(in); p++)
+        {
+            if (isupper(in[p])
+            {
+                in_lower[p] = tolower(in[p])
+            }
+            else
+            {
+                in_lower[p] = in[p]
+            }
+        }
+
         printf("ciphertext: ");
 
         int out[strlen(in)];
@@ -39,7 +52,7 @@ int main(int argc, string argv[])
         {
             for (int k = 0; k < 26; k++)
             {
-                if (in[j] == st[k])
+                if (in_lower[j] == st[k])
                 {
                     if (islower(in[j]))
                     {
