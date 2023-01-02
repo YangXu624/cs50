@@ -107,7 +107,7 @@ int main(int argc, string argv[])
 
     // Print the game's result
     // TODO #7
-    printf("You won!\n")
+    printf("You won!\n");
     // that's all folks!
     return 0;
 }
