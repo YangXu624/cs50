@@ -34,13 +34,13 @@ int main(int argc, string argv[])
         char in_lower[strlen(in)];
         for (int p = 0; p < strlen(in); p++)
         {
-            if (isupper(in[p])
+            if (isupper(in[p]))
             {
-                in_lower[p] = tolower(in[p])
+                in_lower[p] = tolower(in[p]);
             }
             else
             {
-                in_lower[p] = in[p]
+                in_lower[p] = in[p];
             }
         }
 
