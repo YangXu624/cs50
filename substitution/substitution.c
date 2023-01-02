@@ -23,6 +23,7 @@ int main(int argc, string argv[])
 
         for (int j = 0; j < strlen(in); j++)
         {
+            //If the 'j'th character is an alphabet
             if (((64 < in[j] && in[j] < 91) || (96 < in[j] && in[j] < 123)))
             {
                 for (int k = 0; k < 26; k++)
@@ -30,15 +31,22 @@ int main(int argc, string argv[])
                     if (in[j] == st[k])
                     {
                         out[j] = st[k] - diff[k];
-                        printf(" %i %i ", j, k);
+                        printf("%c", out[j]);
                     }
-                    
+                    else
+                    {}
                 }
             }
-            printf("%c\n", out[j]);
+            else
+            {
+                printf("%c", in[j]);
+            }
         }
         printf("\n");
     }
+
+
+    
     else if (argc == 0 || argv[2] != NULL)
     {
         printf("Usage: ./substitution key\n");
