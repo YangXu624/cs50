@@ -28,14 +28,14 @@ int main(int argc, string argv[])
                 if (in[j] == st[k])
                 {
                     out[j] = st[k] - diff[k];
-                    printf("%i%i\n", j, k)
+                    printf(" %i %i ", j, k);
                 }
                 else
                 {
                     out[j] = out[j];
                 }
             }
-            printf("%c", out[j]);
+            printf("%c\n", out[j]);
         }
         printf("\n");
     }
