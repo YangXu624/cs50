@@ -45,7 +45,7 @@ int main(int argc, string argv[])
 
         for (int i = 0; i < 26; i++)
         {
-                diff[i] = st[i] - ss[i];
+            diff[i] = st[i] - ss[i];
         }
 
         string in = get_string("plaintext: ");
