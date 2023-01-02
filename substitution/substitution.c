@@ -75,16 +75,18 @@ int main(int argc, string argv[])
             }
         }
         printf("\n");
+        return 0;
     }
-
 
 
     else if (argc == 0 || argv[2] != NULL)
     {
         printf("Usage: ./substitution key\n");
+        return 1;
     }
     else
     {
         printf("Key must contain 26 characters.\n");
+        return 1;
     }
 }
