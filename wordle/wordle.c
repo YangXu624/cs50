@@ -27,7 +27,7 @@ int main(int argc, string argv[])
 {
     // ensure proper usage
     // TODO #1
-    if (argv[3] != '\0')
+    if (argv[2] != NULL)
     {
         return 1;
     }
