@@ -5,7 +5,7 @@
 
 int main(int argc, string argv[])
 {
-    if (argc == 2 && strlen(argv[1]) == 26 )
+    if (argc == 2 && strlen(argv[1]) == 26)
     {
         string s = argv[1];
         char ss[26];
@@ -14,9 +14,13 @@ int main(int argc, string argv[])
             {
                 ss[m] = tolower(s[m]);
             }
-            else
+            else if (islower(s[m]))
             {
                 ss[m] = s[m];
+            }
+            else
+            {
+                printf("")
             }
 
         string st = "abcdefghijklmnopqrstuvwxyz";
