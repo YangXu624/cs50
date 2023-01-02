@@ -107,7 +107,7 @@ int main(int argc, string argv[])
 
     // Print the game's result
     // TODO #7
-    printf()
+    printf("You won!\n")
     // that's all folks!
     return 0;
 }
@@ -118,6 +118,10 @@ string get_guess(int wordsize)
 
     // ensure users actually provide a guess that is the correct length
     // TODO #3
+    do
+    {
+        
+    }
 
     return guess;
 }
