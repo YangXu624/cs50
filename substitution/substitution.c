@@ -30,10 +30,11 @@ int main(int argc, string argv[])
                     out[j] = st[k] - diff[k];
                     printf(" %i %i ", j, k);
                 }
-                else
+                else if (k < 26)
                 {
-                    printf("%c\n", in[j]);
+                    printf("");
                 }
+                else 
             }
             printf("%c\n", out[j]);
         }
