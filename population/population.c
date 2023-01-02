@@ -18,10 +18,10 @@ int main(void)
     }
     while (e < p);
     // TODO: Calculate number of years until we reach threshold
-    int c = -1;
-    for (int i = p; i <= e;)
+    int c = 0;
+    for (int i = p; i < e;)
     {
-        i = i + (float) (i / 3) - (float) (i / 4);
+        i = i + (i / 3) - (i / 4);
         c = c + 1;
     }
     // TODO: Print number of years
