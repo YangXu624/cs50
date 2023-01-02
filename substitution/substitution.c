@@ -31,7 +31,7 @@ int main(int argc, string argv[])
         {
             for (int r = 0; r < 26; r++)
             {
-                if (ss[q] == ss[r])
+                if (ss[q] == ss[r] && r != q)
                 {
                     printf("Usage: ./substitution key\n");
                     return 1;
