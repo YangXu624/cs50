@@ -29,7 +29,7 @@ int main(int argc, string argv[])
     // TODO #1
     if (argv[2] != NULL)
     {
-        printf("");
+        printf("Error: wordsize must be either 5, 6, 7, or 8\n");
         return 1;
     }
 
