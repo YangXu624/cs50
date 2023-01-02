@@ -39,15 +39,22 @@ int main(int argc, string argv[])
         {
             for (int k = 0; k < 26; k++)
             {
-                if (islower(in[j]))
+                if (in[j] == st[k])
                 {
-                    out[j] = st[k] - diff[k];
-                    printf("%c", out[j]);
+                    if (islower(in[j]))
+                    {
+                        out[j] = st[k] - diff[k];
+                        printf("%c", out[j]);
+                    }
+                    else if (isupper(in[j]))
+                    {
+                        out[j] = st[k] - diff[k];
+                        printf("%c", isupper(out[j]));
+                    }
                 }
-                else if (isupper(in[j]))
+                else
                 {
-                    out[j] = st[k] - diff[k];
-                    printf("%c", isupper(out[j]));
+                    printf("%c", in[j]);
                 }
             }
         }
