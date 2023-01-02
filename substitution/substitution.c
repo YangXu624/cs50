@@ -11,6 +11,7 @@ int main(int argc, string argv[])
         char ss[26];
 
         //Filtering out invalid characters in key, and transforming all of the key into lower case for ease of programming
+        //Upper case characters will be reverted back to uppercase towards the end of programme
         for (int m = 0; m < 26; m++)
             if (isupper(s[m]))
             {
@@ -39,15 +40,15 @@ int main(int argc, string argv[])
             }
         }
 
+        //Comparing input key with a standard set of alphabet sequences to generate a difference in ASCII value
         string st = "abcdefghijklmnopqrstuvwxyz";
-
         int diff[26];
-
         for (int i = 0; i < 26; i++)
         {
             diff[i] = st[i] - ss[i];
         }
 
+        //Conversion of all input characters to lower case for ease of programming
         string in = get_string("plaintext: ");
         char in_lower[strlen(in)];
         for (int p = 0; p < strlen(in); p++)
@@ -62,10 +63,9 @@ int main(int argc, string argv[])
             }
         }
 
+        //Generation of cipher text
         printf("ciphertext: ");
-
         int out[strlen(in)];
-
         for (int j = 0; j < strlen(in); j++)
         {
             if (islower(in[j]) || isupper(in[j]))
