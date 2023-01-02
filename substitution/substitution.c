@@ -5,10 +5,8 @@
 
 int main(int argc, string argv[])
 {
-    if (argc == 2 && strlen(argv[1]) == 26)
+    if (argc == 2 && strlen(argv[1]) == 26 )
     {
-        printf("Valid\n");
-
         string s = argv[1];
         char ss[26];
         for (int m = 0; m < 26; m++)
