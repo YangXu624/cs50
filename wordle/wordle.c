@@ -120,6 +120,7 @@ string get_guess(int wordsize)
     if (strlen(guess) != wordsize)
     {
         string get_guess(int wordsize);
+        return ;
     }
     else
     {
