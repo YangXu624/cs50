@@ -10,16 +10,19 @@ int main(int argc, string argv[])
         printf("Valid\n");
 
         string s = argv[1];
-        string st = "abcdefghijklmnopqrstuvwxyz";
-        string stt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        for (int m = 0; m < strlen(s))
+            if (isupper(s[m]))
+            {
+                tolower(s[m])
+            }
 
-        int diff_lower[26];
-        int diff_upper[26];
+        string st = "abcdefghijklmnopqrstuvwxyz";
+
+        int diff
 
         for (int i = 0; i < 26; i++)
         {
-                diff_lower[i] = st[i] - s[i];
-                diff_upper[i] = stt[i] - s[i];
+                diff[i] = st[i] - s[i];
         }
 
         string in = get_string("plaintext: ");
