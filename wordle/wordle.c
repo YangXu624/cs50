@@ -112,7 +112,14 @@ int main(int argc, string argv[])
 
     // Print the game's result
     // TODO #7
-    printf("You won!\n");
+    if (score == EXACT * wordsize)
+    {
+        printf("You won!\n");
+    }
+    else
+    {
+        printf("The word was %s, better luck next time!\n", choice)
+    }
     // that's all folks!
     return 0;
 }
