@@ -1,11 +1,11 @@
 sort1 uses: TODO
 
-How do you know?: Sort1 takes 0.350s to sort reversed10000
+How do you know?: Sort1 takes 0.350s to sort reversed10000, 0.366s to sort random10000
 
 sort2 uses: TODO
 
-How do you know?: Sort2 takes 0.059s to sort reversed10000
+How do you know?: Sort2 takes 0.059s to sort reversed10000, 0.102s to sort random10000
 
 sort3 uses: TODO
 
-How do you know?: Sort3 takes 0.263s to sort reversed10000
+How do you know?: Sort3 takes 0.263s to sort reversed10000, 0,283s to sort random10000
