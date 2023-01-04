@@ -38,7 +38,6 @@ int main(int argc, string argv[])
     // ensure argv[1] is either 5, 6, 7, or 8 and store that value in wordsize instead
     // TODO #2
     string ws = argv[1];
-    printf("%i\n", ws[0]);
     if (strlen(ws) != 1 || ws[0] < 53 || ws[0] > 56)
     {
         printf("Error: wordsize must be either 5, 6, 7, or 8\n");
@@ -122,7 +121,7 @@ string get_guess(int wordsize)
 {
     // ensure users actually provide a guess that is the correct length
     // TODO #3
-    string guess = get_string("Input a %i-letter word: \n", wordsize);
+    string guess = get_string("Input a %i-letter word: ", wordsize);
     if (strlen(guess) != wordsize)
     {
         get_guess(wordsize);
