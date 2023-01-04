@@ -46,7 +46,7 @@ int main(int argc, string argv[])
     }
     else
     {
-        wordsize = strlen(argv[1]);
+        wordsize = ws[0] - 48;
     }
 
     // open correct file, each file has exactly LISTSIZE words
