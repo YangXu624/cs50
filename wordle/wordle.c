@@ -39,7 +39,7 @@ int main(int argc, string argv[])
     // TODO #2
     string ws = argv[1];
     printf("%i\n", ws[0]);
-    if (strlen(ws[0]) != 1 || ws[0] < 53 || ws[0] > 56)
+    if (strlen(ws) != 1 || ws[0] < 53 || ws[0] > 56)
     {
         printf("Error: wordsize must be either 5, 6, 7, or 8\n");
         return 1;
@@ -125,7 +125,7 @@ string get_guess(int wordsize)
     string guess = "";
     do
     {
-        string get_guess(int wordsize);
+        guess = get_guess(wordsize);
     }
     while (strlen(guess) != wordsize);
     return guess;
