@@ -105,21 +105,19 @@ int main(int argc, string argv[])
         // if they guessed it exactly right, set terminate loop
         if (score == EXACT * wordsize)
         {
+            printf("You won!\n");
             won = true;
             break;
         }
+        else
+        {
+        printf("The word was %s, better luck next time!\n", choice);
+        }
+    // that's all folks!
     }
 
     // Print the game's result
     // TODO #7
-    if (score == EXACT * wordsize)
-    {
-        printf("You won!\n");
-    }
-    else
-    {
-        printf("The word was %s, better luck next time!\n", choice)
-    }
     // that's all folks!
     return 0;
 }
