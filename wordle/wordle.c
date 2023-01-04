@@ -122,13 +122,15 @@ string get_guess(int wordsize)
 {
     // ensure users actually provide a guess that is the correct length
     // TODO #3
-    string guess = "";
-    do
+    string guess = get_guess(wordsize);
+    if (strlen(guess) == wordsize)
     {
-        guess = get_guess(wordsize);
+        return guess;
     }
-    while (strlen(guess) != wordsize);
-    return guess;
+    else
+    {
+        get_guess(wordsize)
+    }
 }
 
 int check_word(string guess, int wordsize, int status[], string choice)
