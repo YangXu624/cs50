@@ -86,19 +86,20 @@ void print_winner(void)
     {
         for (int l = 1; l < candidate_count; l++)
         {
-            if (candidates[k].votes > candidates[k + l].votes)
-            {
-
-            }
+            compare(candidates[k].votes, candidates[k + l].votes)
         }
     }
     return;
 }
 
-int compare(int candidates[].votes, int candidates[].votes)
+int compare(int vote1, int vote2)
 {
-    if (candidates[k].votes > candidates[k + l].votes)
+    if (vote1 > vote2)
     {
-        return candidates[k].votes
+        return vote1;
+    }
+    else
+    {
+        return vote2;
     }
 }
