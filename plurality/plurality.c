@@ -69,7 +69,11 @@ bool vote(string name)
     // TODO
     for (int j = 0; j < argc; j++)
     {
-        if (name == argv[i])
+        if (name == candidates[i].name)
+        {
+            candidates[i].votes = candidate[i].votes + 1;
+            return true;
+        }
     }
     return false;
 }
