@@ -84,7 +84,13 @@ void print_winner(void)
     // TODO
     for (int k = 0; k < candidate_count; k++)
     {
-        
+        for (int l = 1; l < candidate_count; l++)
+        {
+            if (candidates[k].votes > candidates[k + l].votes)
+            {
+                
+            }
+        }
     }
     return;
 }
