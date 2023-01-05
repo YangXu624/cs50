@@ -22,6 +22,7 @@ int candidate_count;
 // Function prototypes
 bool vote(string name);
 void print_winner(void);
+int compare(int vote1, int vote2);
 
 int main(int argc, string argv[])
 {
@@ -82,16 +83,16 @@ bool vote(string name)
 void print_winner(void)
 {
     // TODO
-    string highest_vote = candidates[0].votes
+    int highest_vote = candidates[0].votes;
     for (int k = 1; k < candidate_count; k++)
     {
         highest_vote = compare(highest_vote, candidates[k].votes);
     }
     for (int m = 0; m < candidate_count; m++)
     {
-        if (candidate[m].votes == highest_vote)
+        if (candidates[m].votes == highest_vote)
         {
-            printf("%s", candidate[m].name);
+            printf("%s", candidates[m].name);
         }
     }
     return;
