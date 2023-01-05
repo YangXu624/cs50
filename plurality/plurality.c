@@ -88,9 +88,14 @@ void print_winner(void)
         {
             if (candidates[k].votes > candidates[k + l].votes)
             {
-                
+
             }
         }
     }
     return;
+}
+
+string compare(int candidates[k].votes, int vote2)
+{
+    if (vote1 > vote2)
 }
