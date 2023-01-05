@@ -95,7 +95,10 @@ void print_winner(void)
     return;
 }
 
-string compare(int candidates[k].votes, int vote2)
+int compare(int candidates[].votes, int candidates[].votes)
 {
-    if (vote1 > vote2)
+    if (candidates[k].votes > candidates[k + l].votes)
+    {
+        return candidates[k].votes
+    }
 }
