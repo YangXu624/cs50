@@ -67,7 +67,10 @@ int main(int argc, string argv[])
 bool vote(string name)
 {
     // TODO
-    
+    for (int j = 0; j < argc; j++)
+    {
+        if (name == argv[i])
+    }
     return false;
 }
 
