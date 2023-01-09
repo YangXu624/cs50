@@ -227,11 +227,11 @@ bool check_cycle(int candidate)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        int stronger_candidate;
+        int stronger_candidate = candidate;
         do
         {
-            stronger_candidate = 
+            stronger_candidate = i;
         }
-        while (locked[stronger_candidate][i] == false)
+        while (locked[i][stronger_candidate] == false)
     }
 }
