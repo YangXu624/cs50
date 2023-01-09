@@ -226,7 +226,7 @@ int compare(int vote1, int vote2)
 bool check_cycle(int pairs[])
 {
     int loser = pairs[].loser;
-    
+
 }
 
 int loop(int loser)
@@ -236,6 +236,11 @@ int loop(int loser)
         if (locked[loser][i] == true)
         {
             loser = i;
+            loop(loser);
+        }
+        else
+        {
+            return 0;
         }
     }
 }
