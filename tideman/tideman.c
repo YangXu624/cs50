@@ -163,28 +163,32 @@ void sort_pairs(void)
         strength[i] = preference[pairs[i].winner][pairs[i].loser] - preference[pairs[i].loser][pairs[i].winner];
     }
 
-    int highest_strength = 0;
-    for (int j = 0; j < pair_count; j++)
+    do
     {
-        for (int k = 0; k < pair_count; k++)
+        int highest_strength = 0;
+        for (int j = 0; j < pair_count; j++)
         {
-            if (highest_strength < compare(strength[j], strength[k]))
+            for (int k = 0; k < pair_count; k++)
             {
-                highest_strength = compare(strength[j], strength[k]);
+                if (highest_strength < compare(strength[j], strength[k]))
+                {
+                    highest_strength = compare(strength[j], strength[k]);
+                }
+            }
+        }
+
+        int m = 0;
+        for (int l = 0; l < pair_count; l++)
+        {
+            if (strength[l] == highest_strength)
+            {
+                strength[l] = 0;
+                pairs[m] = pairs[l];
+                m = m + 1;
             }
         }
     }
-
-    int m = 0;
-    for (int l = 0; l < pair_count; l++)
-    {
-        if (strength[l] == highest_strength)
-        {
-            strength[l] = 0;
-            pairs[m] = pairs[l];
-            m = m + 1
-        }
-    }
+    while (m < pair_count)
     return;
 }
 
