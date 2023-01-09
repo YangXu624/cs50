@@ -225,17 +225,12 @@ int compare(int vote1, int vote2)
 
 bool check_cycle(int pairs[])
 {
+    int loser = pairs[].loser;
     for (int i = 0; i < candidate_count; i++)
     {
-        int stronger = pairs[].loser;
-        int weaker = i;
-        do
+        if (locked[loser][i] == true)
         {
-            int tmp = stronger;
-            stronger = weaker;
-            weaker = stronger;
+            loser = i;
         }
-        while (locked[weaker][stronger] == true)
-
     }
 }
