@@ -168,9 +168,14 @@ void sort_pairs(void)
     {
         for (int k = 0; k < pair_count; k++)
         {
-            highest_strength = compare(pair[j], pair[k])
+            if (highest_strength < compare(strength[j], strength[k]))
+            {
+                highest_strength = compare(strength[j], strength[k]);
+            }
         }
     }
+
+    if (strength)
     return;
 }
 
