@@ -32,6 +32,7 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
+int compare(int vote1, int vote2);
 
 int main(int argc, string argv[])
 {
@@ -157,6 +158,8 @@ void sort_pairs(void)
 {
     // TODO
     int strength[pair_count];
+
+    int highest_
     return;
 }
 
@@ -172,4 +175,16 @@ void print_winner(void)
 {
     // TODO
     return;
+}
+
+int compare(int vote1, int vote2)
+{
+    if (vote1 > vote2)
+    {
+        return vote1;
+    }
+    else
+    {
+        return vote2;
+    }
 }
