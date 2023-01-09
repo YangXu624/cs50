@@ -223,4 +223,10 @@ int compare(int vote1, int vote2)
     }
 }
 
-bool check_cycle()
+bool check_cycle(pairs[])
+{
+    for (int i = 0; i < pair_count; i++)
+    {
+        if ()
+    }
+}
