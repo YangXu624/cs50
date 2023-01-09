@@ -227,7 +227,7 @@ bool check_cycle(int pairs[])
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        int stronger_candidate = pairs[].winner;
+        int stronger_candidate = pairs[].loser;
         do
         {
             stronger_candidate = i;
