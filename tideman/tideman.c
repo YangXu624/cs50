@@ -181,7 +181,8 @@ void sort_pairs(void)
         if (strength[l] == highest_strength)
         {
             strength[l] = 0;
-            pairs[m] = pairs
+            pairs[m] = pairs[l];
+            m = m + 1
         }
     }
     return;
