@@ -227,6 +227,6 @@ bool check_cycle(pairs[])
 {
     for (int i = 0; i < pair_count; i++)
     {
-        if (locked[pairs[].winner][pairs[i]])
+        if (locked[pairs[].winner][pairs[i]] == true)
     }
 }
