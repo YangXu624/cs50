@@ -227,12 +227,14 @@ bool check_cycle(int pairs[])
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        int stronger_candidate = pairs[].loser;
+        int stronger = pairs[].loser;
+        int weaker = i;
         do
         {
-            stronger_candidate = i;
+            stronger = i;
+
         }
-        while (locked[stronger_candidate][i] == false)
-        
+        while (locked[stronger][weaker] == false)
+
     }
 }
