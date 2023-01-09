@@ -234,7 +234,7 @@ bool check_cycle(int pairs[])
             stronger = i;
 
         }
-        while (locked[weaker][stronger] == false)
+        while (locked[stronger][weaker] == false)
 
     }
 }
