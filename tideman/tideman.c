@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 // Max number of candidates
 #define MAX 9
@@ -139,9 +140,9 @@ void add_pairs(void)
     {
         for (int j = 0; j < candidate_count; j++)
         {
-            for (int k = 0; k < ((candidate_count) * (candidate_count + 1)) / 2)
+            for (int k = 0; k < ((candidate_count) * (candidate_count + 1)) / 2; k++)
             {
-                if (preference[i][j] > preference[j][i])
+                if (preferences[i][j] > preferences[j][i])
                 {
                     pairs[pair_count].winner = i;
                     pairs[pair_count].loser = j;
@@ -160,9 +161,10 @@ void sort_pairs(void)
     int strength[pair_count];
     for (int i = 0; i < pair_count; i++)
     {
-        strength[i] = preference[pairs[i].winner][pairs[i].loser] - preference[pairs[i].loser][pairs[i].winner];
+        strength[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
     }
 
+    int m = 0;
     do
     {
         int highest_strength = 0;
@@ -177,7 +179,6 @@ void sort_pairs(void)
             }
         }
 
-        int m = 0;
         for (int l = 0; l < pair_count; l++)
         {
             if (strength[l] == highest_strength)
@@ -188,7 +189,7 @@ void sort_pairs(void)
             }
         }
     }
-    while (m < pair_count)
+    while (m < pair_count);
     return;
 }
 
@@ -198,7 +199,7 @@ void lock_pairs(void)
     // TODO
     for (int i = 0; i < pair_count; i++)
     {
-        locked[pairs[i].winner, pairs[i].loser] = true;
+        locked[pairs[i].winner][pairs[i].loser] = true;
     }
     return;
 }
