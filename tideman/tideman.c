@@ -233,5 +233,6 @@ bool check_cycle(int pairs[])
             stronger_candidate = i;
         }
         while (locked[stronger_candidate][i] == false)
+        
     }
 }
