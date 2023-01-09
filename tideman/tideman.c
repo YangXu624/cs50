@@ -228,11 +228,9 @@ bool check_cycle(int pairs[])
     int loser = pairs[].loser;
     for (int i = 0; i < candidate_count; i++)
     {
-        do
+        if (locked[loser][i] == true)
         {
             loser = i;
         }
-        //Continue loop if current loser has a locked advantage over candidate 'i'
-        while (locked[loser][i] == false)
     }
 }
