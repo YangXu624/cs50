@@ -232,6 +232,7 @@ bool check_cycle(int pairs[])
         {
             loser = i;
         }
+        //If current loser does not have a locked advantage over candidate 'i'
         while (locked[loser][i] == false)
     }
 }
