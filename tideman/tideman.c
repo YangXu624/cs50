@@ -158,8 +158,12 @@ void sort_pairs(void)
 {
     // TODO
     int strength[pair_count];
+    for (int i = 0; i < pair_count; i++)
+    {
+        strength[i] = preference[pairs[i].winner][pairs[i].loser] - preference[pairs[i].loser][pairs[i].winner];
+    }
 
-    int highest_
+    int highest_strength
     return;
 }
 
