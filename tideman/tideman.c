@@ -232,6 +232,6 @@ bool check_cycle(int candidate)
         {
             stronger_candidate = i;
         }
-        while (locked[i][stronger_candidate] == false)
+        while (locked[stronger_candidate][i] == false)
     }
 }
