@@ -223,10 +223,15 @@ int compare(int vote1, int vote2)
     }
 }
 
-bool check_cycle(pairs[])
+bool check_cycle(int candidate)
 {
-    for (int i = 0; i < pair_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        if (locked[pairs[].winner][pairs[i].loser] == true)
+        int stronger_candidate;
+        do
+        {
+            stronger_candidate = 
+        }
+        while (locked[stronger_candidate][i] == false)
     }
 }
