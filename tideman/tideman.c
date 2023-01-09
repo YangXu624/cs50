@@ -166,7 +166,10 @@ void sort_pairs(void)
     int highest_strength = 0;
     for (int j = 0; j < pair_count; j++)
     {
-        
+        for (int k = 0; k < pair_count; k++)
+        {
+            highest_strength = compare(pair[j], pair[k])
+        }
     }
     return;
 }
