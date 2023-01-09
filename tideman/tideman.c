@@ -222,3 +222,5 @@ int compare(int vote1, int vote2)
         return vote2;
     }
 }
+
+bool check_cycle()
