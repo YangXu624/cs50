@@ -175,10 +175,14 @@ void sort_pairs(void)
         }
     }
 
-    
+    int m = 0;
     for (int l = 0; l < pair_count; l++)
     {
         if (strength[l] == highest_strength)
+        {
+            strength[l] = 0;
+            pairs[m] = pairs
+        }
     }
     return;
 }
