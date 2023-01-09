@@ -156,6 +156,7 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // TODO
+    int strength[pair_count];
     return;
 }
 
