@@ -225,10 +225,13 @@ int compare(int vote1, int vote2)
 
 bool check_cycle(int winner, int loser)
 {
-    int beaten[candidate_count];
+    int beaten[MAX][MAX];
     for (int k = 0; k < candidate_count; k++)
     {
-        beaten[k] = 0;
+        for (int l = 0; l < candidate_count; k++)
+        {
+            beaten[k][l] = 0;
+        }
     }
 
     int j = 0;
@@ -236,8 +239,7 @@ bool check_cycle(int winner, int loser)
     {
        if (locked[loser][i] == true)
         {
-            beaten[j] = i;
-            j = j + 1;
+            beaten[loser][i] = 1;
         }
     }
 }
