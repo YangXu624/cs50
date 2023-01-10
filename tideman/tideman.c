@@ -281,6 +281,10 @@ cycle(int winner, int loser)
                 return 0;
             }
             else
+            {
+                return loser;
+            }
         }
     }
+    return 0;
 }
