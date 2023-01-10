@@ -265,11 +265,17 @@ bool cycle(int loser)
 //RETRY 1
 bool check_cycle(int winner, int loser)
 {
-    cycle(winner, loser)
-
+    if (cycle(winner, loser) == 0)
+    {
+        return true;
+    }
+    else if (cycle(winner, loser) == 1)
+    {
+        return false
+    }
 }
 
-cycle(int winner, int loser)
+int cycle(int winner, int loser)
 {
     for (int i = 0; i < candidate_count; i++)
     {
@@ -282,9 +288,9 @@ cycle(int winner, int loser)
             }
             else
             {
-                return loser;
+                cycle(winner, loser);
             }
         }
     }
-    return 0;
+    return 1;
 }
