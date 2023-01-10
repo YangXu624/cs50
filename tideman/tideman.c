@@ -210,9 +210,38 @@ void lock_pairs(void)
 void print_winner(void)
 {
     // TODO
+    int points[candidate_count];
+    for (int k = 0; k < candidate_count; k++)
+    {
+        points[k] = 0;
+    }
+
     for (int i = 0; i < candidate_count; i++)
     {
-        
+        for (int j = 0; j < candidate_count; j++)
+        {
+            if (locked[i][j] == true)
+            {
+                points[i] = points[i] + 1;
+            }
+        }
+    }
+
+    int highest_points = points[0];
+    for (int l = 0; l < candidate_count; l++)
+    {
+        if (points[l] > highest_points)
+        {
+            highest_points = points[l];
+        }
+    }
+
+    for (int m = 0; m < candidate_count; m++)
+    {
+        if (points[m] == highest_points)
+        {
+            printf("%s\n", candidates[m]);
+        }
     }
     return;
 }
