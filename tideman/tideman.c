@@ -222,7 +222,7 @@ void print_winner(void)
         {
             if (locked[i][j] == true)
             {
-                points[j] = points[j] + 1;
+                points[i] = points[i] + 1;
             }
         }
     }
