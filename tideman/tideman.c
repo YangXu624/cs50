@@ -239,7 +239,7 @@ void print_winner(void)
             highest_points = points[l];
         }
     }
-    
+
     for (int m = 0; m < candidate_count; m++)
     {
         if (points[m] == highest_points)
