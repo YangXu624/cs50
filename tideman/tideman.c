@@ -274,7 +274,13 @@ bool check_cycle(int winner, int loser)
             {
                 return 0;
             }
-            else 
+            else
+            {
+                for (int j = 0; j < candidate_count; j++)
+                {
+                    if (locked[loser][i] == true)
+                }
+            }
         }
     }
 }
