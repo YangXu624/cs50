@@ -226,23 +226,32 @@ int compare(int vote1, int vote2)
 bool check_cycle(int pairs[])
 {
     int loser = pairs[].loser;
-    do
-    {}
-    while (loser != pairs[].winner)
-}
-
-int loop(int loser)
-{
     for (int i = 0; i < candidate_count; i++)
     {
-        if (locked[loser][i] == true)
+        if (locked[loser][pairs[].winner] == true)
+        {
+            return true;
+        }
+        else if (locked[loser][i] == true)
         {
             loser = i;
             loop(loser);
         }
-        else
+    }
+}
+
+int loop(int loser, int winner)
+{
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (locked[loser][winner] == true)
         {
-            return 0;
+            return 
+        }
+        else if (locked[loser][i] == true)
+        {
+            loser = i;
+            loop(loser);
         }
     }
 }
