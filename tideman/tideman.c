@@ -223,6 +223,7 @@ int compare(int vote1, int vote2)
     }
 }
 
+//MESS 1
 bool check_cycle(int winner, int loser)
 {
     int beaten[MAX][MAX];
@@ -253,6 +254,22 @@ bool cycle(int loser)
         {
             beaten[j] = i;
             j = j + 1;
+        }
+    }
+}
+
+
+
+
+
+//RETRY 1
+bool check_cycle(int winner, int loser)
+{
+    for (int i = 0; i < candidate_count; i++)
+    {
+       if (locked[loser][i] == true)
+        {
+
         }
     }
 }
