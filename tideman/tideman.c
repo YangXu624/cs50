@@ -231,6 +231,21 @@ void print_winner(void)
         }
     }
 
+    int lowest_points = points[0];
+    for (int l = 0; l < candidate_count; l++)
+    {
+        if (points[l] < lowest_points)
+        {
+            lowest_points = points[l];
+        }
+    }
+    for (int m = 0; m < candidate_count; m++)
+    {
+        if (points[m] == lowest_points)
+        {
+            printf("%s\n", candidates[m]);
+        }
+    }
     for (int m = 0; m < candidate_count; m++)
     {
         if (points[m] == 0)
@@ -269,11 +284,9 @@ int cycle(int winner, int loser)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        printf("Round %i, %s vs %s\n", i, candidates[loser], candidates[i]);
         if (locked[loser][i] == true)
         {
             loser = i;
-            printf("...... %s lost\n", candidates[loser]);
             if (locked[loser][winner] == true)
             {
                 return 0;
