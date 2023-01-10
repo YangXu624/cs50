@@ -230,7 +230,20 @@ bool check_cycle(int winner, int loser)
     {
         beaten[k] = 0;
     }
-    
+
+    int j = 0;
+    for (int i = 0; i < candidate_count; i++)
+    {
+       if (locked[loser][i] == true)
+        {
+            beaten[j] = i;
+            j = j + 1;
+        }
+    }
+}
+
+bool cycle(int loser)
+{
     int j = 0;
     for (int i = 0; i < candidate_count; i++)
     {
