@@ -244,11 +244,7 @@ int loop(int loser, int winner)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        if (locked[loser][winner] == true)
-        {
-            return 
-        }
-        else if (locked[loser][i] == true)
+        if (locked[loser][i] == true)
         {
             loser = i;
             loop(loser);
