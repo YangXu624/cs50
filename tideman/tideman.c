@@ -266,7 +266,7 @@ bool cycle(int loser)
 bool check_cycle(int winner, int loser)
 {
     cycle(winner, loser)
-    
+
 }
 
 cycle(int winner, int loser)
@@ -280,6 +280,7 @@ cycle(int winner, int loser)
             {
                 return 0;
             }
+            else
         }
     }
 }
