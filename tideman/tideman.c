@@ -266,7 +266,7 @@ bool check_cycle(int winner, int loser)
     }
     else if (cycle(winner, loser) == 1)
     {
-        return false
+        return false;
     }
 }
 
