@@ -201,7 +201,10 @@ void lock_pairs(void)
     // TODO
     for (int i = 0; i < pair_count; i++)
     {
-        locked[pairs[i].winner][pairs[i].loser] = true;
+        if (check_cycle(pairs[i].winner, pairs[i].loser) == false)
+        {
+            locked[pairs[i].winner][pairs[i].loser] = true;
+        }
     }
     return;
 }
@@ -265,9 +268,11 @@ int cycle(int winner, int loser)
 {
     for (int i = 0; i < candidate_count; i++)
     {
+        printf("Round %i, %s vs %s", i, candidates[loser], candidates[i]);
         if (locked[loser][i] == true)
         {
             loser = i;
+            printf("...... %s lost\n", candidates[loser]);
             if (locked[loser][winner] == true)
             {
                 return 0;
