@@ -35,6 +35,7 @@ void lock_pairs(void);
 void print_winner(void);
 // My Own Prototypes
 int compare(int vote1, int vote2);
+bool check_cycle(int winner, int loser);
 int cycle(int winner, int loser);
 
 int main(int argc, string argv[])
