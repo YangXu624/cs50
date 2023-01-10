@@ -33,7 +33,9 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
+// My Own Prototypes
 int compare(int vote1, int vote2);
+int cycle(int winner, int loser);
 
 int main(int argc, string argv[])
 {
@@ -223,46 +225,6 @@ int compare(int vote1, int vote2)
     }
 }
 
-//MESS 1
-bool check_cycle(int winner, int loser)
-{
-    int beaten[MAX][MAX];
-    for (int k = 0; k < candidate_count; k++)
-    {
-        for (int l = 0; l < candidate_count; k++)
-        {
-            beaten[k][l] = 0;
-        }
-    }
-
-    int j = 0;
-    for (int i = 0; i < candidate_count; i++)
-    {
-       if (locked[loser][i] == true)
-        {
-            beaten[loser][i] = 1;
-        }
-    }
-}
-
-bool cycle(int loser)
-{
-    int j = 0;
-    for (int i = 0; i < candidate_count; i++)
-    {
-       if (locked[loser][i] == true)
-        {
-            beaten[j] = i;
-            j = j + 1;
-        }
-    }
-}
-
-
-
-
-
-//RETRY 1
 bool check_cycle(int winner, int loser)
 {
     if (cycle(winner, loser) == 0)
