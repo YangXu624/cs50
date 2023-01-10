@@ -265,34 +265,11 @@ bool cycle(int loser)
 //RETRY 1
 bool check_cycle(int winner, int loser)
 {
-    for (int i = 0; i < candidate_count; i++)
-    {
-       if (locked[loser][i] == true)
-        {
-            loser = i;
-            if (locked[loser][winner] == true)
-            {
-                return 0;
-            }
-            else
-            {
-                for (int j = 0; j < candidate_count; j++)
-                {
-                    if (locked[loser][j] == true)
-                    {
-                        loser = i;
-                        if (locked[loser][winner] == true)
-                        {
-                            return 0;
-                        }
-                    }
-                }
-            }
-        }
-    }
+    cycle(winner, loser)
+    
 }
 
-cycle(int loser)
+cycle(int winner, int loser)
 {
     for (int i = 0; i < candidate_count; i++)
     {
