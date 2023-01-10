@@ -269,7 +269,7 @@ int cycle(int winner, int loser)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        printf("Round %i, %s vs %s", i, candidates[loser], candidates[i]);
+        printf("Round %i, %s vs %s\n", i, candidates[loser], candidates[i]);
         if (locked[loser][i] == true)
         {
             loser = i;
