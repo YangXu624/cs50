@@ -231,24 +231,18 @@ void print_winner(void)
         }
     }
 
-    int lowest_points = points[0];
+    int highest_points = points[0];
     for (int l = 0; l < candidate_count; l++)
     {
-        if (points[l] < lowest_points)
+        if (points[l] > highest_points)
         {
-            lowest_points = points[l];
+            highest_points = points[l];
         }
     }
+    
     for (int m = 0; m < candidate_count; m++)
     {
-        if (points[m] == lowest_points)
-        {
-            printf("%s\n", candidates[m]);
-        }
-    }
-    for (int m = 0; m < candidate_count; m++)
-    {
-        if (points[m] == 0)
+        if (points[m] == highest_points)
         {
             printf("%s\n", candidates[m]);
         }
