@@ -226,7 +226,9 @@ int compare(int vote1, int vote2)
 bool check_cycle(int pairs[])
 {
     int loser = pairs[].loser;
-
+    do
+    {}
+    while (loser != pairs[].winner)
 }
 
 int loop(int loser)
