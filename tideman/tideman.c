@@ -1,6 +1,5 @@
 #include <cs50.h>
 #include <stdio.h>
-#include <string.h>
 
 // Max number of candidates
 #define MAX 9
@@ -33,10 +32,6 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
-// My Own Prototypes
-int compare(int vote1, int vote2);
-bool check_cycle(int winner, int loser);
-int cycle(int winner, int loser);
 
 int main(int argc, string argv[])
 {
@@ -105,14 +100,6 @@ int main(int argc, string argv[])
 bool vote(int rank, string name, int ranks[])
 {
     // TODO
-    for (int i = 0; i < candidate_count; i++)
-    {
-        if (strcmp(name, candidates[i]) == 0)
-        {
-            ranks[rank] = i;
-            return true;
-        }
-    }
     return false;
 }
 
@@ -120,13 +107,6 @@ bool vote(int rank, string name, int ranks[])
 void record_preferences(int ranks[])
 {
     // TODO
-    for (int i = 0; i < candidate_count; i++)
-    {
-        for (int j = i + 1; j < candidate_count; j++)
-        {
-            preferences[ranks[i]][ranks[j]]++;
-        }
-    }
     return;
 }
 
@@ -134,22 +114,6 @@ void record_preferences(int ranks[])
 void add_pairs(void)
 {
     // TODO
-    pair_count = 0;
-    for (int i = 0; i < candidate_count; i++)
-    {
-        for (int j = 0; j < candidate_count; j++)
-        {
-            for (int k = 0; k < ((candidate_count) * (candidate_count + 1)) / 2; k++)
-            {
-                if (preferences[i][j] > preferences[j][i])
-                {
-                    pairs[pair_count].winner = i;
-                    pairs[pair_count].loser = j;
-                    pair_count = pair_count + 1;
-                }
-            }
-        }
-    }
     return;
 }
 
@@ -157,38 +121,6 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // TODO
-    int strength[pair_count];
-    for (int i = 0; i < pair_count; i++)
-    {
-        strength[i] = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[i].loser][pairs[i].winner];
-    }
-
-    int m = 0;
-    do
-    {
-        int highest_strength = 0;
-        for (int j = 0; j < pair_count; j++)
-        {
-            for (int k = 0; k < pair_count; k++)
-            {
-                if (highest_strength < compare(strength[j], strength[k]))
-                {
-                    highest_strength = compare(strength[j], strength[k]);
-                }
-            }
-        }
-
-        for (int l = 0; l < pair_count; l++)
-        {
-            if (strength[l] == highest_strength)
-            {
-                strength[l] = 0;
-                pairs[m] = pairs[l];
-                m = m + 1;
-            }
-        }
-    }
-    while (m < pair_count);
     return;
 }
 
@@ -196,13 +128,6 @@ void sort_pairs(void)
 void lock_pairs(void)
 {
     // TODO
-    for (int i = 0; i < pair_count; i++)
-    {
-        if (check_cycle(pairs[i].winner, pairs[i].loser) == false)
-        {
-            locked[pairs[i].winner][pairs[i].loser] = true;
-        }
-    }
     return;
 }
 
@@ -210,82 +135,5 @@ void lock_pairs(void)
 void print_winner(void)
 {
     // TODO
-    int points[candidate_count];
-    for (int k = 0; k < candidate_count; k++)
-    {
-        points[k] = 0;
-    }
-
-    for (int i = 0; i < candidate_count; i++)
-    {
-        for (int j = 0; j < candidate_count; j++)
-        {
-            if (locked[i][j] == true)
-            {
-                points[i] = points[i] + 1;
-            }
-        }
-    }
-
-    int highest_points = points[0];
-    for (int l = 0; l < candidate_count; l++)
-    {
-        if (points[l] > highest_points)
-        {
-            highest_points = points[l];
-        }
-    }
-
-    for (int m = 0; m < candidate_count; m++)
-    {
-        if (points[m] == highest_points)
-        {
-            printf("%s\n", candidates[m]);
-        }
-    }
     return;
-}
-
-int compare(int vote1, int vote2)
-{
-    if (vote1 > vote2)
-    {
-        return vote1;
-    }
-    else
-    {
-        return vote2;
-    }
-}
-
-bool check_cycle(int winner, int loser)
-{
-    if (cycle(winner, loser) == 0)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-int cycle(int winner, int loser)
-{
-    for (int i = 0; i < candidate_count; i++)
-    {
-        if (locked[loser][i] == true)
-        {
-            loser = i;
-            if (locked[loser][winner] == true)
-            {
-                return 0;
-            }
-            else
-            {
-                cycle(winner, loser);
-            }
-        }
-    }
-    return 1;
 }
