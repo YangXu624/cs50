@@ -198,6 +198,7 @@ void lock_pairs(void)
 }
 
 int count = 0;
+int r = 0;
 bool check_cycle(int p, int q)
 {
     for (int i = 0; i < candidate_count; i++)
@@ -208,12 +209,16 @@ bool check_cycle(int p, int q)
             {
                 if (locked[q][i] == true)
                 {
-                    return false;
+                    r = 1;
                 }
                 count++;
                 check_cycle(i, q);
             }
             while (count < 10);
+            if (r == 1)
+            {
+                return false;
+            }
             return true;
         }
     }
