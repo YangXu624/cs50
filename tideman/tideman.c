@@ -229,6 +229,7 @@ bool check_cycle(int p, int q)
 
 // Print the winner of the election
 int score1[MAX];
+int highest_score = 0;
 void print_winner(void)
 {
     // TODO
@@ -244,9 +245,9 @@ void print_winner(void)
     }
     for (int k = 0; k < candidate_count; k++)
     {
-        if (score1[k] == candidate_count)
+        if (score[k] > highest_score)
         {
-            printf("%s\n", candidates[k]);
+            highest_score
         }
     }
     return;
