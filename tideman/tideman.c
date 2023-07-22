@@ -213,7 +213,7 @@ bool check_cycle(int p, int q)
                 count++;
                 check_cycle(i, q);
             }
-            while (count < 10);
+            while (count < 100);
             return true;
         }
     }
