@@ -186,7 +186,7 @@ void sort_pairs(void)
                 printf("%i", highest);
             }
         }
-        printf("\n");
+        printf("%s, %s\n", candidates[pairs[counter].winner], candidates[pairs[counter].loser]);
         score[pairs[counter].winner][pairs[counter].loser] = 0;
         counter++;
     }
