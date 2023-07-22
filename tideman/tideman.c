@@ -170,9 +170,11 @@ void sort_pairs(void)
                     score[i][j] = 0;
                 }
             }
+        }
+        counter++;
     }
     while (counter )
-        }
+
     return;
 }
 
