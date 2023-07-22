@@ -155,16 +155,24 @@ void sort_pairs(void)
 {
     // TODO
     int highest = 0;
-    for (int i = 0; i < candidate_count; i++)
+    int counter = 0;
+    do
     {
-        for (int j = 0; j < candidate_count; j++)
+        for (int i = 0; i < candidate_count; i++)
         {
-            if (score[i][j] > highest)
+            for (int j = 0; j < candidate_count; j++)
             {
-                highest = score[i][j];
+                if (score[i][j] > highest)
+                {
+                    highest = score[i][j];
+                    pairs[counter].winner = i;
+                    pairs[counter].loser = j;
+                    score[i][j] = 0;
+                }
             }
-        }
     }
+    while (counter )
+        }
     return;
 }
 
