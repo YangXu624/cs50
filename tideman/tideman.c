@@ -142,6 +142,8 @@ void add_pairs(void)
                 pairs[pair_count].loser = j;
                 score[i][j] = preferences[i][j] - preferences[j][i];
                 pair_count++;
+
+                printf("score: %i\n", score[i][j]);
             }
             else if (preferences[i][j] < preferences[j][i])
             {
@@ -149,6 +151,8 @@ void add_pairs(void)
                 pairs[pair_count].loser = i;
                 score[j][i] = preferences[j][i] - preferences[i][j];
                 pair_count++;
+
+                printf("score: %i\n", score[j][i]);
             }
         }
     }
@@ -179,8 +183,10 @@ void sort_pairs(void)
                     pairs[counter].winner = j;
                     pairs[counter].loser = i;
                 }
+                printf("%i", highest);
             }
         }
+        printf("\n");
         score[pairs[counter].winner][pairs[counter].loser] = 0;
         counter++;
     }
