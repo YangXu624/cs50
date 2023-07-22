@@ -184,7 +184,7 @@ void sort_pairs(void)
         score[pairs[counter].winner][pairs[counter].loser] = 0;
         counter++;
     }
-    while (counter < pair_count);
+    while (counter < pair_count - 1);
     return;
 }
 
