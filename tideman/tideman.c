@@ -34,7 +34,7 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
-bool check_cycle(int p)
+bool check_cycle(int p);
 
 int main(int argc, string argv[])
 {
@@ -184,9 +184,7 @@ void lock_pairs(void)
     // TODO
     for (int i = 0; i < pair_count; i++)
     {
-        CHECK CYCLE
-        IF NO CYCLE, LOCK PAIR
-        IF HAVE CYCLE, SKIP PAIR
+        if (check_cycle(i))
     }
     return;
 }
@@ -203,7 +201,8 @@ bool check_cycle(int p)
                 count++;
                 check_cycle(i);
             }
-            while (count < 10)
+            while (count < 10);
+            return false;
         }
     }
     return true;
