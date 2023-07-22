@@ -108,7 +108,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     image[height - 1][width - 1].rgbtRed = (image[height - 1][width - 1].rgbtRed + image[height - 1][width - 2].rgbtRed + image[height - 2][width - 1].rgbtRed + image[height - 2][width - 2].rgbtRed) / 4;
     image[height - 1][width - 1].rgbtGreen = (image[height - 1][width - 1].rgbtGreen + image[height - 1][width - 2].rgbtGreen + image[height - 2][width - 1].rgbtGreen + image[height - 2][width - 2].rgbtGreen) / 4;
     image[height - 1][width - 1].rgbtBlue = (image[height - 1][width - 1].rgbtBlue + image[height - 1][width - 2].rgbtBlue + image[height - 2][width - 1].rgbtBlue + image[height - 2][width - 2].rgbtBlue) / 4;
-
+    //On hind sight, there was no need to brute force through
+    //Could have just did the first two 'for loops'
+    //Then applied x9/4 for 4 corner pixels, and x9/6 for edge pieces
     return;
 }
 
