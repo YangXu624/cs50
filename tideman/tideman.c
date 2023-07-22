@@ -7,6 +7,7 @@
 
 // preferences[i][j] is number of voters who prefer i over j
 int preferences[MAX][MAX];
+int score[MAX][MAX];
 
 // locked[i][j] means i is locked in over j
 bool locked[MAX][MAX];
@@ -132,18 +133,20 @@ void add_pairs(void)
     // TODO
     for (int i = 0; i < candidate_count; i++)
     {
-        for (int j = 0; j < candidate_count; j++)
+        for (int j = i + 1; j < candidate_count; j++)
         {
             if (preferences[i][j] > preferences[j][i])
             {
                 pairs[pair_count].winner = i;
                 pairs[pair_count].loser = j;
+                score[i][j] = preferences[i][j] - preferences[j][i];
                 pair_count++;
             }
             else if (preferences[i][j] < preferences[j][i])
             {
                 pairs[pair_count].winner = j;
                 pairs[pair_count].loser = i;
+                score[j][i] = preferences[j][i] - preferences[i][j];
                 pair_count++;
             }
         }
@@ -157,7 +160,7 @@ void sort_pairs(void)
     // TODO
     for (int i = 0; i < pair_count; i++)
     {
-        sc
+
     }
     return;
 }
