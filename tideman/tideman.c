@@ -247,8 +247,14 @@ void print_winner(void)
     {
         if (score[k] > highest_score)
         {
-            highest_score
+            highest_score = score[k];
         }
     }
+
+    if (score[k] == highest_score)
+    {
+        printf("%s\n", candidates[k]);
+    }
+
     return;
 }
