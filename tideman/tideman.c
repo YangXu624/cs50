@@ -154,10 +154,10 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // TODO
-    int highest = 0;
     int counter = 0;
     do
     {
+        int highest = 0;
         for (int i = 0; i < candidate_count; i++)
         {
             for (int j = 0; j < candidate_count; j++)
@@ -167,10 +167,10 @@ void sort_pairs(void)
                     highest = score[i][j];
                     pairs[counter].winner = i;
                     pairs[counter].loser = j;
-                    score[i][j] = 0;
                 }
             }
         }
+        score[pairs[counter].winner][pairs[counter].loser] = 0;
         counter++;
     }
     while (counter < pair_count)
