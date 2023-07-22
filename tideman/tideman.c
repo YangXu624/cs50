@@ -239,22 +239,23 @@ void print_winner(void)
         {
             if ((locked[i][j] == false) && (i != j))
             {
-                score1[i]++;
+                score1[j]++;
             }
         }
     }
     for (int k = 0; k < candidate_count; k++)
     {
-        if (score[k] > highest_score)
+        if (score1[k] > highest_score)
         {
-            highest_score = score[k];
+            highest_score = score1[k];
         }
     }
-
-    if (score[k] == highest_score)
+    for (int m = 0; m < candidate_count; m++)
     {
-        printf("%s\n", candidates[k]);
+        if (score1[m] == highest_score)
+        {
+            printf("%s\n", candidates[m]);
+        }
     }
-
     return;
 }
