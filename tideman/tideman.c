@@ -198,7 +198,7 @@ void lock_pairs(void)
 }
 
 int count = 0;
-bool check_cycle(int p)
+bool check_cycle(int p, int q)
 {
     for (int i = 0; i < candidate_count; i++)
     {
