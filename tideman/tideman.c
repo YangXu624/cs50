@@ -34,6 +34,7 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
+bool check_cycle(int p)
 
 int main(int argc, string argv[])
 {
@@ -190,9 +191,17 @@ void lock_pairs(void)
     return;
 }
 
-void check_cycle(int)
+bool check_cycle(int p)
 {
-    for (int i = 0; i < )
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (locked[i][p] == true)
+        {
+            check_cycle(i);
+            return false;
+        }
+    }
+    return true;
 }
 
 // Print the winner of the election
