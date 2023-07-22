@@ -174,7 +174,6 @@ void sort_pairs(void)
         counter++;
     }
     while (counter < pair_count)
-
     return;
 }
 
