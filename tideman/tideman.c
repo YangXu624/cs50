@@ -190,6 +190,11 @@ void lock_pairs(void)
     return;
 }
 
+void check_cycle(int)
+{
+    for (int i = 0; i < )
+}
+
 // Print the winner of the election
 void print_winner(void)
 {
