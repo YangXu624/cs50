@@ -211,7 +211,7 @@ bool check_cycle(int p, int q)
                     return false;
                 }
                 count++;
-                check_cycle(i);
+                check_cycle(i, q);
             }
             while (count < 10);
             return true;
