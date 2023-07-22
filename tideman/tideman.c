@@ -154,9 +154,16 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // TODO
-    for (int i = 0; i < pair_count; i++)
+    int highest = 0;
+    for (int i = 0; i < candidate_count; i++)
     {
-
+        for (int j = i + 1; j < candidate_count; j++)
+        {
+            if (score[i][j] > highest)
+            {
+                highest = score[i][j]
+            }
+        }
     }
     return;
 }
