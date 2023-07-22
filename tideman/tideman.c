@@ -217,6 +217,7 @@ bool check_cycle(int p, int q)
                 check_cycle(i, q);
             }
             while (count < 10);
+            //Instead of returning earlier, I return here so as to avoid premature returns as mentioned above
             if (r == 1)
             {
                 return false;
