@@ -209,6 +209,8 @@ bool check_cycle(int p, int q)
             {
                 if (locked[q][i] == true)
                 {
+                    //I use an integer instead of simply returning false
+                    //This eliminates the problem of having premature returns, as there may be more falses down the line
                     r = 1;
                 }
                 count++;
