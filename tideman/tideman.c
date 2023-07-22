@@ -206,11 +206,15 @@ bool check_cycle(int p, int q)
         {
             do
             {
+                if (locked[q][i] == true)
+                {
+                    return false;
+                }
                 count++;
                 check_cycle(i);
             }
             while (count < 10);
-            return false;
+            return true;
         }
     }
     return true;
