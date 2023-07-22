@@ -68,8 +68,47 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     }
     for (int k = 1; k < height - 1)
     {
-        image[k][0].rgbtRed = (image)
+        image[k][0].rgbtRed = (image[k - 1][0].rgbtRed + image[k - 1][1].rgbtRed +
+        image[k][0].rgbtRed + image[k][1].rgbtRed +
+        image[k + 1][0].rgbtRed + image[k + 1][1].rgbtRed) / 6;
+
+        image[k][0].rgbtGreen = (image[k - 1][0].rgbtGreen + image[k - 1][1].rgbtGreen +
+        image[k][0].rgbtGreen + image[k][1].rgbtGreen +
+        image[k + 1][0].rgbtGreen + image[k + 1][1].rgbtGreen) / 6;
+
+        image[k][0].rgbtBlue = (image[k - 1][0].rgbtBlue + image[k - 1][1].rgbtBlue +
+        image[k][0].rgbtBlue + image[k][1].rgbtBlue +
+        image[k + 1][0].rgbtBlue + image[k + 1][1].rgbtBlue) / 6;
+
+        image[k][width - 1].rgbtRed = (image[k - 1][width - 1].rgbtRed + image[k - 1][width - 2].rgbtRed +
+        image[k][width - 1].rgbtRed + image[k][width - 2].rgbtRed +
+        image[k + 1][width - 1].rgbtRed + image[k + 1][width - 2].rgbtRed) / 6;
+
+        image[k][width - 1].rgbtGreen = (image[k - 1][width - 1].rgbtGreen + image[k - 1][width - 2].rgbtGreen +
+        image[k][width - 1].rgbtGreen + image[k][width - 2].rgbtGreen +
+        image[k + 1][width - 1].rgbtGreen + image[k + 1][width - 2].rgbtGreen) / 6;
+
+        image[k][width - 1].rgbtBlue = (image[k - 1][width - 1].rgbtBlue + image[k - 1][width - 2].rgbtBlue +
+        image[k][width - 1].rgbtBlue + image[k][width - 2].rgbtBlue +
+        image[k + 1][width - 1].rgbtBlue + image[k + 1][width - 2].rgbtBlue) / 6;
     }
+
+    image[0][0].rgbtRed = (image[0][0].rgbtRed + image[0][1].rgbtRed + image[1][0].rgbtRed + image[1][1].rgbtRed) / 4;
+    image[0][0].rgbtGreen = (image[0][0].rgbtGreen + image[0][1].rgbtGreen + image[1][0].rgbtGreen + image[1][1].rgbtGreen) / 4;
+    image[0][0].rgbtBlue = (image[0][0].rgbtBlue + image[0][1].rgbtBlue + image[1][0].rgbtBlue + image[1][1].rgbtBlue) / 4;
+
+    image[0][width - 1].rgbtRed = (image[0][width - 1].rgbtRed + image[0][width - 2].rgbtRed + image[1][width - 1].rgbtRed + image[1][width - 2].rgbtRed) / 4;
+    image[0][width - 1].rgbtGreen = (image[0][width - 1].rgbtGreen + image[0][width - 2].rgbtGreen + image[1][width - 1].rgbtGreen + image[1][width - 2].rgbtGreen) / 4;
+    image[0][width - 1].rgbtBlue = (image[0][width - 1].rgbtBlue + image[0][width - 2].rgbtBlue + image[1][width - 1].rgbtBlue + image[1][width - 2].rgbtBlue) / 4;
+
+    image[height - 1][0].rgbtRed = (image[height - 1][0].rgbtRed + image[height - 1][1].rgbtRed + image[height - 2][0].rgbtRed + image[height - 2][1].rgbtRed) / 4;
+    image[height - 1][0].rgbtGreen = (image[height - 1][0].rgbtGreen + image[height - 1][1].rgbtGreen + image[height - 2][0].rgbtGreen + image[height - 2][1].rgbtGreen) / 4;
+    image[height - 1][0].rgbtBlue = (image[height - 1][0].rgbtBlue + image[height - 1][1].rgbtBlue + image[height - 2][0].rgbtBlue + image[height - 2][1].rgbtBlue) / 4;
+
+    image[height - 1][width - 1].rgbtRed = (image[height - 1][width - 1].rgbtRed + image[height - 1][width - 2].rgbtRed + image[height - 2][width - 1].rgbtRed + image[height - 2][width - 2].rgbtRed) / 4;
+    image[height - 1][width - 1].rgbtGreen = (image[height - 1][width - 1].rgbtGreen + image[height - 1][width - 2].rgbtGreen + image[height - 2][width - 1].rgbtGreen + image[height - 2][width - 2].rgbtGreen) / 4;
+    image[height - 1][width - 1].rgbtBlue = (image[height - 1][width - 1].rgbtBlue + image[height - 1][width - 2].rgbtBlue + image[height - 2][width - 1].rgbtBlue + image[height - 2][width - 2].rgbtBlue) / 4;
+
     return;
 }
 
