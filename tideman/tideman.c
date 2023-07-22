@@ -216,6 +216,7 @@ bool check_cycle(int p)
 }
 
 // Print the winner of the election
+int score1[MAX];
 void print_winner(void)
 {
     // TODO
