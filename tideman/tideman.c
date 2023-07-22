@@ -183,7 +183,9 @@ void lock_pairs(void)
     // TODO
     for (int i = 0; i < pair_count; i++)
     {
-        for (int j = 0)
+        CHECK CYCLE
+        IF NO CYCLE, LOCK PAIR
+        IF HAVE CYCLE, SKIP PAIR
     }
     return;
 }
