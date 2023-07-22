@@ -193,12 +193,15 @@ void lock_pairs(void)
 
 bool check_cycle(int p)
 {
+    int count = 0;
     for (int i = 0; i < candidate_count; i++)
     {
         if (locked[i][p] == true)
         {
-            check_cycle(i);
-            return false;
+            do
+            {
+                check_cycle(i);
+            }
         }
     }
     return true;
