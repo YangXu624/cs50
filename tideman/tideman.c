@@ -223,8 +223,17 @@ void print_winner(void)
     {
         for (int j = 0; j < candidate_count; j++)
         {
-            if (locked[i][j] == true)
-            
+            if ((locked[i][j] == false) && (i != j))
+            {
+                score1[i]++;
+            }
+        }
+    }
+    for (int k = 0; k < candidate_count; k++)
+    {
+        if (score1[k] == candidate_count)
+        {
+            printf("%s\n", candidates[k]);
         }
     }
     return;
