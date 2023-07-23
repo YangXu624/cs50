@@ -129,23 +129,21 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 1; j < width - 1; j++)
         {
-            a = round(sqrt(pow(((-1)*(image[i - 1][j - 1].rgbtRed) + (-2)*(image[i][j - 1].rgbtRed) +
+            a = pow(((-1)*(image[i - 1][j - 1].rgbtRed) + (-2)*(image[i][j - 1].rgbtRed) +
             (-1)*(image[i + 1][j - 1].rgbtRed) + (image[i - 1][j + 1].rgbtRed) + (2)*(image[i][j + 1].rgbtRed) +
-            (image[i + 1][j + 1].rgbtRed)), 2) + pow(((-1)*(image[j - 1][i - 1].rgbtRed) + (-2)*(image[j][i - 1].rgbtRed) +
-            (-1)*(image[j + 1][i - 1].rgbtRed) + (image[j - 1][i + 1].rgbtRed) + (2)*(image[j][i + 1].rgbtRed) +
-            (image[j + 1][i + 1].rgbtRed)), 2)));
+            (image[i + 1][j + 1].rgbtRed)), 2);
 
-            b = round(sqrt(pow(((-1)*(image[i - 1][j - 1].rgbtGreen) + (-2)*(image[i][j - 1].rgbtGreen) +
+            b = pow(((-1)*(image[i - 1][j - 1].rgbtGreen) + (-2)*(image[i][j - 1].rgbtGreen) +
             (-1)*(image[i + 1][j - 1].rgbtGreen) + (image[i - 1][j + 1].rgbtGreen) + (2)*(image[i][j + 1].rgbtGreen) +
             (image[i + 1][j + 1].rgbtGreen)), 2) + pow(((-1)*(image[j - 1][i - 1].rgbtGreen) + (-2)*(image[j][i - 1].rgbtGreen) +
             (-1)*(image[j + 1][i - 1].rgbtGreen) + (image[j - 1][i + 1].rgbtGreen) + (2)*(image[j][i + 1].rgbtGreen) +
-            (image[j + 1][i + 1].rgbtGreen)), 2)));
+            (image[j + 1][i + 1].rgbtGreen)), 2);
 
-            c = round(sqrt(pow(((-1)*(image[i - 1][j - 1].rgbtBlue) + (-2)*(image[i][j - 1].rgbtBlue) +
+            c = pow(((-1)*(image[i - 1][j - 1].rgbtBlue) + (-2)*(image[i][j - 1].rgbtBlue) +
             (-1)*(image[i + 1][j - 1].rgbtBlue) + (image[i - 1][j + 1].rgbtBlue) + (2)*(image[i][j + 1].rgbtBlue) +
             (image[i + 1][j + 1].rgbtBlue)), 2) + pow(((-1)*(image[j - 1][i - 1].rgbtBlue) + (-2)*(image[j][i - 1].rgbtBlue) +
             (-1)*(image[j + 1][i - 1].rgbtBlue) + (image[j - 1][i + 1].rgbtBlue) + (2)*(image[j][i + 1].rgbtBlue) +
-            (image[j + 1][i + 1].rgbtBlue)), 2)));
+            (image[j + 1][i + 1].rgbtBlue)), 2);
 
             if (a > 255)
             {
