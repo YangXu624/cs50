@@ -133,5 +133,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
 void gx(int height, int width, RGBTRIPLE image[height][width])
 {
-    -1
+    image[height][width].rgbtRed = ((-1)(image[height][width].rgbtRed) + (-2)(image[height][width].rgbtRed)
+    + (-1)(image[height][width].rgbtRed) + (image[height][width].rgbtRed) + (2)(image[height][width].rgbtRed) + (image[height][width].rgbtRed))
 }
