@@ -131,7 +131,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
-void gx()
+void gx(int height, int width, RGBTRIPLE image[height][width])
 {
     -1
 }
