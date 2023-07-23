@@ -119,27 +119,54 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
+    int a;
+    int b;
+    int c;
     for (int i = 1; i < height - 1; i++)
     {
         for (int j = 1; j < width - 1; j++)
         {
-            image[i][j].rgbtRed = round(sqrt(pow(((-1)*(image[i - 1][j - 1].rgbtRed) + (-2)*(image[i][j - 1].rgbtRed) +
+            a = round(sqrt(pow(((-1)*(image[i - 1][j - 1].rgbtRed) + (-2)*(image[i][j - 1].rgbtRed) +
             (-1)*(image[i + 1][j - 1].rgbtRed) + (image[i - 1][j + 1].rgbtRed) + (2)*(image[i][j + 1].rgbtRed) +
             (image[i + 1][j + 1].rgbtRed)), 2) + pow(((-1)*(image[j - 1][i - 1].rgbtRed) + (-2)*(image[j][i - 1].rgbtRed) +
             (-1)*(image[j + 1][i - 1].rgbtRed) + (image[j - 1][i + 1].rgbtRed) + (2)*(image[j][i + 1].rgbtRed) +
             (image[j + 1][i + 1].rgbtRed)), 2)));
 
-            image[i][j].rgbtGreen = round(sqrt(pow(((-1)*(image[i - 1][j - 1].rgbtGreen) + (-2)*(image[i][j - 1].rgbtGreen) +
+            b = round(sqrt(pow(((-1)*(image[i - 1][j - 1].rgbtGreen) + (-2)*(image[i][j - 1].rgbtGreen) +
             (-1)*(image[i + 1][j - 1].rgbtGreen) + (image[i - 1][j + 1].rgbtGreen) + (2)*(image[i][j + 1].rgbtGreen) +
             (image[i + 1][j + 1].rgbtGreen)), 2) + pow(((-1)*(image[j - 1][i - 1].rgbtGreen) + (-2)*(image[j][i - 1].rgbtGreen) +
             (-1)*(image[j + 1][i - 1].rgbtGreen) + (image[j - 1][i + 1].rgbtGreen) + (2)*(image[j][i + 1].rgbtGreen) +
             (image[j + 1][i + 1].rgbtGreen)), 2)));
 
-            image[i][j].rgbtBlue = round(sqrt(pow(((-1)*(image[i - 1][j - 1].rgbtBlue) + (-2)*(image[i][j - 1].rgbtBlue) +
+            c = round(sqrt(pow(((-1)*(image[i - 1][j - 1].rgbtBlue) + (-2)*(image[i][j - 1].rgbtBlue) +
             (-1)*(image[i + 1][j - 1].rgbtBlue) + (image[i - 1][j + 1].rgbtBlue) + (2)*(image[i][j + 1].rgbtBlue) +
             (image[i + 1][j + 1].rgbtBlue)), 2) + pow(((-1)*(image[j - 1][i - 1].rgbtBlue) + (-2)*(image[j][i - 1].rgbtBlue) +
             (-1)*(image[j + 1][i - 1].rgbtBlue) + (image[j - 1][i + 1].rgbtBlue) + (2)*(image[j][i + 1].rgbtBlue) +
             (image[j + 1][i + 1].rgbtBlue)), 2)));
+
+            if (a > 255)
+            {
+                image[i][j].rgbtRed = 255;
+            }
+            else
+            {
+                image[i][j].rgbtRed = a;
+            }
+            if (b > 255)
+            {
+                image[i][j].rgbtGreen = 255;
+            }
+            else
+            {
+                image[i][j].rgbtGreen = b;
+            }if (c > 255)
+            {
+                image[i][j].rgbtBlue = 255;
+            }
+            else
+            {
+                image[i][j].rgbtBlue = c;
+            }
         }
     }
     return;
