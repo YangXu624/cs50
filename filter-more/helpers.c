@@ -138,35 +138,38 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             f = pow(((-1)*(image[i - 1][j - 1].rgbtBlue) + (-2)*(image[i][j - 1].rgbtBlue) +
             (-1)*(image[i + 1][j - 1].rgbtBlue) + (image[i - 1][j + 1].rgbtBlue) + (2)*(image[i][j + 1].rgbtBlue) +
             (image[i + 1][j + 1].rgbtBlue)), 2);
-
-    for
-    {
-        for
-        {
-            g = pow(((-1)*(image[j - 1][i - 1].rgbtRed) + (-2)*(image[j][i - 1].rgbtRed) +
-            (-1)*(image[j + 1][i - 1].rgbtRed) + (image[j - 1][i + 1].rgbtRed) + (2)*(image[j][i + 1].rgbtRed) +
-            (image[j + 1][i + 1].rgbtRed)), 2);
-
-            h = pow(((-1)*(image[j - 1][i - 1].rgbtGreen) + (-2)*(image[j][i - 1].rgbtGreen) +
-            (-1)*(image[j + 1][i - 1].rgbtGreen) + (image[j - 1][i + 1].rgbtGreen) + (2)*(image[j][i + 1].rgbtGreen) +
-            (image[j + 1][i + 1].rgbtGreen)), 2);
-
-            p = pow(((-1)*(image[j - 1][i - 1].rgbtBlue) + (-2)*(image[j][i - 1].rgbtBlue) +
-            (-1)*(image[j + 1][i - 1].rgbtBlue) + (image[j - 1][i + 1].rgbtBlue) + (2)*(image[j][i + 1].rgbtBlue) +
-            (image[j + 1][i + 1].rgbtBlue)), 2);
         }
     }
-            if (a > 255)
-            {
-                new_pixel_r[i][j] = 255;
-            }
-            else
-            {
-                new_pixel_r[i][j] = a;
-            }
-            if (b > 255)
-            {
-                new_pixel_g[i][j] = 255;
+
+    for (int i = 1; i < width - 1; i++)
+    {
+        for (int j = 1; j < height - 1; j++)
+        {
+            g = pow(((-1)*(image[i - 1][j - 1].rgbtRed) + (-2)*(image[i][j - 1].rgbtRed) +
+            (-1)*(image[i + 1][j - 1].rgbtRed) + (image[i - 1][j + 1].rgbtRed) + (2)*(image[i][j + 1].rgbtRed) +
+            (image[i + 1][j + 1].rgbtRed)), 2);
+
+            h = pow(((-1)*(image[i - 1][j - 1].rgbtGreen) + (-2)*(image[i][j - 1].rgbtGreen) +
+            (-1)*(image[i + 1][j - 1].rgbtGreen) + (image[i - 1][j + 1].rgbtGreen) + (2)*(image[i][j + 1].rgbtGreen) +
+            (image[i + 1][j + 1].rgbtGreen)), 2);
+
+            p = pow(((-1)*(image[i - 1][j - 1].rgbtBlue) + (-2)*(image[i][j - 1].rgbtBlue) +
+            (-1)*(image[i + 1][j - 1].rgbtBlue) + (image[i - 1][j + 1].rgbtBlue) + (2)*(image[i][j + 1].rgbtBlue) +
+            (image[i + 1][j + 1].rgbtBlue)), 2);
+
+        }
+    }
+    if (a > 255)
+    {
+        new_pixel_r[i][j] = 255;
+    }
+    else
+    {
+        new_pixel_r[i][j] = a;
+    }
+    if (b > 255)
+    {
+        new_pixel_g[i][j] = 255;
             }
             else
             {
