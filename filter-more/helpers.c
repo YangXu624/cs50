@@ -113,6 +113,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     //Then applied x9/4 for 4 corner pixels, and x9/6 for edge pieces
     return;
     //On hind sight of hind sight, I could have wrote a function to process everything.. bruh
+    //Will come back to write this function
 }
 
 // Detect edges
@@ -132,5 +133,5 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
 void gx()
 {
-    
+    -1
 }
