@@ -119,23 +119,22 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-    int new_pixel_r[height][width];
-    int new_pixel_g[height][width];
-    int new_pixel_b[height][width];
-    int a, b, c, d, e, f, g, h, p;
+    int new_pixel_rx[height][width], new_pixel_ry[height][width];
+    int new_pixel_gx[height][width], new_pixel_gy[height][width];
+    int new_pixel_bx[height][width], new_pixel_by[height][width];
     for (int i = 1; i < height - 1; i++)
     {
         for (int j = 1; j < width - 1; j++)
         {
-            d = pow(((-1)*(image[i - 1][j - 1].rgbtRed) + (-2)*(image[i][j - 1].rgbtRed) +
+            new_pixel_rx[i][j] = pow(((-1)*(image[i - 1][j - 1].rgbtRed) + (-2)*(image[i][j - 1].rgbtRed) +
             (-1)*(image[i + 1][j - 1].rgbtRed) + (image[i - 1][j + 1].rgbtRed) + (2)*(image[i][j + 1].rgbtRed) +
             (image[i + 1][j + 1].rgbtRed)), 2);
 
-            e = pow(((-1)*(image[i - 1][j - 1].rgbtGreen) + (-2)*(image[i][j - 1].rgbtGreen) +
+            new_pixel_rx[i][j] = pow(((-1)*(image[i - 1][j - 1].rgbtGreen) + (-2)*(image[i][j - 1].rgbtGreen) +
             (-1)*(image[i + 1][j - 1].rgbtGreen) + (image[i - 1][j + 1].rgbtGreen) + (2)*(image[i][j + 1].rgbtGreen) +
             (image[i + 1][j + 1].rgbtGreen)), 2);
 
-            f = pow(((-1)*(image[i - 1][j - 1].rgbtBlue) + (-2)*(image[i][j - 1].rgbtBlue) +
+            new_pixel_rx[i][j] = pow(((-1)*(image[i - 1][j - 1].rgbtBlue) + (-2)*(image[i][j - 1].rgbtBlue) +
             (-1)*(image[i + 1][j - 1].rgbtBlue) + (image[i - 1][j + 1].rgbtBlue) + (2)*(image[i][j + 1].rgbtBlue) +
             (image[i + 1][j + 1].rgbtBlue)), 2);
         }
@@ -145,20 +144,21 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 1; j < height - 1; j++)
         {
-            g = pow(((-1)*(image[i - 1][j - 1].rgbtRed) + (-2)*(image[i][j - 1].rgbtRed) +
+            new_pixel_ry[i][j] = pow(((-1)*(image[i - 1][j - 1].rgbtRed) + (-2)*(image[i][j - 1].rgbtRed) +
             (-1)*(image[i + 1][j - 1].rgbtRed) + (image[i - 1][j + 1].rgbtRed) + (2)*(image[i][j + 1].rgbtRed) +
             (image[i + 1][j + 1].rgbtRed)), 2);
 
-            h = pow(((-1)*(image[i - 1][j - 1].rgbtGreen) + (-2)*(image[i][j - 1].rgbtGreen) +
+            new_pixel_ry[i][j] = pow(((-1)*(image[i - 1][j - 1].rgbtGreen) + (-2)*(image[i][j - 1].rgbtGreen) +
             (-1)*(image[i + 1][j - 1].rgbtGreen) + (image[i - 1][j + 1].rgbtGreen) + (2)*(image[i][j + 1].rgbtGreen) +
             (image[i + 1][j + 1].rgbtGreen)), 2);
 
-            p = pow(((-1)*(image[i - 1][j - 1].rgbtBlue) + (-2)*(image[i][j - 1].rgbtBlue) +
+            new_pixel_ry[i][j] = pow(((-1)*(image[i - 1][j - 1].rgbtBlue) + (-2)*(image[i][j - 1].rgbtBlue) +
             (-1)*(image[i + 1][j - 1].rgbtBlue) + (image[i - 1][j + 1].rgbtBlue) + (2)*(image[i][j + 1].rgbtBlue) +
             (image[i + 1][j + 1].rgbtBlue)), 2);
 
         }
     }
+    for 
     if (a > 255)
     {
         new_pixel_r[i][j] = 255;
@@ -170,29 +170,19 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     if (b > 255)
     {
         new_pixel_g[i][j] = 255;
-            }
-            else
-            {
-                new_pixel_g[i][j] = b;
-            }if (c > 255)
-            {
-                new_pixel_b[i][j] = 255;
-            }
-            else
-            {
+    }
+    else
+    {
+        new_pixel_g[i][j] = b;
+    }
+    if (c > 255)
+    {
+        new_pixel_b[i][j] = 255;
+    }
+    else
+    {
                 new_pixel_b[i][j] = c;
-            }
-        }
     }
 
-    for (int i = 1; i < height - 1; i++)
-    {
-        for (int j = 1; j < width - 1; j++)
-        {
-            image[i][j].rgbtRed = new_pixel_r[i][j];
-            image[i][j].rgbtGreen = new_pixel_g[i][j];
-            image[i][j].rgbtBlue = new_pixel_b[i][j];
-        }
-    }
     return;
 }
