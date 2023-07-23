@@ -119,27 +119,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-    for (int i = -1; i < height + 1; i++)
+    for (int i = 1; i < height - 1; i++)
     {
-        image[i][width].rgbtRed = 0;
-        image[i][-1].rgbtRed = 0;
-        image[i][width].rgbtGreen = 0;
-        image[i][-1].rgbtGreen = 0;
-        image[i][width].rgbtBlue = 0;
-        image[i][-1].rgbtBlue = 0;
-    }
-    for (int i = -1; i < width + 1; i++)
-    {
-        image[height][i].rgbtRed = 0;
-        image[-1][i].rgbtRed = 0;
-        image[height][i].rgbtGreen = 0;
-        image[-1][i].rgbtGreen = 0;
-        image[height][i].rgbtBlue = 0;
-        image[-1][i].rgbtBlue = 0;
-    }
-    for (int i = 0; i < height; i++)
-    {
-        for (int j = 0; j < width; j++)
+        for (int j = 1; j < width - 1; j++)
         {
             image[i][j].rgbtRed = pow(((-1)*(image[i - 1][j - 1].rgbtRed) + (-2)*(image[i][j - 1].rgbtRed) +
             (-1)*(image[i + 1][j - 1].rgbtRed) + (image[i - 1][j + 1].rgbtRed) + (2)*(image[i][j + 1].rgbtRed) +
@@ -154,9 +136,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             (image[i + 1][j + 1].rgbtBlue)), 2);
         }
     }
-    for (int j = 0; j < height; j++)
+    for (int j = 1; j < height - 1; j++)
     {
-        for (int i = 0; i < width; i++)
+        for (int i = 1; i < width - 1; i++)
         {
             image[i][j].rgbtRed = sqrt(image[j][i].rgbtRed + pow(((-1)*(image[i - 1][j - 1].rgbtRed) + (-2)*(image[i][j - 1].rgbtRed) +
             (-1)*(image[i + 1][j - 1].rgbtRed) + (image[i - 1][j + 1].rgbtRed) + (2)*(image[i][j + 1].rgbtRed) +
