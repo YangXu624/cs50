@@ -117,21 +117,21 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 }
 
 // Detect edges
-void gx(RGBTRIPLE image[height][width]);
+void gx(int height, int width, RGBTRIPLE image[height][width]);
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
-            gx(image[i][j]);
-            gx(image[j][i]);
+            gx(i, j, image[i][j]);
+            gx(j, i, image[j][i]);
         }
     }
     return;
 }
 
-void gx(RGBTRIPLE image[height][width])
+void gx(int height, int width, RGBTRIPLE image[height][width])
 {
     image[height][width].rgbtRed = ((-1)*(image[height - 1][width - 1].rgbtRed) + (-2)*(image[height][width - 1].rgbtRed) +
     (-1)*(image[height + 1][width - 1].rgbtRed) + (image[height - 1][width + 1].rgbtRed) + (2)*(image[height][width + 1].rgbtRed) +
