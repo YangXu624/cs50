@@ -117,16 +117,16 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 }
 
 // Detect edges
+
+void gx(int height, int width, RGBTRIPLE image[height][width]);
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-    int gx = 0;
-    int gy = 0;
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
-            gx(i, j, RGBTRIPLE[i][j]);
-            gx(j, i, RGBTRIPLE[j][i]);
+            gx(i, j, RGBTRIPLE image[i][j]);
+            gx(j, i, RGBTRIPLE image[j][i]);
         }
     }
     return;
@@ -134,15 +134,15 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
 void gx(int height, int width, RGBTRIPLE image[height][width])
 {
-    image[height][width].rgbtRed = ((-1)(image[height - 1][width - 1].rgbtRed) + (-2)(image[height][width - 1].rgbtRed) +
-    (-1)(image[height + 1][width - 1].rgbtRed) + (image[height - 1][width + 1].rgbtRed) + (2)(image[height][width + 1].rgbtRed) +
+    image[height][width].rgbtRed = ((-1)*(image[height - 1][width - 1].rgbtRed) + (-2)*(image[height][width - 1].rgbtRed) +
+    (-1)*(image[height + 1][width - 1].rgbtRed) + (image[height - 1][width + 1].rgbtRed) + (2)*(image[height][width + 1].rgbtRed) +
     (image[height + 1][width + 1].rgbtRed));
 
-    image[height][width].rgbtGreen = ((-1)(image[height - 1][width - 1].rgbtGreen) + (-2)(image[height][width - 1].rgbtGreen) +
-    (-1)(image[height + 1][width - 1].rgbtGreen) + (image[height - 1][width + 1].rgbtGreen) + (2)(image[height][width + 1].rgbtGreen) +
+    image[height][width].rgbtGreen = ((-1)*(image[height - 1][width - 1].rgbtGreen) + (-2)*(image[height][width - 1].rgbtGreen) +
+    (-1)*(image[height + 1][width - 1].rgbtGreen) + (image[height - 1][width + 1].rgbtGreen) + (2)*(image[height][width + 1].rgbtGreen) +
     (image[height + 1][width + 1].rgbtGreen));
 
-    image[height][width].rgbtBlue = ((-1)(image[height - 1][width - 1].rgbtBlue) + (-2)(image[height][width - 1].rgbtBlue) +
-    (-1)(image[height + 1][width - 1].rgbtBlue) + (image[height - 1][width + 1].rgbtBlue) + (2)(image[height][width + 1].rgbtBlue) +
+    image[height][width].rgbtBlue = ((-1)*(image[height - 1][width - 1].rgbtBlue) + (-2)*(image[height][width - 1].rgbtBlue) +
+    (-1)*(image[height + 1][width - 1].rgbtBlue) + (image[height - 1][width + 1].rgbtBlue) + (2)*(image[height][width + 1].rgbtBlue) +
     (image[height + 1][width + 1].rgbtBlue));
 }
