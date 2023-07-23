@@ -133,6 +133,15 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
 void gx(int height, int width, RGBTRIPLE image[height][width])
 {
-    image[height][width].rgbtRed = ((-1)(image[height][width].rgbtRed) + (-2)(image[height][width].rgbtRed)
-    + (-1)(image[height][width].rgbtRed) + (image[height][width].rgbtRed) + (2)(image[height][width].rgbtRed) + (image[height][width].rgbtRed))
+    image[height][width].rgbtRed = ((-1)(image[height - 1][width - 1].rgbtRed) + (-2)(image[height][width - 1].rgbtRed) +
+    (-1)(image[height + 1][width - 1].rgbtRed) + (image[height - 1][width + 1].rgbtRed) + (2)(image[height][width + 1].rgbtRed) +
+    (image[height + 1][width + 1].rgbtRed));
+
+    image[height][width].rgbtGreen = ((-1)(image[height - 1][width - 1].rgbtGreen) + (-2)(image[height][width - 1].rgbtGreen) +
+    (-1)(image[height + 1][width - 1].rgbtGreen) + (image[height - 1][width + 1].rgbtGreen) + (2)(image[height][width + 1].rgbtGreen) +
+    (image[height + 1][width + 1].rgbtGreen));
+
+    image[height][width].rgbtBlue = ((-1)(image[height - 1][width - 1].rgbtBlue) + (-2)(image[height][width - 1].rgbtBlue) +
+    (-1)(image[height + 1][width - 1].rgbtBlue) + (image[height - 1][width + 1].rgbtBlue) + (2)(image[height][width + 1].rgbtBlue) +
+    (image[height + 1][width + 1].rgbtBlue));
 }
