@@ -67,7 +67,17 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     int red[height][width];
     int green[height][width];
     int blue[height][width];
-    convert(height, width, image);
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            red[i][j] = image[i][j].rgbtRed;
+            green[i][j] = image[i][j].rgbtGreen;
+            blue[i][j] = image[i][j].rgbtBlue;
+        }
+    }
+    
     reflect_function(height, width, red);
     reflect_function(height, width, green);
     reflect_function(height, width, blue);
