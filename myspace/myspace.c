@@ -2,5 +2,5 @@
 
 int main(){
     char *s = "hello";
-    printf("%p\n", s);
+    printf("%i\n", *(s + 10));
 }
