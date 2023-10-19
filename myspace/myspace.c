@@ -1,5 +1,6 @@
 #include <stdio.h>
 
 int main(){
-    int 
+    int n = 50;
+    printf("%p\n", &n);
 }
