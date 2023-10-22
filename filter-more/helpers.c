@@ -133,7 +133,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
 
-            temp[i][j].R = sqrt()
+            temp[i][j].R = sqrt(GxR * GxR + GyR * GyR);
+            temp[i][j].G = sqrt(GxG * GxG + GyG * GyG);
+            temp[i][j].B = sqrt(GxB * GxB + GyB * GyB);
         }
     }
 
