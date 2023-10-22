@@ -50,7 +50,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             float counter = 0.00;
-            int totalR = totalG = totalB = 0;
+            int totalR, totalG, totalB;
+            totalR = totalG = totalB = 0;
 
             for (int y = -1; y <= 1; y++)
             {
@@ -69,13 +70,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     totalB += image[coord_y][coord_x].B;
                     counter++;
                 }
+            temp[i][j].R = round(totalR / counter);
+            temp[i][j].G = round(totalG / counter);
+            temp[i][j].B = round(totalB / counter);
             }
-            float red = temp[i][j].R;
-            float green = temp[i][j].G;
-            float blue = temp[i][j].B;
-            temp[i][j].R = round(red / counter);
-            temp[i][j].G = round(green / counter);
-            temp[i][j].B = round(blue / counter);
+
         }
     }
 
