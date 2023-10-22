@@ -97,15 +97,15 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            int Gx = 0;
+            int GxR, GxG, GxB;
+            GxR = GxG = GxB = 0;
             for (int y = -1; y <= 1; y++)
             {
                 for (int x = -1; x <= 1; x++)
                 {
-                    if (x = -1)
-                    {
-                        
-                    }
+                    coord_y = i + y;
+                    coord_x = j + x;
+                    GxR = GxR + (x * image[coord_y][coord_x].R)
                 }
             }
         }
