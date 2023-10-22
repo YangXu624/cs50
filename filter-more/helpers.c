@@ -1,4 +1,5 @@
 #include "helpers.h"
+#include <math.h>
 
 #define R rgbtRed
 #define G rgbtGreen
@@ -12,10 +13,11 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            average = (image[i][j].R + image[i][j].G + image[i][j].B) / 3;
-            image[i][j].R = average;
-            image[i][j].G = average;
-            image[i][j].B = average;
+            float red = image[i][j].R;
+            float green = image[i][j].G;
+            float blue = image[i][j].B;
+
+            
         }
     }
     return;
