@@ -70,19 +70,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     totalG += image[coord_y][coord_x].G;
                     totalB += image[coord_y][coord_x].B;
                     counter++;
-
-                    if (i == 1 && j == 1)
-                    {printf("%f, %i\n", counter, totalR);}
                 }
-
+            }
             temp[i][j].R = round(totalR / counter);
             temp[i][j].G = round(totalG / counter);
             temp[i][j].B = round(totalB / counter);
-            if (i == 1 && j == 1)
-            {printf("%f\n", counter);}
-            }
-        if (i == 1 && j == 1)
-        {printf("%f, %i\n", counter, totalR);}
         }
     }
 
