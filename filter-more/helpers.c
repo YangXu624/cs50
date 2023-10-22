@@ -105,7 +105,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 {
                     coord_y = i + y;
                     coord_x = j + x;
-                    GxR = GxR + (x * image[coord_y][coord_x].R)
+                    GxR = GxR + (x * (2 - abs(y)) * image[coord_y][coord_x].R);
+                    GxG = GxG + (x * (2 - abs(y)) * image[coord_y][coord_x].G);
+                    GxB = GxB + (x * (2 - abs(y)) * image[coord_y][coord_x].B);
                 }
             }
         }
