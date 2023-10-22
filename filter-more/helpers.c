@@ -17,7 +17,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             float green = image[i][j].G;
             float blue = image[i][j].B;
 
-            
+            image[i][j].R = image[i][j].G = image[i][j].B = round((red + green + blue) / 3);
         }
     }
     return;
