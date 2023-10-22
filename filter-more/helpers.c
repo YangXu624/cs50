@@ -93,9 +93,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE temp[height][width];
 
-    for (int i = 1; i < height - 1; i++)
+    for (int i = 0; i < height; i++)
     {
-        for (int j = 1; j < width - 1; j++)
+        for (int j = 0; j < width; j++)
         {
             float GxR, GxG, GxB, GyR, GyG, GyB;
             GxR = GxG = GxB = GyR = GyG = GyB = 0.00;
