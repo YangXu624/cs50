@@ -81,7 +81,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             if (i == 1 && j == 1)
             {printf("%f\n", counter);}
             }
-
+        if (i == 1 && j == 1)
+        {printf("%f, %i\n", counter, totalR);}
         }
     }
 
