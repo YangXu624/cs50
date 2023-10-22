@@ -49,14 +49,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            temp[i][j] = image[i][j];
-        }
-    }
-
-    for (int i = 0; i < height; i++)
-    {
-        for (int j = 0; j < width; j++)
-        {
             int counter = 0;
 
             for (int y = -1; y <= 1; y++)
@@ -70,19 +62,27 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     {
                         continue;
                     }
-                    
-                    image[i][j].R += temp[coord_y][coord_x].R;
-                    image[i][j].G += temp[coord_y][coord_x].G;
-                    image[i][j].B += temp[coord_y][coord_x].B;
+
+                    temp[i][j].R += image[coord_y][coord_x].R;
+                    temp[i][j].G += image[coord_y][coord_x].G;
+                    temp[i][j].B += image[coord_y][coord_x].B;
                     counter++;
                 }
             }
-            float red = image[i][j].R;
-            float green = image[i][j].G;
-            float blue = image[i][j].B;
-            image[i][j].R = round(red / counter);
-            image[i][j].G = round(green / counter);
-            image[i][j].B = round(blue / counter);
+            float red = temp[i][j].R;
+            float green = temp[i][j].G;
+            float blue = temp[i][j].B;
+            temp[i][j].R = round(red / counter);
+            temp[i][j].G = round(green / counter);
+            temp[i][j].B = round(blue / counter);
+        }
+    }
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            image[i][j] = temp[i][j];
         }
     }
     return;
