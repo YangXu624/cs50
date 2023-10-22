@@ -108,16 +108,24 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
                     if ((coord_y < 0 || coord_y > height - 1) || (coord_x < 0 || coord_x > width - 1))
                     {
-                        continue;
+                        GxR = GxR + (x * (2 - abs(y)) * 0);
+                        GxG = GxG + (x * (2 - abs(y)) * 0);
+                        GxB = GxB + (x * (2 - abs(y)) * 0);
+
+                        GyR = GyR + (y * (2 - abs(x)) * 0);
+                        GyG = GyG + (y * (2 - abs(x)) * 0);
+                        GyB = GyB + (y * (2 - abs(x)) * 0);
                     }
+                    else
+                    {
+                        GxR = GxR + (x * (2 - abs(y)) * image[coord_y][coord_x].R);
+                        GxG = GxG + (x * (2 - abs(y)) * image[coord_y][coord_x].G);
+                        GxB = GxB + (x * (2 - abs(y)) * image[coord_y][coord_x].B);
 
-                    GxR = GxR + (x * (2 - abs(y)) * image[coord_y][coord_x].R);
-                    GxG = GxG + (x * (2 - abs(y)) * image[coord_y][coord_x].G);
-                    GxB = GxB + (x * (2 - abs(y)) * image[coord_y][coord_x].B);
-
-                    GyR = GyR + (y * (2 - abs(x)) * image[coord_y][coord_x].R);
-                    GyG = GyG + (y * (2 - abs(x)) * image[coord_y][coord_x].G);
-                    GyB = GyB + (y * (2 - abs(x)) * image[coord_y][coord_x].B);
+                        GyR = GyR + (y * (2 - abs(x)) * image[coord_y][coord_x].R);
+                        GyG = GyG + (y * (2 - abs(x)) * image[coord_y][coord_x].G);
+                        GyB = GyB + (y * (2 - abs(x)) * image[coord_y][coord_x].B);
+                    }
                 }
             }
             temp[i][j].R = round(sqrt(GxR * GxR + GyR * GyR));
