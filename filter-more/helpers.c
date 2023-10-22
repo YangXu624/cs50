@@ -105,7 +105,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 {
                     int coord_y = i + y;
                     int coord_x = j + x;
-                    
+
                     if ((coord_y < 0 || coord_y > height - 1) || (coord_x < 0 || coord_x > width - 1))
                     {
                         continue;
@@ -136,10 +136,16 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     GyB = GyB + (y * (2 - abs(x)) * image[coord_y][coord_x].B);
                 }
             }
+            if(GxR > 255){GxR = 255;}
+            if(GxG > 255){GxG = 255;}
+            if(GxB > 255){GxB = 255;}
+            if(GyR > 255){GyR = 255;}
+            if(GyG > 255){GyG = 255;}
+            if(GyB > 255){GyB = 255;}
 
-            temp[i][j].R = sqrt(GxR * GxR + GyR * GyR);
-            temp[i][j].G = sqrt(GxG * GxG + GyG * GyG);
-            temp[i][j].B = sqrt(GxB * GxB + GyB * GyB);
+            temp[i][j].R = round(sqrt(GxR * GxR + GyR * GyR));
+            temp[i][j].G = round(sqrt(GxG * GxG + GyG * GyG));
+            temp[i][j].B = round(sqrt(GxB * GxB + GyB * GyB));
         }
     }
 
