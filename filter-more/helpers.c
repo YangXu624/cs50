@@ -70,17 +70,19 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     {
                         continue;
                     }
-
+                    
                     image[i][j].R += temp[coord_y][coord_x].R;
                     image[i][j].G += temp[coord_y][coord_x].G;
                     image[i][j].B += temp[coord_y][coord_x].B;
                     counter++;
                 }
             }
-
-            image[i][j].R = image[i][j].R / counter;
-            image[i][j].G = image[i][j].G / counter;
-            image[i][j].B = image[i][j].B / counter;
+            float red = image[i][j].R;
+            float green = image[i][j].G;
+            float blue = image[i][j].B;
+            image[i][j].R = round(red / counter);
+            image[i][j].G = round(green / counter);
+            image[i][j].B = round(blue / counter);
         }
     }
     return;
