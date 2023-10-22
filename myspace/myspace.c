@@ -1,7 +1,16 @@
 #include <stdio.h>
 
-int main(){
-    int a[5] = {1, 2, 3, 4, 5};
-    int (*p)[5] = &a;
-    printf("%i\n", *p[1]);
+void change(int *n)
+{
+    *n = 40 + *n;
+}
+
+int main()
+{
+    int a = 50;
+    int *p = &a;
+
+    change(&a);
+
+    printf("%i\n", *p);
 }

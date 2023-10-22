@@ -4,18 +4,6 @@
 #define G rgbtGreen
 #define B rgbtBlue
 
-#define REFLECT(R)
-(
-    reflect2
-)
-
-#define APPLY(FUNCTION)
-(
-    FUNCTION(R)
-    FUNCTION(G)
-    FUNCTION(B)
-)
-
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -33,21 +21,10 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
-void reflect2(int height, int width, RGBTRIPLE image[height][width])
-{
-    for (int i = 0, i < height; i++)
-    {
-        for (int j = 0; j < width / 2; j++)
-        {
-            image[i][j].R = image[i][width - j].R;
-        }
-    }
-}
-
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
-    APPLY(REFLECT)
+    CONV(R, G, B);
     return;
 }
 
