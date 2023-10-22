@@ -70,6 +70,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     totalB += image[coord_y][coord_x].B;
                     counter++;
                 }
+                
             temp[i][j].R = round(totalR / counter);
             temp[i][j].G = round(totalG / counter);
             temp[i][j].B = round(totalB / counter);
