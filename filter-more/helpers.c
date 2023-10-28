@@ -106,7 +106,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     int coord_y = i + y;
                     int coord_x = j + x;
 
-                    if ((coord_y < 0 || coord_y > height) || (coord_x < 0 || coord_x > width))
+                    if ((coord_y < 0 || coord_y > height - 1) || (coord_x < 0 || coord_x > width - 1))
                     {
                         continue;
                     }
