@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 #define BLOCK_SIZE = 512
 
@@ -36,5 +37,5 @@ int main(int argc, char *argv[])
 
 char get_filename(int i)
 {
-    char filename[7] = {}
+    int num[3] = {}
 }
