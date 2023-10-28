@@ -2,7 +2,6 @@
 
 int main()
 {
-    int a = 50;
-    int b = 1;
-    printf("%d\n", ((a + b) / 2));
+
+    printf("%d\n", 000);
 }
