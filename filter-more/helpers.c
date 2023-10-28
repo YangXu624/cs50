@@ -120,13 +120,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     GyB = GyB + (y * (2 - abs(x)) * image[coord_y][coord_x].B);
                 }
             }
-            temp[i][j].R = round(sqrt(GxR * GxR + GyR * GyR));
-            temp[i][j].G = round(sqrt(GxG * GxG + GyG * GyG));
-            temp[i][j].B = round(sqrt(GxB * GxB + GyB * GyB));
-
-            if (temp[i][j].R > 255) {temp[i][j].R = 255;}
-            if (temp[i][j].G > 255) {temp[i][j].G = 255;}
-            if (temp[i][j].B > 255) {temp[i][j].B = 255;}
+            temp[i][j].R = fmin(round(sqrt(GxR * GxR + GyR * GyR)), 255);
+            temp[i][j].G = fmin(round(sqrt(GxG * GxG + GyG * GyG)), 255);
+            temp[i][j].B = fmin(round(sqrt(GxB * GxB + GyB * GyB)), 255);
         }
     }
 
