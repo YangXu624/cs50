@@ -35,14 +35,3 @@ int main(int argc, char *argv[])
 
 }
 
-char get_filename(int i)
-{
-    int a = floor(i / 100);
-    int b = floor((i - a * 100) / 10);
-    int c = i - a * 100 - b * 10;
-    int num[3] = {a, b, c}
-
-    char filename = {a, b, c, ".", "j", "p", "g"}
-
-    return filename;
-}
