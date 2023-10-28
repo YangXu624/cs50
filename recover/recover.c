@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define BLOCK_SIZE = 512
+#define BLOCK_SIZE 512
+
+char get_filename(int k);
 
 int main(int argc, char *argv[])
 {
@@ -19,19 +21,32 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    unsigned int buffer[BLOCK_SIZE];
-    while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
+    int buffer[BLOCK_SIZE];
+    int k = 0;
+    while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] > 0xdf && buffer[3] < 0xf0)
         {
-            FILE *f1 = fopen("000.jpg", "a");
+            FILE *f1 = fopen(get_filename(k), "a");
             for (int i = 0; i < BLOCK_SIZE; i++)
             {
-                fprintf(000.jpg, "%i ", buffer[i]);
+                fprintf(get_filename(k), "%i ", buffer[i]);
             }
+            k++;
         }
 
     }
 
 }
 
+char get_filename(int k)
+{
+    int a = floor(k / 100);
+    int b = floor((k - a * 100) / 10);
+    int c = k - a * 100 - b * 10;
+
+    char filename[10];
+    sprintf(filename, "%i%i%i.jpg", a, b, c);
+
+    return filename;
+}
