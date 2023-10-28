@@ -37,5 +37,8 @@ int main(int argc, char *argv[])
 
 char get_filename(int i)
 {
+    int a = floor(i / 100);
+    int b = floor(i / 10);
+    int c = 
     int num[3] = {}
 }
