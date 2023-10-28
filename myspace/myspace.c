@@ -2,6 +2,6 @@
 
 int main()
 {
-
-    printf("%d\n", 000);
+    FILE *f1 = fopen(000.jpg, "a")
+    
 }
