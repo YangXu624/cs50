@@ -123,6 +123,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             temp[i][j].R = fmin(round(sqrt(GxR * GxR + GyR * GyR)), 255);
             temp[i][j].G = fmin(round(sqrt(GxG * GxG + GyG * GyG)), 255);
             temp[i][j].B = fmin(round(sqrt(GxB * GxB + GyB * GyB)), 255);
+
+            // Unsolved question: Why does "if (temp[][] > 255) {temp[][] = 255;}" yield different results?
         }
     }
 
