@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 
 }
 
-char get_filename(int k)
+FILE get_filename(int k)
 {
     int a = floor(k / 100);
     int b = floor((k - a * 100) / 10);
@@ -48,6 +48,8 @@ char get_filename(int k)
 
     char filename[10];
     sprintf(filename, "%i%i%i.jpg", a, b, c);
+
+    FILE *file = 
 
     return filename;
 }
