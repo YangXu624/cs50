@@ -8,9 +8,9 @@ char get_filename(int i)
     int c = i - a * 100 - b * 10;
     int num[3] = {a, b, c};
 
-    char filename[7] = {a, b, c, ".", "j", "p", "g"};
+    char filename[7] = {'0', '0', '0', '.', 'j', 'p', 'g'};
 
-    return filename;
+    return &filename;
 }
 
 int main()
@@ -18,6 +18,6 @@ int main()
     get_filename(0);
     for (int i = 0; i < 7; i++)
     {
-        printf("%c", filename[i]);
+        printf("%c", &filename[i]);
     }
 }
