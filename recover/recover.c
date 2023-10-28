@@ -18,10 +18,10 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    unsigned int buffer[]
+    unsigned int buffer[BLOCKSIZE];
     while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
     {
-
+        
 
     }
 
