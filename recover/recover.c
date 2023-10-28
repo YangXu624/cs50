@@ -25,7 +25,9 @@ int main(int argc, char *argv[])
         {
             FILE *f1 = fopen("000.jpg", "a");
             for (int i = 0; i < BLOCK_SIZE; i++)
-            fprintf(000.jpg, ")
+            {
+                fprintf(000.jpg, "%i ", buffer[i]);
+            }
         }
 
     }
