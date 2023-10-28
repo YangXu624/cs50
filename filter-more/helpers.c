@@ -106,10 +106,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     int coord_y = i + y;
                     int coord_x = j + x;
 
-                    if ((coord_y < 0 || coord_y > height - 1) || (coord_x < 0 || coord_x > width - 1))
-                    {
-                        continue;
-                    }
+                    coord_y = fmin(fmax(coord_y, 0), height - 1);
+                    coord_x = fmin(fmax(coord_x, 0), width - 1);
 
                     GxR = GxR + (x * (2 - abs(y)) * image[coord_y][coord_x].R);
                     GxG = GxG + (x * (2 - abs(y)) * image[coord_y][coord_x].G);
