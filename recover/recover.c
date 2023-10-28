@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] > 0xdf && buffer[3] < 0xf0)
         {
-            string filename = get_filename(k);
+            char filename[10] = get_filename(k);
             FILE *file1 = fopen(filename, "a");
             for (int i = 0; i < BLOCK_SIZE; i++)
             {
