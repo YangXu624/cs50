@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define BLOCK_SIZE = 512
+
 int main(int argc, char *argv[])
 {
     if (argv[2] != NULL)
@@ -16,5 +18,10 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
+    {
+
+
+    }
 
 }
