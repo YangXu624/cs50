@@ -42,5 +42,7 @@ char get_filename(int i)
     int c = i - a * 100 - b * 10;
     int num[3] = {a, b, c}
 
-    char filename = {a, b, c, ".", "}
+    char filename = {a, b, c, ".", "j", "p", "g"}
+
+    return filename;
 }
