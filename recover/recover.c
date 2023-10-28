@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    unsigned int buffer[]
     while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
     {
 
