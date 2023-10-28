@@ -27,7 +27,8 @@ int main(int argc, char *argv[])
     printf("%i\n", k);
     while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
     {
-        printf("%i\n", buffer[0]);
+        printf("%i\n", buffer[3]);
+        return 1;
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] > 0xdf && buffer[3] < 0xf0)
         {
             char filename = get_filename(k);
