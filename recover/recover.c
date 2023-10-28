@@ -28,7 +28,8 @@ int main(int argc, char *argv[])
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] > 0xdf && buffer[3] < 0xf0)
         {
-            FILE *file1 = get_filename(k);
+            string filename = get_filename(k);
+            FILE *file1 = fopen(filename, "a");
             for (int i = 0; i < BLOCK_SIZE; i++)
             {
                 fprintf(get_filename(k), "%i ", buffer[i]);
@@ -40,16 +41,14 @@ int main(int argc, char *argv[])
 
 }
 
-FILE get_filename(int k)
+string get_filename(int k)
 {
     int a = floor(k / 100);
     int b = floor((k - a * 100) / 10);
     int c = k - a * 100 - b * 10;
 
-    char filename[10];
+    string filename;
     sprintf(filename, "%i%i%i.jpg", a, b, c);
 
-    FILE *file2 = fopen(filename, "a");
-
-    return file2;
+    return filename;
 }
