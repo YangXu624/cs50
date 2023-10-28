@@ -34,5 +34,7 @@ int main(int argc, char *argv[])
 
 }
 
-string get_filename()
-
+char get_filename(int i)
+{
+    char filename[7] = {}
+}
