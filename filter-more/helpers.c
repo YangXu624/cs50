@@ -135,7 +135,3 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     }
     return;
 }
-
-if (x > 255) {x = 255;}
-
-x = fmin(x, 255);
