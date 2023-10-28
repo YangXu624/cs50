@@ -2,6 +2,5 @@
 
 int main()
 {
-    FILE *f1 = fopen(000.jpg, "a")
-    
+    FILE *f1 = fopen("%i%i%i.jpg", 0, 0, 0, "a");
 }
