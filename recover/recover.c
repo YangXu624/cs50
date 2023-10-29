@@ -50,7 +50,7 @@ char get_filename(int k)
     int b = floor((k - a * 100) / 10);
     int c = k - a * 100 - b * 10;
 
-    string filename = NULL;
+    char *filename = malloc(8 * sizeof(char));
     sprintf(filename, "%i%i%i.jpg", a, b, c);
 
     return *filename;
