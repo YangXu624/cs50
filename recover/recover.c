@@ -29,9 +29,10 @@ int main(int argc, char *argv[])
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] > 0xdf && buffer[3] < 0xf0)
         {
-            string filename = get_filename(count);
+            string filename = malloc(8 * sizeof(char));
+            sprintf(filename, "%03i.jpg", count);
 
-            FILE *out_file = fopen(filename, "a");
+            FILE *out_file = fopen(filename, "w");
 
             if (out_file != NULL)
             {
@@ -46,16 +47,4 @@ int main(int argc, char *argv[])
     }
     fclose(in_file);
 
-}
-
-string get_filename(int k)
-{
-    int a = floor(k / 100);
-    int b = floor((k - a * 100) / 10);
-    int c = k - a * 100 - b * 10;
-
-    string filename = malloc(8 * sizeof(char));
-    sprintf(filename, "%i%i%i.jpg", a, b, c);
-
-    return filename;
 }
