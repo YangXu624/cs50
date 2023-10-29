@@ -45,5 +45,4 @@ int main(int argc, char *argv[])
     fclose(out_file);
     free(filename);
     fclose(in_file);
-
 }
