@@ -40,8 +40,9 @@ int main(int argc, char *argv[])
         if (out_file != NULL)
         {
             fwrite(buffer, sizeof(char), BLOCK_SIZE, out_file);
+            fclose(out_file);
+            free(filename);
         }
-
     }
     fclose(in_file);
 
