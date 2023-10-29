@@ -1,12 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <math.h>
-#include <cs50.h>
 
 #define BLOCK_SIZE 512
-
-string get_filename(int k);
 
 int main(int argc, char *argv[])
 {
