@@ -34,7 +34,10 @@ int main(int argc, char *argv[])
 
             FILE *out_file = fopen(filename, "a");
 
-            fwrite(buffer, 1, BLOCK_SIZE, out_file)
+            if (out_file != NULL)
+            {
+                fwrite(buffer, 1, BLOCK_SIZE, out_file);
+            }
 
             fclose(out_file);
 
