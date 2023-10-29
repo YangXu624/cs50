@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 
     unsigned char buffer[BLOCK_SIZE];
     FILE *out_file = NULL;
-    string filename = malloc(8 * sizeof(char));
+    char *filename = malloc(8 * sizeof(char));
     int count = 0;
     while (fread(buffer, sizeof(char), BLOCK_SIZE, in_file) == BLOCK_SIZE)
     {
@@ -40,9 +40,9 @@ int main(int argc, char *argv[])
         if (out_file != NULL)
         {
             fwrite(buffer, sizeof(char), BLOCK_SIZE, out_file);
-            fclose(out_file);
         }
     }
+    fclose(out_file);
     free(filename);
     fclose(in_file);
 
