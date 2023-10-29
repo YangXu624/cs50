@@ -24,6 +24,7 @@ int main(int argc, char *argv[])
     }
 
     unsigned char buffer[BLOCK_SIZE];
+    FILE *out_file = NULL;
     int count = 0;
     while (fread(buffer, sizeof(char), BLOCK_SIZE, in_file) == BLOCK_SIZE)
     {
@@ -32,7 +33,7 @@ int main(int argc, char *argv[])
             string filename = malloc(8 * sizeof(char));
             sprintf(filename, "%03i.jpg", count);
 
-            FILE *out_file = fopen(filename, "w");
+            out_file = fopen(filename, "w");
 
             if (out_file != NULL)
             {
