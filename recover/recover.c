@@ -35,14 +35,11 @@ int main(int argc, char *argv[])
 
             out_file = fopen(filename, "w");
 
-            if (out_file != NULL)
-            {
-                fwrite(buffer, sizeof(char), BLOCK_SIZE, out_file);
-            }
-
-            fclose(out_file);
-
             count++;
+        }
+        if (out_file != NULL)
+        {
+            fwrite(buffer, sizeof(char), BLOCK_SIZE, out_file);
         }
 
     }
