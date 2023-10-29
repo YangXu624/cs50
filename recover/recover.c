@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    int buffer[BLOCK_SIZE];
+    unsigned char buffer[BLOCK_SIZE];
     int count = 0;
     while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
     {
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
         {
             string filename = get_filename(count);
             printf("%s\n", filename);
-            
+
             FILE *file1 = fopen(filename, "a");
             for (int i = 0; i < BLOCK_SIZE; i++)
             {
