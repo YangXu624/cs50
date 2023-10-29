@@ -6,7 +6,7 @@
 
 #define BLOCK_SIZE 512
 
-char get_filename(int k);
+string get_filename(int k);
 
 int main(int argc, char *argv[])
 {
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] > 0xdf && buffer[3] < 0xf0)
         {
-            filename = get_filename(count);
+            string filename = get_filename(count);
             FILE *file1 = fopen(filename, "a");
             for (int i = 0; i < BLOCK_SIZE; i++)
             {
@@ -43,13 +43,13 @@ int main(int argc, char *argv[])
 
 }
 
-char get_filename(int k)
+string get_filename(int k)
 {
     int a = floor(k / 100);
     int b = floor((k - a * 100) / 10);
     int c = k - a * 100 - b * 10;
 
-    char *filename = malloc(8 * sizeof(char));
+    string filename = malloc(8 * sizeof(char));
     sprintf(filename, "%i%i%i.jpg", a, b, c);
 
     return filename;
