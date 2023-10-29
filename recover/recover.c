@@ -41,9 +41,9 @@ int main(int argc, char *argv[])
         {
             fwrite(buffer, sizeof(char), BLOCK_SIZE, out_file);
             fclose(out_file);
-            free(filename);
         }
     }
+    free(filename);
     fclose(in_file);
 
 }
