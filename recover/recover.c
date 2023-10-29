@@ -37,10 +37,14 @@ int main(int argc, char *argv[])
             {
                 fprintf(out_file, "%i ", buffer[i]);
             }
+            fclose(out_file);
+
             count++;
         }
 
     }
+
+    fclose(in_file);
 
 }
 
