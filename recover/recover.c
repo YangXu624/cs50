@@ -25,18 +25,17 @@ int main(int argc, char *argv[])
 
     unsigned char buffer[BLOCK_SIZE];
     int count = 0;
-    while (fread(buffer, 1, BLOCK_SIZE, in_file) == BLOCK_SIZE)
+    while (fread(buffer, sizeof(char), BLOCK_SIZE, in_file) == BLOCK_SIZE)
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] > 0xdf && buffer[3] < 0xf0)
         {
             string filename = get_filename(count);
-            printf("%s\n", filename);
 
             FILE *out_file = fopen(filename, "a");
 
             if (out_file != NULL)
             {
-                fwrite(buffer, 1, BLOCK_SIZE, out_file);
+                fwrite(buffer, sizeof(char), BLOCK_SIZE, out_file);
             }
 
             fclose(out_file);
