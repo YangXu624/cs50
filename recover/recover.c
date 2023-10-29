@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <math.h>
 #include <cs50.h>
 
@@ -29,7 +30,7 @@ int main(int argc, char *argv[])
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] > 0xdf && buffer[3] < 0xf0)
         {
-            get_filename(count);
+            filename = get_filename(count);
             FILE *file1 = fopen(filename, "a");
             for (int i = 0; i < BLOCK_SIZE; i++)
             {
