@@ -53,5 +53,5 @@ char get_filename(int k)
     char *filename = malloc(8 * sizeof(char));
     sprintf(filename, "%i%i%i.jpg", a, b, c);
 
-    return *filename;
+    return filename;
 }
