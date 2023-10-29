@@ -23,8 +23,8 @@ int main(int argc, char *argv[])
     }
 
     int buffer[BLOCK_SIZE];
-    int k = 0;
-    printf("%i\n", k);
+    int count = 0;
+    printf("%i\n", count);
     while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
     {
         printf("%i\n", buffer[3]);
@@ -37,8 +37,7 @@ int main(int argc, char *argv[])
             {
                 fprintf(file1, "%i ", buffer[i]);
             }
-            printf("%i\n", k);
-            k++;
+            count++;
         }
 
     }
