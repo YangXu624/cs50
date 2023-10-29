@@ -16,26 +16,26 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    FILE *file = fopen(argv[1], "r");
+    FILE *in_file = fopen(argv[1], "r");
 
-    if (file == NULL)
+    if (in_file == NULL)
     {
         return 1;
     }
 
     unsigned char buffer[BLOCK_SIZE];
     int count = 0;
-    while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
+    while (fread(buffer, 1, BLOCK_SIZE, in_file) == BLOCK_SIZE)
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] > 0xdf && buffer[3] < 0xf0)
         {
             string filename = get_filename(count);
             printf("%s\n", filename);
 
-            FILE *file1 = fopen(filename, "a");
+            FILE *out_file = fopen(filename, "a");
             for (int i = 0; i < BLOCK_SIZE; i++)
             {
-                fprintf(file1, "%i ", buffer[i]);
+                fprintf(out_file, "%i ", buffer[i]);
             }
             count++;
         }
