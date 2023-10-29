@@ -33,10 +33,9 @@ int main(int argc, char *argv[])
             printf("%s\n", filename);
 
             FILE *out_file = fopen(filename, "a");
-            for (int i = 0; i < BLOCK_SIZE; i++)
-            {
-                fprintf(out_file, "%i ", buffer[i]);
-            }
+
+            fwrite(buffer, 1, BLOCK_SIZE, out_file)
+
             fclose(out_file);
 
             count++;
@@ -44,7 +43,6 @@ int main(int argc, char *argv[])
 
     }
     fclose(in_file);
-    free(filename);
 
 }
 
