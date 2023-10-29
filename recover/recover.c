@@ -31,6 +31,11 @@ int main(int argc, char *argv[])
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] > 0xdf && buffer[3] < 0xf0)
         {
+            if (count > 0)
+            {
+                fclose(out_file);
+            }
+
             sprintf(filename, "%03i.jpg", count);
 
             out_file = fopen(filename, "w");
@@ -42,7 +47,6 @@ int main(int argc, char *argv[])
             fwrite(buffer, sizeof(char), BLOCK_SIZE, out_file);
         }
     }
-    fclose(out_file);
     free(filename);
     fclose(in_file);
 
