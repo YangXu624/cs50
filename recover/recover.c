@@ -27,10 +27,11 @@ int main(int argc, char *argv[])
     int count = 0;
     while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
     {
-        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff)
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] > 0xdf && buffer[3] < 0xf0)
         {
             string filename = get_filename(count);
             printf("%s\n", filename);
+            
             FILE *file1 = fopen(filename, "a");
             for (int i = 0; i < BLOCK_SIZE; i++)
             {
