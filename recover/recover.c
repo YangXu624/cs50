@@ -25,12 +25,12 @@ int main(int argc, char *argv[])
 
     unsigned char buffer[BLOCK_SIZE];
     FILE *out_file = NULL;
+    string filename = malloc(8 * sizeof(char));
     int count = 0;
     while (fread(buffer, sizeof(char), BLOCK_SIZE, in_file) == BLOCK_SIZE)
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] > 0xdf && buffer[3] < 0xf0)
         {
-            string filename = malloc(8 * sizeof(char));
             sprintf(filename, "%03i.jpg", count);
 
             out_file = fopen(filename, "w");
@@ -40,10 +40,10 @@ int main(int argc, char *argv[])
         if (out_file != NULL)
         {
             fwrite(buffer, sizeof(char), BLOCK_SIZE, out_file);
-            fclose(out_file);
-            free(filename);
         }
     }
+    fclose(out_file);
+    free(filename);
     fclose(in_file);
 
 }
