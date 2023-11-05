@@ -42,7 +42,7 @@ bool load(const char *dictionary)
         printf("Please input a dictionary!\n");
         return false;
     }
-    unsigned char letters[]
+    unsigned char letters[LENGTH];
     fread
 
     return false;
