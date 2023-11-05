@@ -37,6 +37,7 @@ bool load(const char *dictionary)
 {
     // TODO
     FILE *file = fopen(dictionary, "r");
+    
 
     return false;
 }
