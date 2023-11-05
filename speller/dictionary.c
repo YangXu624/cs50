@@ -43,7 +43,7 @@ bool load(const char *dictionary)
         return false;
     }
     unsigned char letters[LENGTH];
-    fread
+    fread(letters, sizeof(char), )
 
     return false;
 }
