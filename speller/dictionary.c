@@ -43,7 +43,7 @@ bool load(const char *dictionary)
         return false;
     }
 
-    while (fread() == )
+    fread
 
     return false;
 }
