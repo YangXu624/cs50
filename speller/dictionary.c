@@ -1,5 +1,5 @@
 // Implements a dictionary's functionality
-
+#include <stdio.h>
 #include <ctype.h>
 #include <stdbool.h>
 
@@ -37,7 +37,7 @@ bool load(const char *dictionary)
 {
     // TODO
     fopen(dictionary, "r");
-    
+
     return false;
 }
 
