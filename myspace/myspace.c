@@ -2,5 +2,6 @@
 
 int main()
 {
-    printf("%i\n",  );
+    int a = a;
+    printf("%d\n", a);
 }
