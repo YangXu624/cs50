@@ -100,5 +100,16 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
+    for (int i = 0; i < N; i++)
+    {
+        do
+        {
+            if (strcasecmp(word, ptr->word) == 0)
+            {
+                return true;
+            }
+            ptr = ptr->next;
+        } while (ptr != NULL)
+    }
     return false;
 }
