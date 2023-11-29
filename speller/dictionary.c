@@ -29,7 +29,7 @@ bool check(const char *word)
     int number = hash(const char *word);
     do
     {
-        srtcasecmp()
+        srtcasecmp(word, table[number]->word);
     }
     return false;
 }
