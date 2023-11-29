@@ -68,15 +68,13 @@ bool load(const char *dictionary)
         fscanf(file, "%s", n->word);
         n->next = table[hash(word)];
         table[hash(word)] = n;
+        count ++;
 
         if (feof(file))
         {
             return true;
         }
     }
-
-
-
     return false;
 }
 
@@ -84,7 +82,7 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    return 0;
+    return count;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
