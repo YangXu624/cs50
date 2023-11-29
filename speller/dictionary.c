@@ -31,7 +31,14 @@ unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
     int sum = 0;
-    for (int i = 0; )
+    for (int i = 0; i < LENGTH + 1; i++)
+    {
+        if (word[i] == '\0')
+        {
+            break;
+        }
+        sum += to
+    }
 
     return sum;
 }
