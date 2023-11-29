@@ -27,6 +27,7 @@ bool check(const char *word)
 {
     // TODO
     int number = hash(const char *word);
+    
     do
     {
         srtcasecmp(word, table[number]->word);
