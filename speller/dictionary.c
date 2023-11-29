@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
 #include "dictionary.h"
 
@@ -42,8 +43,27 @@ bool load(const char *dictionary)
         printf("Please input a dictionary!\n");
         return false;
     }
-    unsigned char letters[LENGTH];
-    fread(letters, sizeof(char), )
+
+    while (1)
+    {
+        node *n = malloc(sizeof(node));
+        if (n == NULL)
+        {
+            printf("Insufficient memory to allocate for loading.\n");
+            return false;
+        }
+
+        fscanf(file, "%s", n->word);
+
+        printf("%s\n", n->word);
+
+        if (feof(file))
+        {
+            return true;
+        }
+    }
+
+
 
     return false;
 }
