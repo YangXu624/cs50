@@ -37,7 +37,7 @@ unsigned int hash(const char *word)
         {
             break;
         }
-        sum += to
+        sum += tolower(word[i]);
     }
 
     return sum;
