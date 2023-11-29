@@ -26,11 +26,11 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
-    int number = hash(const char *word);
-    
+    node *ptr = table[hash(const char *word)];
+
     do
     {
-        srtcasecmp(word, table[number]->word);
+        if (srtcasecmp(word, ptr->word) = true);
     }
     return false;
 }
