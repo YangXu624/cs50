@@ -68,7 +68,7 @@ bool load(const char *dictionary)
         fscanf(file, "%s", n->word);
         n->next = table[hash(word)];
         table[hash(word)] = n;
-        count ++;
+        count++;
 
         if (feof(file))
         {
