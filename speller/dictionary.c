@@ -35,7 +35,7 @@ bool check(const char *word)
             return true;
         }
         ptr = ptr->next;
-    } while (ptr->next != NULL)
+    } while (ptr != NULL)
     return false;
 }
 
