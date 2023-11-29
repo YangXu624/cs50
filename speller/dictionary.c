@@ -6,6 +6,8 @@
 
 #include "dictionary.h"
 
+int count;
+
 // Represents a node in a hash table
 typedef struct node
 {
