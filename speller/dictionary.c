@@ -30,7 +30,11 @@ bool check(const char *word)
 
     do
     {
-        if (srtcasecmp(word, ptr->word) = true);
+        if (srtcasecmp(word, ptr->word) == 0)
+        {
+            return true;
+        }
+        
     }
     return false;
 }
