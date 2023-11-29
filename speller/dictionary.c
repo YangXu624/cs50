@@ -30,12 +30,12 @@ bool check(const char *word)
 
     do
     {
-        if (srtcasecmp(word, ptr->word) == 0)
+        if (strcasecmp(word, ptr->word) == 0)
         {
             return true;
         }
-        
-    }
+        ptr = ptr->next;
+    } while (ptr->next != NULL)
     return false;
 }
 
