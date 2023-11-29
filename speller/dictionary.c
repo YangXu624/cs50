@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "dictionary.h"
 
@@ -25,7 +26,11 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
-    hash(const char *word)
+    int number = hash(const char *word);
+    do
+    {
+        srtcasecmp()
+    }
     return false;
 }
 
