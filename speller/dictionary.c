@@ -35,7 +35,7 @@ bool check(const char *word)
             return true;
         }
         ptr = ptr->next;
-    } while (ptr != NULL)
+    } while (ptr != NULL);
     return false;
 }
 
@@ -102,14 +102,13 @@ bool unload(void)
     // TODO
     for (int i = 0; i < N; i++)
     {
+        node *ptr = table[i];
         do
         {
-            if (strcasecmp(word, ptr->word) == 0)
-            {
-                return true;
-            }
+            node *tmp = ptr;
             ptr = ptr->next;
-        } while (ptr != NULL)
+            free(tmp);
+        } while (ptr != NULL);
     }
     return false;
 }
