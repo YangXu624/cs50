@@ -7,3 +7,6 @@ number = 0
 while number < pow(10, 12) or pow(10, 13) <= number < pow(10, 15) or number >= pow(10, 16):
     number = get_int("Number: ")
 
+odd_sum = 0
+for i in range(len(number / 2))
+    sum += number % pow(10, 2 * i + 1) - number % pow(10, 2 * i)
