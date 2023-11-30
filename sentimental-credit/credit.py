@@ -4,7 +4,7 @@ from cs50 import get_int
 
 number = get_int("Number: ")
 
-if number < pow(10, 12) or pow(10, 13) <= number < pow(10, 15) or number >= pow(10, 16):
+if number < pow(10, 12) or pow(10, 13) <= number < pow(10, 14) or number >= pow(10, 16):
     print("INVALID")
 
 else:
