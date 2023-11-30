@@ -22,6 +22,13 @@ for i in range(8):
 final_num = even_sum + odd_sum
 
 if final_sum % 10 = 0:
-    if len("{number}") = 13
+    if len("{number}") = 13:
+        if (number - number % pow(10, 12)) / pow(10, 12) = 4:
+            print("VISA")
+        else:
+            print("INVALID")
+    if len("{number}") = 15:
+        if (number - number % pow(10, 13)) / pow(10, 13) = 34 or (number - number % pow(10, 13)) / pow(10, 13) = 37:
+            print("AMEX")
 else:
     print("INVALID")
