@@ -8,6 +8,7 @@ if number < pow(10, 12) or pow(10, 13) <= number < pow(10, 15) or number >= pow(
     print("INVALID")
 
 else:
+    print(len("{number}"))
     odd_sum = 0
     for i in range(8):
         odd_sum += (number % pow(10, 2 * i + 1) - number % pow(10, 2 * i)) / pow(10, 2 * i)
