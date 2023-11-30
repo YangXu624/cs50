@@ -15,12 +15,12 @@ else:
 
     even_sum = 0
     for i in range(8):
-        x = 2 * (number % pow(10, 2 * i) - number % pow(10, 2 * i - 1)) / pow(10, 2 * i - 1)
+        x = 2 * (number % pow(10, 2 * i + 2) - number % pow(10, 2 * i + 1)) / pow(10, 2 * i + 1)
         if x > 9:
             even_sum += x % 10 + (x - x % 10) / 10
         else:
             even_sum += x
-
+    print(odd_sum, even_sum)
     final_num = even_sum + odd_sum
     print(final_num)
 
