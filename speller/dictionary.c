@@ -74,16 +74,15 @@ bool load(const char *dictionary)
             printf("Insufficient memory to allocate for loading.\n");
             return false;
         }
+        if (feof(file))
+        {
+            return true;
+        }
 
         fscanf(file, "%s", n->word);
         n->next = table[hash(n->word)];
         table[hash(n->word)] = n;
         count++;
-
-        if (feof(file))
-        {
-            return true;
-        }
     }
     return false;
 }
