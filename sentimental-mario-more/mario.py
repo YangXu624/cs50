@@ -1,5 +1,5 @@
 # TODO
-#import 
+from cs50 import get_int
 
 x = 0
 
@@ -15,4 +15,6 @@ for i in range(x):
     print("  ", end="")
     for k in range(i + 1):
         print("#", end="")
+
+    print("")
 
