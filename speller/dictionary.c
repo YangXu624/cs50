@@ -29,7 +29,7 @@ bool check(const char *word)
     // TODO
     node *ptr = table[hash(word)];
 
-    while (ptr != NULL)
+    while (ptr != 0)
     {
         if (strcasecmp(word, ptr->word) == 0)
         {
