@@ -22,6 +22,6 @@ for i in range(8):
 final_num = even_sum + odd_sum
 
 if final_sum % 10 = 0:
-    
+    if len("{number}") = 13
 else:
     print("INVALID")
