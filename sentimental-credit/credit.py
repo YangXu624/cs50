@@ -13,3 +13,4 @@ for i in range(8)
 
 even_sum = 0
 for i in range()
+    x = 
