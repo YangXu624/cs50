@@ -20,9 +20,8 @@ else:
             even_sum += x % 10 + (x - x % 10) / 10
         else:
             even_sum += x
-    print(odd_sum, even_sum)
+            
     final_num = even_sum + odd_sum
-    print(final_num)
 
     if final_num % 10 == 0:
         if len(f"{number}") == 13:
