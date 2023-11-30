@@ -82,6 +82,11 @@ bool load(const char *dictionary)
         n->next = table[hash_value];
         table[hash_value] = n;
         count++;
+
+        if (fscanf(file, "%s", word) != EOF)
+        {
+            return true;
+        }
     }
     return false;
 }
