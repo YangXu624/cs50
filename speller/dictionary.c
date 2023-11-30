@@ -108,8 +108,6 @@ bool unload(void)
             ptr = ptr->next;
             free(tmp);
         };
-
-
         table[i] = NULL;
     }
     return true;
