@@ -112,10 +112,6 @@ bool unload(void)
             free(tmp);
         };
         table[i] = NULL;
-        if (ptr == NULL)
-        {
-            return true;
-        }
     }
-    return false;
+    return true;
 }
