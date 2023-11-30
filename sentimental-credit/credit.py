@@ -13,4 +13,4 @@ for i in range(8)
 
 even_sum = 0
 for i in range()
-    x = 
+    x = (number % pow(10, 2 * i) - number % pow(10, 2 * i)) / pow(10, 2 * i)
