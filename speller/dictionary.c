@@ -53,6 +53,8 @@ unsigned int hash(const char *word)
     {
         sum += tolower(word[i]) - 'a';
     }
+    // By design, my buckets were made to accomodate all possible
+    // sums of ASCII values (0 to 26xLENGTH, corresponding to aaa...aa and zzz...zz respectively)
     return sum % N;
 }
 
