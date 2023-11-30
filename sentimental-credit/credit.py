@@ -2,15 +2,26 @@
 from math import pow
 from cs50 import get_int
 
-number = 0
+number = get_int("Number: ")
 
-while number < pow(10, 12) or pow(10, 13) <= number < pow(10, 15) or number >= pow(10, 16):
-    number = get_int("Number: ")
+if number < pow(10, 12) or pow(10, 13) <= number < pow(10, 15) or number >= pow(10, 16):
+    print("INVALID")
 
 odd_sum = 0
-for i in range(8)
+for i in range(8):
     odd_sum += (number % pow(10, 2 * i + 1) - number % pow(10, 2 * i)) / pow(10, 2 * i)
 
 even_sum = 0
-for i in range()
-    x = (number % pow(10, 2 * i) - number % pow(10, 2 * i)) / pow(10, 2 * i)
+for i in range(8):
+    x = 2 * (number % pow(10, 2 * i) - number % pow(10, 2 * i - 1)) / pow(10, 2 * i - 1)
+    if x > 9:
+        even_sum += x % 10 + (x - x % 10) / 10
+    else:
+        even_sum += x
+
+final_num = even_sum + odd_sum
+
+if final_sum % 10 = 0:
+    
+else:
+    print("INVALID")
