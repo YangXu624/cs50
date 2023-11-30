@@ -27,6 +27,7 @@ else:
             if (number - number % pow(10, 12)) / pow(10, 12) == 4:
                 print("VISA")
         if len(f"{number}") == 15:
+            print((number - number % pow(10, 13)) / pow(10, 13))
             if (number - number % pow(10, 13)) / pow(10, 13) == 34 or (number - number % pow(10, 13)) / pow(10, 13) == 37:
                 print("AMEX")
         if len(f"{number}") == 16:
