@@ -75,7 +75,7 @@ bool load(const char *dictionary)
             printf("Insufficient memory to allocate for loading.\n");
             return false;
         }
-        n->word = word;
+        n->word = ;
         n->next = table[hash(n->word)];
         table[hash(n->word)] = n;
         count++;
