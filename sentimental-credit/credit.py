@@ -22,6 +22,7 @@ else:
             even_sum += x
 
     final_num = even_sum + odd_sum
+    print(final_num)
 
     if final_num % 10 == 0:
         if len(f"{number}") == 13:
