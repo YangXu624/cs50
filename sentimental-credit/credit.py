@@ -8,5 +8,5 @@ while number < pow(10, 12) or pow(10, 13) <= number < pow(10, 15) or number >= p
     number = get_int("Number: ")
 
 odd_sum = 0
-for i in range(len(8)
+for i in range(len(8))
     sum += (number % pow(10, 2 * i + 1) - number % pow(10, 2 * i)) / pow
