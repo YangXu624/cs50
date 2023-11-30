@@ -51,7 +51,7 @@ unsigned int hash(const char *word)
         {
             break;
         }
-        sum += tolower(word[i]) - 97;
+        sum += tolower(word[i]) - 'a';
     }
     printf("%d\n", sum);
     return sum;
