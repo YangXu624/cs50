@@ -66,17 +66,13 @@ bool load(const char *dictionary)
         return false;
     }
 
-    while (1)
+    while (feof(file) == 0)
     {
         node *n = malloc(sizeof(node));
         if (n == NULL)
         {
             printf("Insufficient memory to allocate for loading.\n");
             return false;
-        }
-        if (feof(file))
-        {
-            return true;
         }
 
         fscanf(file, "%s", n->word);
