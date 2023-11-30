@@ -28,14 +28,14 @@ bool check(const char *word)
     // TODO
     node *ptr = table[hash(word)];
 
-    do
+    while (ptr != NULL)
     {
         if (strcasecmp(word, ptr->word) == 0)
         {
             return true;
         }
         ptr = ptr->next;
-    } while (ptr != NULL);
+    };
     return false;
 }
 
@@ -74,7 +74,7 @@ bool load(const char *dictionary)
             printf("Insufficient memory to allocate for loading.\n");
             return false;
         }
-        
+
         if (feof(file))
         {
             return true;
