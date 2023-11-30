@@ -8,7 +8,7 @@
 
 #include "dictionary.h"
 
-int count;
+
 
 // Represents a node in a hash table
 typedef struct node
@@ -22,6 +22,10 @@ const unsigned int N = 26 * LENGTH;
 
 // Hash table
 node *table[N];
+
+// Declare variables
+unsigned int count;
+unsigned int hash_value;
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
@@ -78,7 +82,7 @@ bool load(const char *dictionary)
         }
 
         strcpy(n->word, word);
-        int hash_value = hash(n->word);
+        hash_value = hash(n->word);
         n->next = table[hash_value];
         table[hash_value] = n;
         count++;
