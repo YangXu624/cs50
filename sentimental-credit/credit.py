@@ -34,5 +34,5 @@ else:
                 print("VISA")
             elif 50 < (number - number % pow(10, 14)) / pow(10, 14) < 56:
                 print("MASTERCARD")
-    else:
-        print("INVALID")
+
+    print("INVALID")
