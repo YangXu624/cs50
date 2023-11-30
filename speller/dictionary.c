@@ -49,15 +49,11 @@ unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
     int sum = 0;
-    for (int i = 0; i < LENGTH + 1; i++)
+    for (int i = 0; i < strlen(word); i++)
     {
-        if (word[i] == '\0')
-        {
-            break;
-        }
         sum += tolower(word[i]) - 'a';
     }
-    return sum;
+    return sum % N;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
