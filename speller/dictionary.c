@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <strings.h>
+#include <string.h>
 
 #include "dictionary.h"
 
@@ -75,9 +76,11 @@ bool load(const char *dictionary)
             printf("Insufficient memory to allocate for loading.\n");
             return false;
         }
-        ;
+
+        strcpy(n->word, word);
         n->next = table[hash(n->word)];
         table[hash(n->word)] = n;
+        strcpy(word, NULL);
         count++;
     }
     return false;
