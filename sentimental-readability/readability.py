@@ -27,5 +27,4 @@ if x < 1:
 elif x > 15:
     print("Grade 16+")
 else:
-    grade = chr(x)
-    print("Grade" + grade)
+    print(f"Grade {x}")
