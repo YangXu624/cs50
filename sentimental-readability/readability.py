@@ -13,8 +13,8 @@ for i in range(len(text)):
     if text[i] == "." or "?" or "!":
         sentences += 1
 
-    if 64 < int(text[i]) < 91 or 96 < int(text[i]) < 123:
+    if 64 < ord(text[i]) < 91 or 96 < ord(text[i]) < 123:
         letters += 1
 
-print(sentences, letters)
+print(sentences)
 
