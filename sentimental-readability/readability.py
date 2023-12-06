@@ -16,5 +16,9 @@ for i in range(len(text)):
     if 64 < ord(text[i]) < 91 or 96 < ord(text[i]) < 123:
         letters += 1
 
-print(letters, words, sentences)
+L = letters / words * 100
+S = sentences / words * 100
 
+index = 0.0588 * L - 0.296 * S - 15.8
+
+print("Grade" + )
