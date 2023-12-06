@@ -1,6 +1,10 @@
 from cs50 import get_string
 
 sentence = get_string("Text: ")
+
+if len(sentence) == 0
+    
+
 word_num = 0
 
 for i in range(len(sentence))
