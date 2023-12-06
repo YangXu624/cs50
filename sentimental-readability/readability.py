@@ -1,13 +1,14 @@
 from cs50 import get_string
 
-sentence = get_string("Text: ")
+text = get_string("Text: ")
+words = 0
+sentences = 0
 
-if len(sentence) == 0
-    
 
-word_num = 0
+for i in range(len(text))
+    if text[i] == " "
+        words += 1
 
-for i in range(len(sentence))
-    if sentence[i] == " "
-        word_num += 1
+    if text[i] == "." or "?" or "!"
+        sentences += 1
 
