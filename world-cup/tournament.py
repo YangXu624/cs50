@@ -30,9 +30,12 @@ def main():
     for i in range(N):
         winner = simulate_tournament(teams)
 
+        for team in winner:
+            winner_name = team['team']
+
         for team in teams:
             name = team['team']
-            if name == winner['team']:
+            if name == winner_name:
                 print("Hi")
                 if name in counts:
                     count[name] += 1
