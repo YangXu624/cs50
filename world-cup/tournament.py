@@ -5,7 +5,7 @@ import sys
 import random
 
 # Number of simluations to run
-N = 10
+N = 1
 
 
 def main():
@@ -29,10 +29,11 @@ def main():
     # TODO: Simulate N tournaments and keep track of win counts
     for i in range(N):
         winner = simulate_tournament(teams)
-        print(winner)
 
         for name in teams:
+            print(name)
             if name == winner:
+                print("Hi")
                 if name in counts:
                     count[name] += 1
                 else:
