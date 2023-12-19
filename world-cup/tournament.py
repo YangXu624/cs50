@@ -36,11 +36,10 @@ def main():
         for team in teams:
             name = team['team']
             if name == winner_name:
-                print("Hi")
                 if name in counts:
-                    count[name] += 1
+                    counts[name] += 1
                 else:
-                    count[name] = 1
+                    counts[name] = 1
 
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
