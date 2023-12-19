@@ -29,10 +29,11 @@ def main():
     # TODO: Simulate N tournaments and keep track of win counts
     for i in range(N):
         winner = simulate_tournament(teams)
+        winner_name = winner['team']
 
-        for name in teams:
-            print(name)
-            if name == winner:
+        for team in teams:
+            name = team['team']
+            if name == winner_name:
                 print("Hi")
                 if name in counts:
                     count[name] += 1
