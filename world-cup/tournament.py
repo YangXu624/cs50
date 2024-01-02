@@ -75,6 +75,7 @@ def simulate_tournament(teams):
         teams = simulate_round(teams)
 
     winner = teams
+    print(winner)
 
     return winner
 
