@@ -9,6 +9,7 @@ def main():
         print("Usage: python dna.py CSVFILENAME TXTFILENAME")
 
     # TODO: Read database file into a variable
+    with 
 
     # TODO: Read DNA sequence file into a variable
 
