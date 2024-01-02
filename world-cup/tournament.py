@@ -30,7 +30,7 @@ def main():
     for i in range(N):
         winner = simulate_tournament(teams)
 
-        winner_name = team[0]['team']
+        winner_name = team['team']
 
         for team in teams:
             name = team['team']
