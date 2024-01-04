@@ -11,6 +11,7 @@ def main():
     # TODO: Read database file into a variable
     dna = []
     dna_num = 0
+    name = []
     with open(sys.argv[1], "r") as database:
         reader = csv.reader(database)
 
@@ -28,7 +29,7 @@ def main():
             if index > 0:
                 for index1, obj in enumerate(row):
                     if index == 0:
-                        
+                        name.append(obj)
 
 
 
