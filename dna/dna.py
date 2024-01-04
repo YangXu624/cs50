@@ -13,7 +13,12 @@ def main():
     with open(sys.argv[1], "r") as database:
         reader = csv.reader(database)
 
-        for row in reader:
+        for index, row in enumerate(reader)
+            if index == 0:
+                num_obj = len(row)
+
+                for obj in row:
+                    
 
 
     # TODO: Read DNA sequence file into a variable
