@@ -49,9 +49,10 @@ def main():
 
     # TODO: Find longest match of each STR in DNA sequence
         for i in range(dna_num):
-            longest_match(sequence, dna[dna_num])
+            set.append(longest_match(sequence, dna[dna_num]))
 
     # TODO: Check database for matching profiles
+        
 
     return
 
