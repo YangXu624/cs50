@@ -25,12 +25,14 @@ def main():
                         dna_num += 1
 
             if index > 0:
-                for index1, name in enumerate(row):
+                for index1, obj in enumerate(row):
                     if index1 == 0:
-                        if name not in dna_database:
+                        if obj not in dna_database:
+                            name = obj
                             dna_database[name] = set()
 
-                    if index1 > 0
+                    if index1 > 0:
+                        name.append(obj)
 
 
 
