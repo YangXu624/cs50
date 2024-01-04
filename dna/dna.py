@@ -27,7 +27,8 @@ def main():
             if index > 0:
                 for index1, name in enumerate(row):
                     if index1 == 0:
-                        name.append(obj)
+                        if name not in dna_database:
+                            dna_database[name] = set()
 
                     if index1 > 0
 
