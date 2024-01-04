@@ -10,17 +10,23 @@ def main():
 
     # TODO: Read database file into a variable
     dna = []
+    dna_num = 0
     with open(sys.argv[1], "r") as database:
         reader = csv.reader(database)
 
-        for index, row in enumerate(reader)
+        for index, row in enumerate(reader):
             if index == 0:
                 num_obj = len(row)
 
-                for obj in row:
-                    dna.append(obj)
+                for index1, obj in enumerate(row):
+                    if index1 > 0:
+                        dna.append(obj)
+                        dna_num += 1
+
+                        
+
             if index > 0:
-                
+
 
 
     # TODO: Read DNA sequence file into a variable
