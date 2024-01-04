@@ -18,7 +18,9 @@ def main():
                 num_obj = len(row)
 
                 for obj in row:
-                    
+                    dna.append(obj)
+            if index > 0:
+                
 
 
     # TODO: Read DNA sequence file into a variable
