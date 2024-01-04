@@ -44,6 +44,8 @@ def main():
                 print(f"Name: {names[counter]}, DNA Count: {dna_database[names[counter]]}")
 
     # TODO: Read DNA sequence file into a variable
+    with open(sys.argv[2], "r") as text:
+        reader = 
 
     # TODO: Find longest match of each STR in DNA sequence
 
