@@ -33,6 +33,7 @@ def main():
 
                     if index1 > 0:
                         name.append(obj)
+                        print(f"Name: {name}, Set: ")
 
 
 
