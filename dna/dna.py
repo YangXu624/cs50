@@ -32,7 +32,7 @@ def main():
                             dna_database[name] = set()
 
                     if index1 > 0:
-                        set.append()
+                        set.append(obj)
                         print(f"Name: {name}, Set: {set}")
 
 
