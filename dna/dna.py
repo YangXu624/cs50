@@ -50,7 +50,9 @@ def main():
             set.append(longest_match(sequence, dna[i]))
 
     # TODO: Check database for matching profiles
+        print(set)
         for i in range(counter + 1):
+            print(dna_database[names[i]])
             if set == dna_database[names[i]]:
                 print(dna_database[names])
                 return
