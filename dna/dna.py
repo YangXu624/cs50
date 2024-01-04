@@ -11,6 +11,7 @@ def main():
     # TODO: Read database file into a variable
     dna_database = {}
     dna = []
+    names = []
     dna_num = 0
     with open(sys.argv[1], "r") as database:
         reader = csv.reader(database)
@@ -28,8 +29,8 @@ def main():
                 for index1, obj in enumerate(row):
                     if index1 == 0:
                         if obj not in dna_database:
-                            name = obj
-                            dna_database[name] = 0
+                            names.append(obj)
+                            dna_database[names] = 0
 
                     if index1 > 0:
                         set = []
