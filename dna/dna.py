@@ -9,6 +9,7 @@ def main():
         print("Usage: python dna.py CSVFILENAME TXTFILENAME")
 
     # TODO: Read database file into a variable
+    dna_database = {}
     dna = []
     dna_num = 0
     name = []
@@ -28,7 +29,7 @@ def main():
                 for index1, obj in enumerate(row):
                     if index1 == 0:
                         name.append(obj)
-                        name = obj
+                        
                     if index1 > 0
 
 
