@@ -41,11 +41,7 @@ def main():
                     dna_database[names[counter]] = set
                     set = []
 
-                print(f"Name: {names[counter]}, Set: {dna_database[names[counter]]}")
-
-
-
-
+                print(f"Name: {names[counter]}, DNA Count: {dna_database[names[counter]]}")
 
     # TODO: Read DNA sequence file into a variable
 
