@@ -44,6 +44,7 @@ def main():
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2], "r") as text:
         sequence = text.read()
+        print(sequence)
 
     # TODO: Find longest match of each STR in DNA sequence
         for i in range(dna_num):
@@ -53,6 +54,7 @@ def main():
         for i in range(counter):
             if set == dna_database[names[i]]:
                 print(dna_database[names])
+                return
 
         print("No match")
 
