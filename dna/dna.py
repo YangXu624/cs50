@@ -29,7 +29,7 @@ def main():
                     if index1 == 0:
                         if obj not in dna_database:
                             name = obj
-                            dna_database[name] = set()
+                            dna_database[name] = 0
 
                     if index1 > 0:
                         set = ()
