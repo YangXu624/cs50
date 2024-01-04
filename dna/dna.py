@@ -11,6 +11,7 @@ def main():
     # TODO: Read database file into a variable
     dna_database = {}
     dna = []
+    set = []
     names = []
     dna_num = 0
     counter = -1
@@ -34,12 +35,13 @@ def main():
                             counter += 1
                             dna_database[names[counter]] = 0
 
-                    if index1 > 0:
-                        set = []
+                    for index1 in range(1, num_obj):
                         set.append(obj)
-                        dna_database[names[counter]] = set
 
-            print(f"Name: {names[counter]}, Set: {dna_database[names[counter]]}")
+                    dna_database[names[counter]] = set
+                    set = []
+
+                print(f"Name: {names[counter]}, Set: {dna_database[names[counter]]}")
 
 
 
