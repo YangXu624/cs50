@@ -13,6 +13,7 @@ def main():
     dna = []
     names = []
     dna_num = 0
+    counter = 0
     with open(sys.argv[1], "r") as database:
         reader = csv.reader(database)
 
@@ -30,14 +31,15 @@ def main():
                     if index1 == 0:
                         if obj not in dna_database:
                             names.append(obj)
-                            dna_database[names] = 0
+                            dna_database[names[counter]] = 0
 
                     if index1 > 0:
                         set = []
                         set.append(obj)
                         dna_database[name] = set
 
-            print(f"Name: {name}, Set: {dna_database[name]}")
+            print(f"Name: {names[counter]}, Set: {dna_database[name]}")
+            counter += 1
 
 
 
