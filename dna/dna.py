@@ -49,14 +49,14 @@ def main():
 
     # TODO: Find longest match of each STR in DNA sequence
         for i in range(dna_num):
-            set.append(longest_match(sequence, dna[dna_num]))
+            set.append(longest_match(sequence, dna[i]))
 
     # TODO: Check database for matching profiles
         for i in range(counter):
-            if set == dna_database[names[counter]]:
+            if set == dna_database[names[i]]:
                 print(dna_database[names])
-            else:
-                print("No match")
+
+        print("No match")
 
     return
 
