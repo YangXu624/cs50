@@ -28,7 +28,7 @@ def main():
                 for index1, obj in enumerate(row):
                     if index1 == 0:
                         name.append(obj)
-                        
+                        name = obj
                     if index1 > 0
 
 
