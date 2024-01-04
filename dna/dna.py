@@ -11,7 +11,6 @@ def main():
     # TODO: Read database file into a variable
     dna_database = {}
     dna = []
-    set = []
     dna_num = 0
     with open(sys.argv[1], "r") as database:
         reader = csv.reader(database)
