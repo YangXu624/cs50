@@ -12,7 +12,6 @@ def main():
     dna_database = {}
     dna = []
     dna_num = 0
-    name = []
     with open(sys.argv[1], "r") as database:
         reader = csv.reader(database)
 
@@ -26,10 +25,10 @@ def main():
                         dna_num += 1
 
             if index > 0:
-                for index1, obj in enumerate(row):
+                for index1, name in enumerate(row):
                     if index1 == 0:
                         name.append(obj)
-                        
+
                     if index1 > 0
 
 
