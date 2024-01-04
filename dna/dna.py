@@ -11,6 +11,7 @@ def main():
     # TODO: Read database file into a variable
     dna_database = {}
     dna = []
+    set = []
     dna_num = 0
     with open(sys.argv[1], "r") as database:
         reader = csv.reader(database)
@@ -32,10 +33,9 @@ def main():
                             dna_database[name] = 0
 
                     if index1 > 0:
-                        set = ()
                         set.append(obj)
                         dna_database[name] = set
-                        print(f"Name: {name}, Set: {set}")
+                    print(f"Name: {name}, Set: {set}")
 
 
 
