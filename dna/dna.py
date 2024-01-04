@@ -24,12 +24,12 @@ def main():
                         dna.append(obj)
                         dna_num += 1
 
-
-
             if index > 0:
                 for index1, obj in enumerate(row):
                     if index1 == 0:
                         name.append(obj)
+                    if index1 > 0
+                        
 
 
 
