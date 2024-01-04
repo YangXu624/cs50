@@ -16,14 +16,14 @@ def main():
 
         for index, row in enumerate(reader):
             if index == 0:
-                num_obj = len(row)
+                num_obj = len(row) - 1
 
                 for index1, obj in enumerate(row):
                     if index1 > 0:
                         dna.append(obj)
                         dna_num += 1
 
-                        
+
 
             if index > 0:
 
