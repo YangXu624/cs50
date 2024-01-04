@@ -51,7 +51,6 @@ def main():
 
     # TODO: Check database for matching profiles
         for i in range(counter + 1):
-            print(dna_database[names[i]])
             if set == dna_database[names[i]]:
                 print(names[i])
                 return
