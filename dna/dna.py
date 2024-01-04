@@ -35,8 +35,8 @@ def main():
                             counter += 1
                             dna_database[names[counter]] = 0
 
-                    for index1 in range(1, num_obj):
-                        set.append(obj)
+                    for i in range(1, num_obj + 1):
+                        set.append(row[i])
 
                     dna_database[names[counter]] = set
                     set = []
