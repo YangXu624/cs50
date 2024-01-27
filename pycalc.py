@@ -1,8 +1,8 @@
 
 n = int(input("n: "))
-h = int(input("h: "))
-x = int(input("x: "))
-y = int(input("y: "))
+h = float(input("h: "))
+x = float(input("x: "))
+y = float(input("y: "))
 
 def f(x, y):
     return (x - x * y)
