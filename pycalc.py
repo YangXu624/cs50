@@ -1,3 +1,4 @@
+import math
 
 n = int(input("n: "))
 h = float(input("h: "))
@@ -5,13 +6,13 @@ x = float(input("x: "))
 y = float(input("y: "))
 
 def f(x, y):
-    return (x - x * y)
+    return ((math.sqrt(y)) / (x + 1))
 
 for i in range(n):
     print(f"n = {i}, x = {x}, y = {y}, f(x, y) = {f(x, y)}")
 
-    y = round((y + h * f(x, y)), 4)
-    x = round((x + h), 4)
+    y += h * f(x, y)
+    x += h
 
 
 
