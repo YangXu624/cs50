@@ -15,7 +15,7 @@ for i in range(n):
 
     print(f"n = {i}, x = {x}, y = {y}, k1 = {k1}, k2 = {k2}")
 
-    y += h * (k1 + k2) / 2
+    y += h + (k1 + k2) / 2
     x += h
 
 
