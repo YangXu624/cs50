@@ -1,8 +1,12 @@
 
 
-h = input("h: ")
-x = input("x: ")
-y = input("y: ")
+h = int(input("h: "))
+x = int(input("x: "))
+y = int(input("y: "))
 
-def grad(x, y):
-    
+def f(x, y):
+    return (x - x * y)
+
+
+y += h * f(x, y)
+x += h
