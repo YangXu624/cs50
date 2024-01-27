@@ -6,7 +6,7 @@ x = float(input("x: "))
 y = float(input("y: "))
 
 def f(x, y):
-    return ((math.sqrt(y)) / (x + 1))
+    return ((y) / (x))
 
 for i in range(n):
     print(f"n = {i}, x = {x}, y = {y}, f(x, y) = {f(x, y)}")
