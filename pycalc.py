@@ -8,10 +8,10 @@ def f(x, y):
     return (x - x * y)
 
 for i in range(n):
-    print(f(x, y))
+    print(1, f(x, y), end="")
 
     y += h * f(x, y)
-    print(y)
+    print(y, end="")
 
     x += h
     print(x)
