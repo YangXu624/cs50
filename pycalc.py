@@ -10,8 +10,8 @@ def f(x, y):
 for i in range(n):
     print(f"n = {i}, x = {x}, y = {y}, f(x, y) = {f(x, y)}")
 
-    y += h * f(x, y)
-    x += h
+    y = round((y + h * f(x, y)), 4)
+    x = round((x + h), 4)
 
 
 
