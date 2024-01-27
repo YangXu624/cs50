@@ -10,11 +10,11 @@ def f(x, y):
 for i in range(n):
     print(f"n = {i}", end="")
 
+    print(f"y = {y}", end="")
+    y += h * f(x, y)
+
     print(f"x = {x}", end="")
     x += h
-
-    print(y)
-    y += h * f(x, y)
 
     print(f(x, y), end="")
 
