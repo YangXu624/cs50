@@ -1,7 +1,8 @@
 
 
 h = input("h: ")
+x = input("x: ")
+y = input("y: ")
 
-
-
-def 
+def grad(x, y):
+    
