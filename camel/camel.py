@@ -8,5 +8,6 @@ def convert(st):
         if st[i].isupper():
             st[i].lower()
             st.insert(i, "_")
+    return st
 
 main()
