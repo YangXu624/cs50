@@ -1,5 +1,5 @@
 def main():
-    qn = input("What is the Answer to the Great Question of Life, the Universe, and Everything? ")
+    qn = input("What is the Answer to the Great Question of Life, the Universe, and Everything? ").lower().strip()
 
     print(value(qn))
 
