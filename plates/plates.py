@@ -11,7 +11,7 @@ def is_valid(s):
         return False
 
     for i in range(len(s)):
-        if s[i] < 65 or s[i] > 90:
+        if ord(s[i]) < 65 or ord(s[i]) > 90:
             return False
 
 
