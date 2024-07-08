@@ -9,8 +9,8 @@ def main():
         print("dinner time")
 
 def convert(time):
-    h, min = float(time.split(":"))
-    value = h + (min / 60)
+    h, min = time.split(":")
+    value = float(h) + (float(min) / 60)
     return value
 
 
