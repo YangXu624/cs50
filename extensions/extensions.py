@@ -4,7 +4,7 @@ def main():
 
 def cmp(x):
     if ".jpg" in x:
-        return "image/jgep"
+        return "image/jpeg"
     elif ".jpeg" in x:
         return "image/jpeg"
     elif ".gif" in x:
@@ -14,7 +14,7 @@ def cmp(x):
     elif ".pdf" in x:
         return "application/pdf"
     elif ".txt" in x:
-        return "application/txt"
+        return "text/plain"
     elif ".zip" in x:
         return "application/zip"
     else:
