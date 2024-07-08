@@ -7,9 +7,16 @@ def main():
 
 
 def is_valid(s):
+    #Check between 2 to 6 characters
     if len(s) < 2 or len(s) > 6:
         return False
 
+    #Check no punctuation
+    for i in range(len(s)):
+        if s[i] == "." or s[i] == "!" or s[i] == " ":
+            return False
+
+    #Check first two characters are alphabets
     for i in range(2):
         if ord(s[i]) < 65 or ord(s[i]) > 90:
             return False
@@ -24,5 +31,7 @@ def is_valid(s):
         if ord(s[i + 2]) >= 48 and ord(s[i + 2]) <= 57:
             if ord(s[i + 3]) >= 65 and ord(s[i + 3]) <= 90:
                 return False
+
+    return True
 
 main()
