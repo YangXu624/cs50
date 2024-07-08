@@ -14,10 +14,15 @@ def is_valid(s):
         if ord(s[i]) < 65 or ord(s[i]) > 90:
             return False
 
-    #Starting from the 3rd character, if character i is an alphabet, ensure character i + 1 is not 0
+    #Start from the 3rd character
     for i in range(len(s) - 2):
+        #If character i is an alphabet, ensure character i + 1 is not 0
         if ord(s[i + 2]) >= 65 and ord(s[i + 2]) <= 90:
             if s[i + 3] == 0:
+                return False
+        #If character i is a number, ensure character i + 1 is not an alphabet
+        if ord(s[i + 2]) >= 48 and ord(s[i + 2]) <= 57:
+            if ord(s[i + 3]) >= 65 and ord(s[i + 3]) <= 90:
                 return False
 
 main()
