@@ -6,7 +6,7 @@ def main():
     print("{:.1f}".format(w))
 
 def operate(eqn):
-    x, y, z = eqn.split
+    x, y, z = eqn.split()
     x = float(x)
     z = float(z)
 
