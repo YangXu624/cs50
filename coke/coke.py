@@ -7,7 +7,7 @@ def main():
             bal = int(bal) - amt
         else:
             bal = (-1) * int(bal)
-            print("Change Owed", bal)
+            print("Change Owed:", bal)
             break
 
 def insert():
