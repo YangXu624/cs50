@@ -1,10 +1,12 @@
 def main():
     file = input("File name: ").lower().strip()
-    print(cmp(file))
+    print(cmp(file), end = "")
 
 def cmp(x):
-    if ".jpg" or ".jpeg" in x:
+    if ".jpg" in x:
         return "image/jgep"
+    elif ".jpeg" in x:
+        return "image/jpeg"
     elif ".gif" in x:
         return "image/gif"
     elif ".png" in x:
