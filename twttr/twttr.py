@@ -3,9 +3,11 @@ def main():
     sen = input("Input: ")
 
     i = 0
-    while i < range(len(sen)):
+    while i < int(len(sen)):
         if sen[i] in list:
             sen = sen.replace(sen[i], "")
+        else:
+            i += 1
 
     print("Output:", sen)
 
