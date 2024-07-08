@@ -11,10 +11,10 @@ def main():
             break
 
 def insert():
-    while True:
-        amt = int(input("Insert Coin: "))
-        if amt == 5 or amt == 10 or amt == 25:
-            break
-    return amt
+    amt = int(input("Insert Coin: "))
+    if amt == 5 or amt == 10 or amt == 25:
+        return amt
+    else:
+        return 0
 
 main()
