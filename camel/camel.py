@@ -6,7 +6,7 @@ def main():
 def convert(st):
     for i in range(len(st)):
         if st[i].isupper():
-            st.replace(st[i], "_" + st[i].lower())
+            st = st.replace(st[i], "_" + st[i].lower())
             print(i)
 
     return st
