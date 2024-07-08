@@ -22,7 +22,7 @@ def is_valid(s):
             return False
 
     #Start from the 3rd character
-    for i in range(len(s) - 2):
+    for i in range(len(s) - 3):
         #If character i is an alphabet, ensure character i + 1 is not 0
         if ord(s[i + 2]) >= 65 and ord(s[i + 2]) <= 90:
             if s[i + 3] == 0:
