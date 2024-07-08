@@ -3,7 +3,7 @@ def main():
 
     w = operate(math)
 
-    print()
+    print("{:.1f}".format(w))
 
 def operate(eqn):
     x, y, z = eqn.split
@@ -18,3 +18,5 @@ def operate(eqn):
         return x * z
     elif y == "/":
         return x / z
+
+main()
