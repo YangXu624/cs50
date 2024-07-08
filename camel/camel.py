@@ -3,4 +3,5 @@ def main():
 
 def convert(st):
     for i in range(len(st)):
-        if st[i].isupper
+        if st[i].isupper():
+            
