@@ -3,7 +3,7 @@ def main():
     print(check(greet[0]))
 
 def check(x):
-    if x == "hello":
+    if x == "hello" or "hello!" or "hello,":
         return "$0"
     elif x[0] == "h":
         return "$20"
