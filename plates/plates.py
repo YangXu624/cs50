@@ -22,15 +22,14 @@ def is_valid(s):
             return False
 
     #Start from the 3rd character
-    for i in range(len(s) - 3):
+    for i in range(len(s) - 1):
         #If character i is an alphabet, ensure character i + 1 is not 0
-        if ord(s[i + 2]) >= 65 and ord(s[i + 2]) <= 90:
-            print("AAAAAAAAAAAAAAAAAAAA")
-            if s[i + 3] == 0:
+        if ord(s[i]) >= 65 and ord(s[i]) <= 90:
+            if ord(s[i + 1]) == 48:
                 return False
         #If character i is a number, ensure character i + 1 is not an alphabet
-        if ord(s[i + 2]) >= 48 and ord(s[i + 2]) <= 57:
-            if ord(s[i + 3]) >= 65 and ord(s[i + 3]) <= 90:
+        if ord(s[i]) >= 48 and ord(s[i]) <= 57:
+            if ord(s[i + 1]) >= 65 and ord(s[i + 1]) <= 90:
                 return False
 
     return True
