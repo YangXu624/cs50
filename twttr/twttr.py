@@ -2,7 +2,7 @@ def main():
     list = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
     sen = input("Input: ")
 
-    for i in range(len(sen)):
+    for i in range(len(sen) - 1):
         if sen[i] in list:
             sen = sen.replace(sen[i], "")
 
