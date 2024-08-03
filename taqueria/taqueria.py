@@ -17,6 +17,9 @@ def main():
         price += round(float(taqueria[f"{item}"]), 2)
         print("$", "%.2f" % price, sep = "")
 
+        if item == "":
+            break
+
 def get_str():
     str = input("Item: ")
 
