@@ -42,7 +42,7 @@ def get_input():
         ## c = 2 means date is in MM/DD/YYYY form, while c = 5 means date in Month Day, Year form
         if c == 2:
             numbers = date.split("/")
-            if numbers[1] > 31 or numbers[1] < 1:
+            if int(numbers[1]) > 31 or int(numbers[1]) < 1:
                 c = 0
             else:
                 return numbers
