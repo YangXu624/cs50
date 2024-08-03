@@ -13,10 +13,12 @@ taqueria = {
 def main():
     price = float(0)
     item = get_str()
-    price += round(float(taqueria[f"{item}"]), 2)
+    price += round(float(taqueria[f"{item}"]), 3)
     print(f"${price}")
 
 def get_str():
     str = input("Item:")
 
     return str
+
+main()
