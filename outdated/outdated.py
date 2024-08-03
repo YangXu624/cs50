@@ -16,12 +16,14 @@ months = [
 def main():
     date = get_input()
 
-    if len(date) == 3:
-        mth = "%02d" % months.index(date[0])
-        day = date[1].strip(",")
-        print(f"{day}-{mth}-{date[2]}")
-    else:
-
+    for i in range(3):
+        if date[0] in months:
+            mth = "%02d" % months.index(date[0])
+            day = date[1].strip(",")
+            print(f"{day}-{mth}-{date[2]}")
+        else:
+            print(f"{date[1]}-{date[0]}-{date[2]}")
+        return
 
 def get_input():
     c = 0
