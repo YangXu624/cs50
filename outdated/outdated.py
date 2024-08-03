@@ -14,6 +14,7 @@ months = [
 ]
 
 def main():
+    print("H")
     date = get_input()
     print(date)
 
