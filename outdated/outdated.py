@@ -18,7 +18,7 @@ def main():
 
     if len(date) == 3:
         mth = months.index(date[0])
-
+        date[1] = 
 
     print(date)
     return
