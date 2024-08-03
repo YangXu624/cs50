@@ -22,7 +22,12 @@ def main():
 
 def get_str():
     while True:
-        str = input("Item: ")
+        try:
+            str = input("Item: ")
+        except KeyError:
+            print("Not in menu")
+        else:
+            break
 
     return str
 
