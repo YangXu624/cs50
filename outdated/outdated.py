@@ -40,8 +40,10 @@ def get_input():
             for i in range(len(words))
                 if words[i] in months:
                     return words
+                else:
+                    c = 0
         ## c reset to 0 to restart while loop
         else:
             c = 0
 
-
+main()
