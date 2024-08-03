@@ -21,9 +21,9 @@ def get_fuel():
             print("Not integer")
         except ZeroDivisionError:
             print("Cannot divide by zero")
-        except percent >= 100:
-            print("That's more than 100%")
         else:
+            if percent >= 100:
+                print("That's more than 100%")
             break
 
     return percent
