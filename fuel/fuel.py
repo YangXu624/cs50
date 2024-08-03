@@ -4,12 +4,13 @@ def main():
 
         for i in range(len(fuel)):
             if fuel[i] == "/":
-                
                 break
 
     print(convert(fuel))
 
-def convert(x)
-
+def convert(x):
+    numbers = x.split("/")
+    percent = float(numbers[0])/float(numbers[1])
+    return percent
 
 main()
