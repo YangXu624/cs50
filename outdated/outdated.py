@@ -21,15 +21,19 @@ def main():
         except TypeError:
             return
 
-    for i in range(3):
-        if date[0] in months:
-            mth = "%02d" % int(months.index(date[0]))
-            day = "%02d" % int(date[1])
-            print(f"{day}-{mth}-{date[2]}")
-        else:
-            mth = "%02d" % int(date[0])
-            day = "%02d" % int(date[1])
-            print(f"{day}-{mth}-{date[2]}")
+    if len(date) == 3:
+        for i in range(3):
+            if date[0] in months:
+                mth = "%02d" % int(months.index(date[0]))
+                day = "%02d" % int(date[1])
+                print(f"{day}-{mth}-{date[2]}")
+            else:
+                mth = "%02d" % int(date[0])
+                day = "%02d" % int(date[1])
+                print(f"{day}-{mth}-{date[2]}")
+            return
+    else:
+        print("")
         return
 
 def get_input():
@@ -38,7 +42,8 @@ def get_input():
         try:
             date = input("Date: ")
         except EOFError:
-            break
+            empty_list = ['0']
+            return empty_list
 
         for i in range(len(date)):
             if date[i] == "/":
