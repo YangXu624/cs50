@@ -33,7 +33,7 @@ def get_input():
         try:
             date = input("Date: ")
         except EOFError:
-            print("")
+            break
 
         for i in range(len(date)):
             if date[i] == "/":
