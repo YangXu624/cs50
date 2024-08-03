@@ -21,7 +21,10 @@ def main():
 def get_input():
     c = 0
     while c < 2:
-        date = input("Date: ")
+        try:
+            date = input("Date: ")
+        except EOFError:
+            break
 
         for i in range(len(date)):
             if date[i] == "/":
