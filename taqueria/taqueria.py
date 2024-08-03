@@ -10,4 +10,4 @@ taqueria = {
     "Tortilla Salad": 8.00
 }
 
-print(taqueria[Baja Taco])
+print(taqueria[0])
