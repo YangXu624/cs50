@@ -17,7 +17,9 @@ def main():
     date = get_input()
 
     if len(date) == 3:
-        
+        mth = months.index(date[0])
+
+
     print(date)
     return
 
