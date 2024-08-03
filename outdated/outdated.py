@@ -14,7 +14,7 @@ months = [
 ]
 
 def main():
-    date = convert(get_input())
+    date = get_input()
     print(date)
 
 def get_input():
@@ -28,11 +28,20 @@ def get_input():
             elif date[i] == ",":
                 c += 5
 
+        ## c = 2 means date is in MM/DD/YYYY form, while c = 5 means date in Month Day, Year form
         if c = 2:
             numbers = date.split("/")
             if numbers[1] > 31 or numbers[1] < 1:
                 c = 0
+            else:
+                return numbers
         elif c = 5:
-            if 
+            words = date.split(" ")
+            for i in range(len(words))
+                if words[i] in months:
+                    return words
+        ## c reset to 0 to restart while loop
+        else:
+            c = 0
 
 
