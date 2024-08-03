@@ -13,8 +13,8 @@ taqueria = {
 def main():
     price = float(0)
     item = get_str()
-    price += round(float(taqueria[f"{item}"]), 3)
-    print(f"${price}")
+    price += round(float(taqueria[f"{item}"]), 2)
+    print("%.2f" % f"${price}")
 
 def get_str():
     str = input("Item:")
