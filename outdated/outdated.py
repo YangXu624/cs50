@@ -17,7 +17,7 @@ def main():
     date = get_input()
 
     if len(date) == 3:
-        mth = months.index(date[0])
+        mth = "%02d" % months.index(date[0])
         day = date[1].strip(",")
         print(f"{day}-{mth}-{date[2]}")
     else:
