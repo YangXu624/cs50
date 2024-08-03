@@ -14,7 +14,12 @@ months = [
 ]
 
 def main():
-    date = get_input()
+    while True:
+        try:
+            date = get_input()
+            break
+        except TypeError:
+            return
 
     for i in range(3):
         if date[0] in months:
