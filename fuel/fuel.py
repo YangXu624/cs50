@@ -1,11 +1,10 @@
 def main():
-    while True:
-        fuel = input("Fraction: ")
-        numbers = fuel.split("/")
-
-        for i in range(len(fuel)):
-            if fuel[i] == "/":
-                break
+    fuel = input("Fraction: ")
+    numbers = fuel.split("/")
+    try:
+        x = int(numbers[0])
+        y = int(numbers[1])
+    except ValueError:
 
     print(convert(fuel))
 
