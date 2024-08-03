@@ -24,7 +24,8 @@ def get_fuel():
         else:
             if percent >= 100:
                 print("That's more than 100%")
-            break
+            else:
+                break
 
     return percent
 
