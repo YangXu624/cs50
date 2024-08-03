@@ -26,11 +26,11 @@ def main():
             if date[0] in months:
                 mth = "%02d" % int(months.index(date[0]))
                 day = "%02d" % int(date[1])
-                print(f"{day}-{mth}-{date[2]}")
+                print(f"{date[2]}-{mth}-{day}")
             else:
                 mth = "%02d" % int(date[0])
                 day = "%02d" % int(date[1])
-                print(f"{day}-{mth}-{date[2]}")
+                print(f"{date[2]}-{mth}-{day}")
             return
     else:
         print("")
