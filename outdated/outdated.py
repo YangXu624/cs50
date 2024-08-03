@@ -27,3 +27,4 @@ def get_input():
                 c += 1
             elif date[i] == ",":
                 c += 2
+
