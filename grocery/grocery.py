@@ -1,8 +1,12 @@
 def main():
     gcr = get_arg()
 
+    unique = {}
     for i in range(len(gcr)):
         gcr[i] = gcr[i].upper()
+
+        if gcr[i] in unique:
+
 
     print(gcr)
 
