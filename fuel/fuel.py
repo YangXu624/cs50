@@ -5,16 +5,18 @@ def main():
             numbers = fuel.split("/")
             x = int(numbers[0])
             y = int(numbers[1])
+            percent = 100 * round(float(x/y), 2)
 
         except ValueError:
-            print(")
+            print("Not integer")
 
+        except ZeroDivisionError:
+            print("Cannot divide by zero")
 
-    print(convert(fuel))
+        else:
+            print("HI")
+            break
 
-def convert(x):
-    numbers = x.split("/")
-    percent = float(numbers[0])/float(numbers[1])
-    return percent
+    print(percent, "%")
 
 main()
