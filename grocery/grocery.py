@@ -2,7 +2,7 @@ def main():
     gcr = get_arg()
 
     for i in range(len(gcr)):
-        gcr[i] = gcr[i].toupper()
+        gcr[i] = gcr[i].upper()
 
     print(gcr)
 
