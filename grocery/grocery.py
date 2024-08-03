@@ -6,9 +6,11 @@ def main():
         gcr[i] = gcr[i].upper()
 
         if gcr[i] in unique:
+            unique[f"{gcr[i]}"] += 1
+        else:
+            unique[f"{gcr[i]}"] = 1
 
-
-    print(gcr)
+    print(unique)
 
 def get_arg():
     groceries = []
