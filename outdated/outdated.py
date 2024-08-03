@@ -19,7 +19,7 @@ def main():
     for i in range(3):
         if date[0] in months:
             mth = "%02d" % int(months.index(date[0]))
-            day = "%02d" % int(date[1].strip(","))
+            day = "%02d" % int(date[1])
             print(f"{day}-{mth}-{date[2]}")
         else:
             mth = "%02d" % int(date[0])
@@ -52,7 +52,11 @@ def get_input():
             words = date.split(" ")
             for i in range(len(words)):
                 if words[i] in months:
-                    return words
+                    words[1] = words[1].strip(",")
+                    if int(words[1]) > 31 or int(words[1]) < 1:
+                        c = 0
+                    else:
+                        return words
                 else:
                     c = 0
         ## c reset to 0 to restart while loop
