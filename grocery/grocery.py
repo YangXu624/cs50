@@ -13,7 +13,7 @@ def main():
             unique_count += 1
 
     for i in range(unique_count):
-        print(unique["i"], )
+        print(unique[i])
 
 def get_arg():
     groceries = []
