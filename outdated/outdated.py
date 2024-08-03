@@ -18,10 +18,10 @@ def main():
 
     if len(date) == 3:
         mth = months.index(date[0])
-        date[1] = 
+        day = date[1].strip(",")
+        print(f"{day}-{mth}-{date[2]}")
+    else:
 
-    print(date)
-    return
 
 def get_input():
     c = 0
