@@ -6,7 +6,7 @@ def main():
     elif fuel <= 1:
         print("E")
     else:
-        print(percent, "%")
+        print(f"{fuel}%")
 
 
 def get_fuel():
@@ -26,6 +26,6 @@ def get_fuel():
         else:
             break
 
-    return precent
+    return percent
 
 main()
