@@ -14,6 +14,8 @@ def main():
     price = float(0)
     while True:
         item = get_str()
+        if item == 0:
+            return
         price += round(float(taqueria[f"{item}"]), 2)
         print("$", "%.2f" % price, sep = "")
 
@@ -24,6 +26,9 @@ def get_str():
             price = taqueria[f"{str}"]
         except KeyError:
             print("Not in menu")
+        except EOFError:
+            print("")
+            return 0
         else:
             return str
 
