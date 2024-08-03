@@ -22,7 +22,7 @@ def main():
 def get_str():
     while True:
         try:
-            str = input("Item: ")
+            str = input("Item: ").title()
             price = taqueria[f"{str}"]
         except KeyError:
             print("Not in menu")
