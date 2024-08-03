@@ -26,5 +26,13 @@ def get_input():
             if date[i] == "/":
                 c += 1
             elif date[i] == ",":
-                c += 2
+                c += 5
+
+        if c = 2:
+            numbers = date.split("/")
+            if numbers[1] > 31 or numbers[1] < 1:
+                c = 0
+        elif c = 5:
+            if 
+
 
