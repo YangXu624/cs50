@@ -12,7 +12,7 @@ def main():
             unique[f"{gcr[i]}"] = 1
             unique_count += 1
 
-    keys = list(unique.keys()).sort
+    keys = sorted(list(unique.keys()))
 
     for i in range(unique_count):
         print(unique[keys[i]], keys[i])
