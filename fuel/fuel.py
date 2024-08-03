@@ -4,6 +4,7 @@ def main():
             fuel = input("Fraction: ")
             print("hi")
             numbers = fuel.split("/")
+            print(numbers)
             x = int(numbers[0])
             y = int(numbers[1])
             percent = 100 * round(float(x/y), 2)
