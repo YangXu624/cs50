@@ -2,13 +2,11 @@ def main():
     while True:
         try:
             fuel = input("Fraction: ")
-            print("hi")
             numbers = fuel.split("/")
-            print(numbers)
             x = int(numbers[0])
             y = int(numbers[1])
             percent = 100 * round(float(x/y), 2)
-            print(percent, "%")
+            
         except ValueError:
             print("Not integer")
 
@@ -16,7 +14,6 @@ def main():
             print("Cannot divide by zero")
 
         else:
-            print("HI")
             break
 
     print(percent, "%")
