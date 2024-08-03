@@ -15,6 +15,9 @@ months = [
 
 def main():
     date = get_input()
+
+    if len(date) == 3:
+        
     print(date)
     return
 
