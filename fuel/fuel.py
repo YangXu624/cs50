@@ -1,6 +1,7 @@
 def main():
     while True:
         fuel = input("Fraction: ")
+        numbers = fuel.split("/")
 
         for i in range(len(fuel)):
             if fuel[i] == "/":
