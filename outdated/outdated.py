@@ -18,11 +18,13 @@ def main():
 
     for i in range(3):
         if date[0] in months:
-            mth = "%02d" % months.index(date[0])
-            day = date[1].strip(",")
+            mth = "%02d" % int(months.index(date[0]))
+            day = "%02d" % int(date[1].strip(","))
             print(f"{day}-{mth}-{date[2]}")
         else:
-            print(f"{date[1]}-{date[0]}-{date[2]}")
+            mth = "%02d" % int(date[0])
+            day = "%02d" % int(date[1])
+            print(f"{day}-{mth}-{date[2]}")
         return
 
 def get_input():
