@@ -2,7 +2,10 @@ def main():
     while True:
         fuel = input("Fraction: ")
 
-        if 
+        for i in range(len(fuel)):
+            if fuel[i] == "/":
+                
+                break
 
     print(convert(fuel))
 
