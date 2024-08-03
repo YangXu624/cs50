@@ -24,7 +24,7 @@ def main():
     if len(date) == 3:
         for i in range(3):
             if date[0] in months:
-                mth = "%02d" % int(months.index(date[0]))
+                mth = "%02d" % (int(months.index(date[0])) + 1)
                 day = "%02d" % int(date[1])
                 print(f"{date[2]}-{mth}-{day}")
             else:
