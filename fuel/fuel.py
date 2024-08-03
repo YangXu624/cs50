@@ -1,10 +1,13 @@
 def main():
     fuel = input("Fraction: ")
     numbers = fuel.split("/")
+
     try:
         x = int(numbers[0])
         y = int(numbers[1])
+
     except ValueError:
+
 
     print(convert(fuel))
 
