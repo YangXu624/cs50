@@ -21,7 +21,8 @@ def main():
             break
 
 def get_str():
-    str = input("Item: ")
+    while True:
+        str = input("Item: ")
 
     return str
 
