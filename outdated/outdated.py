@@ -18,6 +18,12 @@ def main():
     print(date)
 
 def get_input():
-    while True:
-        try:
-            date = input("Date: ")
+    c = 0
+    while c < 2:
+        date = input("Date: ")
+
+        for i in range(len(date)):
+            if date[i] == "/":
+                c += 1
+            elif date[i] == ",":
+                c += 2
