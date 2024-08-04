@@ -47,7 +47,8 @@ def get_input():
                     if int(numbers[0]) > 0 and int(numbers[0]) < 13 and int(numbers[1]) > 0 and int(numbers[1]) < 32:
                         return numbers
                 elif date[i] == ",":
-                    return date.split()
+                    chars = date.split()
+                    
                 else:
                     return
         except EOFError:
