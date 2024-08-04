@@ -44,13 +44,19 @@ def get_input():
             for i in range(len(date)):
                 if date[i] == "/":
                     numbers = date.split("/")
-                    if int(numbers[0]) > 0 and int(numbers[0]) < 13 and int(numbers[1]) > 0 and int(numbers[1]) < 32:
+                    if int(numbers[0]) > 0 and int(numbers[0]) < 13 and int(numbers[1]) > 0 and int(numbers[1]) < 32 and int(numbers[2]) > 0:
                         return numbers
+
                 elif date[i] == ",":
                     chars = date.split()
-                    mth = chars[1]
-                else:
-                    return
+                    if chars[0] in months:
+                        chars[1] = chars[1].replace(",", "")
+                        if int(chars[1]) > 0 and int(chars[1]) < 32 and int(chars[2]) > 0:
+                            return chars
+
         except EOFError:
+            continue
+        except TypeError:
+            continue
 
 main()
