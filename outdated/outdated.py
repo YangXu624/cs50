@@ -56,7 +56,7 @@ def get_input():
 
         except EOFError:
             continue
-        except TypeError:
+        except ValueError:
             continue
 
 main()
