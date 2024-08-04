@@ -39,7 +39,7 @@ def main():
 def get_input():
     while True:
         try:
-            date = input("Date: ")
+            date = input("Date: ").strip()
 
             for i in range(len(date)):
                 if date[i] == "/":
