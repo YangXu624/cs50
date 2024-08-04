@@ -55,7 +55,7 @@ def get_input():
                             return chars
 
         except EOFError:
-            continue
+            break
         except ValueError:
             continue
 
