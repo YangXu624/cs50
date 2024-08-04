@@ -48,7 +48,7 @@ def get_input():
                         return numbers
                 elif date[i] == ",":
                     chars = date.split()
-                    chars[1] == 
+                    mth = chars[1]
                 else:
                     return
         except EOFError:
