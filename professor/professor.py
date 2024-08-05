@@ -2,13 +2,13 @@ import random
 
 
 def main():
+    score = 0
     lvl = get_level()
     for i in range(10):
         pair = generate_integer(lvl)
         sol = int(pair[0]) + int(pair[1])
 
         count = 0
-        score = 0
 
         while count < 3:
             ans = int(input(f"{pair[0]} + {pair[1]} = "))
@@ -19,6 +19,8 @@ def main():
             else:
                 print("EEE")
                 count += 1
+
+    print("Score:", score)
 
 def get_level():
     while True:
