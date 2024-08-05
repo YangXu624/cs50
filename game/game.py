@@ -1,8 +1,12 @@
 import random
 
 def main():
-    number = get_int()
-    print(number)
+    ans = int(get_int())
+
+    while True:
+        num = int(input("Guess: "))
+        if compare(ans, num):
+            return
 
 def get_int():
     while True:
@@ -14,5 +18,16 @@ def get_int():
             continue
         except EOFError:
             break
+
+def compare(ans, gs):
+    if ans > gs:
+        print("Too small!")
+    elif ans < gs:
+        print("Too large!")
+    elif ans == gs:
+        print("Just right!")
+        return True
+    else:
+        print("How even")
 
 main()
