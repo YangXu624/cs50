@@ -1,13 +1,13 @@
 from pyfiglet import Figlet
 import sys
+import random
 
 figlet = Figlet()
 
 def main():
     if len(sys.argv) == 1:
         text = input("Input: ")
-        fonts = Figlet.getFonts()
-        print(fonts)
+        fonts = figlet.getFonts()
         f = Figlet(font = 'slant')
         print(f.renderText(f'{text}'))
 
