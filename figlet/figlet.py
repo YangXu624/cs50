@@ -11,7 +11,7 @@ def main():
         f = Figlet(font = f'{fonts}')
         print(f.renderText(f'{text}'))
 
-    elif len(sys.argv) == 3:
+    elif len(sys.argv) == 3 and (sys.argv[1] == "--font" or sys.argv[1] == "-f"):
         text = input("Input: ")
         f = Figlet(font = f"{sys.argv[2]}")
         print(f.renderText(f'{text}'))
