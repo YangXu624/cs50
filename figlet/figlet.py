@@ -7,8 +7,8 @@ figlet = Figlet()
 def main():
     if len(sys.argv) == 1:
         text = input("Input: ")
-        fonts = figlet.getFonts()
-        f = Figlet(font = 'slant')
+        fonts = random.choice(figlet.getFonts())
+        f = Figlet(font = f'{fonts}')
         print(f.renderText(f'{text}'))
 
     elif len(sys.argv) == 3:
