@@ -26,12 +26,12 @@ def get_int():
 def compare(ans, gs):
     if ans > gs:
         print("Too small!")
+        return False
     elif ans < gs:
         print("Too large!")
+        return False
     elif ans == gs:
         print("Just right!")
         return True
-    else:
-        print("How even")
 
 main()
