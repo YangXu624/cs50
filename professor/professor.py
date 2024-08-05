@@ -6,7 +6,10 @@ def main():
 
 
 def get_level():
-    lvl = input("Level: ")
+    while True:
+        try:
+            lvl = int(input("Level: "))
+        except ValueError:
 
 
 def generate_integer(level):
