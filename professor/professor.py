@@ -11,7 +11,7 @@ def main():
         score = 0
 
         while count < 3:
-            ans = int(input(f"{pair[0] + pair[1] = }"))
+            ans = int(input(f"{pair[0]} + {pair[1]} = "))
 
             if ans == sol:
                 score += 1
