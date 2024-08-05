@@ -14,6 +14,7 @@ def main():
     elif len(sys.argv) == 3:
         text = input("Input: ")
         f = Figlet(font = f"{sys.argv[2]}")
+        print(f.renderText(f'{text}'))
 
     else:
         sys.exit("Invalid Input")
