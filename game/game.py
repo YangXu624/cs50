@@ -1,4 +1,5 @@
 import random
+from sys import exit
 
 def main():
     try:
@@ -10,7 +11,7 @@ def main():
         try:
             num = int(input("Guess: "))
             if compare(ans, num):
-                return
+                exit("Just right!")
         except ValueError:
             continue
 
@@ -34,7 +35,6 @@ def compare(ans, gs):
         print("Too large!")
         return False
     elif ans == gs:
-        print("Just right!")
         return True
 
 main()
