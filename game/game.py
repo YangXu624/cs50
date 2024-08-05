@@ -7,9 +7,12 @@ def main():
         return
 
     while True:
-        num = int(input("Guess: "))
-        if compare(ans, num):
-            return
+        try:
+            num = int(input("Guess: "))
+            if compare(ans, num):
+                return
+        except ValueError:
+            continue
 
 def get_int():
     while True:
