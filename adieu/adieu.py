@@ -9,9 +9,10 @@ def main():
 
     print("Adieu, adieu, to", end = " ")
 
-    for i in range(len(list) - 1):
-        print(f"{list[i]}, ", end = "")
+    
+        for i in range(len(list) - 1):
+            print(f"{list[i]}, ", end = "")
 
-    print(f"and {list[len(list) - 1]}")
+        print(f"and {list[len(list) - 1]}")
 
 main()
