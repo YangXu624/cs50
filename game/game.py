@@ -1,7 +1,10 @@
 import random
 
 def main():
-    ans = int(get_int())
+    try:
+        ans = int(get_int())
+    except TypeError:
+        return
 
     while True:
         num = int(input("Guess: "))
@@ -17,6 +20,7 @@ def get_int():
         except ValueError:
             continue
         except EOFError:
+            print("")
             break
 
 def compare(ans, gs):
