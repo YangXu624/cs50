@@ -1,15 +1,18 @@
 def main():
-    fuel = get_fuel()
+    fuel = convert()
+    print(gauge(fuel))
 
+
+def gauge(fuel):
     if fuel >= 99:
-        print("F")
+        return "F"
     elif fuel <= 1:
-        print("E")
+        return "E"
     else:
-        print(f"{fuel}%")
+        return int(fuel)
 
 
-def get_fuel():
+def convert():
     while True:
         try:
             fuel = input("Fraction: ")
