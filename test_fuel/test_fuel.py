@@ -9,6 +9,7 @@ def test_convert_ValueErrors():
         convert("cat/car")
         convert("12/3")
         convert("1")
+        convert("  ")
 
 
 def test_convert_ZeroDivisionErrors():
