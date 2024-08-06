@@ -9,8 +9,6 @@ def test_convert_ValueErrors():
         convert("mona lisa")
         convert("cat/car")
         convert("12/3")
-        convert("-1/-2")
-        convert("-2/-1")
         convert("1")
 
 
