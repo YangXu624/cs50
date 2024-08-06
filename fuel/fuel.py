@@ -22,6 +22,8 @@ def convert():
             percent = int(100 * round(float(x/y), 2))
         except ValueError:
             print("Not integer")
+        except IndexError:
+            print("Wrong input format")
         except ZeroDivisionError:
             print("Cannot divide by zero")
         else:
@@ -32,4 +34,5 @@ def convert():
 
     return percent
 
-main()
+if __name__ == "__main__":
+    main()
