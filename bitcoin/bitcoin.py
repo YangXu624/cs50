@@ -14,9 +14,8 @@ def main():
     rate = float(dict_USD["rate"].replace(",", ""))
 
     inp = get_inp()
-    out = str(f"{float(inp * rate):.4f}")
-    for i in range(len(out)):
-        print(f"{out[i]}")
+    out = f"{float(inp * rate):,.4f}"
+    print(f"{out}")
 
 def get_inp():
     while True:
