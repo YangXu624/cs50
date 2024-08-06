@@ -11,3 +11,8 @@ def test20():
 
 def test100():
     assert value("morning") == 100
+
+def test_case():
+    assert value("HeLlO") == 0
+    assert value("HIPPO") == 20
+    assert value("ANythinG") == 100
