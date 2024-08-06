@@ -14,8 +14,9 @@ def main():
     rate = float(dict_USD["rate"].replace(",", ""))
 
     inp = get_inp()
-    out = float(inp * rate)
-    print(out)
+    out = str(inp * rate)
+    for i in range(len(out)):
+        print(f"{out[i]}")
 
 def get_inp():
     while True:
@@ -23,7 +24,7 @@ def get_inp():
             inp = float(sys.argv[1])
             return inp
         except ValueError:
-            sys.exit("0")
+            sys.exit("Command-line argument is not a number")
         except TypeError:
             sys.exit("1")
         except IndexError:
