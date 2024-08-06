@@ -2,7 +2,7 @@ def main():
     greet = input("Greeting: ").lower().strip().split()
     print(check(greet[0]))
 
-def check(x):
+def value(x):
     if x == "hello" or x == "hello!" or x == "hello,":
         return "$0"
     elif x[0] == "h":
@@ -10,4 +10,5 @@ def check(x):
     else:
         return "$100"
 
-main()
+if __name__ == "__main__":
+    main()
