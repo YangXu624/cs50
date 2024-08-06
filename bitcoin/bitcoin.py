@@ -1,5 +1,4 @@
 import requests
-import json
 import sys
 
 def main():
@@ -15,7 +14,7 @@ def main():
 
     inp = get_inp()
     out = f"{float(inp * rate):,.4f}"
-    print(f"{out}")
+    print(f"${out}")
 
 def get_inp():
     while True:
