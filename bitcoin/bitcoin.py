@@ -20,13 +20,13 @@ def main():
 def get_inp():
     while True:
         try:
-            inp = float(argv[1])
+            inp = float(sys.argv[1])
             return inp
         except ValueError:
             sys.exit("0")
         except TypeError:
             sys.exit("1")
-        except NameError:
+        except IndexError:
             sys.exit("Missing command-line argument")
 
 
