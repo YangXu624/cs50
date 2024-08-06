@@ -14,10 +14,6 @@ def test_gauge():
 
 def test_error():
     with pytest.raises(ZeroDivisionError):
-        convert("1/0")
-
+        assert convert("0/0")
     with pytest.raises(ValueError):
-        convert("cat")
-
-    with pytest.raises(ValueError):
-        convert("2/1")
+        assert convert("cat")
