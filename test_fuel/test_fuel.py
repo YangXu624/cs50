@@ -10,3 +10,4 @@ def test_gauge():
     assert gauge(99) == "F"
     assert gauge(30) == "30%"
     assert gauge(0) == "E"
+    assert gauge(1) == "E"
