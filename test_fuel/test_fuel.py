@@ -7,7 +7,7 @@ import pytest
 def test_convert_ValueErrors():
     with pytest.raises(ValueError):
         convert("mona lisa")
-        convert("cat/car")
+        assert convert("cat/car")
         convert("12/3")
         convert("1")
 
