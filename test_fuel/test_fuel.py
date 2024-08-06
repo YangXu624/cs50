@@ -4,12 +4,17 @@ from fuel import gauge
 import pytest
 
 
-def test_convert_ValueErrors():
+def test_ve():
     with pytest.raises(ValueError):
-        convert("cat/car")
-        convert("12/3")
-        convert("1")
-        convert("  ")
+        convert("sd")
+        convert("s/d")
+        convert("s/50")
+    with pytest.raises(ValueError):
+        convert("-5/10")
+        convert("5/-3")
+    with pytest.raises(ValueError):
+        convert("1.5/3")
+        convert("5/3")
 
 
 def test_convert_ZeroDivisionErrors():
