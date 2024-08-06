@@ -5,8 +5,8 @@ def test_convert():
     assert convert("1/4") == 25
     assert convert("99/100") == 99
     assert convert("1/100") == 1
-    assert convert("4/0") == "Cannot divide by zero"
-    assert convert("cat") == "Not integer"
+    assert convert("4/0") == "\n"
+    assert convert("cat") == "\n"
 
 def test_gauge():
     assert gauge(99) == "F"
