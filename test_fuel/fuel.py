@@ -1,6 +1,6 @@
 def main():
     fuel = convert()
-    print(gauge(fuel))
+    print(f"{gauge(fuel)}%")
 
 
 def gauge(fuel):
