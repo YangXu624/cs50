@@ -5,11 +5,19 @@ def test_convert():
     assert convert("1/4") == 25
     assert convert("99/100") == 99
     assert convert("1/100") == 1
-    assert convert("4/0") == "\n"
-    assert convert("cat") == "\n"
 
 def test_gauge():
     assert gauge(99) == "F"
     assert gauge(30) == "30%"
     assert gauge(0) == "E"
     assert gauge(1) == "E"
+
+def test_error():
+    with pytest.raises(ZeroDivisionError):
+        convert("1/0")
+
+    with pytest.raises(ValueError):
+        convert("cat")
+
+    with pytest.raises(ValueError):
+        convert("2/1")
