@@ -1,9 +1,14 @@
 from sys import argv, exit
+
 from PIL import Image
 
 
 def main():
+    images = []
 
+    for arg in argv[:1]:
+        img = Image.open(arg)
+        images.append(img)
 
 
 def get():
@@ -15,18 +20,18 @@ def get():
 
         one, two = argv[1].split(".")
         if two != "png" and two != "jpg" and two != "jpeg":
-            exit("Not a compatible file")
+            exit("Invalid input")
 
         three, four = argv[2].split(".")
         if four != two:
-            exit("Output file does not match input")
+            exit("Input and output have different extensions")
 
         return argv[1], argv[2]
 
     except FileNotFoundError:
-        exit(f"Could not read {argv[1]}")
+        exit("Invalid input")
     except ValueError:
-        exit(f"Could not read {argv[1]}")
+        exit("Invalid input")
 
 
 if __name__ == "__main__":
