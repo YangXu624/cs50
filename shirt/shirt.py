@@ -14,7 +14,7 @@ def main():
     centering=(0.0, 1.0)  # center the image
     )
 
-    image1.paste(resized_shirt, resized_shirt)
+    image1.paste(resized_shirt, (0, 1000), resized_shirt)
     image1.save(f"{argv[2]}")
 
 
