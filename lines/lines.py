@@ -1,12 +1,15 @@
-from sys import argv
+from sys import argv, exit
 
 def main():
-    with open(f"{argv[1]}", "r") as file:
-        rows = file.readlines()
-        count = 0
-        for i in range(len(rows)):
-            count += 1
-    print(count)
+    try:
+        with open(f"{argv[1]}", "r") as file:
+            rows = file.readlines()
+            count = 0
+            for i in range(len(rows)):
+                count += 1
+        print(count)
+    except FileNotFoundError:
+        exit("File does not exist")
 
 if __name__ == "__main__":
     main()
