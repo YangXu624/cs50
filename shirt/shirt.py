@@ -11,7 +11,7 @@ def main():
         images.append(image)
 
     images[0].paste(images[1])
-    images[0].save(f"{argv[2]}")
+    images[0].save(f"{argv[2]}", save_all=True, append_images=[images[1]])
 
 
 def get():
