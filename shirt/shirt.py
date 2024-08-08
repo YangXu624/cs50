@@ -6,25 +6,18 @@ from PIL import Image, ImageOps
 def main():
     get()
 
-    image1 = Image.open(f"{argv[1]}")
-    image1 = ImageOps.fit(
-    image1,
-    size=image1.size,
-    bleed=0.0,  # no bleeding
-    centering=(0.5, 0.5)  # center the image
-    )
+    try:
+        shirt = Image.open("shirt.png")
+        before = Image.open(argv[1])
 
-    shirt = Image.open("shirt.png")
-    size = shirt.size
-    resized_shirt = ImageOps.fit(
-    shirt,
-    size,  # target size
-    bleed=0.0,  # no bleeding
-    centering=(0.0, 1.0)  # center the image
-    )
+    except FileNotFoundError:
+        exit("Could not find the image file")
 
-    image1.paste(resized_shirt, (0, 400), resized_shirt)
-    image1.save(f"{argv[2]}")
+    else:
+        size = shirt.size
+        before = ImageOps.fit(before, size)
+        before.paste(shirt, box = (0, 0), mask = shirt)
+        before.save(argv[2], format=None)
 
 
 def get():
