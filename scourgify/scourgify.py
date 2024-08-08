@@ -1,8 +1,13 @@
 from sys import argv
+import csv
 
 
 def main():
-    file1 = get()
+
+    file1, file2 = get()
+    with open(f"{file1}") as f1:
+        with open(f"{file2}")) as f2:
+            x = csv.DictReader
 
 
 def get():
@@ -30,4 +35,3 @@ def get():
 
 if __name__ == "__main__":
     main()
-
