@@ -18,9 +18,13 @@ def main():
                 last, first = dict["name"].split(", ")
                 list_dict.append({"first": first, "last": last, "house": dict["house"]})
 
+            print(list_dict)
+
         with open(f"{file2}", "w") as f2:
             y = csv.DictWriter(f2, fieldnames = ["first", "last", "house"])
-            y.writerow(list_dict)
+
+            for item in list_dict:
+                y.writerow(item)
 
     except FileNotFoundError:
         exit(f"Could not read {file1}")
