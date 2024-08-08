@@ -6,7 +6,7 @@ from PIL import Image
 def main():
     images = []
 
-    for arg in argv[:1]:
+    for arg in argv[1:]:
         img = Image.open(arg)
         images.append(img)
 
