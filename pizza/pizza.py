@@ -17,7 +17,7 @@ def main():
         headers.append(item)
     print(headers)
 
-    print(tabulate(prices, tablefmt = "grid"))
+    print(tabulate(prices, headers = ", tablefmt = "grid"))
 
 
 def get():
