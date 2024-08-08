@@ -4,7 +4,7 @@ from PIL import Image, ImageOps
 
 
 def main():
-    get
+    get()
 
     image1 = Image.open(f"{argv[1]}")
     shirt = Image.open("shirt.png")
@@ -32,7 +32,6 @@ def get():
             exit("Invalid input")
 
         three, four = argv[2].split(".")
-        print(four, two)
         if four != two:
             exit("Input and output have different extensions")
 
