@@ -7,11 +7,12 @@ def main():
     images = []
 
     for arg in argv[1:]:
-        img = Image.open(arg)
-        images.append(img)
+        image = Image.open(arg)
+        images.append(image)
 
     images[0].paste(images[1])
     images[0].save(f"{argv[2]}")
+
 
 def get():
     try:
