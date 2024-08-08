@@ -4,6 +4,7 @@ import csv
 
 def main():
     temp = []
+    list_dict = []
 
     try:
         file1, file2 = get()
@@ -14,13 +15,17 @@ def main():
                 temp.append(row)
 
             for dict in temp:
+                last, first = dict["name"].split(", ")
+                list_dict.append({"first": first, "last": last, "house": dict["house"]})
                 
+        with open(f"{file2}") as f2:
+            y = csv.DictWriter(f2, fieldnames = ["first", "last", "house"])
+            y.writerow(list_dict)
 
     except FileNotFoundError:
         exit(f"Could not read {file1}")
 
 
-    print(temp)
 
 
 def get():
