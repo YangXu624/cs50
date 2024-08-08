@@ -17,8 +17,8 @@ def main():
             for dict in temp:
                 last, first = dict["name"].split(", ")
                 list_dict.append({"first": first, "last": last, "house": dict["house"]})
-                
-        with open(f"{file2}") as f2:
+
+        with open(f"{file2}", "w") as f2:
             y = csv.DictWriter(f2, fieldnames = ["first", "last", "house"])
             y.writerow(list_dict)
 
