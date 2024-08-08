@@ -5,10 +5,10 @@ from PIL import Image, ImageOps
 
 def main():
     image1 = Image.open(f"{argv[1]}")
-    image2 = Image.open("shirt.png")
+    shirt = Image.open("shirt.png")
 
     resized_shirt = ImageOps.fit(
-    image2,
+    shirt,
     (1200, 400),  # target size
     bleed=0.0,  # no bleeding
     centering=(0.0, 1.0)  # center the image
