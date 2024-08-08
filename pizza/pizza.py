@@ -12,12 +12,7 @@ def main():
         for row in pizza:
             prices.append(row)
 
-    headers = []
-    for item in prices[0].keys():
-        headers.append(item)
-    print(headers)
-
-    print(tabulate(prices, headers = ", tablefmt = "grid"))
+    print(tabulate(prices, headers = "keys", tablefmt = "grid"))
 
 
 def get():
