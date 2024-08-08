@@ -12,7 +12,7 @@ def main():
         for row in pizza:
             prices.append(row)
 
-    print(tabulate(prices))
+    print(tabulate(prices, headers, tablefmt = "grid"))
 
 
 def get():
