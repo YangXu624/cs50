@@ -9,9 +9,9 @@ def main():
 
     resized_shirt = ImageOps.fit(
     image2,
-    (1200, 1200),  # target size
+    (1200, 400),  # target size
     bleed=0.0,  # no bleeding
-    centering=(1.0, 0.0)  # center the image
+    centering=(0.0, 1.0)  # center the image
     )
 
     image1.paste(resized_shirt)
