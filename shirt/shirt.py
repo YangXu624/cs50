@@ -18,12 +18,12 @@ def main():
 
     resized_shirt = ImageOps.fit(
     shirt,
-    (1200, 400),  # target size
+    (600, 200),  # target size
     bleed=0.0,  # no bleeding
     centering=(0.0, 1.0)  # center the image
     )
 
-    image1.paste(resized_shirt, (0, 1000), resized_shirt)
+    image1.paste(resized_shirt, (0, 400), resized_shirt)
     image1.save(f"{argv[2]}")
 
 
