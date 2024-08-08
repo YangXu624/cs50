@@ -1,24 +1,37 @@
-from sys import argv, exit, argc
-import os
+from sys import argv, exit
 
 def main():
+    file_name = get()
+    print(count(file_name))
+
+
+def get():
     try:
-        if argc > 2:
+        if len(argv) > 2:
             exit("Too many command-line arguments")
-        if argc < 2:
+        if len(argv) < 2:
             exit("Too few command-line arguments")
 
-        if not arg[1].endswith('.py'):
-            exit("The provided file is not a Python file.")
+        one, two = argv[1].split(".")
+        if two != "py":
+            exit("Not a Python file")
 
-        with open(f"{argv[1]}", "r") as file:
+        return argv[1]
+
+    except FileNotFoundError:
+        exit("File does not exist")
+    except ValueError:
+        exit("File does not exist")
+
+
+def count(file_name):
+    with open(f"{file_name}", "r") as file:
             rows = file.readlines()
             count = 0
             for i in range(len(rows)):
                 count += 1
-        print(count)
-    except FileNotFoundError:
-        exit("File does not exist")
+    return count
+
 
 if __name__ == "__main__":
     main()
