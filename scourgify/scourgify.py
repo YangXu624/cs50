@@ -24,8 +24,6 @@ def main():
         exit(f"Could not read {file1}")
 
 
-
-
 def get():
     try:
         if len(argv) > 3:
