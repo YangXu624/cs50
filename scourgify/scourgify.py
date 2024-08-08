@@ -11,6 +11,7 @@ def main():
             with open(f"{file2}", "w") as f2:
                 x = csv.DictReader(f1)
                 y = csv.DictWriter(f2, fieldnames = ["first", "last", "house"])
+                y.writeheader()
 
                 for row in x:
                     temp.append(row)
