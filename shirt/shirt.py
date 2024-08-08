@@ -7,7 +7,9 @@ def main():
     image1 = Image.open(f"{argv[1]}")
     image2 = Image.open("shirt.png")
 
-    image1.paste(image2, "shirt.png")
+    PIL.ImageOps.fit(image2, tuple[1, 1], int = Resampling.BICUBIC, float = 0.0, tuple[0.5, 0.5])
+
+    image1.paste(image2)
     image1.save(f"{argv[2]}")
 
 
