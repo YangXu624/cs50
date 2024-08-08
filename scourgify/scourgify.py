@@ -2,7 +2,7 @@ from sys import argv
 
 
 def main():
-    get()
+    file1 = get()
 
 
 def get():
@@ -23,9 +23,9 @@ def get():
         return argv[1], argv[2]
 
     except FileNotFoundError:
-        exit("File does not exist")
+        exit(f"Could not read {argv[1]}")
     except ValueError:
-        exit("File does not exist")
+        exit(f"Could not read {argv[1]}")
 
 
 if __name__ == "__main__":
