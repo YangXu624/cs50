@@ -8,7 +8,7 @@ def main():
     image2 = Image.open("shirt.png")
 
     image1.paste(image2)
-    image1.save(f"{argv[2]}", save_all=True, append_images=[images[1]])
+    image1.save(f"{argv[2]}")
 
 
 def get():
