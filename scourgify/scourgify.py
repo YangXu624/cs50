@@ -4,25 +4,20 @@ import csv
 
 def main():
     temp = []
-    list_dict = []
 
     try:
         file1, file2 = get()
         with open(f"{file1}") as f1:
-            x = csv.DictReader(f1)
+            with open(f"{file2}", "w") as f2:
+                x = csv.DictReader(f1)
+                y = csv.DictWriter(f2, fieldnames = ["first", "last", "house"])
 
-            for row in x:
-                temp.append(row)
+                for row in x:
+                    temp.append(row)
 
-            for dict in temp:
-                last, first = dict["name"].split(", ")
-                list_dict.append({"first": first, "last": last, "house": dict["house"]})
-
-        with open(f"{file2}", "w") as f2:
-            y = csv.DictWriter(f2, fieldnames = ["first", "last", "house"])
-
-            for item in list_dict:
-                y.writerow(item)
+                for dict in temp:
+                    last, first = dict["name"].split(", ")
+                    y.writerow({"first": first, "last": last, "house": dict["house"]})
 
     except FileNotFoundError:
         exit(f"Could not read {file1}")
