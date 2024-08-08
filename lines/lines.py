@@ -29,7 +29,13 @@ def count(file_name):
             rows = file.readlines()
             count = 0
             for i in range(len(rows)):
-                count += 1
+                line = rows[i].strip()
+                if line == "":
+                    continue
+                elif line[0] == "#":
+                    continue
+                else:
+                    count += 1
     return count
 
 
