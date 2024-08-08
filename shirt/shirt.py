@@ -1,15 +1,20 @@
 from sys import argv, exit
 
-from PIL import Image
+from PIL import Image, ImageOps
 
 
 def main():
     image1 = Image.open(f"{argv[1]}")
     image2 = Image.open("shirt.png")
 
-    PIL.ImageOps.fit(image2, tuple[1, 1], int = Resampling.BICUBIC, float = 0.0, tuple[0.5, 0.5])
+    resized_shirt = ImageOps.fit(
+    image2,
+    (1200, 1200),  # target size
+    bleed=0.0,  # no bleeding
+    centering=(0, -1000)  # center the image
+    )
 
-    image1.paste(image2)
+    image1.paste(resized_shirt)
     image1.save(f"{argv[2]}")
 
 
