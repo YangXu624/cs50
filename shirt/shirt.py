@@ -30,6 +30,7 @@ def get():
             exit("Invalid input")
 
         three, four = argv[2].split(".")
+        print(four, two)
         if four != two:
             exit("Input and output have different extensions")
 
