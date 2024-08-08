@@ -7,7 +7,10 @@ def main():
     file1, file2 = get()
     with open(f"{file1}") as f1:
         with open(f"{file2}")) as f2:
-            x = csv.DictReader
+            x = csv.DictReader(f1)
+
+            for row in x:
+                temp = row.replace('"', '')
 
 
 def get():
