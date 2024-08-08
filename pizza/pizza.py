@@ -9,8 +9,8 @@ def main():
     file1 = get()
     with open(f"{file1}") as file:
         pizza = csv.DictReader(file)
-        for one, two, three in pizza:
-            print(one, two, three)
+        for row in pizza:
+            print(row)
             prices.append({"Pizza": one, "Small": two, "Large": three})
 
     print(tabulate(prices))
