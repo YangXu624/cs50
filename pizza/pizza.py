@@ -1,5 +1,6 @@
 from sys import argv
 import csv
+from tabulate import tabulate
 
 
 def main():
@@ -10,6 +11,8 @@ def main():
         pizza = csv.DictReader(file)
         for one, two, three in pizza:
             prices.append({"Pizza": one, "Small": two, "Large": three})
+
+    print(tabulate(prices))
 
 
 def get():
