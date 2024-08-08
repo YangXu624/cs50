@@ -3,7 +3,13 @@ import csv
 
 
 def main():
-    pztype = get()
+    prices = []
+
+    file1 = get()
+    with open(f"{file1}") as file:
+        pizza = csv.DictReader(file)
+        for one, two, three in pizza:
+            prices.append({"Pizza": one, "Small": two, "Large": three})
 
 
 def get():
