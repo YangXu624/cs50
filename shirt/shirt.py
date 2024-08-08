@@ -4,14 +4,11 @@ from PIL import Image
 
 
 def main():
-    images = []
+    image1 = Image.open(f"{argv[1]}")
+    image2 = Image.open("shirt.png")
 
-    for arg in argv[1:]:
-        image = Image.open(arg)
-        images.append(image)
-
-    images[0].paste(images[1])
-    images[0].save(f"{argv[2]}", save_all=True, append_images=[images[1]])
+    image1.paste(image2)
+    image1.save(f"{argv[2]}", save_all=True, append_images=[images[1]])
 
 
 def get():
