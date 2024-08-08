@@ -10,6 +10,7 @@ def main():
         img = Image.open(arg)
         images.append(img)
 
+    
 
 def get():
     try:
