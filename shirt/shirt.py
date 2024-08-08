@@ -7,7 +7,7 @@ def main():
     image1 = Image.open(f"{argv[1]}")
     image2 = Image.open("shirt.png")
 
-    image1.paste(image2)
+    image1.paste(image2, "shirt.png")
     image1.save(f"{argv[2]}")
 
 
