@@ -9,16 +9,16 @@ def main():
     image1 = Image.open(f"{argv[1]}")
     image1 = ImageOps.fit(
     image1,
-    (600, 600),  # target size
+    size=image1.size,
     bleed=0.0,  # no bleeding
     centering=(0.5, 0.5)  # center the image
     )
 
     shirt = Image.open("shirt.png")
-
+    size = shirt.size
     resized_shirt = ImageOps.fit(
     shirt,
-    (600, 200),  # target size
+    size,  # target size
     bleed=0.0,  # no bleeding
     centering=(0.0, 1.0)  # center the image
     )
