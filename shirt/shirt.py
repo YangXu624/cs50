@@ -10,7 +10,7 @@ def main():
         img = Image.open(arg)
         images.append(img)
 
-    
+    Image.paste(im: Image | str | float | tuple[float, ...], box: Image | tuple[int, int, int, int] | tuple[int, int] | None = None, mask: Image | None = None)
 
 def get():
     try:
