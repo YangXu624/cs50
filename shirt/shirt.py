@@ -7,6 +7,13 @@ def main():
     get()
 
     image1 = Image.open(f"{argv[1]}")
+    image1 = ImageOps.fit(
+    image1,
+    (600, 600),  # target size
+    bleed=0.0,  # no bleeding
+    centering=(0.5, 0.5)  # center the image
+    )
+
     shirt = Image.open("shirt.png")
 
     resized_shirt = ImageOps.fit(
