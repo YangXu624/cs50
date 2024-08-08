@@ -1,7 +1,14 @@
-from sys import argv, exit
+from sys import argv, exit, argc
 
 def main():
     try:
+        if argc > 2:
+            exit("Too many command-line arguments")
+        if argc < 2:
+            exit("Too few command-line arguments")
+
+        if 
+
         with open(f"{argv[1]}", "r") as file:
             rows = file.readlines()
             count = 0
