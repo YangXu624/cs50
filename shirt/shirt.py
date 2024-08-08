@@ -3,7 +3,7 @@ from PIL import Image
 
 
 def main():
-    
+
 
 
 def get():
@@ -14,12 +14,12 @@ def get():
             exit("Too few command-line arguments")
 
         one, two = argv[1].split(".")
-        if two != "csv":
-            exit("Not a CSV file")
+        if two != "png" and two != "jpg" and two != "jpeg":
+            exit("Not a compatible file")
 
         three, four = argv[2].split(".")
-        if four != "csv":
-            exit("Not a CSV file")
+        if four != two:
+            exit("Output file does not match input")
 
         return argv[1], argv[2]
 
