@@ -3,6 +3,7 @@ import csv
 
 
 def main():
+    temp = []
 
     file1, file2 = get()
     with open(f"{file1}") as f1:
@@ -10,7 +11,9 @@ def main():
             x = csv.DictReader(f1)
 
             for row in x:
-                temp = row.replace('"', '')
+                temp.append(row)
+
+    print(temp)
 
 
 def get():
