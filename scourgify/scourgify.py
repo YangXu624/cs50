@@ -1,4 +1,4 @@
-from sys import argv
+from sys import argv, exit
 import csv
 
 
@@ -30,8 +30,6 @@ def get():
         three, four = argv[2].split(".")
         if four != "csv":
             exit("Not a CSV file")
-
-        print("Passed")
 
         return argv[1], argv[2]
 
