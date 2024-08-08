@@ -4,6 +4,8 @@ from PIL import Image, ImageOps
 
 
 def main():
+    get
+
     image1 = Image.open(f"{argv[1]}")
     shirt = Image.open("shirt.png")
 
