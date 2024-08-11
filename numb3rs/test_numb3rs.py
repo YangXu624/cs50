@@ -10,3 +10,4 @@ def test_false():
     assert validate("yes.1.2.3") == False
     assert validate("25.1.1.2.3") == False
     assert validate("-9") == False
+    assert validate("25.1.1.300") == False
