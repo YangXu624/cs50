@@ -10,10 +10,13 @@ def parse(s):
     list = s.split(" ")
 
     for item in list:
-        if re.search(r"^[s][r][c].+$"):
+        if re.search(r"^[s][r][c].+$", item):
             src = item
 
-    return item
+    src = src.split('"')
+    link = src[1].replace("/embed", "")
+
+    return link
 
 
 
