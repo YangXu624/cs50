@@ -19,7 +19,5 @@ def parse(s):
     return link
 
 
-
-
 if __name__ == "__main__":
     main()
