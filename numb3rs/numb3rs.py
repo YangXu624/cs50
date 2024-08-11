@@ -7,7 +7,7 @@ def main():
 
 
 def validate(ip):
-    if re.search(r"^[\.\d+\.\d+\.\d+$", ip):
+    if re.search(r"^\d+\.\d+\.\d+\.\d+$", ip):
         return True
     else:
         return False
