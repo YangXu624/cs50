@@ -7,10 +7,10 @@ def main():
 
 
 def validate(ip):
-    if re.search(r"^\d+\.\d+\.\d+\.\d+$",ip):
-        print("True")
+    if re.search(r"^\d+\.\d+\.\d+\.\d+$", ip):
+        return True
     else:
-        exit("Nah")
+        return YES
 
 
 if __name__ == "__main__":
