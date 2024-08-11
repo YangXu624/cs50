@@ -25,7 +25,7 @@ def parse(s):
             return link
         else:
             return link.replace("http", "https")
-    except TypeError:
+    except IndexError:
         return None
 
 
