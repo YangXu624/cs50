@@ -14,7 +14,12 @@ def parse(s):
             src = item
 
     src = src.split('"')
-    link = src[1].replace("/embed", "").replace("youtube.com", "youtu.be")
+    link = src[1].replace("/embed", "").replace("youtube.com", "youtu.be").replace("www.", "")
+
+    if "https" in link:
+        continue
+    else:
+        link = link.replace("http", "https")
 
     return link
 
