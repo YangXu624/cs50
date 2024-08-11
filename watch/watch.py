@@ -7,23 +7,26 @@ def main():
 
 
 def parse(s):
-    list = s.split(" ")
+    try:
+        list = s.split(" ")
 
-    for item in list:
-        if re.search(r"^[s][r][c].+$", item):
-            src = item
+        for item in list:
+            if re.search(r"^[s][r][c].+$", item):
+                src = item
 
-    src = src.split('"')
-    link = src[1].replace("/embed", "").replace("youtube.com", "youtu.be").replace("www.", "")
+        src = src.split('"')
+        link = src[1].replace("/embed", "").replace("youtube.com", "youtu.be").replace("www.", "")
 
-    test = link.split("/")
-    if "youtu.be" not in test:
+        test = link.split("/")
+        if "youtu.be" not in test:
+            return None
+
+        if "https" in link:
+            return link
+        else:
+            return link.replace("http", "https")
+    except TypeError:
         return None
-
-    if "https" in link:
-        return link
-    else:
-        return link.replace("http", "https")
 
 
 if __name__ == "__main__":
