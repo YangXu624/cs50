@@ -17,7 +17,7 @@ def parse(s):
     link = src[1].replace("/embed", "").replace("youtube.com", "youtu.be").replace("www.", "")
 
     test = link.split("/")
-    if "youtu.be" not in test[2]:
+    if "youtu.be" not in test:
         print(test)
         return None
 
