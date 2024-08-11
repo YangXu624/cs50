@@ -16,12 +16,15 @@ def parse(s):
     src = src.split('"')
     link = src[1].replace("/embed", "").replace("youtube.com", "youtu.be").replace("www.", "")
 
-    if "https" in link:
-        continue
-    else:
-        link = link.replace("http", "https")
+    test = link.split("/")
+    if "youtu.be" not in test[2]:
+        print(test)
+        return None
 
-    return link
+    if "https" in link:
+        return link
+    else:
+        return link.replace("http", "https")
 
 
 if __name__ == "__main__":
