@@ -14,7 +14,7 @@ def parse(s):
             src = item
 
     src = src.split('"')
-    link = src[1].replace("/embed", "")
+    link = src[1].replace("/embed", "").replace("youtube", "youtu.be")
 
     return link
 
