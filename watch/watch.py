@@ -10,7 +10,7 @@ def parse(s):
     list = s.split(" ")
 
     for item in list:
-        if re.search()
+        if re.search(r"^[s][r][c]")
 
 
 
