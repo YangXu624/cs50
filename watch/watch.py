@@ -18,7 +18,6 @@ def parse(s):
 
     test = link.split("/")
     if "youtu.be" not in test:
-        print(test)
         return None
 
     if "https" in link:
