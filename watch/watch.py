@@ -7,10 +7,12 @@ def main():
 
 
 def parse(s):
-    ...
+    list = s.split(" ")
+
+    for item in list:
+        if re.search()
 
 
-...
 
 
 if __name__ == "__main__":
