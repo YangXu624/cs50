@@ -15,9 +15,10 @@ def convert(s):
         return
 
     if first[2] == "AM":
-        return (first, last)
+        continue
     elif first[2] == "PM":
-        return ()
+        first[0] = int(first[0]) + 12
+        
 
 ...
 
