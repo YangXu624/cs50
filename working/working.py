@@ -14,17 +14,13 @@ def convert(s):
     else:
         return
 
-    if first[2] == "AM":
-        continue
-    elif first[2] == "PM":
+    if first[2] == "PM":
         first[0] = int(first[0]) + 12
 
-    if last[2] == "AM":
-        continue
-    elif last[2] == "PM":
-        last[0] = int(first[0]) + 12
+    if last[2] == "PM":
+        last[0] = int(last[0]) + 12
 
-    return (first, last)
+    return f"{first[0]}:{first[1]} to {last[0]}:{last[1]}"
 
 ...
 
