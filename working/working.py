@@ -8,9 +8,11 @@ def main():
 
 def convert(s):
     if matches := re.search(r"^([1-9]|10|11|12)(?:\:00)? (AM|PM) to ([1-9]|10|11|12)(?:\:00)? (AM|PM)$", s):
-        first = [matches.group(0), matches.group(2)]
-        last = [matches.group(1), matches.group(3)]
+        first = [matches.group(1), matches.group(2)]
+        last = [matches.group(3), matches.group(4)]
         print(first, last)
+    else:
+        return
 
 
 ...
