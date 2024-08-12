@@ -14,7 +14,10 @@ def convert(s):
     else:
         return
 
-    if first
+    if first[2] == "AM":
+        return (first, last)
+    elif first[2] == "PM":
+        return ()
 
 ...
 
