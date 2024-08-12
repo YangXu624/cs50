@@ -18,7 +18,13 @@ def convert(s):
         continue
     elif first[2] == "PM":
         first[0] = int(first[0]) + 12
-        
+
+    if last[2] == "AM":
+        continue
+    elif last[2] == "PM":
+        last[0] = int(first[0]) + 12
+
+    return (first, last)
 
 ...
 
