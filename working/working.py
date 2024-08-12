@@ -7,7 +7,10 @@ def main():
 
 
 def convert(s):
-    if re.search(r"^(\d)(?:\:00)? AM|PM to (\d)(?:\:00)? AM|PM$")
+    matches = re.search(r"^(\d)(?:\:00)? AM|PM to (\d)(?:\:00)? AM|PM$", s)
+        print(matches)
+
+
 
 
 ...
