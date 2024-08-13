@@ -5,8 +5,9 @@ from num2words import num2words
 
 
 def main():
-    dt = input("Date of Birth: ")
+    print(check(input("Date of Birth: ")))
 
+def check(dts):
     if dts := re.search(r"(\d{4})-(\d{2})-(\d{2})", dt):
         year, month, day = int(dts.group(1)), int(dts.group(2)), int(dts.group(3))
     else:
@@ -16,9 +17,7 @@ def main():
     list2 = list1.split(" ")
     days = int(list2[0])
 
-    print(num2words(days * 24 * 60))
-
-
+    return num2words(days * 24 * 60).replace(" and", "").capitalize()
 
 ...
 
