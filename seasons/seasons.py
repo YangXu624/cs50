@@ -13,7 +13,9 @@ def check(dt):
     else:
         sys.exit("Invalid input")
 
-    list1 = str(datetime.datetime.today() - datetime.datetime(year, month, day))
+    today = datetime.datetime.today()
+
+    list1 = str(today - datetime.datetime(year, month, day))
     list2 = list1.split(" ")
     days = int(list2[0])
 
