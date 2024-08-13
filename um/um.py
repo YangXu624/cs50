@@ -1,7 +1,3 @@
-import re
-import sys
-
-
 def main():
     print(count(input("Text: ")))
 
@@ -11,10 +7,9 @@ def count_substring(string, substring):
 
 
 def count(s):
-    substring = "hello"
-    return s.count(substring)
-
-...
+    substring1 = " um"
+    substring2 = "Um"
+    return s.count(substring1) + s.count(substring2)
 
 
 if __name__ == "__main__":
