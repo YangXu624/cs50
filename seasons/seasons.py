@@ -3,6 +3,8 @@ import re
 from sys import exit
 import inflect
 
+today = datetime.datetime.today()
+
 p = inflect.engine()
 
 def main():
@@ -13,8 +15,6 @@ def check(dt):
         year, month, day = int(dts.group(1)), int(dts.group(2)), int(dts.group(3))
     else:
         exit("Invalid input")
-
-    today = datetime.datetime.today()
 
     list1 = str(today - datetime.datetime(year, month, day))
     list2 = list1.split(" ")
