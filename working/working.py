@@ -7,7 +7,7 @@ def main():
 
 
 def convert(s):
-    if matches := re.search(r"^(([1-9])|10|11|12)\:([0-5][0-9]) (AM|PM) to ([1-9]|10|11|12)\:([0-5][0-9]) (AM|PM)$", s):
+    if matches := re.search(r"^(([1-9])|10|11|12)(\:[0-5][0-9])? (AM|PM) to ([1-9]|10|11|12)(\:[0-5][0-9])? (AM|PM)$", s):
         first = [matches.group(1), matches.group(2), matches.group(3)]
         last = [matches.group(4), matches.group(5), matches.group(6)]
 
@@ -29,27 +29,6 @@ def convert(s):
 
         return f"{first[0]}:{first[1]} to {last[0]}:{last[1]}"
 
-    elif matches := re.search(r"^([1-9]|10|11|12) (AM|PM) to ([1-9]|10|11|12) (AM|PM)$", s):
-        first = [matches.group(1), matches.group(2)]
-        last = [matches.group(3), matches.group(4)]
-
-        if first[1] == "PM":
-            first[0] = int(first[0]) + 12
-
-        if last[1] == "PM":
-            last[0] = int(last[0]) + 12
-
-        if len(str(first[0])) == 1:
-            first[0] = "0" + first[0]
-        if len(str(last[0])) == 1:
-            last[0] = "0" + last[0]
-
-        if int(first[0]) == 24:
-            first[0] = "00"
-        if int(last[0]) == 24:
-            last[0] = "00"
-
-        return f"{first[0]}:00 to {last[0]}:00"
     else:
         raise ValueError("Invalid time format")
 
