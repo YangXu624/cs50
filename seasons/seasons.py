@@ -11,7 +11,7 @@ def main():
     else:
         sys.exit("Invalid input")
 
-    print(datetime.today())
+    print(datetime.datetime.today())
     datetime.datetime(year, month, day)
 
 
