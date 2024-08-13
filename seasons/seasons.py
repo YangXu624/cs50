@@ -11,7 +11,7 @@ def main():
     else:
         sys.exit("Invalid input")
 
-    print(date(year, month, day))
+    
 
 
 ...
