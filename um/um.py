@@ -7,8 +7,10 @@ def main():
 
 
 def count(s):
-    if " um" in s:
-        return 1
+    substring = "hello"
+
+    count = count_substring(s, substring)
+    return count
 
 
 ...
