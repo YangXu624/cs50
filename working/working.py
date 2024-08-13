@@ -17,6 +17,11 @@ def convert(s):
         if last[2] == "PM":
             last[0] = int(last[0]) + 12
 
+        if first[1] == None:
+            first[1] = ":00"
+        if last[1] == None:
+            last[1] = ":00"
+
         if len(str(first[0])) == 1:
             first[0] = "0" + first[0]
         if len(str(last[0])) == 1:
@@ -27,7 +32,7 @@ def convert(s):
         if int(last[0]) == 24:
             last[0] = "00"
 
-        return f"{first[0]}:{first[1]} to {last[0]}:{last[1]}"
+        return f"{first[0]}{first[1]} to {last[0]}{last[1]}"
 
     else:
         raise ValueError("Invalid time format")
