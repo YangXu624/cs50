@@ -12,7 +12,8 @@ def convert(s):
         last = [matches.group(4), matches.group(5), matches.group(6)]
 
         if first[2] == "PM":
-            first[0] = int(first[0]) + 12
+            if int(first[1]) < 12:
+                first[0] = int(first[0]) + 12
 
         if last[2] == "PM":
             if int(last[1]) < 12:
