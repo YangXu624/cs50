@@ -17,7 +17,7 @@ def check(dt):
     list2 = list1.split(" ")
     days = int(list2[0])
 
-    return num2words(days * 24 * 60).replace(" and", "").capitalize()
+    return num2words((days - 1) * 24 * 60).replace(" and", "").capitalize()
 
 ...
 
