@@ -1,5 +1,3 @@
-import re
-
 def main():
     inp = input("What's your email address? ")
 
