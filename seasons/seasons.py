@@ -5,7 +5,7 @@ from num2words import num2words
 
 
 def main():
-    print(check(input("Date of Birth: ")))
+    print(f"{check(input("Date of Birth: "))} minutes")
 
 def check(dt):
     if dts := re.search(r"(\d{4})-(\d{2})-(\d{2})", dt):
