@@ -22,14 +22,17 @@ def convert(s):
     elif matches := re.search(r"^([1-9]|10|11|12) (AM|PM) to ([1-9]|10|11|12) (AM|PM)$", s):
         first = [matches.group(1), matches.group(2)]
         last = [matches.group(3), matches.group(4)]
-        print(matches)
+        
         if first[1] == "PM":
             first[0] = int(first[0]) + 12
 
         if last[1] == "PM":
             last[0] = int(last[0]) + 12
 
-        if first[0]
+        if len(str(first[0])) == 1:
+            first[0] = "0" + first[0]
+        if len(str(last[0])) == 1:
+            last[0] = "0" + last[0]
 
         return f"{first[0]}:00 to {last[0]}:00"
     else:
