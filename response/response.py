@@ -1,4 +1,5 @@
 import re
+import validators
 
 def main():
     inp = input("What's your email address? ")
