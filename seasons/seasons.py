@@ -1,8 +1,9 @@
 import datetime
 import re
 from sys import exit
-from num2words import num2words
+import inflect
 
+p = inflect.engine()
 
 def main():
     print(f"{check(input("Date of Birth: "))} minutes")
@@ -11,7 +12,7 @@ def check(dt):
     if dts := re.search(r"(\d{4})-(\d{2})-(\d{2})", dt):
         year, month, day = int(dts.group(1)), int(dts.group(2)), int(dts.group(3))
     else:
-        sys.exit("Invalid input")
+        exit("Invalid input")
 
     today = datetime.datetime.today()
 
@@ -19,9 +20,7 @@ def check(dt):
     list2 = list1.split(" ")
     days = int(list2[0])
 
-    return num2words((days - 1) * 24 * 60).replace(" and", "").capitalize()
-
-...
+    return p.number_to_words((days - 1) * 24 * 60).replace(" and", "").capitalize()
 
 
 if __name__ == "__main__":
