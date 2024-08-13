@@ -19,9 +19,9 @@ def convert(s):
             if int(last[0]) < 12:
                 last[0] = int(last[0]) + 12
 
-        if first[2] == "AM" and first[0] == 12:
+        if first[2] == "AM" and first[0] == "12":
             first[0] = 24
-        if last[2] == "AM" and last[0] == 12:
+        if last[2] == "AM" and last[0] == "12":
             last[0] = 24
 
         if first[1] == None:
