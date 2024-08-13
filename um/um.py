@@ -10,10 +10,7 @@ def count(s):
     substring = " um"
     c = s.count(substring)
 
-    string = (f"{s[0]}{s[1]})").lower()
-
-    print(string)
-
+    string = (f"{s[0]}{s[1]}").lower()
     if string == "um":
         c += 1
 
