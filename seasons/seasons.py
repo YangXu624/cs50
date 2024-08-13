@@ -1,6 +1,7 @@
 import datetime
 import re
 from sys import exit
+from num2words import num2words
 
 
 def main():
@@ -15,7 +16,7 @@ def main():
     list2 = list1.split(" ")
     days = int(list2[0])
 
-    print(days * 24 * 60)
+    print(num2words(days * 24 * 60))
 
 
 
