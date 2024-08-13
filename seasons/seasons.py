@@ -1,11 +1,10 @@
-import datetime
+from datetime import date
 import re
 from sys import exit
 import inflect
 
-today = datetime.datetime.today()
-
 p = inflect.engine()
+
 
 def main():
     print(f"{check(input("Date of Birth: "))} minutes")
@@ -16,7 +15,8 @@ def check(dt):
     else:
         exit("Invalid input")
 
-    diff = (today - datetime.datetime(year, month, day)).days
+    today = date.today()
+    diff = (today - date(year, month, day)).days
 
     return p.number_to_words((diff - 1) * 24 * 60).replace(" and", "").capitalize()
 
