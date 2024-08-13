@@ -15,7 +15,8 @@ def convert(s):
             first[0] = int(first[0]) + 12
 
         if last[2] == "PM":
-            last[0] = int(last[0]) + 12
+            if int(last[1]) < 12:
+                last[0] = int(last[0]) + 12
 
         if first[1] == None:
             first[1] = ":00"
