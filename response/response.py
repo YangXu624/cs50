@@ -8,3 +8,6 @@ def main():
         print("Valid")
     else:
         print("Invalid")
+
+if __name__ == "__main__":
+    main()
