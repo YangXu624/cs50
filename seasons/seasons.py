@@ -13,7 +13,7 @@ def check(dt):
     if dts := re.search(r"(\d{4})-(\d{2})-(\d{2})", dt):
         year, month, day = int(dts.group(1)), int(dts.group(2)), int(dts.group(3))
     else:
-        raise ValueError("Invalid input")
+        exit("Invalid input")
 
     today = date.today()
     diff = (today - date(year, month, day)).days
