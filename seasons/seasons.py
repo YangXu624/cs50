@@ -1,58 +1,25 @@
-import sys
+from datetime import date
 import re
-from datetime import datetime, date
+from sys import exit
 import inflect
 
 p = inflect.engine()
 
 
-class Born:
-    def __init__(self,date,dif):
-        self.date = date
-
-    def __str__(self):
-        return f"{self.date}"
-
-    @classmethod
-    def get(cls):
-        birth = input("Birth date: ")
-        check = birth
-        if check := re.search(r"^([0-9]{4})\-([0-9]{2})\-([0-9]{2})$",check):
-            year = int(check.group(1))
-            month = int(check.group(2))
-            day = int(check.group(3))
-            if month <= 12 and day <= 31 :
-                birth = date(year,month,day)
-                return birth
-            else:
-                sys.exit("Invalid date format")
-        else :
-            sys.exit("Invalid date format")
-
-
-class Today:
-    def __init__(self,today):
-        self.today = today
-
-    def __str__(self):
-        return f"{self.today}"
-
-    @classmethod
-    def get(cls):
-        today = date.today()
-        return today
-
 def main():
-    born = Born.get()
-    today =Today.get()
-    dif = today - born
-    dif = dif.days
-    minutes = dif*1440
-    words = p.number_to_words(minutes,andword="")
-    print(f"{words.capitalize()} minutes")
+    print(f"{check(input("Date of Birth: "))} minutes")
+
+def check(dt):
+    if dts := re.search(r"(\d{4})-(\d{2})-(\d{2})", dt):
+        year, month, day = int(dts.group(1)), int(dts.group(2)), int(dts.group(3))
+    else:
+        exit("Invalid input")
+
+    today = date.today()
+    diff = (today - date(year, month, day)).days
+
+    return p.number_to_words((diff - 1) * 24 * 60).replace(" and", "").capitalize()
 
 
-
-
-if _name_ == "__main__":
+if __name__ == "__main__":
     main()
