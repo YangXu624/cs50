@@ -16,11 +16,9 @@ def check(dt):
     else:
         exit("Invalid input")
 
-    list1 = str(today - datetime.datetime(year, month, day))
-    list2 = list1.split(" ")
-    days = int(list2[0])
+    diff = (today - datetime.datetime(year, month, day)).days
 
-    return p.number_to_words((days - 1) * 24 * 60).replace(" and", "").capitalize()
+    return p.number_to_words((diff - 1) * 24 * 60).replace(" and", "").capitalize()
 
 
 if __name__ == "__main__":
