@@ -18,7 +18,7 @@ def check(dt):
     today = date.today()
     diff = (today - date(year, month, day)).days
 
-    return p.number_to_words((diff - 1) * 24 * 60).replace(" and", "").capitalize()
+    return p.number_to_words((diff) * 24 * 60).replace(" and", "").capitalize()
 
 
 if __name__ == "__main__":
