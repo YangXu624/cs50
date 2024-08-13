@@ -11,7 +11,8 @@ def main():
     else:
         sys.exit("Invalid input")
 
-    print(datedatetime.datetime(year, month, day))
+    print(datetime.date.fromtimestamp(2000))
+    datetime.datetime(year, month, day)
 
 
 ...
