@@ -11,7 +11,11 @@ def main():
     else:
         sys.exit("Invalid input")
 
-    print(datetime.datetime.today() - datetime.datetime(year, month, day))
+    list1 = str(datetime.datetime.today() - datetime.datetime(year, month, day))
+    list2 = list1.split(" ")
+    days = int(list2[0])
+
+    print(days * 24 * 60)
 
 
 
