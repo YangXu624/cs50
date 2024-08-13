@@ -7,9 +7,17 @@ def count_substring(string, substring):
 
 
 def count(s):
-    substring1 = " um"
-    substring2 = "Um"
-    return s.count(substring1) + s.count(substring2)
+    substring = " um"
+    c = s.count(substring)
+
+    string = (f"{s[0]}{s[1]})").lower()
+
+    print(string)
+
+    if string == "um":
+        c += 1
+
+    return c
 
 
 if __name__ == "__main__":
