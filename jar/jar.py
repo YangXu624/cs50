@@ -7,7 +7,7 @@ class Jar:
 
     def __str__(self):
         cookie_string = " "
-        for i in range(self.capacity):
+        for i in range(self.size):
             cookie_string = cookie_string.replace(" ", "🍪 ")
         return (f"{cookie_string}").strip()
 
