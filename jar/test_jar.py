@@ -1,8 +1,10 @@
 from jar import Jar
+import pytest
 
 
 def test_init():
-    ...
+    with pytest.raises(ValueError):
+        jar = Jar("ok", "boomer")
 
 
 def test_str():
@@ -15,9 +17,12 @@ def test_str():
 
 
 def test_deposit():
-    with pytest.raises ValueError:
-
+    jar = Jar()
+    with pytest.raises(ValueError):
+        jar.deposit(jar.capacity + 1)
 
 
 def test_withdraw():
-    ...
+    jar = Jar()
+    with pytest.raises(ValueError):
+        jar.withdraw(jar.capacity + 1)
