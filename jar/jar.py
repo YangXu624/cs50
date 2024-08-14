@@ -7,10 +7,8 @@ class Jar:
         return f"Capacity is {self.capacity}"
 
     def deposit(self, n):
-
-        else:
-            print("Too many cookies!!")
-            return
+        self.cookies += int(n)
+        print(self._cookies)
 
 
     def withdraw(self, n):
@@ -37,14 +35,8 @@ class Jar:
 
     @cookies.setter
     def cookies(self, ck):
-        if deposit(ck) > int(self._cookies):
-            print("Too few cookies in the jar!!")
-            return self._cookies
-        if deposit(ck) < int(self._capacity - self._cookies):
-            self.cookies += int(n)
-            print(self._cookies)
-            return
-
+        if int(ck) < 0 or int(ck) > self._capacity:
+            raise ValueError("Not possible to withdraw/deposit!!")
 
 def main():
     jar = Jar()
