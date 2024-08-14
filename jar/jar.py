@@ -1,22 +1,22 @@
 from sys import exit
 
 class Jar:
-    def __init__(self, capacity=12, cookies=0):
+    def __init__(self, capacity=12, size=0):
         self.capacity = capacity
-        self.cookies = cookies
+        self.size = size
 
     def __str__(self):
         return f"Capacity is {self.capacity}"
 
 
     def deposit(self, n):
-        self.cookies += int(n)
-        if self.cookies > self.capacity:
+        self.size += int(n)
+        if self.size > self.capacity:
             raise ValueError("Cookies exceed jar size!!")
 
     def withdraw(self, n):
-        self.cookies = self.cookies - int(n)
-        if self.cookies < 0:
+        self.size = self.size - int(n)
+        if self.size < 0:
             raise ValueError("Cookies fall below zero!!")
 
 
@@ -36,12 +36,12 @@ class Jar:
 
 
     @property
-    def cookies(self):
-        return self._cookies
+    def size(self):
+        return self._size
 
-    @cookies.setter
-    def cookies(self, ck):
-        self._cookies = int(ck)
+    @size.setter
+    def size(self, ck):
+        self._size = int(ck)
 
 def main():
     jar = Jar()
