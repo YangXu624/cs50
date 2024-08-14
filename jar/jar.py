@@ -24,6 +24,29 @@ class Jar:
             self.cookies = self.cookies - int(n)
             print(self.cookies)
 
+
+    @property
+    def capacity(self):
+        return self._capacity
+
+    @capacity.setter
+    def capacity(self, cap):
+        try:
+            self._capacity = int(cap)
+            return self._capacity
+        except ValueError:
+            sys.exit("Capacity not integer")
+
+
+    @property
+    def cookies(self):
+        return self._cookies
+
+    @cookies.setter
+    def cookies(self, ck):
+        if 
+
+
 def main():
     jar = Jar()
     while True:
