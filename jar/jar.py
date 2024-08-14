@@ -16,7 +16,8 @@ class Jar:
 
 
     def withdraw(self, n):
-        ...
+        if n > self.cookies:
+            
 
     @property
     def capacity(self):
