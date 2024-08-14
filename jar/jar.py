@@ -17,7 +17,10 @@ class Jar:
 
     def withdraw(self, n):
         if n > self.cookies:
-            
+            print("Too few cookies in the jar!!")
+            return
+        else:
+            self.cookies -= n
 
     @property
     def capacity(self):
