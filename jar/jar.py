@@ -7,9 +7,9 @@ class Jar:
         return f"Capacity is {self.capacity}"
 
     def deposit(self, n):
-        if int(n) > int(self.capacity - self.cookies):
-            print(n, self.capacity, self.cookies)
+        if int(n) < int(self.capacity - self.cookies):
             self.cookies += int(n)
+            print(self.cookies)
             return
         else:
             print("Too many cookies!!")
@@ -22,6 +22,7 @@ class Jar:
             return
         else:
             self.cookies = self.cookies - int(n)
+            print(self.cookies)
 
 def main():
     jar = Jar()
@@ -30,6 +31,7 @@ def main():
             jar.deposit(input("Deposit: "))
             jar.withdraw(input("Withdraw: "))
         except EOFError:
+            print("")
             print(jar.cookies)
             return
 
