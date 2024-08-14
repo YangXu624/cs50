@@ -6,7 +6,10 @@ class Jar:
         self.size = size
 
     def __str__(self):
-        return f"{self.capacity}🍪"
+        cookie_string = []
+        for i in range(self.capacity):
+            cookie_string.append("🍪")
+        return f"{cookie_string}"
 
 
     def deposit(self, n):
