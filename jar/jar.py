@@ -6,9 +6,9 @@ class Jar:
         self.size = size
 
     def __str__(self):
-        cookie_string = []
+        cookie_string = "ok"
         for i in range(self.capacity):
-            cookie_string.append("🍪")
+            cookie_string.replace("ok", "🍪ok")
         return f"{cookie_string}"
 
 
