@@ -20,7 +20,6 @@ class Jar:
             raise ValueError("Cookies fall below zero!!")
 
 
-
     @property
     def capacity(self):
         return self._capacity
@@ -29,7 +28,6 @@ class Jar:
     def capacity(self, cap):
         if int(cap) < 0:
             raise ValueError("Capacity cannot be negative!!")
-
         try:
             self._capacity = int(cap)
             return self._capacity
