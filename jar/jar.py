@@ -8,12 +8,12 @@ class Jar:
 
     def deposit(self, n):
         self.cookies += int(n)
-        print(self._cookies)
+        print(self.cookies)
 
 
     def withdraw(self, n):
-        self._cookies = self._cookies - int(n)
-        print(self._cookies)
+        self.cookies = self.cookies - int(n)
+        print(self.cookies)
 
 
     @property
