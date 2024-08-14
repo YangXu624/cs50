@@ -51,7 +51,7 @@ def main():
             jar.withdraw(input("Withdraw: "))
         except EOFError:
             print("")
-            print(jar.cookies)
+            print(jar)
             return
 
 if __name__ == "__main__":
