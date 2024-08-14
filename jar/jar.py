@@ -1,3 +1,5 @@
+from sys import exit
+
 class Jar:
     def __init__(self, capacity=12, cookies=0):
         self.capacity = capacity
@@ -26,7 +28,7 @@ class Jar:
             self._capacity = int(cap)
             return self._capacity
         except ValueError:
-            sys.exit("Capacity not integer")
+            exit("Capacity not integer")
 
 
     @property
@@ -36,7 +38,8 @@ class Jar:
     @cookies.setter
     def cookies(self, ck):
         if int(ck) < 0 or int(ck) > self._capacity:
-            raise ValueError("Not possible to withdraw/deposit!!")
+            exit("Not possible to withdraw/deposit!!")
+        self._cookies = int(ck)
 
 def main():
     jar = Jar()
