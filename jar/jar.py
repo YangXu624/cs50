@@ -6,10 +6,10 @@ class Jar:
         self.size = size
 
     def __str__(self):
-        cookie_string = "ok"
+        cookie_string = " "
         for i in range(self.capacity):
-            cookie_string.replace("ok", "🍪ok")
-        return f"{cookie_string}"
+            cookie_string = cookie_string.replace(" ", "🍪 ")
+        return (f"{cookie_string}").strip()
 
 
     def deposit(self, n):
