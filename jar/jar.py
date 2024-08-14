@@ -9,8 +9,11 @@ class Jar:
     def deposit(self, n):
         if n > (self.capacity - self.cookies):
             self.cookies += n
+            return
         else:
-            
+            print("Too many cookies!!")
+            return
+
 
     def withdraw(self, n):
         ...
