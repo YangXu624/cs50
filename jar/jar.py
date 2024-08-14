@@ -3,7 +3,7 @@ class Jar:
         self.capacity = capacity
 
     def __str__(self):
-        ...
+        return f"Capacity is {self.capacity}"
 
     def deposit(self, n):
         ...
