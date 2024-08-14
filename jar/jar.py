@@ -11,11 +11,14 @@ class Jar:
 
     def deposit(self, n):
         self.cookies += int(n)
-        print(self.cookies)
+        if self.cookies > self.capacity:
+            raise ValueError("Cookies exceed jar size!!")
 
     def withdraw(self, n):
         self.cookies = self.cookies - int(n)
-        print(self.cookies)
+        if self.cookies < 0:
+            raise ValueError("Cookies fall below zero!!")
+
 
 
     @property
@@ -24,11 +27,14 @@ class Jar:
 
     @capacity.setter
     def capacity(self, cap):
+        if int(cap) < 0:
+            raise ValueError("Capacity cannot be negative!!")
+
         try:
             self._capacity = int(cap)
             return self._capacity
         except ValueError:
-            exit("Capacity not integer")
+            raise ValueError("Capacity not integer")
 
 
     @property
@@ -37,8 +43,6 @@ class Jar:
 
     @cookies.setter
     def cookies(self, ck):
-        if int(ck) < 0 or int(ck) > self._capacity:
-            exit("Not possible to withdraw/deposit!!")
         self._cookies = int(ck)
 
 def main():
