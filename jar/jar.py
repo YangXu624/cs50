@@ -8,10 +8,10 @@ class Jar:
     def __str__(self):
         return f"Capacity is {self.capacity}"
 
+
     def deposit(self, n):
         self.cookies += int(n)
         print(self.cookies)
-
 
     def withdraw(self, n):
         self.cookies = self.cookies - int(n)
