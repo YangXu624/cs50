@@ -14,8 +14,8 @@ class Jar:
 
 
     def withdraw(self, n):
-        self.cookies = self.cookies - int(n)
-        print(self.cookies)
+        self._cookies = self._cookies - int(n)
+        print(self._cookies)
 
 
     @property
@@ -37,12 +37,12 @@ class Jar:
 
     @cookies.setter
     def cookies(self, ck):
-        if deposit(ck) > int(self.cookies):
+        if deposit(ck) > int(self._cookies):
             print("Too few cookies in the jar!!")
-            return self.cookies
-        if deposit(ck) < int(self.capacity - self.cookies):
+            return self._cookies
+        if deposit(ck) < int(self._capacity - self._cookies):
             self.cookies += int(n)
-            print(self.cookies)
+            print(self._cookies)
             return
 
 
