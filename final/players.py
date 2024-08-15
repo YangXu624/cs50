@@ -1,10 +1,9 @@
 class Player:
-    def __init__(self, name, hand=['Card 1', 'Card 2'], balance=100, fold=False, is_raiser=False):
+    def __init__(self, name, hand=['Card 1', 'Card 2'], balance=100, fold=False):
         self.name = name
         self.hand = hand
         self.balance = balance
         self.fold = fold
-        self.is_raiser = is_raiser
 
     def action(self, current=2):
         #Only continue if player has not folded

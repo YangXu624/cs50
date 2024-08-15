@@ -59,9 +59,7 @@ def main():
         added = bet(player, current1)
         print(f"{player.name} balance: {player.balance}")
         if added > current1:
-            player.is_raiser = True
-        else:
-            player.is_raiser = False
+            raised = True
         current1 = added
         pot += added
         print(f"Pot value: {pot}\n")
