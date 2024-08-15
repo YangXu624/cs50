@@ -59,7 +59,7 @@ def main():
 
     #Pre-river betting
     #Current = Minimum bet
-    current1 = 2
+    current = 2
     #If a player raises, ensure everyone gets a turn to bet again, kept track by raise_count
     raised_count = 0
     while raised_count < no_of_players:
@@ -68,9 +68,9 @@ def main():
             if raised_count == no_of_players:
                 break
 
-            added = bet(player, current1)
+            added = bet(player, current)
             print(f"{player.name} balance: {player.balance}")
-            if added > current1:
+            if added > current:
                 raised_count = 0
             else:
                 raised_count += 1
@@ -87,12 +87,22 @@ def main():
         print(f"River: {river}")
 
         #Current = Minimum bet
-        current2 = 0
+        current = 0
+        #If a player raises, ensure everyone gets a turn to bet again, kept track by raise_count
+    raised_count = 0
+    while raised_count < no_of_players:
         #Each player takes turns to perform action
         for player in players:
-            added = bet(player, current2)
-            print(f"{player.name} now has {player.balance}")
-            current2 = added
+            if raised_count == no_of_players:
+                break
+
+            added = bet(player, current)
+            print(f"{player.name} balance: {player.balance}")
+            if added > current:
+                raised_count = 0
+            else:
+                raised_count += 1
+            current = added
             pot += added
             print(f"Pot value: {pot}\n")
 
