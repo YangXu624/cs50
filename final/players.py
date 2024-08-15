@@ -16,9 +16,9 @@ class Player:
 
             elif "raise" in act:
                 s = act.split(" ")
-                amt = int(s[1])
+                amt = current + int(s[1])
                 self.balance = self.balance - amt
-                print(f"{self.name} raises by {amt}!")
+                print(f"{self.name} raises by {s[1]}!")
                 return self.balance
 
             elif act == "call":
