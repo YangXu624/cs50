@@ -10,7 +10,7 @@ def main():
             card = Card(rank, suit)
             deck.append(card)
 
-    hand = tuple('', '')
+    hand = ['', '']
     hand[0] = choice(deck)
     deck.remove(hand[0])
     hand[1] = choice(deck)
@@ -19,4 +19,4 @@ def main():
     print(hand)
 
 if __name__ == "__main__":
-    
+    main()
