@@ -39,6 +39,7 @@ def main():
     #Add bot into game
     bot = Bot(name="Bot")
     players.append(bot)
+    no_of_players = len(players)
 
 
     #Initiate pot
