@@ -42,7 +42,7 @@ def main():
     for i in range(2):
         hand[i] = choice(deck)
         deck.remove(hand[i])
-    print(f"Your hand is {hand}\n")
+    print(f"\nYour hand is {hand}\n")
 
     #Pre-river betting
     #Current = Minimum bet
@@ -66,7 +66,10 @@ def main():
         current = 2
         #Each player takes turns to perform action
         for player in players:
-            bet(player, current)
+            added = bet(player, current)
+            print(f"{player.name} now has {player.balance}")
+            pot += added
+            print(f"Pot value: {pot}\n")
 
 
 if __name__ == "__main__":
