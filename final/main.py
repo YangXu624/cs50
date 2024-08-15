@@ -8,7 +8,7 @@ def round(river, deck):
     card = choice(deck)
     river.append(card)
     deck.remove(card)
-    return river
+    return river, deck
 
 
 def bet(pots):
@@ -40,7 +40,7 @@ def main():
     for i in range(5):
         print(f"Round {i + 1}")
         #Deal a card to the river
-        round(river, deck)
+        river, deck = round(river, deck)
         print(f"River: {river}\n")
 
 
