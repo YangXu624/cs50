@@ -7,7 +7,9 @@ class Player:
 
         if act == "check":
             print(f"Check. Balance = {self.balance}")
+            return self.balance
         elif "raise" in act:
             s = act.split(" ")
             amt = int(s[1])
+            
 
