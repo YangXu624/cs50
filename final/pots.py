@@ -6,3 +6,4 @@ class Player:
         act = input("Action: ").lower()
         if act == "check":
             print(f"Check. Balance = {self.balance}")
+        
