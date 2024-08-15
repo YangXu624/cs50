@@ -2,7 +2,7 @@ class Player:
     def __init__(self, balance=100):
         self.balance = balance
 
-    def action(self, current=0):
+    def action(self, current=2):
         act = input("Action: ").lower()
 
         if act == "check":
@@ -22,3 +22,5 @@ class Player:
             print(f"Fold. Balance = {self.balance}")
             return
 
+player = Player()
+player.action()
