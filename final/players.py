@@ -1,6 +1,7 @@
 class Player:
-    def __init__(self, name, balance=100, fold=False):
+    def __init__(self, name, hand=['Card 1', 'Card 2'], balance=100, fold=False):
         self.name = name
+        self.hand = hand
         self.balance = balance
         self.fold = fold
 

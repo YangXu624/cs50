@@ -39,12 +39,13 @@ def main():
     #Initiate pot
     pot = 0
 
-    #Give out hand to Player 1 (User)
-    hand = ['Card 1', 'Card 2']
-    for i in range(2):
-        hand[i] = choice(deck)
-        deck.remove(hand[i])
-    print(f"\nYour hand is {hand}\n")
+    #Deal hands
+    for player in players:
+        for i in range(2):
+            player.hand[i] = choice(deck)
+            deck.remove(player.hand[i])
+
+    print(f"\nYour hand is {player1.hand}\n")
 
     #Pre-river betting
     #Current = Minimum bet
@@ -75,6 +76,7 @@ def main():
             pot += added
             print(f"Pot value: {pot}\n")
 
+    print(f"Bot's hand was {bot.hand}")
 
 if __name__ == "__main__":
     main()
