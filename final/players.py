@@ -13,8 +13,11 @@ class Player:
 
             #Only allow 'check' if current = 0
             if act == "check":
-                print(f"{self.name} checks!")
-                return self.balance
+                if current == 0:
+                    print(f"{self.name} checks!")
+                    return self.balance
+                else:
+                    print("Cannot check!")
 
             elif "raise" in act:
                 s = act.split(" ")
