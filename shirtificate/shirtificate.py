@@ -4,7 +4,7 @@ from fpdf import FPDF
 class PDF(FPDF):
     def header(self):
         # Rendering logo:
-        self.image("shirtificate.png", 10, 8, 33)
+        self.image("shirtificate.png", 20, 8, 33)
         # Setting font: helvetica bold 15
         self.set_font("helvetica", "B", 15)
         # Moving cursor to the right:
@@ -18,6 +18,6 @@ class PDF(FPDF):
 # Instantiation of inherited class
 pdf = PDF()
 pdf.add_page()
-pdf.set_font("Times", size=12)
+pdf.set_font("Times", size=10)
 pdf.cell(0, 10, f"Name took CS50", ln = True)
-pdf.output("new-tuto2.pdf")
+pdf.output("shirtificate.pdf")
