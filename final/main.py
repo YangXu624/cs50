@@ -50,6 +50,7 @@ def main():
     #Each player takes turns to perform action
     for player in players:
         added = bet(player, current)
+        pot += added
 
     #Iterate rounds
     river = []
