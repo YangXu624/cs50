@@ -4,7 +4,7 @@ from players import Player
 from bot import Bot
 
 
-#Argument river(list) and deck(list), returns an updated river and deck
+#Argument: river and deck (which are both lists), returns an updated river and deck
 def round(river, deck):
     #Add one card to the river
     card = choice(deck)
@@ -13,7 +13,7 @@ def round(river, deck):
     return river, deck
 
 
-#Argument player and current bet, returns player's bet
+#Argument: player and current bet, returns player's bet
 def bet(player, current):
     initial = player.balance
     #Perform action: Call/check/raise by n/fold
