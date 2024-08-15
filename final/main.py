@@ -1,6 +1,7 @@
 from cards import Card
 from random import choice
 from players import Player
+from bot import Bot
 
 
 #Argument river(list) and deck(list)
@@ -30,6 +31,8 @@ def main():
 
     #Initiate players
     players = []
+    bot = Bot(name="Bot")
+    players.append(bot)
     player1 = Player(name="Player 1")
     players.append(player1)
 
