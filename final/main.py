@@ -16,6 +16,7 @@ def main():
         hand[i] = choice(deck)
         deck.remove(hand[i])
     print(hand)
+
     #Pre-river betting
     #Deal river
 
