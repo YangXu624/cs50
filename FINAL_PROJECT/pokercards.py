@@ -19,4 +19,4 @@ class Card:
 
 cards = []
 for suit in ['spades', 'hearts', 'clubs', 'diamonds']:
-    for rank in []
+    for rank in ['2', '3', ]
