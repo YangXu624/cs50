@@ -8,6 +8,10 @@ def round(river, deck):
     return river
 
 
+def bet(players):
+    
+
+
 def main():
     #Inititate deck
     deck = []
