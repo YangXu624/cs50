@@ -11,4 +11,8 @@ class Cards:
         self.suit = suit
 
     def __str__(self):
-        return f"{self.rank}{self.suit}"
+        suit_emoji = self.suit_emojis[f"{self.suit}"]
+        return f"{self.rank}{suit_emoji}"
+
+card = Cards(10, hearts)
+print(card)
