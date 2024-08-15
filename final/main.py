@@ -16,6 +16,7 @@ def bet(player, current):
     initial = player.balance
     #Perform action: Call/check/raise by n/fold
     player.balance = player.action(current)
+    #If fold, add 0 to pot
     added_to_pot = initial - player.balance
     return added_to_pot
 
@@ -48,7 +49,7 @@ def main():
     current = 2
     #Each player takes turns to perform action
     for player in players:
-        bet(player, current)
+        added = bet(player, current)
 
     #Iterate rounds
     river = []
