@@ -7,6 +7,8 @@ class Bot:
     def action(self, current=2):
         #Only continue if bot has not folded
         if self.fold == False:
+            #Generate a number, to determine probability
+            number =
 
             #Only allow 'check' if current = 0
             if act == "check":
