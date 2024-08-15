@@ -6,20 +6,20 @@ class Player:
         act = input("Action: ").lower()
 
         if act == "check":
-            print(f"Check. Balance = {self.balance}")
+            print(f"Check")
             return self.balance
         elif "raise" in act:
             s = act.split(" ")
             amt = int(s[1])
             self.balance = self.balance - amt
-            print(f"Raise by {amt}. Balance = {self.balance}")
+            print(f"Raise by {amt}")
             return self.balance
         elif act == "call":
             self.balance = self.balance - current
-            print(f"Call. Balance = {self.balance}")
+            print(f"Call")
             return self.balance
         elif act == "fold":
-            print(f"Fold. Balance = {self.balance}")
+            print(f"Fold")
             return
 
 player = Player()

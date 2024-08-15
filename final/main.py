@@ -16,7 +16,7 @@ def bet(players):
     #Each player takes turns to perform action
     for player in players:
         #Perform action: Call/check/raise by n/fold
-        player.action()
+        player.balance = player.action()
 
 
 def main():
