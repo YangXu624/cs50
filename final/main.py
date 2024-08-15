@@ -1,8 +1,10 @@
 from pokercards import Card
 from random import choice
 
-def round():
-    #
+def round(river, deck):
+    #Add one card to the river
+    river.append(choice(deck))
+    return river
 
 
 def main():
@@ -21,7 +23,10 @@ def main():
     print(hand)
 
     #Pre-river betting
-    #Deal river
+    #Iterate rounds
+    river = []
+    
+
 
 if __name__ == "__main__":
     main()
