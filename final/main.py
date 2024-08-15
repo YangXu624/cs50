@@ -4,7 +4,7 @@ from players import Player
 from bot import Bot
 
 
-#Argument river(list) and deck(list)
+#Argument river(list) and deck(list), returns an updated river and deck
 def round(river, deck):
     #Add one card to the river
     card = choice(deck)
@@ -13,6 +13,7 @@ def round(river, deck):
     return river, deck
 
 
+#Argument player and current bet, returns player's bet
 def bet(player, current):
     initial = player.balance
     #Perform action: Call/check/raise by n/fold
@@ -22,17 +23,19 @@ def bet(player, current):
 
 
 def main():
-    #Inititate deck
+    #Create deck
     deck = []
     for suit in ['spades', 'hearts', 'clubs', 'diamonds']:
         for rank in ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']:
             card = Card(rank, suit)
             deck.append(card)
 
-    #Initiate players
+    #Add players into a list called 'players'
     players = []
+    #Add user into game
     player1 = Player(name="Player 1")
     players.append(player1)
+    #Add bot into game
     bot = Bot(name="Bot")
     players.append(bot)
 
@@ -45,6 +48,7 @@ def main():
             player.hand[i] = choice(deck)
             deck.remove(player.hand[i])
 
+    #Tell user his hand
     print(f"\nYour hand is {player1.hand}\n")
 
     #Pre-river betting
@@ -76,6 +80,9 @@ def main():
             pot += added
             print(f"Pot value: {pot}\n")
 
+    #TBC: Evaluate and compare hand strength to determine winner
+
+    #Reveal bot's hand
     print(f"Bot's hand was {bot.hand}")
 
 if __name__ == "__main__":

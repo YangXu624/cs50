@@ -25,7 +25,7 @@ class Bot:
                 print(f"{self.name} raises by 10!")
                 return self.balance
 
-            elif number > 30 and number < 90:
+            elif number > 30 and number < 91:
                 self.balance = self.balance - current
                 print(f"{self.name} calls!")
                 return self.balance
