@@ -17,7 +17,8 @@ def main():
     hand[1] = choice(deck)
     deck.remove(hand[1])
 
-    print(hand)
+    #Pre-river betting
+    #Deal river
 
 if __name__ == "__main__":
     main()
