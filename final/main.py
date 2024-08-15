@@ -49,7 +49,7 @@ def main():
     #Each player takes turns to perform action
     for player in players:
         added = bet(player, current)
-        print(f"{player.name} now has {player.balance}")
+        print(f"{player.name} balance: {player.balance}")
         pot += added
         print(f"Pot value: {pot}\n")
 
