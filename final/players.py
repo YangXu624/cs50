@@ -31,6 +31,7 @@ class Player:
                 self.fold = True
                 print(f"{self.name} folds!")
                 return self.balance
+            
         else:
             print(f"{self.name} has folded")
             return self.balance
