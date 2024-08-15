@@ -11,5 +11,14 @@ class Player:
         elif "raise" in act:
             s = act.split(" ")
             amt = int(s[1])
-            
+            self.balance = self.balance - amt
+            print(f"Raise by {amt}. Balance = {self.balance}")
+            return self.balance
+        elif act == "call":
+            self.balance = self.balance - current
+            print(f"Call. Balance = {self.balance}")
+            return self.balance
+        elif act == "fold":
+            print(f"Fold. Balance = {self.balance}")
+            return
 

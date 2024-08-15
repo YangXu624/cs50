@@ -1,5 +1,6 @@
 from cards import Card
 from random import choice
+from players import Player
 
 
 #Argument river(list) and deck(list)
@@ -25,6 +26,13 @@ def main():
         for rank in ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']:
             card = Card(rank, suit)
             deck.append(card)
+
+    #Initiate players
+    players = []
+    player1 = Player()
+    players.append(player1)
+
+    
 
     #Give out hand to Player 1 (User)
     hand = ['Card 1', 'Card 2']
