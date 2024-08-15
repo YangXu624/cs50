@@ -2,6 +2,7 @@ from cards import Card
 from random import choice
 
 
+#Argument 
 def round(river, deck):
     #Add one card to the river
     river.append(choice(deck))
