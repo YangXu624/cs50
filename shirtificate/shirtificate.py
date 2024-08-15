@@ -4,7 +4,7 @@ from fpdf import FPDF
 class PDF(FPDF):
     def header(self):
         # Rendering logo:
-        self.image("shirtificate.png", 40, 50, 150)
+        self.image("shirtificate.png", 30, 50, 150)
         # Setting font: helvetica bold 15
         self.set_font("helvetica", "B", 15)
         # Moving cursor to the right:
@@ -19,5 +19,5 @@ class PDF(FPDF):
 pdf = PDF()
 pdf.add_page()
 pdf.set_font("Times", size=50)
-pdf.cell(0, 10, f"Name took CS50", ln = True)
+pdf.cell(80, 50, f"Name took CS50", ln = True)
 pdf.output("shirtificate.pdf")
