@@ -14,7 +14,7 @@ def round(river, deck):
 def bet(pots):
     #Each player takes turns to perform action
     for player in players:
-        #Perform action: Call/check/raise/fold
+        #Perform action: Call/check/raise by n/fold
         player.action()
 
 
