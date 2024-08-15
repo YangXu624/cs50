@@ -1,4 +1,4 @@
-from final.cards import Card
+from cards import Card
 from random import choice
 
 
@@ -21,7 +21,7 @@ def main():
     for i in range(2):
         hand[i] = choice(deck)
         deck.remove(hand[i])
-    print(f"Your hand is {hand}")
+    print(f"Your hand is {hand}\n")
 
     #Pre-river betting
 
@@ -31,8 +31,7 @@ def main():
         print(f"Round {i + 1}")
         #Deal a card to the river
         round(river, deck)
-        print(f"River: {river}")
-        print("")
+        print(f"River: {river}\n")
 
 
 if __name__ == "__main__":
