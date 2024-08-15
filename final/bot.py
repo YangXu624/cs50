@@ -1,0 +1,36 @@
+class Bot:
+    def __init__(self, name, balance=100, fold=False):
+        self.name = name
+        self.balance = balance
+        self.fold = fold
+
+    def action(self, current=2):
+        #Only continue if bot has not folded
+        if self.fold == False:
+
+            #Only allow 'check' if current = 0
+            if act == "check":
+                print(f"{self.name} checks!")
+                return self.balance
+
+            elif "raise" in act:
+                s = act.split(" ")
+                amt = current + int(s[1])
+                self.balance = self.balance - amt
+                print(f"{self.name} raises by {s[1]}!")
+                return self.balance
+
+            elif act == "call":
+                self.balance = self.balance - current
+                print(f"{self.name} calls!")
+                return self.balance
+
+            #If player folds, set fold=True
+            elif act == "fold":
+                self.fold = True
+                print(f"{self.name} folds!")
+                return self.balance
+
+        else:
+            print(f"{self.name} has folded")
+            return self.balance
