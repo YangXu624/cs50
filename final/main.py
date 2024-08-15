@@ -2,14 +2,16 @@ from cards import Card
 from random import choice
 
 
-#Argument 
+#Argument river(list) and deck(list)
 def round(river, deck):
     #Add one card to the river
-    river.append(choice(deck))
+    card = choice(deck)
+    river.append(card)
+    deck.remove(card)
     return river
 
 
-def bet(players):
+def bet(pots):
     #Each player takes turns to perform action
     for player in players:
         #Perform action: Call/check/raise/fold
