@@ -17,8 +17,4 @@ class Card:
     def __repr__(self):
         return self.__str__()
 
-    deck = []
-    for suit in ['spades', 'hearts', 'clubs', 'diamonds']:
-        for rank in ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']:
-            card = Card(rank, suit)
-            deck.append(card)
+
