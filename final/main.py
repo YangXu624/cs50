@@ -70,6 +70,8 @@ def main():
             added = bet(player, current)
             print(f"{player.name} now has {player.balance}")
             current = added
+
+            print(f"Current bet: {current}")
             pot += added
             print(f"Pot value: {pot}\n")
 
