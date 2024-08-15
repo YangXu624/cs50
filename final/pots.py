@@ -3,7 +3,12 @@ class Player:
         self.balance = balance
 
     def action():
-        act = input("Action: ").lower()
+        while True:
+            try:
+                act = input("Action: ").lower()
+                
+            except ValueError:
+                print("Check/call/raise x/fold")
         if act == "check":
             print(f"Check. Balance = {self.balance}")
-        
+
