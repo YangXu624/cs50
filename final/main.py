@@ -45,12 +45,12 @@ def main():
 
     #Pre-river betting
     #Current = Minimum bet
-    current = 2
+    current1 = 2
     #Each player takes turns to perform action
     for player in players:
-        added = bet(player, current)
+        added = bet(player, current1)
         print(f"{player.name} balance: {player.balance}")
-        current = added
+        current1 = added
         pot += added
         print(f"Pot value: {pot}\n")
 
@@ -63,12 +63,12 @@ def main():
         print(f"River: {river}")
 
         #Current = Minimum bet
-        current = 0
+        current2 = 0
         #Each player takes turns to perform action
         for player in players:
-            added = bet(player, current)
+            added = bet(player, current2)
             print(f"{player.name} now has {player.balance}")
-            current = added
+            current2 = added
             pot += added
             print(f"Pot value: {pot}\n")
 
