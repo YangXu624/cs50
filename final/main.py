@@ -81,6 +81,9 @@ def main():
             print(f"Pot value: {pot}\n")
 
     #TBC: Evaluate and compare hand strength to determine winner
+    #Require a function that returns winner
+
+    #Pseudocode: winner.balance += pot then reset pot to 0
 
     #Reveal bot's hand
     print(f"Bot's hand was {bot.hand}")
