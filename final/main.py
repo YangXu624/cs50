@@ -1,5 +1,6 @@
-from pokercards import Card
+from final.cards import Card
 from random import choice
+
 
 def round(river, deck):
     #Add one card to the river
