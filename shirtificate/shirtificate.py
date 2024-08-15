@@ -6,7 +6,7 @@ class PDF(FPDF):
         # Rendering logo:
         self.image("shirtificate.png", 30, 50, 150)
         # Setting font: helvetica bold 15
-        self.set_font("helvetica", "B", 15)
+        self.set_font("helvetica", "B", 70)
         # Moving cursor to the right:
         self.cell(80)
         # Printing title:
@@ -18,6 +18,6 @@ class PDF(FPDF):
 # Instantiation of inherited class
 pdf = PDF()
 pdf.add_page()
-pdf.set_font("Times", size=50)
-pdf.cell(80, 50, f"Name took CS50", ln = True)
+pdf.set_font("Times", size=40)
+pdf.cell(150, 100, f"Name took CS50")
 pdf.output("shirtificate.pdf")
