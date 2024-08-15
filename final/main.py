@@ -1,6 +1,9 @@
 from pokercards import Card
 from random import choice
 
+def round():
+    #
+
 
 def main():
     #Inititate deck
