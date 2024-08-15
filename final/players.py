@@ -4,7 +4,7 @@ class Player:
         self.balance = balance
         self.fold = fold
 
-    def action(self, current):
+    def action(self, current=2):
         #Only continue if player has not folded
         if self.fold == False:
             act = input("Action: ").lower()
@@ -31,7 +31,7 @@ class Player:
                 self.fold = True
                 print(f"{self.name} folds!")
                 return self.balance
-            
+
         else:
             print(f"{self.name} has folded")
             return self.balance
