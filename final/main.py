@@ -60,7 +60,7 @@ def main():
         print(f"Round {i + 1}")
         #Deal a card to the river
         river, deck = round(river, deck)
-        print(f"River: {river}\n")
+        print(f"River: {river}")
 
         #Current = Minimum bet
         current = 2
