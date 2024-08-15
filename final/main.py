@@ -89,22 +89,22 @@ def main():
         #Current = Minimum bet
         current = 0
         #If a player raises, ensure everyone gets a turn to bet again, kept track by raise_count
-    raised_count = 0
-    while raised_count < no_of_players:
-        #Each player takes turns to perform action
-        for player in players:
-            if raised_count == no_of_players:
-                break
+        raised_count = 0
+        while raised_count < no_of_players:
+            #Each player takes turns to perform action
+            for player in players:
+                if raised_count == no_of_players:
+                    break
 
-            added = bet(player, current)
-            print(f"{player.name} balance: {player.balance}")
-            if added > current:
-                raised_count = 0
-            else:
-                raised_count += 1
-            current = added
-            pot += added
-            print(f"Pot value: {pot}\n")
+                added = bet(player, current)
+                print(f"{player.name} balance: {player.balance}")
+                if added > current:
+                    raised_count = 0
+                else:
+                    raised_count += 1
+                current = added
+                pot += added
+                print(f"Pot value: {pot}\n")
 
     #TBC: Evaluate and compare hand strength to determine winner
     #Require a function that returns winner
