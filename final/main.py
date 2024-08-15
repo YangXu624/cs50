@@ -30,6 +30,7 @@ def main():
             card = Card(rank, suit)
             deck.append(card)
 
+
     #Add players into a list called 'players'
     players = []
     #Add user into game
@@ -39,8 +40,10 @@ def main():
     bot = Bot(name="Bot")
     players.append(bot)
 
+
     #Initiate pot
     pot = 0
+
 
     #Deal hands
     for player in players:
@@ -48,21 +51,31 @@ def main():
             player.hand[i] = choice(deck)
             deck.remove(player.hand[i])
 
+
     #Tell user his hand
     print(f"\nYour hand is {player1.hand}\n")
+
 
     #Pre-river betting
     #Current = Minimum bet
     current1 = 2
-    #Each player takes turns to perform action
-    for player in players:
-        added = bet(player, current1)
-        print(f"{player.name} balance: {player.balance}")
-        if added > current1:
-            raised = True
-        current1 = added
-        pot += added
-        print(f"Pot value: {pot}\n")
+    #If a player raises, ensure everyone gets a turn to bet again, kept track by raise_count
+    raised_count = 0
+    while raised_count < no_of_players:
+        #Each player takes turns to perform action
+        for player in players:
+            if raised_count == no_of_players:
+                break
+
+            added = bet(player, current1)
+            print(f"{player.name} balance: {player.balance}")
+            if added > current1:
+                raised_count = 0
+            else:
+                raised_count += 1
+            current1 = added
+            pot += added
+            print(f"Pot value: {pot}\n")
 
     #Iterate rounds
     river = []
