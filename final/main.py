@@ -50,6 +50,7 @@ def main():
     for player in players:
         added = bet(player, current)
         print(f"{player.name} balance: {player.balance}")
+        current = added
         pot += added
         print(f"Pot value: {pot}\n")
 
