@@ -17,6 +17,6 @@ class Card:
     def __repr__(self):
         return self.__str__()
 
-
-card = Card('A', 'spades')
-print(card)
+cards = []
+for suit in ['spades', 'hearts', 'clubs', 'diamonds']:
+    for rank in []
