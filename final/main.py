@@ -12,9 +12,9 @@ def round(river, deck):
     return river, deck
 
 
-def bet(player):
+def bet(player, current):
     #Perform action: Call/check/raise by n/fold
-    player.balance = player.action()
+    player.balance = player.action(current)
 
 
 def main():
@@ -41,9 +41,11 @@ def main():
     print(f"Your hand is {hand}\n")
 
     #Pre-river betting
+    #Current = Minimum bet
+    current = 2
     #Each player takes turns to perform action
     for player in players:
-        bet(player)
+        bet(player, current)
 
     #Iterate rounds
     river = []
