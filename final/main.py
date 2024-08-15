@@ -62,7 +62,7 @@ def main():
         print(f"River: {river}")
 
         #Current = Minimum bet
-        current = 2
+        current = 0
         #Each player takes turns to perform action
         for player in players:
             added = bet(player, current)
