@@ -15,9 +15,12 @@ def round(river, deck):
 def bet(player, current):
     initial = player.balance
     #Perform action: Call/check/raise by n/fold
-    player.balance = player.action(current)
+    try:
+        player.balance = player.action(current)
+        added_to_pot = initial - player.balance
     #If fold, add 0 to pot
-    added_to_pot = initial - player.balance
+    except TypeError:
+        added_to_pot = 0
     return added_to_pot
 
 
