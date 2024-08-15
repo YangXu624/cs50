@@ -1,5 +1,6 @@
 class Player:
-    def __init__(self, balance=100):
+    def __init__(self, name, balance=100):
+        self.name = name
         self.balance = balance
 
     def action(self, current=2):
@@ -21,6 +22,3 @@ class Player:
         elif act == "fold":
             print(f"Fold")
             del self
-
-player = Player()
-player.action()

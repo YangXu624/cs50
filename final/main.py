@@ -31,7 +31,7 @@ def main():
 
     #Initiate players
     players = []
-    player1 = Player()
+    player1 = Player(name="Player 1")
     players.append(player1)
 
     #Initiate pot
@@ -50,7 +50,9 @@ def main():
     #Each player takes turns to perform action
     for player in players:
         added = bet(player, current)
+        print(f"{player.name} now has {player.balance}")
         pot += added
+        print(f"Pot value: {pot}")
 
     #Iterate rounds
     river = []
