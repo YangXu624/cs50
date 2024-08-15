@@ -31,10 +31,10 @@ def main():
 
     #Initiate players
     players = []
-    bot = Bot(name="Bot")
-    players.append(bot)
     player1 = Player(name="Player 1")
     players.append(player1)
+    bot = Bot(name="Bot")
+    players.append(bot)
 
     #Initiate pot
     pot = 0
