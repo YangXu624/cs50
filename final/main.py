@@ -52,7 +52,7 @@ def main():
         added = bet(player, current)
         print(f"{player.name} now has {player.balance}")
         pot += added
-        print(f"Pot value: {pot}")
+        print(f"Pot value: {pot}\n")
 
     #Iterate rounds
     river = []
