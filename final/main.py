@@ -11,12 +11,11 @@ def main():
             deck.append(card)
 
     #Give out hand to Player 1 (User)
-    hand = ['', '']
-    hand[0] = choice(deck)
-    deck.remove(hand[0])
-    hand[1] = choice(deck)
-    deck.remove(hand[1])
-
+    hand = ['Card 1', 'Card 2']
+    for i in range(2):
+        hand[i] = choice(deck)
+        deck.remove(hand[i])
+    print(hand)
     #Pre-river betting
     #Deal river
 
