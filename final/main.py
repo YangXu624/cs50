@@ -27,9 +27,11 @@ def main():
     #Iterate rounds
     river = []
     for i in range(5):
+        print(f"Round {i + 1}")
         #Deal a card to the river
         round(river, deck)
         print(f"River: {river}")
+        print("")
 
 
 if __name__ == "__main__":
