@@ -32,7 +32,8 @@ def main():
     player1 = Player()
     players.append(player1)
 
-    
+    #Initiate pot
+    pot = 0
 
     #Give out hand to Player 1 (User)
     hand = ['Card 1', 'Card 2']
@@ -42,6 +43,7 @@ def main():
     print(f"Your hand is {hand}\n")
 
     #Pre-river betting
+    bet(players)
 
     #Iterate rounds
     river = []
