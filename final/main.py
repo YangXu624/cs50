@@ -20,12 +20,16 @@ def main():
     for i in range(2):
         hand[i] = choice(deck)
         deck.remove(hand[i])
-    print(hand)
+    print(f"Your hand is {hand}")
 
     #Pre-river betting
+
     #Iterate rounds
     river = []
-    
+    for i in range(5):
+        #Deal a card to the river
+        round(river, deck)
+        print(f"River: {river}")
 
 
 if __name__ == "__main__":
