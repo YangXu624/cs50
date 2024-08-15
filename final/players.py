@@ -11,25 +11,25 @@ class Player:
 
             #Only allow 'check' if current = 0
             if act == "check":
-                print(f"Check")
+                print(f"{self.name} checks!")
                 return self.balance
 
             elif "raise" in act:
                 s = act.split(" ")
                 amt = int(s[1])
                 self.balance = self.balance - amt
-                print(f"Raise by {amt}")
+                print(f"{self.name} raises by {amt}!")
                 return self.balance
 
             elif act == "call":
                 self.balance = self.balance - current
-                print(f"Call")
+                print(f"{self.name} calls!")
                 return self.balance
 
             #If player folds, set fold=True
             elif act == "fold":
                 self.fold = True
-                print(f"Fold")
+                print(f"{self.name} folds!")
                 return self.balance
         else:
             print(f"{self.name} has folded")
