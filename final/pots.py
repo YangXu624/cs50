@@ -1,5 +1,5 @@
 class Player:
-    def __init__(self, balance=1000):
+    def __init__(self, balance=100):
         self.balance = balance
 
     def action():
