@@ -10,6 +10,7 @@ def main():
             card = Card(rank, suit)
             deck.append(card)
 
+    #Give out hand to Player 1 (User)
     hand = ['', '']
     hand[0] = choice(deck)
     deck.remove(hand[0])
