@@ -4,24 +4,28 @@ class Player:
         self.balance = balance
         self.fold = fold
 
-    def action(self, current=2):
+    def action(self, current):
         #Only continue if player has not folded
         if self.fold == False:
             act = input("Action: ").lower()
 
+            #Only allow 'check' if current = 0
             if act == "check":
                 print(f"Check")
                 return self.balance
+
             elif "raise" in act:
                 s = act.split(" ")
                 amt = int(s[1])
                 self.balance = self.balance - amt
                 print(f"Raise by {amt}")
                 return self.balance
+
             elif act == "call":
                 self.balance = self.balance - current
                 print(f"Call")
                 return self.balance
+
             #If player folds, set fold=True
             elif act == "fold":
                 self.fold = True
