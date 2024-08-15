@@ -20,7 +20,7 @@ class Player:
             return self.balance
         elif act == "fold":
             print(f"Fold")
-            return
+            del self
 
 player = Player()
 player.action()
