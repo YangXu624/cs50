@@ -86,8 +86,8 @@ def main():
         river, deck = round(river, deck)
         print(f"River: {river}")
 
+        #Endround variable: Ends round when everyone has placed bets
         endround = False
-
         #Current = Minimum bet
         current = 0
         #If a player raises, ensure everyone gets a turn to bet again, kept track by raise_count
@@ -95,6 +95,10 @@ def main():
         while raised_count < no_of_players:
             #Each player takes turns to perform action
             for player in players:
+                if raised_count == no_of_players:
+                    endround = True
+                    break
+
                 added = bet(player, current)
                 print(f"{player.name} balance: {player.balance}")
                 if added > current:
@@ -105,9 +109,6 @@ def main():
                 pot += added
                 print(f"Pot value: {pot}\n")
 
-                if raised_count == no_of_players:
-                    endround = True
-                    break
 
             if endround: break
 
