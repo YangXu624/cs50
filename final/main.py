@@ -62,10 +62,10 @@ def main():
     current = 2
     #If a player raises, ensure everyone gets a turn to bet again, kept track by raise_count
     raised_count = 0
-    while raised_count < no_of_players - 1:
+    while raised_count < no_of_players:
         #Each player takes turns to perform action
         for player in players:
-            if raised_count == no_of_players:
+            if raised_count == no_of_players - 1:
                 break
 
             added = bet(player, current)
@@ -90,10 +90,10 @@ def main():
         current = 0
         #If a player raises, ensure everyone gets a turn to bet again, kept track by raise_count
         raised_count = 0
-        while raised_count < no_of_players - 1:
+        while raised_count < no_of_players:
             #Each player takes turns to perform action
             for player in players:
-                if raised_count == no_of_players:
+                if raised_count == no_of_players - 1:
                     break
 
                 added = bet(player, current)
