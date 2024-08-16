@@ -15,9 +15,15 @@ class Bot:
             #Generate a number, to determine probability
             number = randint(1, 100)
 
-            if current == 0 and number < 51:
-                print(f"{self.name} checks!")
-                return self.balance
+            if current == 0:
+                if number < 51:
+                    print(f"{self.name} checks!")
+                    return self.balance
+                else:
+                    amt = current + 10
+                    self.balance = self.balance - amt
+                    print(f"{self.name} raises by 10!")
+                    return self.balance
 
             if number > 0 and number < 31:
                 amt = current + 10
