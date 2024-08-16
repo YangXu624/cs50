@@ -27,13 +27,13 @@ class Bot:
                     return self.balance
 
             if number > 0 and number < 31:
-                amt = current + 10
+                amt = diff + 10
                 self.balance = self.balance - amt
                 print(f"{self.name} raises by 10!")
                 return self.balance
 
             elif number > 30 and number < 91:
-                self.balance = self.balance - current
+                self.balance = self.balance - diff
                 print(f"{self.name} calls!")
                 return self.balance
 
