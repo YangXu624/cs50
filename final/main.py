@@ -95,7 +95,7 @@ def main():
         while raised_count < no_of_players:
             #Each player takes turns to perform action
             for player in players:
-                if raised_count == no_of_players:
+                if raised_count == no_of_players - 1:
                     endround = True
                     break
 
@@ -110,7 +110,6 @@ def main():
                 print(f"Pot value: {pot}\n")
 
             if endround: break
-        if endround: break
 
     #TBC: Evaluate and compare hand strength to determine winner
     #Require a function that returns winner
