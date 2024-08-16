@@ -86,6 +86,8 @@ def main():
         river, deck = round(river, deck)
         print(f"River: {river}")
 
+        endround = False
+
         #Current = Minimum bet
         current = 0
         #If a player raises, ensure everyone gets a turn to bet again, kept track by raise_count
@@ -94,6 +96,7 @@ def main():
             #Each player takes turns to perform action
             for player in players:
                 if raised_count == no_of_players - 1:
+                    endround = True
                     break
 
                 added = bet(player, current)
@@ -105,6 +108,9 @@ def main():
                 current = added
                 pot += added
                 print(f"Pot value: {pot}\n")
+
+            if endround: break
+        if endround: break
 
     #TBC: Evaluate and compare hand strength to determine winner
     #Require a function that returns winner
