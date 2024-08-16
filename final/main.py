@@ -74,7 +74,7 @@ def main():
                 raised_count = 0
             else:
                 raised_count += 1
-            current1 = added
+            current = added
             pot += added
             print(f"Pot value: {pot}\n")
 
