@@ -14,7 +14,7 @@ class Player:
 
             #Only allow 'check' if current = 0
             if act == "check":
-                if current == 0:
+                if diff == 0:
                     print(f"{self.name} checks!")
                     return self.balance
                 else:
