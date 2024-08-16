@@ -22,7 +22,7 @@ class Player:
 
             elif "raise" in act:
                 s = act.split(" ")
-                amt = current + int(s[1])
+                amt = diff + int(s[1])
                 self.balance = self.balance - amt
                 print(f"{self.name} raises by {s[1]}!")
                 return self.balance
