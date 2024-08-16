@@ -8,6 +8,8 @@ class Player:
     def action(self, current=2):
         #Only continue if player has not folded
         if self.fold == False:
+            act = ""
+            while act not in ("fold", "check", "call") or 
             act = input("Action: ").lower()
 
             #Only allow 'check' if current = 0
