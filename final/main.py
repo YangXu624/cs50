@@ -88,6 +88,9 @@ def main():
 
         #Endround variable: Ends round when everyone has placed bets
         endround = False
+        #Reset everyone's current bet to 0
+        for player in players:
+            player.current_bet = 0
         #Current = Minimum bet
         current = 0
         #If a player raises, ensure everyone gets a turn to bet again, kept track by raise_count
@@ -99,9 +102,9 @@ def main():
                     endround = True
                     break
 
-                added = bet(player, current)
+                player.current_bet = bet(player, current)
                 print(f"{player.name} balance: {player.balance}")
-                if added > current:
+                if player.current_bet > current:
                     raised_count = 0
                 else:
                     raised_count += 1
