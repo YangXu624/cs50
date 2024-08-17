@@ -63,7 +63,36 @@ def main():
     current = 2
     #If a player raises, ensure everyone gets a turn to bet again, kept track by raise_count
     raised_count = 0
-    while raised_count < no_of_players:
+    #Each player takes turns to perform action
+    for player in players:
+        if raised_count == no_of_players:
+            break
+
+        added = bet(player, current)
+        print(f"{player.name} balance: {player.balance}")
+        if added > current:
+            raised_count = 0
+        else:
+            raised_count += 1
+        current = player.current_bet
+        pot += added
+        print(f"Pot value: {pot}\n")
+
+    #Iterate rounds
+    river = []
+    for i in range(5):
+        print(f"Round {i + 1}")
+        #Deal a card to the river
+        river, deck = round(river, deck)
+        print(f"River: {river}")
+
+        #Reset everyone's current bet to 0
+        for player in players:
+            player.current_bet = 0
+        #Current = Minimum bet
+        current = 0
+        #If a player raises, ensure everyone gets a turn to bet again, kept track by raise_count
+        raised_count = 0
         #Each player takes turns to perform action
         for player in players:
             if raised_count == no_of_players:
@@ -79,41 +108,7 @@ def main():
             pot += added
             print(f"Pot value: {pot}\n")
 
-    #Iterate rounds
-    river = []
-    for i in range(5):
-        print(f"Round {i + 1}")
-        #Deal a card to the river
-        river, deck = round(river, deck)
-        print(f"River: {river}")
 
-        #Endround variable: Ends round when everyone has placed bets
-        endround = False
-        #Reset everyone's current bet to 0
-        for player in players:
-            player.current_bet = 0
-        #Current = Minimum bet
-        current = 0
-        #If a player raises, ensure everyone gets a turn to bet again, kept track by raise_count
-        raised_count = 0
-        while raised_count < no_of_players:
-            #Each player takes turns to perform action
-            for player in players:
-                added = bet(player, current)
-                print(f"{player.name} balance: {player.balance}")
-                if player.current_bet > current:
-                    raised_count = 0
-                else:
-                    raised_count += 1
-                current = added
-                pot += added
-                print(f"Pot value: {pot}\n")
-
-                if raised_count == no_of_players:
-                    endround = True
-                    break
-
-            if endround: break
 
     #TBC: Evaluate and compare hand strength to determine winner
     #Require a function that returns winner
