@@ -7,7 +7,7 @@ class Player:
         self.balance = balance
         self.fold = fold
 
-    def action(self, current=2):
+    def action(self, current):
         diff = current - self.current_bet
         #Only continue if player has not folded
         if self.fold == False:
