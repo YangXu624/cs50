@@ -131,7 +131,11 @@ def game():
     for player in players:
         print(f"{player.name}'s hand was {player.hand}")
 
-###################################################################################################
+#####################################################################################################
+    winner = compare_hands(players)
+    print(f"The winner is {winner.name} with the hand {winner.hand}")
+
+
 
 from collections import Counter
 
