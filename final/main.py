@@ -19,7 +19,6 @@ def bet(player, current):
     #Perform action: Call/check/raise by n/fold
     player.balance = player.action(current)
     added_to_pot = initial - player.balance
-    print(f"ADDED: {added_to_pot}")
     return added_to_pot
 
 
@@ -38,8 +37,9 @@ def main():
     player1 = Player(name="Player 1")
     players.append(player1)
     #Add bot into game
-    bot = Bot(name="Bot")
-    players.append(bot)
+    bot1, bot2 = Bot(name="Bot 1"), Bot(name="Bot 2")
+    players.append(bot1)
+    players.append(bot2)
     no_of_players = len(players)
 
 

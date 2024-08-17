@@ -13,7 +13,6 @@ class Bot:
 
     def action(self, current):
         #Only continue if bot has not folded
-        print(f"CURRENT = {current}")
         if self.fold == False:
             diff = current - self.current_bet
             #Generate a number, to determine probability
