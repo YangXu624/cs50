@@ -15,6 +15,8 @@ class Player:
                 try:
                     act = input("Action: ").lower()
 
+                    
+
                     #Only allow 'check' if current = 0
                     if act == "check":
                         if diff == 0:
@@ -33,7 +35,7 @@ class Player:
                     elif act == "call":
                         if diff == 0:
                             print("Can't call when there is no bet. Did you mean 'call'?")
-                            raise ValueError("Can't call when there is no bet. Did you mean 'call'?")
+                            raise ValueError("Can't call when there is no bet. Did you mean 'check'?")
                         else:
                             self.balance = self.balance - diff
                             print(f"{self.name} calls!")
