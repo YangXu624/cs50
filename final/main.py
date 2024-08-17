@@ -141,7 +141,7 @@ from collections import Counter
 
 def hand_rank(hand):
     """Evaluate the strength of a hand."""
-    ranks = '23456789TJQKA'
+    ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
     rank_values = {r: i for i, r in enumerate(ranks, 2)}
     rank_counts = Counter(card.rank for card in hand)
     suits = [card.suit for card in hand]
@@ -171,6 +171,7 @@ def hand_rank(hand):
         return (1, sorted_ranks)  # One pair
     else:
         return (0, sorted_ranks)  # High card
+
 
 def compare_hands(players):
     """Compare all players' hands to determine the winner."""
