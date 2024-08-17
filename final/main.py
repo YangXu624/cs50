@@ -105,6 +105,7 @@ def main():
             for player in players:
                 if raised_count == no_of_players - 1:
                     endround = True
+                    break
 
                 added = bet(player, current)
                 player.current_bet += added
