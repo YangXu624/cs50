@@ -19,6 +19,7 @@ def bet(player, current):
     #Perform action: Call/check/raise by n/fold
     player.balance = player.action(current)
     added_to_pot = initial - player.balance
+    print(f"ADDED: {added_to_pot}")
     return added_to_pot
 
 
