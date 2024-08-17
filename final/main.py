@@ -69,8 +69,9 @@ def main():
             break
 
         added = bet(player, current)
+        player.current_bet += added
         print(f"{player.name} balance: {player.balance}")
-        if added > current:
+        if player.current_bet > current:
             raised_count = 0
         else:
             raised_count += 1
@@ -99,8 +100,9 @@ def main():
                 break
 
             added = bet(player, current)
+            player.current_bet += added
             print(f"{player.name} balance: {player.balance}")
-            if added > current:
+            if player.current_bet > current:
                 raised_count = 0
             else:
                 raised_count += 1
