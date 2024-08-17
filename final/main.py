@@ -22,7 +22,7 @@ def bet(player, current):
     return added_to_pot
 
 
-def main():
+def game():
     #Create deck
     deck = []
     for suit in ['spades', 'hearts', 'clubs', 'diamonds']:
@@ -131,6 +131,9 @@ def main():
     #Reveal bot's hand
     for player in players:
         print(f"{player.name}'s hand was {player.hand}")
+
+def main():
+    game()
 
 if __name__ == "__main__":
     main()
