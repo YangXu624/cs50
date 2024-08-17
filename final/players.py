@@ -19,7 +19,7 @@ class Player:
 
                     if act in ['call', 'check', 'fold']:
                         continue
-                    elif search(act):
+                    elif search(r"^raise \d", act):
                         continue
                     else:
                         raise ValueError
