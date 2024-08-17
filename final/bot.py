@@ -3,9 +3,9 @@ from random import randint
 
 
 class Bot:
-    def __init__(self, name, hand=[], current_bet=0, balance=100, fold=False):
+    def __init__(self, name, hand=None, current_bet=0, balance=100, fold=False):
         self.name = name
-        self.hand = hand
+        self.hand = hand if hand is not None else []  # Initialize an empty hand
         #Within a specific round, keeps track of how much the player has already betted
         self.current_bet = current_bet
         self.balance = balance
