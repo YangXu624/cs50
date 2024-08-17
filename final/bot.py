@@ -11,10 +11,11 @@ class Bot:
         self.balance = balance
         self.fold = fold
 
-    def action(self, current=2):
+    def action(self, current):
         #Only continue if bot has not folded
         if self.fold == False:
             diff = current - self.current_bet
+            print(f"DIFF = {diff}")
             #Generate a number, to determine probability
             number = randint(1, 100)
 
