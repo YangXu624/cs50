@@ -45,6 +45,9 @@ class Player:
                             print("Can't call when there is no bet. Did you mean 'call'?")
                             raise ValueError("Can't call when there is no bet. Did you mean 'check'?")
                         else:
+                            if diff > self.balance:
+                                print("Insufficient balance!")
+                                raise ValueError
                             self.balance = self.balance - diff
                             print(f"{self.name} calls!")
                             return self.balance
@@ -54,7 +57,7 @@ class Player:
                         self.fold = True
                         print(f"{self.name} folds!")
                         return self.balance
-                    
+
                 except ValueError:
                     print("")
                     continue
