@@ -131,6 +131,51 @@ def game():
     for player in players:
         print(f"{player.name}'s hand was {player.hand}")
 
+###################################################################################################
+
+from collections import Counter
+
+def hand_rank(hand):
+    """Evaluate the strength of a hand."""
+    ranks = '23456789TJQKA'
+    rank_values = {r: i for i, r in enumerate(ranks, 2)}
+    rank_counts = Counter(card.rank for card in hand)
+    suits = [card.suit for card in hand]
+    rank_histogram = sorted(rank_counts.values(), reverse=True)
+    sorted_ranks = sorted((rank_values[rank] for rank in rank_counts), reverse=True)
+
+    # Check for flush (all cards of the same suit)
+    flush = len(set(suits)) == 1
+    # Check for straight (consecutive ranks)
+    straight = len(rank_histogram) == 5 and (sorted_ranks[0] - sorted_ranks[-1] == 4)
+
+    if flush and straight:
+        return (8, sorted_ranks)  # Straight flush
+    elif rank_histogram == [4, 1]:
+        return (7, sorted_ranks)  # Four of a kind
+    elif rank_histogram == [3, 2]:
+        return (6, sorted_ranks)  # Full house
+    elif flush:
+        return (5, sorted_ranks)  # Flush
+    elif straight:
+        return (4, sorted_ranks)  # Straight
+    elif rank_histogram == [3, 1, 1]:
+        return (3, sorted_ranks)  # Three of a kind
+    elif rank_histogram == [2, 2, 1]:
+        return (2, sorted_ranks)  # Two pair
+    elif rank_histogram == [2, 1, 1, 1]:
+        return (1, sorted_ranks)  # One pair
+    else:
+        return (0, sorted_ranks)  # High card
+
+def compare_hands(players):
+    """Compare all players' hands to determine the winner."""
+    player_ranks = [(player, hand_rank(player.hand)) for player in players]
+    player_ranks.sort(key=lambda x: x[1], reverse=True)
+    winner = player_ranks[0][0]
+    return winner
+############################################################################################
+
 
 def main():
     game()
