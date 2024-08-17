@@ -75,7 +75,7 @@ def main():
                 raised_count = 0
             else:
                 raised_count += 1
-            current = added
+            current = player.current_bet
             pot += added
             print(f"Pot value: {pot}\n")
 
