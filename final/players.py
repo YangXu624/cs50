@@ -21,7 +21,7 @@ class Player:
                             print(f"{self.name} checks!")
                             return self.balance
                         else:
-                            print("Cannot check!")
+                            print("Cannot check when bet is not zero! Did you mean 'call'?\n")
 
                     elif "raise" in act:
                         s = act.split(" ")
@@ -32,6 +32,7 @@ class Player:
 
                     elif act == "call":
                         if diff == 0:
+                            print("Can't call when there is no bet. Did you mean 'call'?")
                             raise ValueError("Can't call when there is no bet. Did you mean 'call'?")
                         else:
                             self.balance = self.balance - diff
