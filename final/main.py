@@ -37,7 +37,8 @@ def game():
     player1 = Player(name="Player 1")
     players.append(player1)
     #Add bot into game
-    bot1, bot2 = Bot(name="Bot 1"), Bot(name="Bot 2")
+    bot1 = Bot(name="Bot 1")
+    bot2 = Bot(name="Bot 2")
     players.append(bot1)
     players.append(bot2)
     no_of_players = len(players)
@@ -50,8 +51,9 @@ def game():
     #Deal hands
     for player in players:
         for i in range(2):
-            player.hand[i] = choice(deck)
-            deck.remove(player.hand[i])
+            card = choice(deck)
+            player.hand.append(card)
+            deck.remove(card)
 
 
     #Tell user his hand
