@@ -34,7 +34,7 @@ class Player:
                         s = act.split(" ")
                         amt = diff + int(s[1])
                         if amt > self.balance:
-                            print("Insufficient balance!")
+                            print(f"Insufficient balance! You only have {self.balance}")
                             raise ValueError
                         self.balance = self.balance - amt
                         print(f"{self.name} raises by {s[1]}!")
@@ -46,7 +46,7 @@ class Player:
                             raise ValueError("Can't call when there is no bet. Did you mean 'check'?")
                         else:
                             if diff > self.balance:
-                                print("Insufficient balance!")
+                                print(f"Insufficient balance! You only have {self.balance}")
                                 raise ValueError
                             self.balance = self.balance - diff
                             print(f"{self.name} calls!")
