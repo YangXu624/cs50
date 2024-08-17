@@ -18,7 +18,7 @@ class Player:
                 try:
                     act = input("Action: ").lower().strip()
 
-                    if act not in ['call', 'check', 'fold'] or search(r"^raise \d+$", act) == False:
+                    if act not in ['call', 'check', 'fold'] and search(r"^raise \d+$", act) == False:
                         print("Invalid action. Usage: 'call', 'check', 'raise (n)', 'fold'")
                         raise ValueError
 
