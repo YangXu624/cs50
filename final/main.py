@@ -99,11 +99,7 @@ def main():
         while raised_count < no_of_players:
             #Each player takes turns to perform action
             for player in players:
-                if raised_count == no_of_players:
-                    endround = True
-                    break
-
-                player.current_bet = bet(player, current)
+                added = bet(player, current)
                 print(f"{player.name} balance: {player.balance}")
                 if player.current_bet > current:
                     raised_count = 0
@@ -113,6 +109,9 @@ def main():
                 pot += added
                 print(f"Pot value: {pot}\n")
 
+                if raised_count == no_of_players:
+                    endround = True
+                    break
 
             if endround: break
 
