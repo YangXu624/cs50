@@ -23,7 +23,7 @@ class Bot:
                     print(f"{self.name} checks!")
                     return self.balance
                 else:
-                    amt = current + 10
+                    amt = diff + 10
                     self.balance = self.balance - amt
                     print(f"{self.name} raises by 10!")
                     return self.balance
