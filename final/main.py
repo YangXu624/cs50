@@ -83,9 +83,6 @@ def main():
             pot += added
             print(f"Pot value: {pot}\n")
 
-        if endround == True:
-            break
-
     #Iterate rounds
     river = []
     for i in range(5):
