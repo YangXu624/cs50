@@ -94,21 +94,28 @@ def main():
         current = 0
         #If a player raises, ensure everyone gets a turn to bet again, kept track by raise_count
         raised_count = 0
-        #Each player takes turns to perform action
-        for player in players:
-            if raised_count == no_of_players:
-                break
+        #Initiate endround variable to end loop when round ends
+        endround == False
+        while endround == False:
+            #Each player takes turns to perform action
+            for player in players:
+                if raised_count == no_of_players:
+                    endround == True
+                    break
 
-            added = bet(player, current)
-            player.current_bet += added
-            print(f"{player.name} balance: {player.balance}")
-            if player.current_bet > current:
-                raised_count = 0
-            else:
-                raised_count += 1
-            current = player.current_bet
-            pot += added
-            print(f"Pot value: {pot}\n")
+                added = bet(player, current)
+                player.current_bet += added
+                print(f"{player.name} balance: {player.balance}")
+                if player.current_bet > current:
+                    raised_count = 0
+                else:
+                    raised_count += 1
+                current = player.current_bet
+                pot += added
+                print(f"Pot value: {pot}\n")
+
+            if endround == True:
+                break
 
 
 
