@@ -129,7 +129,8 @@ def main():
     #Pseudocode: winner.balance += pot then reset pot to 0
 
     #Reveal bot's hand
-    print(f"Bot's hand was {bot.hand}")
+    for player in players:
+        print(f"{player.name}'s hand was {player.hand}")
 
 if __name__ == "__main__":
     main()
