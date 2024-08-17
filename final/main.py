@@ -122,7 +122,6 @@ def game():
                 break
 
 
-
     #TBC: Evaluate and compare hand strength to determine winner
     #Require a function that returns winner
 
@@ -132,8 +131,10 @@ def game():
     for player in players:
         print(f"{player.name}'s hand was {player.hand}")
 
+
 def main():
     game()
+
 
 if __name__ == "__main__":
     main()
