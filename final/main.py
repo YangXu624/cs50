@@ -41,6 +41,7 @@ def game():
     players.append(bot1)
     players.append(bot2)
     no_of_players = len(players)
+    print(players)
 
 
     #Initiate pot
