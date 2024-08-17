@@ -11,33 +11,41 @@ class Player:
         diff = current - self.current_bet
         #Only continue if player has not folded
         if self.fold == False:
-            act = input("Action: ").lower()
+            while True:
+                try:
+                    act = input("Action: ").lower()
 
-            #Only allow 'check' if current = 0
-            if act == "check":
-                if diff == 0:
-                    print(f"{self.name} checks!")
-                    return self.balance
-                else:
-                    print("Cannot check!")
+                    #Only allow 'check' if current = 0
+                    if act == "check":
+                        if diff == 0:
+                            print(f"{self.name} checks!")
+                            return self.balance
+                        else:
+                            print("Cannot check!")
 
-            elif "raise" in act:
-                s = act.split(" ")
-                amt = diff + int(s[1])
-                self.balance = self.balance - amt
-                print(f"{self.name} raises by {s[1]}!")
-                return self.balance
+                    elif "raise" in act:
+                        s = act.split(" ")
+                        amt = diff + int(s[1])
+                        self.balance = self.balance - amt
+                        print(f"{self.name} raises by {s[1]}!")
+                        return self.balance
 
-            elif act == "call":
-                self.balance = self.balance - diff
-                print(f"{self.name} calls!")
-                return self.balance
+                    elif act == "call":
+                        if diff == 0:
+                            raise ValueError("Can't call when there is no bet. Did you mean 'call'?")
+                        else:
+                            self.balance = self.balance - diff
+                            print(f"{self.name} calls!")
+                            return self.balance
 
-            #If player folds, set fold=True
-            elif act == "fold":
-                self.fold = True
-                print(f"{self.name} folds!")
-                return self.balance
+                    #If player folds, set fold=True
+                    elif act == "fold":
+                        self.fold = True
+                        print(f"{self.name} folds!")
+                        return self.balance
+                except ValueError:
+                    print("")
+                    continue
 
         else:
             print(f"{self.name} has folded")
