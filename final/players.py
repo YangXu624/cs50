@@ -9,6 +9,7 @@ class Player:
         self.balance = balance
         self.fold = fold
 
+
     def action(self, current):
         diff = current - self.current_bet
         #Only continue if player has not folded
@@ -17,11 +18,8 @@ class Player:
                 try:
                     act = input("Action: ").lower().strip()
 
-                    if act in ['call', 'check', 'fold']:
-                        continue
-                    elif search(r"^raise \d", act):
-                        continue
-                    else:
+                    if act not in ['call', 'check', 'fold'] or search(r"^raise \d+$", act) == False:
+                        print("Invalid action. Usage: 'call', 'check', 'raise (n)', 'fold'")
                         raise ValueError
 
                     #Only allow 'check' if current = 0
@@ -35,6 +33,9 @@ class Player:
                     elif "raise" in act:
                         s = act.split(" ")
                         amt = diff + int(s[1])
+                        if amt > self.balance:
+                            print("Insufficient balance!")
+                            raise ValueError
                         self.balance = self.balance - amt
                         print(f"{self.name} raises by {s[1]}!")
                         return self.balance
@@ -53,6 +54,7 @@ class Player:
                         self.fold = True
                         print(f"{self.name} folds!")
                         return self.balance
+                    
                 except ValueError:
                     print("")
                     continue
