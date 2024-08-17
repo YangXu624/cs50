@@ -1,3 +1,5 @@
+from re import search
+
 class Player:
     def __init__(self, name, hand=['Card 1', 'Card 2'], current_bet=0, balance=100, fold=False):
         self.name = name
@@ -13,9 +15,14 @@ class Player:
         if self.fold == False:
             while True:
                 try:
-                    act = input("Action: ").lower()
+                    act = input("Action: ").lower().strip()
 
-                    
+                    if act in ['call', 'check', 'fold']:
+                        continue
+                    elif search(act):
+                        continue
+                    else:
+                        raise ValueError
 
                     #Only allow 'check' if current = 0
                     if act == "check":
