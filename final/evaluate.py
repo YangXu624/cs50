@@ -175,6 +175,7 @@ def ReturnStrongestHand(allPlayerCards, player):
             player.handstrength = 2
 
         else:
+            print("HIGHCARD")
             player.handstrength = 1
             return player.hand
 
