@@ -132,7 +132,7 @@ def game():
         strongest_hand = ReturnStrongestHand(allPlayerCards, player)
 
     #Returns a list of players who share the STRONGEST HANDSTRENGTH
-    ReturnWinner(players)
+    print(ReturnWinner(players))
 
     #Require a function that returns winner
     print()
