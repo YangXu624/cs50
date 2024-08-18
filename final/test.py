@@ -149,8 +149,10 @@ def game():
     #Deal hands
     for player in players:
         for i in range(2):
-            player.hand[i] = choice(deck)
-            deck.remove(player.hand[i])
+            card = choice(deck)
+            player.hand.append(card)
+            deck.remove(card)
+        print(player.name, player.hand)
 
 
     #Tell user his hand
