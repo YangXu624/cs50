@@ -2,7 +2,6 @@ from cards import Card
 from random import choice
 from players import Player
 from bot import Bot
-from evaluate import ReturnStrongestHand, ReturnWinner
 
 
 #Argument: river and deck (which are both lists), returns an updated river and deck
@@ -21,7 +20,6 @@ def bet(player, current):
     player.balance = player.action(current)
     added_to_pot = initial - player.balance
     return added_to_pot
-
 
 
 def game():
@@ -43,6 +41,7 @@ def game():
     players.append(bot1)
     players.append(bot2)
     no_of_players = len(players)
+    print(players)
 
 
     #Initiate pot
@@ -55,6 +54,7 @@ def game():
             card = choice(deck)
             player.hand.append(card)
             deck.remove(card)
+        print(player.name, player.hand)
 
 
     #Tell user his hand
@@ -125,29 +125,64 @@ def game():
                 break
 
 
-    #Iterate through players, appends dictionary as such: {'PLAYERNAME': [PLAYERSTRONGESTHAND]}
-    PlayersStrongestHand = {}
-    for player in players:
-        allPlayerCards = river + player.hand
-        PlayersStrongestHand[player.name] = ReturnStrongestHand(allPlayerCards, player)
-
-    #Returns a list of players who share the STRONGEST HANDSTRENGTH
-    winner_list = ReturnWinner(players)
-    #If there is only 1 player with the strongest hand, he is the winner
-    if len(winner_list) == 1:
-        print(f"Winner is {winner_list[0]}!")
-    #Else, REQUIRE FUNCTION TO COMPARE WITHIN ONE HANDSTRENGTH TIER
-    #Can access players' strongest hand using dictionary 'PlayersStrongestHand'
-    else:
-        print(f"Winners are {winner_list}")
-
+    #TBC: Evaluate and compare hand strength to determine winner
     #Require a function that returns winner
 
     #Pseudocode: winner.balance += pot then reset pot to 0
 
     #Reveal bot's hand
     for player in players:
-        print(f"{player.name}'s hand was {player.hand}, forming a strongest handstrength of {PlayersStrongestHand[player.name]}")
+        print(f"{player.name}'s hand was {player.hand}")
+
+#####################################################################################################
+    winner = compare_hands(players)
+    print(f"The winner is {winner.name} with the hand {winner.hand}")
+
+
+
+from collections import Counter
+
+def hand_rank(hand):
+    """Evaluate the strength of a hand."""
+    ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+    rank_values = {r: i for i, r in enumerate(ranks, 2)}
+    rank_counts = Counter(card.rank for card in hand)
+    suits = [card.suit for card in hand]
+    rank_histogram = sorted(rank_counts.values(), reverse=True)
+    sorted_ranks = sorted((rank_values[rank] for rank in rank_counts), reverse=True)
+
+    # Check for flush (all cards of the same suit)
+    flush = len(set(suits)) == 1
+    # Check for straight (consecutive ranks)
+    straight = len(rank_histogram) == 5 and (sorted_ranks[0] - sorted_ranks[-1] == 4)
+
+    if flush and straight:
+        return (8, sorted_ranks)  # Straight flush
+    elif rank_histogram == [4, 1]:
+        return (7, sorted_ranks)  # Four of a kind
+    elif rank_histogram == [3, 2]:
+        return (6, sorted_ranks)  # Full house
+    elif flush:
+        return (5, sorted_ranks)  # Flush
+    elif straight:
+        return (4, sorted_ranks)  # Straight
+    elif rank_histogram == [3, 1, 1]:
+        return (3, sorted_ranks)  # Three of a kind
+    elif rank_histogram == [2, 2, 1]:
+        return (2, sorted_ranks)  # Two pair
+    elif rank_histogram == [2, 1, 1, 1]:
+        return (1, sorted_ranks)  # One pair
+    else:
+        return (0, sorted_ranks)  # High card
+
+
+def compare_hands(players):
+    """Compare all players' hands to determine the winner."""
+    player_ranks = [(player, hand_rank(player.hand)) for player in players]
+    player_ranks.sort(key=lambda x: x[1], reverse=True)
+    winner = player_ranks[0][0]
+    return winner
+############################################################################################
 
 
 def main():
