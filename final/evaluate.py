@@ -120,27 +120,33 @@ def ReturnStrongestHand(allPlayerCards):
     for combination in allCombinations:
         FourOfAKind = ReturnFourOfAKind(combination)
         if FourOfAKind != None:
-            return StoredFourOfAKind.append(FourOfAKind)
+            StoredFourOfAKind.append(FourOfAKind)
+            return StoredFourOfAKind
 
         FullHouse = ReturnFullHouse(combination)
         if FullHouse != None:
-            return StoredFullHouse.append(FullHouse)
+            StoredFullHouse.append(FullHouse)
+            return StoredFullHouse
 
         Flush = ReturnFlush(combination)
         if Flush != None:
-            return StoredFlush.append(Flush)
+            StoredFlush.append(Flush)
+            return StoredFlush
 
         Straight = ReturnStraight(combination)
         if Straight != None:
-            return StoredStraight.append(Straight)
+            StoredStraight.append(Straight)
+            return StoredStraight
 
         Triple = ReturnTriple(combination)
         if Triple != None:
-            return StoredTriple.append(Triple)
+            StoredTriple.append(Triple)
+            return StoredTriple
 
         TwoPair = ReturnTwoPair(combination)
         if TwoPair != None:
-            return StoredTwoPair.append(TwoPair)
+            StoredTwoPair.append(TwoPair)
+            return StoredTwoPair
 
         Pair = ReturnPair(combination)
         if Pair != None:
