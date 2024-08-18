@@ -144,6 +144,7 @@ def ReturnStrongestHand(allPlayerCards):
 
         Pair = ReturnPair(combination)
         if Pair != None:
-            return StoredPair.append(Pair)
+            StoredPair.append(Pair)
+            return StoredPair
 
     return []
