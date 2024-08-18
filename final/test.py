@@ -148,7 +148,7 @@ def game():
 
     #Reveal bot's hand
     for player in players:
-        print(f"{player.name}'s hand was {player.hand}")
+        print(f"{player.name}'s hand was {player.hand}, forming a strongest handstrength of {PlayersStrongestHand[player.name]}")
 
 
 def main():
