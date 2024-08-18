@@ -147,14 +147,3 @@ def ReturnStrongestHand(allPlayerCards):
             return StoredPair.append(Pair)
 
     return []
-
-
-
-
-    print(StoredFlush)
-    print(StoredStraight)
-    print(StoredFullHouse)
-    print(StoredPair)
-    print(StoredTriple)
-    print(StoredTwoPair)
-    print(StoredFourOfAKind)
