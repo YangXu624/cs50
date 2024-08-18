@@ -2,7 +2,7 @@ from cards import Card
 from random import choice
 from players import Player
 from bot import Bot
-from evaluate import ReturnStrongestHand
+from evaluate import ReturnStrongestHand, ReturnWinner
 
 
 #Argument: river and deck (which are both lists), returns an updated river and deck
@@ -133,6 +133,7 @@ def game():
 
 
     #Require a function that returns winner
+    print(ReturnWinner(players))
 
     #Pseudocode: winner.balance += pot then reset pot to 0
 

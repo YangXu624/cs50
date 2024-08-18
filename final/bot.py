@@ -3,13 +3,14 @@ from random import randint
 
 
 class Bot:
-    def __init__(self, name, hand=None, current_bet=0, balance=100, fold=False):
+    def __init__(self, name, hand=[], current_bet=0, balance=100, fold=False, handstrength=0):
         self.name = name
-        self.hand = hand if hand is not None else []  # Initialize an empty hand
+        self.hand = hand
         #Within a specific round, keeps track of how much the player has already betted
         self.current_bet = current_bet
         self.balance = balance
         self.fold = fold
+        self.handstrength = handstrength
 
     def action(self, current):
         #Only continue if bot has not folded
