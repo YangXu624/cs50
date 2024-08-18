@@ -55,7 +55,6 @@ def game():
             card = choice(deck)
             player.hand.append(card)
             deck.remove(card)
-        print(player.name, player.hand)
 
 
     #Tell user his hand
@@ -127,12 +126,14 @@ def game():
 
 
     #Iterate through players, returns strongest hand
+    PlayersStrongestHand = {}
     for player in players:
         allPlayerCards = river + player.hand
-        strongest_hand = ReturnStrongestHand(allPlayerCards, player)
+         ReturnStrongestHand(allPlayerCards, player)
+
 
     #Returns a list of players who share the STRONGEST HANDSTRENGTH
-    print(ReturnWinner(players))
+    winner_list = ReturnWinner(players)
 
     #Require a function that returns winner
     print()
