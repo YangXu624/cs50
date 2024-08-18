@@ -3,6 +3,7 @@ from random import choice
 from players import Player
 from bot import Bot
 from itertools import combinations
+from evaluate import ReturnFlush and 
 
 
 #Argument: river and deck (which are both lists), returns an updated river and deck
