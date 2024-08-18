@@ -174,9 +174,10 @@ def ReturnStrongestHand(allPlayerCards, player):
             StoredPair.append(Pair)
             player.handstrength = 2
             return StoredPair
-
-    player.handstrength = 1
-    return player.hand
+        
+        else:
+            player.handstrength = 1
+            return player.hand
 
 
 def ReturnWinner(players):
