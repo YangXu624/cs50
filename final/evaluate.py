@@ -167,13 +167,12 @@ def ReturnStrongestHand(allPlayerCards, player):
 def ReturnWinner(players):
     score = 0
     winners = []
-    for i in range(2):
-        for player in players:
-            if player.handstrength == score:
-                winners.append(player.name)
-                score = player.handstrength
-            elif player.handstrength > score:
-                winners = []
-                winners.append(player.name)
-                score = player.handstrength
+
+    for player in players:
+        if player.handstrength > score:
+            winners = [player.name]  # Start a new winners list
+            score = player.handstrength
+        elif player.handstrength == score:
+            winners.append(player.name)  # Add to the existing winners list
+
     return winners
