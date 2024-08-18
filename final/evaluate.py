@@ -126,6 +126,8 @@ def StrongestPair(StoredPair):
 def ReturnStrongestHand(allPlayerCards, player):
     allCombinations = combinations(allPlayerCards, 5)
     best_hand = []
+    #List containing all pair combinations
+    list_of_pairs = []
     highest_strength = 1  # Default hand strength (High Card)
 
     for combination in allCombinations:
@@ -166,6 +168,7 @@ def ReturnStrongestHand(allPlayerCards, player):
                 highest_strength = current_strength
 
         elif ReturnPair(combination):
+            list_of_pairs.append(combination)
             current_strength = 2
             if current_strength > highest_strength:
                 best_hand = combination
