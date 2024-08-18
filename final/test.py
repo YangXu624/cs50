@@ -128,47 +128,9 @@ def game():
 
 
     #TBC: Evaluate and compare hand strength to determine winner
-    allPlayerCards = river + player1.hand
-    print(allPlayerCards)
-    allCombinations = combinations(allPlayerCards, 5)
-    StoredFlush = []
-    StoredStraight = []
-    StoredFullHouse = []
-    StoredFourOfAKind = []
-    StoredPair = []
-    StoredTriple = []
-    StoredTwoPair = []
-    for combination in allCombinations:
-        Flush = ReturnFlush(combination)
-        if Flush != None:
-            StoredFlush.append(Flush)
-        Straight = ReturnStraight(combination)
-        if Straight != None:
-            StoredStraight.append(Straight)
-        Pair = ReturnPair(combination)
-        if Pair != None:
-            StoredPair.append(Pair)
-        TwoPair = ReturnTwoPair(combination)
-        if TwoPair != None:
-            StoredTwoPair.append(TwoPair)
-        Triple = ReturnTriple(combination)
-        if Triple != None:
-            StoredTriple.append(Triple)
-        FullHouse = ReturnFullHouse(combination)
-        if FullHouse != None:
-            StoredFullHouse.append(FullHouse)
-        FourOfAKind = ReturnFourOfAKind(combination)
-        if FourOfAKind != None:
-            StoredFourOfAKind.append(FourOfAKind)
-    print(StoredFlush)
-    print(StoredStraight)
-    print(StoredFullHouse)
-    print(StoredPair)
-    print(StoredTriple)
-    print(StoredTwoPair)
-    print(StoredFourOfAKind)
-
-    print(f"AAAAAAAAAAAAAAAAAA {ReturnStrongestHand(allPlayerCards, player1)}")
+    for player in players:
+        allPlayerCards = river + player.hand
+        print(f"{player.name}'s strongest hand is {ReturnStrongestHand(allPlayerCards, player1)}")
 
 
     #Require a function that returns winner
