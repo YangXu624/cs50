@@ -3,6 +3,7 @@ def ReturnFlush(combination):
     if r == True:
         return combination
 
+
 def ReturnStraight(combination):
     CardValues = []
     for card in combination:
@@ -28,6 +29,7 @@ def ReturnStraight(combination):
     if r == True:
         return combination
 
+
 def ReturnPair(combination):
     RankOfCards = []
     for card in combination:
@@ -38,6 +40,55 @@ def ReturnPair(combination):
         InstancesOfValue.append(NumberOfRepeats)
     if 2 == InstancesOfValue.count(2) and 3 == InstancesOfValue.count(1):
         return combination
+
+
+def ReturnTriple(combination):
+    RankOfCards = []
+    for card in combination:
+        RankOfCards.append(card.rank)
+    InstancesOfValue = []
+    for value in RankOfCards:
+        NumberOfRepeats = RankOfCards.count(value)
+        InstancesOfValue.append(NumberOfRepeats)
+    if 3 == InstancesOfValue.count(3) and 2 == InstancesOfValue.count(1):
+        return combination
+
+
+def ReturnFourOfAKind(combination):
+    RankOfCards = []
+    for card in combination:
+        RankOfCards.append(card.rank)
+    InstancesOfValue = []
+    for value in RankOfCards:
+        NumberOfRepeats = RankOfCards.count(value)
+        InstancesOfValue.append(NumberOfRepeats)
+    if 4 == InstancesOfValue.count(4):
+        return combination
+
+
+def ReturnTwoPair(combination):
+    RankOfCards = []
+    for card in combination:
+        RankOfCards.append(card.rank)
+    InstancesOfValue = []
+    for value in RankOfCards:
+        NumberOfRepeats = RankOfCards.count(value)
+        InstancesOfValue.append(NumberOfRepeats)
+    if 4 == InstancesOfValue.count(2):
+        return combination
+
+
+def ReturnFullHouse(combination):
+    RankOfCards = []
+    for card in combination:
+        RankOfCards.append(card.rank)
+    InstancesOfValue = []
+    for value in RankOfCards:
+        NumberOfRepeats = RankOfCards.count(value)
+        InstancesOfValue.append(NumberOfRepeats)
+    if 2 == InstancesOfValue.count(2) and 3 == InstancesOfValue.count(3):
+        return combination
+
 
 def StrongestPair(StoredPair):
     RankOfCards = []
@@ -54,46 +105,5 @@ def StrongestPair(StoredPair):
             else:
                 count[item] = 1
 
-def ReturnTriple(combination):
-    RankOfCards = []
-    for card in combination:
-        RankOfCards.append(card.rank)
-    InstancesOfValue = []
-    for value in RankOfCards:
-        NumberOfRepeats = RankOfCards.count(value)
-        InstancesOfValue.append(NumberOfRepeats)
-    if 3 == InstancesOfValue.count(3) and 2 == InstancesOfValue.count(1):
-        return combination
 
-def ReturnFourOfAKind(combination):
-    RankOfCards = []
-    for card in combination:
-        RankOfCards.append(card.rank)
-    InstancesOfValue = []
-    for value in RankOfCards:
-        NumberOfRepeats = RankOfCards.count(value)
-        InstancesOfValue.append(NumberOfRepeats)
-    if 4 == InstancesOfValue.count(4):
-        return combination
-
-def ReturnTwoPair(combination):
-    RankOfCards = []
-    for card in combination:
-        RankOfCards.append(card.rank)
-    InstancesOfValue = []
-    for value in RankOfCards:
-        NumberOfRepeats = RankOfCards.count(value)
-        InstancesOfValue.append(NumberOfRepeats)
-    if 4 == InstancesOfValue.count(2):
-        return combination
-
-def ReturnFullHouse(combination):
-    RankOfCards = []
-    for card in combination:
-        RankOfCards.append(card.rank)
-    InstancesOfValue = []
-    for value in RankOfCards:
-        NumberOfRepeats = RankOfCards.count(value)
-        InstancesOfValue.append(NumberOfRepeats)
-    if 2 == InstancesOfValue.count(2) and 3 == InstancesOfValue.count(3):
-        return combination
+def ReturnStrongestHand(allPlayerCards, )
