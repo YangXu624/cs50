@@ -175,4 +175,5 @@ def ReturnWinner(players):
             elif player.handstrength > score:
                 winners = []
                 winners.append(player.name)
+                score = player.handstrength
     return winners
