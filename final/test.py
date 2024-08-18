@@ -129,7 +129,9 @@ def game():
     #TBC: Evaluate and compare hand strength to determine winner
     for player in players:
         allPlayerCards = river + player.hand
-        print(f"{player.name}'s strongest hand is {ReturnStrongestHand(allPlayerCards, player1)}")
+        strongest_hand = ReturnStrongestHand(allPlayerCards, player1)
+        print(player.handstrength)
+        print(f"{player.name}'s strongest hand is {strongest_hand}")
 
 
     #Require a function that returns winner
