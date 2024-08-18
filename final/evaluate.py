@@ -125,62 +125,54 @@ def StrongestPair(StoredPair):
 
 def ReturnStrongestHand(allPlayerCards, player):
     allCombinations = combinations(allPlayerCards, 5)
-    StoredFlush = []
-    StoredStraight = []
-    StoredFullHouse = []
-    StoredFourOfAKind = []
-    StoredPair = []
-    StoredTriple = []
-    StoredTwoPair = []
+    best_hand = []
+    highest_strength = 1  # Default hand strength (High Card)
+
     for combination in allCombinations:
-        FourOfAKind = ReturnFourOfAKind(combination)
-        if FourOfAKind != None:
-            StoredFourOfAKind.append(FourOfAKind)
-            player.handstrength = 8
-            return StoredFourOfAKind
+        if ReturnFourOfAKind(combination):
+            current_strength = 8
+            if current_strength > highest_strength:
+                best_hand = combination
+                highest_strength = current_strength
 
-        FullHouse = ReturnFullHouse(combination)
-        if FullHouse != None:
-            StoredFullHouse.append(FullHouse)
-            player.handstrength = 7
-            return StoredFullHouse
+        elif ReturnFullHouse(combination):
+            current_strength = 7
+            if current_strength > highest_strength:
+                best_hand = combination
+                highest_strength = current_strength
 
-        Flush = ReturnFlush(combination)
-        if Flush != None:
-            StoredFlush.append(Flush)
-            player.handstrength = 6
-            return StoredFlush
+        elif ReturnFlush(combination):
+            current_strength = 6
+            if current_strength > highest_strength:
+                best_hand = combination
+                highest_strength = current_strength
 
-        Straight = ReturnStraight(combination)
-        if Straight != None:
-            StoredStraight.append(Straight)
-            player.handstrength = 5
-            return StoredStraight
+        elif ReturnStraight(combination):
+            current_strength = 5
+            if current_strength > highest_strength:
+                best_hand = combination
+                highest_strength = current_strength
 
-        Triple = ReturnTriple(combination)
-        if Triple != None:
-            StoredTriple.append(Triple)
-            player.handstrength = 4
-            return StoredTriple
+        elif ReturnTriple(combination):
+            current_strength = 4
+            if current_strength > highest_strength:
+                best_hand = combination
+                highest_strength = current_strength
 
-        TwoPair = ReturnTwoPair(combination)
-        if TwoPair != None:
-            StoredTwoPair.append(TwoPair)
-            player.handstrength = 3
-            return StoredTwoPair
+        elif ReturnTwoPair(combination):
+            current_strength = 3
+            if current_strength > highest_strength:
+                best_hand = combination
+                highest_strength = current_strength
 
-        Pair = ReturnPair(combination)
-        if Pair != None:
-            StoredPair.append(Pair)
-            player.handstrength = 2
+        elif ReturnPair(combination):
+            current_strength = 2
+            if current_strength > highest_strength:
+                best_hand = combination
+                highest_strength = current_strength
 
-        else:
-            print("HIGHCARD")
-            player.handstrength = 1
-            return player.hand
-
-    strongest_pair = StrongestPair(StoredPair)
-    return strongest_pair
+    player.handstrength = highest_strength
+    return best_hand if best_hand else max(allCombinations, key=lambda x: hand_rank(x))
 
 
 def ReturnWinner(players):
