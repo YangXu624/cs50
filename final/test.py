@@ -125,20 +125,21 @@ def game():
                 break
 
 
-    #Iterate through players, returns strongest hand
+    #Iterate through players, appends dictionary as such: {'PLAYERNAME': [PLAYERSTRONGESTHAND]}
     PlayersStrongestHand = {}
     for player in players:
         allPlayerCards = river + player.hand
         PlayersStrongestHand[player.name] = ReturnStrongestHand(allPlayerCards, player)
 
-    print(PlayersStrongestHand)
-
     #Returns a list of players who share the STRONGEST HANDSTRENGTH
     winner_list = ReturnWinner(players)
+    #If there is only 1 player with the strongest hand, he is the winner
     if len(winner_list) == 1:
         print(f"Winner is {winner_list[0]}!")
+    #Else, REQUIRE FUNCTION TO COMPARE WITHIN ONE HANDSTRENGTH TIER
+    #Can access players' strongest hand using dictionary 'PlayersStrongestHand'
     else:
-        print(winner_list)
+        print(f"Winners are {winner_list}")
 
     #Require a function that returns winner
     print()
