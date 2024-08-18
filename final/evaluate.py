@@ -114,7 +114,6 @@ def StrongestPair(StoredPair):
             if Count[item] != 2:
                 sum += int(item)
         ListOfSum.append(sum)
-    print(ListOfSum)
     HighestSum = 0
     for sum in ListOfSum:
         if sum > HighestSum:

@@ -142,7 +142,6 @@ def game():
         print(f"Winners are {winner_list}")
 
     #Require a function that returns winner
-    print()
 
     #Pseudocode: winner.balance += pot then reset pot to 0
 
