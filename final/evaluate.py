@@ -93,19 +93,34 @@ def ReturnFullHouse(combination):
 
 
 def StrongestPair(StoredPair):
+    if StoredPair == []:
+        return
     RankOfCards = []
     for PairCombination in StoredPair:
         RankOfCombination = []
         for card in PairCombination:
             RankOfCombination.append(card.rank)
         RankOfCards.append(RankOfCombination)
-    count = {}
+    ListOfSum = []
     for PairCombination in RankOfCards:
+        Count = {}
+        sum = 0
         for card in PairCombination:
-            if card in count:
-                count[item] += 1
+            if card in Count:
+                Count[card] += 1
             else:
-                count[item] = 1
+                Count[card] = 1
+        for item in Count:
+            if Count[item] != 2:
+                sum += int(item)
+        ListOfSum.append(sum)
+    print(ListOfSum)
+    HighestSum = 0
+    for sum in ListOfSum:
+        if sum > HighestSum:
+            HighestSum = sum
+    IndexOfStrongestPair = ListOfSum.index(HighestSum)
+    return StoredPair[IndexOfStrongestPair]
 
 
 def ReturnStrongestHand(allPlayerCards, player):
