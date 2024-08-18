@@ -174,8 +174,11 @@ def ReturnStrongestHand(allPlayerCards, player):
                 best_hand = combination
                 highest_strength = current_strength
 
+        if highest_strength == 2:
+            best_hand = StrongestPair(list_of_pairs)
+
     player.handstrength = highest_strength
-    return best_hand if best_hand else max(allCombinations, key=lambda x: hand_rank(x))
+    return best_hand if best_hand else player.hand
 
 
 def ReturnWinner(players):
