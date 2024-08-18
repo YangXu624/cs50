@@ -1,3 +1,5 @@
+from itertools import combinations
+
 def ReturnFlush(combination):
     r = all(combination[i].suit == combination[0].suit for i in range(1, len(combination)))
     if r == True:
@@ -116,27 +118,39 @@ def ReturnStrongestHand(allPlayerCards):
     StoredTriple = []
     StoredTwoPair = []
     for combination in allCombinations:
-        Flush = ReturnFlush(combination)
-        if Flush != None:
-            StoredFlush.append(Flush)
-        Straight = ReturnStraight(combination)
-        if Straight != None:
-            StoredStraight.append(Straight)
-        Pair = ReturnPair(combination)
-        if Pair != None:
-            StoredPair.append(Pair)
-        TwoPair = ReturnTwoPair(combination)
-        if TwoPair != None:
-            StoredTwoPair.append(TwoPair)
-        Triple = ReturnTriple(combination)
-        if Triple != None:
-            StoredTriple.append(Triple)
-        FullHouse = ReturnFullHouse(combination)
-        if FullHouse != None:
-            StoredFullHouse.append(FullHouse)
         FourOfAKind = ReturnFourOfAKind(combination)
         if FourOfAKind != None:
-            StoredFourOfAKind.append(FourOfAKind)
+            return StoredFourOfAKind.append(FourOfAKind)
+
+        FullHouse = ReturnFullHouse(combination)
+        if FullHouse != None:
+            return StoredFullHouse.append(FullHouse)
+
+        Flush = ReturnFlush(combination)
+        if Flush != None:
+            return StoredFlush.append(Flush)
+
+        Straight = ReturnStraight(combination)
+        if Straight != None:
+            return StoredStraight.append(Straight)
+
+        Triple = ReturnTriple(combination)
+        if Triple != None:
+            return StoredTriple.append(Triple)
+
+        TwoPair = ReturnTwoPair(combination)
+        if TwoPair != None:
+            return StoredTwoPair.append(TwoPair)
+
+        Pair = ReturnPair(combination)
+        if Pair != None:
+            return StoredPair.append(Pair)
+
+    return []
+
+
+
+
     print(StoredFlush)
     print(StoredStraight)
     print(StoredFullHouse)

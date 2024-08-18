@@ -3,7 +3,7 @@ from random import choice
 from players import Player
 from bot import Bot
 from itertools import combinations
-from evaluate import ReturnFlush, ReturnStraight, ReturnFourOfAKind, ReturnFullHouse, ReturnTriple, ReturnTwoPair, ReturnPair
+from evaluate import ReturnFlush, ReturnStraight, ReturnFourOfAKind, ReturnFullHouse, ReturnTriple, ReturnTwoPair, ReturnPair, ReturnStrongestHand
 
 
 #Argument: river and deck (which are both lists), returns an updated river and deck
@@ -167,6 +167,8 @@ def game():
     print(StoredTriple)
     print(StoredTwoPair)
     print(StoredFourOfAKind)
+
+    print(f"AAAAAAAAAAAAAAAAAA {ReturnStrongestHand(allPlayerCards)}")
 
 
     #Require a function that returns winner
