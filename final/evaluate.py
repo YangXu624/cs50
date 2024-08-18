@@ -108,7 +108,7 @@ def StrongestPair(StoredPair):
                 count[item] = 1
 
 
-def ReturnStrongestHand(allPlayerCards):
+def ReturnStrongestHand(allPlayerCards, player):
     allCombinations = combinations(allPlayerCards, 5)
     StoredFlush = []
     StoredStraight = []
@@ -121,36 +121,43 @@ def ReturnStrongestHand(allPlayerCards):
         FourOfAKind = ReturnFourOfAKind(combination)
         if FourOfAKind != None:
             StoredFourOfAKind.append(FourOfAKind)
+            player.handstrength = 8
             return StoredFourOfAKind
 
         FullHouse = ReturnFullHouse(combination)
         if FullHouse != None:
             StoredFullHouse.append(FullHouse)
+            player.handstrength = 7
             return StoredFullHouse
 
         Flush = ReturnFlush(combination)
         if Flush != None:
             StoredFlush.append(Flush)
+            player.handstrength = 6
             return StoredFlush
 
         Straight = ReturnStraight(combination)
         if Straight != None:
             StoredStraight.append(Straight)
+            player.handstrength = 5
             return StoredStraight
 
         Triple = ReturnTriple(combination)
         if Triple != None:
             StoredTriple.append(Triple)
+            player.handstrength = 4
             return StoredTriple
 
         TwoPair = ReturnTwoPair(combination)
         if TwoPair != None:
             StoredTwoPair.append(TwoPair)
+            player.handstrength = 3
             return StoredTwoPair
 
         Pair = ReturnPair(combination)
         if Pair != None:
             StoredPair.append(Pair)
+            player.handstrength = 2
             return StoredPair
 
     return []

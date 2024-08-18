@@ -168,7 +168,7 @@ def game():
     print(StoredTwoPair)
     print(StoredFourOfAKind)
 
-    print(f"AAAAAAAAAAAAAAAAAA {ReturnStrongestHand(allPlayerCards)}")
+    print(f"AAAAAAAAAAAAAAAAAA {ReturnStrongestHand(allPlayerCards, player1)}")
 
 
     #Require a function that returns winner
