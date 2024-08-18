@@ -129,11 +129,16 @@ def game():
     PlayersStrongestHand = {}
     for player in players:
         allPlayerCards = river + player.hand
-         ReturnStrongestHand(allPlayerCards, player)
+        PlayersStrongestHand[player.name] = ReturnStrongestHand(allPlayerCards, player)
 
+    print(PlayersStrongestHand)
 
     #Returns a list of players who share the STRONGEST HANDSTRENGTH
     winner_list = ReturnWinner(players)
+    if len(winner_list) == 1:
+        print(f"Winner is {winner_list[0]}!")
+    else:
+        print(winner_list)
 
     #Require a function that returns winner
     print()
