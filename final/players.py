@@ -43,7 +43,7 @@ class Player:
 
                     elif act == "call":
                         if diff == 0:
-                            print("Can't call when there is no bet. Did you mean 'call'?")
+                            print("Can't call when there is no bet. Did you mean 'check'?")
                             raise ValueError("Can't call when there is no bet. Did you mean 'check'?")
                         else:
                             if diff > self.balance:
