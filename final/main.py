@@ -145,10 +145,9 @@ def game():
 
     #Pseudocode: winner.balance += pot then reset pot to 0
 
-    ConvertJQKA(players)
     #Reveal bot's hand
     for player in players:
-        print(f"{player.name}'s hand was {player.hand}, forming a strongest handstrength of {PlayersStrongestHand[player.name]}")
+        print(f"{ConvertJQKA(player.name)}'s hand was {player.hand}, forming a strongest handstrength of {ConvertJQKA(PlayersStrongestHand[player.name])}")
 
 
 def main():

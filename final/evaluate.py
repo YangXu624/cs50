@@ -365,16 +365,15 @@ def ReturnWinner(players, PlayersStrongestHand):
 
     return list_of_winners
 
-def ConvertJQKA(players):
-    for player in players:
-            for card in player.hand:
-                if card.rank == 11:
-                    card.rank = "J"
-                elif card.rank == 12:
-                    card.rank = "Q"
-                elif card.rank == 13:
-                    card.rank = "K"
-                elif card.rank == 14:
-                    card.rank = "A"
-                else:
-                    card.rank = int(card.rank)
+def ConvertJQKA(list):
+        for card in list:
+            if card.rank == 11:
+                card.rank = "J"
+            elif card.rank == 12:
+                card.rank = "Q"
+            elif card.rank == 13:
+                card.rank = "K"
+            elif card.rank == 14:
+                card.rank = "A"
+            else:
+                card.rank = int(card.rank)
