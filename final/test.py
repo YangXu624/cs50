@@ -140,6 +140,7 @@ def game():
     PlayersStrongestHand = {}
     for player in players:
         allPlayerCards = river + player.hand
+        print(player.name)
         PlayersStrongestHand[player.name] = ReturnStrongestHand(allPlayerCards, player)
 
     print("before returnwinner")
