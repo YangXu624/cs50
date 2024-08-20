@@ -6,7 +6,7 @@ p1, p2 = Player(name="P1"), Player(name="P2")
 
 #MANUALLY DEAL PLAYER1 HIS HAND
 p1.hand = []
-card21 = Card('6', 'spades')
+card21 = Card('3', 'spades')
 card22 = Card('9', 'spades')
 p1.hand.append(card21)
 p1.hand.append(card22)
@@ -22,8 +22,8 @@ p2.hand.append(card20)
 river = []
 card1 = Card('1', 'spades')
 card2 = Card('2', 'spades')
-card3 = Card('3', 'spades')
-card4 = Card('4', 'spades')
+card3 = Card('K', 'diamonds')
+card4 = Card('4', 'clubs')
 card5 = Card('5', 'spades')
 river.append(card1)
 river.append(card2)
