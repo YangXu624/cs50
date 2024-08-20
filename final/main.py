@@ -24,7 +24,7 @@ def bet(player, current):
 
 
 
-def game():
+def game(players_list):
     #Create deck
     deck = []
     for suit in ['spades', 'hearts', 'clubs', 'diamonds']:
@@ -34,14 +34,7 @@ def game():
 
 
     #Add players into a list called 'players'
-    players = []
-    #Add user into game
-    player1 = Player(name="Player 1")
-    players.append(player1)
-    #Add bot into game
-    bot1, bot2 = Bot(name="Bot 1"), Bot(name="Bot 2")
-    players.append(bot1)
-    players.append(bot2)
+    players = players_list
     no_of_players = len(players)
 
 
@@ -155,8 +148,19 @@ def main():
     games = int(input("Number of games: "))
     bal = int(input("Player Balance: "))
     bot = int(input("Number of Bots: "))
+
+    players_list = []
+    #Add user into game
+    player1 = Player(name="Player 1", balance=bal)
+    players_list.append(player1)
+
+    #Add bot into game
+    for i in range(bot):
+        bot = Bot(name=f"Bot {i}", balance=bal)
+        players_list.append(bot)
+
     for i in range(games):
-        game(bal, bot)
+        game()
 
 
 if __name__ == "__main__":
