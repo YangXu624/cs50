@@ -324,46 +324,46 @@ def ReturnWinner(players, PlayersStrongestHand):
 
     if len(winners) != 1:
         playersCombi = [] # list of Players best_hand of the same tier
-        for player in winners:
+        for player in players:
             if player.handstrength == score:
                 playersCombi.append(PlayersStrongestHand[player.name])
 
-        if score == 1 or score == 5 or score == 6 or score == 9:
-            best_hand = StrongestSingleCard(playersCombi)
+    if score == 1 or score == 5 or score == 6 or score == 9:
+        best_hand = StrongestSingleCard(playersCombi)
 
-        elif score == 2:
-            best_hand = StrongestSingleCard(HasStrongestPair(playersCombi))
+    elif score == 2:
+        best_hand = StrongestSingleCard(HasStrongestPair(playersCombi))
 
-        elif score == 3:
-            CombiHasStrongestPair = HasStrongestPair(playersCombi)
-            HasStrongestTwoPair = HasSecondStrongestPair(CombiHasStrongestPair)
-            best_hand = StrongestSingleCard(HasStrongestTwoPair)
+    elif score == 3:
+        CombiHasStrongestPair = HasStrongestPair(playersCombi)
+        HasStrongestTwoPair = HasSecondStrongestPair(CombiHasStrongestPair)
+        best_hand = StrongestSingleCard(HasStrongestTwoPair)
 
-        elif score == 4:
-            CombiHasStrongestTriple = HasStrongestTriple(playersCombi)
-            best_hand = StrongestSingleCard(CombiHasStrongestTriple)
+    elif score == 4:
+        CombiHasStrongestTriple = HasStrongestTriple(playersCombi)
+        best_hand = StrongestSingleCard(CombiHasStrongestTriple)
 
-        elif score == 7:
-            HasLargestPair = HasSecondStrongestPair(playersCombi)
-            best_hand = HasStrongestTriple(HasLargestPair)
+    elif score == 7:
+        HasLargestPair = HasSecondStrongestPair(playersCombi)
+        best_hand = HasStrongestTriple(HasLargestPair)
 
-        elif score == 8:
-            HasLargestFourOfAKind = HasSecondStrongestPair(playersCombi)
-            best_hand = StrongestSingleCard(HasLargestFourOfAKind)
+    elif score == 8:
+        HasLargestFourOfAKind = HasSecondStrongestPair(playersCombi)
+        best_hand = StrongestSingleCard(lHasLargestFourOfAKind)
 
-        best_hand_rank = []
-        for card in best_hand:
-            best_hand_rank.append(card.rank)
+    best_hand_rank = []
+    for card in best_hand:
+        best_hand_rank.append(card.rank)
 
-        list_of_winners = []
-        for player in players:
-            playerRank = []
-            for card in PlayersStrongestHand[player.name]:
-                playerRank.append(card.rank)
-            if playerRank == best_hand_rank:
-                list_of_winners.append(player.name)
+    list_of_winners = []
+    for player in players:
+        playerRank = []
+        for card in PlayersStrongestHand[player.name]:
+            playerRank.append(card.rank)
+        if playerRank == best_hand_rank:
+            list_of_winners.append(player.name)
 
-        return list_of_winners
+    return list_of_winners
 
 def ConvertJQKA(list):
         for card in list:
