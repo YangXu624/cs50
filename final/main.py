@@ -2,7 +2,7 @@ from cards import Card
 from random import choice
 from players import Player
 from bot import Bot
-from evaluate import ReturnStrongestHand, ReturnWinner
+from evaluate import ReturnStrongestHand, ReturnWinner, ConvertJQKA
 
 
 #Argument: river and deck (which are both lists), returns an updated river and deck
@@ -145,6 +145,7 @@ def game():
 
     #Pseudocode: winner.balance += pot then reset pot to 0
 
+    ConvertJQKA(players)
     #Reveal bot's hand
     for player in players:
         print(f"{player.name}'s hand was {player.hand}, forming a strongest handstrength of {PlayersStrongestHand[player.name]}")

@@ -364,3 +364,17 @@ def ReturnWinner(players, PlayersStrongestHand):
             list_of_winners.append(player.name)
 
     return list_of_winners
+
+def ConvertJQKA(players):
+    for player in players:
+            for card in player.hand:
+                if card.rank == "J":
+                    card.rank = 11
+                elif card.rank == "Q":
+                    card.rank = 12
+                elif card.rank == "K":
+                    card.rank = 13
+                elif card.rank == "A":
+                    card.rank = 14
+                else:
+                    card.rank = int(card.rank)
