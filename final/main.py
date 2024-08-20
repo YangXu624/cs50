@@ -94,7 +94,7 @@ def game(players_list):
             if player.balance < 0:
                 players.remove(player)
                 print(f"{player.name} HAS BANKRUPTED")
-        for player in players:
+        for player in PlayersStillInGame:
             if player.fold == True:
                 PlayersStillInGame.remove(player)
                 print(f"{player.name} HAS FOLDED")
