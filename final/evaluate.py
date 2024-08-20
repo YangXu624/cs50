@@ -323,11 +323,11 @@ def ReturnWinner(players, PlayersStrongestHand):
 
     if len(winners) != 1:
         playersCombi = [] # list of Players best_hand of the same tier
-        for player in players:
+        for player in winners:
             if player.handstrength == score:
                 playersCombi.append(PlayersStrongestHand[player.name])
 
-        for player in players:
+        for player in winners:
             if score == 1 or score == 5 or score == 6 or score == 9:
                 best_hand = StrongestSingleCard(playersCombi)
                 print("BEST HAND", best_hand)
