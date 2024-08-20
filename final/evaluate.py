@@ -301,6 +301,7 @@ def ReturnStrongestHand(allPlayerCards, player):
         best_hand = StrongestSingleCard(HasLargestFourOfAKind)
 
     elif highest_strength == 9:
+        print("HIIIIIIIII")
         best_hand == StrongestSingleCard(list_of_straightFlush)
 
     print(list_of_straightFlush)
