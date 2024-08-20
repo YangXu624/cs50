@@ -375,3 +375,6 @@ def ConvertJQKA(list):
                 card.rank = "K"
             if card.rank == 14:
                 card.rank = "A"
+
+if __name__ == "__main__":
+    main()
