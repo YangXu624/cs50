@@ -130,8 +130,13 @@ def game(players_list):
         allPlayerCards = river + player.hand
         PlayersStrongestHand[player.name] = ReturnStrongestHand(allPlayerCards, player)
 
+    PlayersStillInGame = []
+    for player in players:
+        if player.fold == False:
+            PlayersStillInGame.append(player)
+
     #Returns a list of players who share the STRONGEST HANDSTRENGTH
-    winner_list = ReturnWinner(players, PlayersStrongestHand)
+    winner_list = ReturnWinner(PlayersStillInGame, PlayersStrongestHand)
 
     WinnerList = []
     #Ensure players who folded cannot win (CORRECT THIS)
