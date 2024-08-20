@@ -36,6 +36,8 @@ def game(players_list):
     #Add players into a list called 'players'
     players = players_list
     no_of_players = len(players)
+    PlayersStillInGame = players
+
 
     #You are Player 1
     player1 = players_list[0]
@@ -92,6 +94,10 @@ def game(players_list):
             if player.balance < 0:
                 players.remove(player)
                 print(f"{player.name} HAS BANKRUPTED")
+        for player in players:
+            if player.fold == True:
+                PlayersStillInGame.remove(player)
+                print(f"{player.name} HAS FOLDED")
 
         print(f"Round {i + 1}")
         #Deal a card to the river
@@ -135,10 +141,6 @@ def game(players_list):
         allPlayerCards = river + player.hand
         PlayersStrongestHand[player.name] = ReturnStrongestHand(allPlayerCards, player)
 
-    PlayersStillInGame = []
-    for player in players:
-        if player.fold == False:
-            PlayersStillInGame.append(player)
 
     #Returns a list of players who share the STRONGEST HANDSTRENGTH
     winner_list = ReturnWinner(PlayersStillInGame, PlayersStrongestHand)
