@@ -161,7 +161,11 @@ def game():
 
 
 def main():
-    game()
+    games = int(input("Number of games: "))
+    bal = int(input("Player Balance: "))
+    bot = int(input("Number of Bots: "))
+    for i in range(games):
+        game(bal, bot)
 
 
 if __name__ == "__main__":
