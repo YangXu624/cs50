@@ -44,6 +44,8 @@ def game(players_list):
     players_dict = {}
     for player in players:
         players_dict[player.name] = player.balance
+        #Reset fold boolean
+        player.fold = False
 
     #Initiate pot
     pot = 0
@@ -175,7 +177,7 @@ def main():
         players_list.append(bot)
 
     for i in range(games):
-        print("-------Game)
+        print("------- Game {i + 1} -------\n")
         game(players_list)
 
 
