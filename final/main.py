@@ -90,6 +90,8 @@ def game(players_list):
     #Iterate rounds
     river = []
     for i in range(5):
+        print(f"Round {i + 1}")
+
         for player in players:
             if player.balance < 0:
                 players.remove(player)
@@ -98,8 +100,7 @@ def game(players_list):
             if player.fold == True:
                 PlayersStillInGame.remove(player)
                 print(f"{player.name} HAS FOLDED")
-
-        print(f"Round {i + 1}")
+                
         #Deal a card to the river
         river, deck = round(river, deck)
         print(f"River: {river}")
