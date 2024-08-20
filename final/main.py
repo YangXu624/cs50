@@ -147,7 +147,7 @@ def game():
 
     #Reveal bot's hand
     for player in players:
-        print(f"{ConvertJQKA(player.name)}'s hand was {player.hand}, forming a strongest handstrength of {ConvertJQKA(PlayersStrongestHand[player.name])}")
+        print(f"{player.name}'s hand was {ConvertJQKA(player.hand)}, forming a strongest handstrength of {ConvertJQKA(PlayersStrongestHand[player.name])}")
 
 
 def main():
