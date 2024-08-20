@@ -329,7 +329,7 @@ def ReturnWinner(players, PlayersStrongestHand):
 
     if score == 1 or score == 5 or score == 6 or score == 9:
         best_hand = StrongestSingleCard(playersCombi)
-        print(best_hand)
+        print("BEST HAND", best_hand)
 
     elif score == 2:
         best_hand = StrongestSingleCard(HasStrongestPair(playersCombi))
