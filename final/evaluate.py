@@ -367,15 +367,13 @@ def ReturnWinner(players, PlayersStrongestHand):
 
 def ConvertJQKA(list):
         for card in list:
-            print(card)
-        for card in list:
-            if card.rank == 11:
+            if str(card.rank) == "11":
                 card.rank = "J"
-            elif card.rank == 12:
+            elif str(card.rank) == "12":
                 card.rank = "Q"
-            elif card.rank == 13:
+            elif str(card.rank) == "13":
                 card.rank = "K"
-            elif card.rank == 14:
+            elif str(card.rank) == "14":
                 card.rank = "A"
             else:
-                card.rank = int(card.rank)
+                card.rank = str(card.rank)
