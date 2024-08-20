@@ -77,14 +77,11 @@ def StrongestSingleCard(Combinations):
             if Count[item] == 1:
                 sum += item
         ListOfSum.append(sum)
-    print(ListOfSum)
     HighestSum = 0
     for sum in ListOfSum:
         if sum > HighestSum:
             HighestSum = sum
     indexOfStrongestSingle = ListOfSum.index(HighestSum)
-    print(f"INDEX IS {indexOfStrongestSingle}")
-    print()
     return Combinations[indexOfStrongestSingle]
 
 def HasStrongestPair(HasPairCombination):
@@ -332,6 +329,7 @@ def ReturnWinner(players, PlayersStrongestHand):
 
     if score == 1 or score == 5 or score == 6 or score == 9:
         best_hand = StrongestSingleCard(playersCombi)
+        print(best_hand)
 
     elif score == 2:
         best_hand = StrongestSingleCard(HasStrongestPair(playersCombi))
