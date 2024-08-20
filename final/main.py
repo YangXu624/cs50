@@ -130,6 +130,7 @@ def game(players_list):
     winner_list = ReturnWinner(players, PlayersStrongestHand)
     #If there is only 1 player with the strongest hand, he is the winner
     if len(winner_list) == 1:
+        print(winner_list)
         winner = winner_list[0]
         print(f"Winner is {winner}!\n")
         winner.balance += pot
