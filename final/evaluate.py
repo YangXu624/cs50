@@ -65,7 +65,6 @@ def ReturnFullHouse(combination):
 
 def StrongestSingleCard(Combinations):
     ListOfSum = []
-    print("COMBINATIONS: ", Combinations)
     for combination in Combinations:
         Count = {}
         sum = 0
@@ -83,7 +82,6 @@ def StrongestSingleCard(Combinations):
         if sum > HighestSum:
             HighestSum = sum
     indexOfStrongestSingle = ListOfSum.index(HighestSum)
-    print("Winning hand is", Combinations[indexOfStrongestSingle])
     return Combinations[indexOfStrongestSingle]
 
 def HasStrongestPair(HasPairCombination):
@@ -304,7 +302,6 @@ def ReturnStrongestHand(allPlayerCards, player):
     elif highest_strength == 9:
         best_hand = StrongestSingleCard(list_of_straightFlush)
 
-    print(list_of_straightFlush)
     player.handstrength = highest_strength
     return best_hand
 
@@ -330,7 +327,6 @@ def ReturnWinner(players, PlayersStrongestHand):
                 playersCombi.append(PlayersStrongestHand[player.name])
 
     if score == 1 or score == 5 or score == 6 or score == 9:
-        print("PLAYERSCOMBI: ", playersCombi)
         best_hand = StrongestSingleCard(playersCombi)
 
     elif score == 2:

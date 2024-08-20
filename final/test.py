@@ -143,7 +143,6 @@ def game():
         print(player.name)
         PlayersStrongestHand[player.name] = ReturnStrongestHand(allPlayerCards, player)
 
-    print("before returnwinner")
     #Returns a list of players who share the STRONGEST HANDSTRENGTH
     winner_list = ReturnWinner(players, PlayersStrongestHand)
     #If there is only 1 player with the strongest hand, he is the winner
