@@ -367,6 +367,8 @@ def ReturnWinner(players, PlayersStrongestHand):
 
 def ConvertJQKA(list):
         for card in list:
+            print(card)
+        for card in list:
             if card.rank == 11:
                 card.rank = "J"
             elif card.rank == 12:
