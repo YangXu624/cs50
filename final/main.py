@@ -36,6 +36,8 @@ def game(players_list):
     #Add players into a list called 'players'
     players = players_list
     no_of_players = len(players)
+    #You are Player 1
+    player1 = players_list[0]
 
 
     #Initiate pot
@@ -130,7 +132,7 @@ def game(players_list):
     if len(winner_list) == 1:
         winner = winner_list[0]
         print(f"Winner is {winner}!\n")
-        winner.bal += pot
+        winner.balance += pot
         pot = 0
 
     else:
@@ -139,7 +141,7 @@ def game(players_list):
         print(f"Winners are {winner_list}")
 
         for winner in winner_list:
-            winner.bal += split_pot
+            winner.balance += split_pot
 
     #Convert card.rank from int back to J Q K A
     for player in players:
