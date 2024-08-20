@@ -135,13 +135,14 @@ def game():
         if endround == True:
             break
 
-
+        print("before strongesthand")
     #Iterate through players, appends dictionary as such: {'PLAYERNAME': [PLAYERSTRONGESTHAND]}
     PlayersStrongestHand = {}
     for player in players:
         allPlayerCards = river + player.hand
         PlayersStrongestHand[player.name] = ReturnStrongestHand(allPlayerCards, player)
 
+    print("before returnwinner")
     #Returns a list of players who share the STRONGEST HANDSTRENGTH
     winner_list = ReturnWinner(players, PlayersStrongestHand)
     #If there is only 1 player with the strongest hand, he is the winner
