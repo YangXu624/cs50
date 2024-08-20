@@ -140,6 +140,7 @@ def game():
     for player in players:
         allPlayerCards = river + player.hand
         PlayersStrongestHand[player.name] = ReturnStrongestHand(allPlayerCards, player)
+        print(PlayersStrongestHand[player.name])
 
     #Returns a list of players who share the STRONGEST HANDSTRENGTH
     winner_list = ReturnWinner(players, PlayersStrongestHand)
@@ -165,7 +166,7 @@ def main():
     bal = int(input("Player Balance: "))
     bot = int(input("Number of Bots: "))
     for i in range(games):
-        game(bal, bot)
+        game()
 
 
 if __name__ == "__main__":

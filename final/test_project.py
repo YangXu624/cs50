@@ -1,6 +1,6 @@
 from cards import Card
 from players import Player
-import evaluate
+from evaluate import ReturnStrongestHand
 
 p1, p2 = Player(name="P1"), Player(name="P2")
 
@@ -31,4 +31,8 @@ river.append(card3)
 river.append(card4)
 river.append(card5)
 
-def test_
+allP1cards = river + p1.hand
+allP2cards = river + p2.hand
+
+def test_ReturnStrongestHand():
+    assert ReturnStrongestHand(allP1cards, p1) == [2♠, 3♠, 4♠, 5♠, 6♠]
