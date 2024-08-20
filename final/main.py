@@ -147,7 +147,7 @@ def game(players_list):
     #If there is only 1 player with the strongest hand, he is the winner
     if len(WinnerList) == 1:
         winner = WinnerList[0]
-        print(f"Winner is {winner}!\n")
+        print(f"Winner is {winner.name}!\n")
         for player in WinnerList:
             player.balance += pot
         pot = 0
@@ -160,7 +160,10 @@ def game(players_list):
             player.balance += split_pot
 
         pot = 0
-        print(f"Winners are {winner_list}")
+        print(f"Winners are:", end="")
+        for winner in WinnerList:
+            print(winner.name)
+        print("")
 
 
     #Convert card.rank from int back to J Q K A
