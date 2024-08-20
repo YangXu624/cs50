@@ -23,7 +23,7 @@ river = []
 card1 = Card('1', 'spades')
 card2 = Card('2', 'spades')
 card3 = Card('K', 'diamonds')
-card4 = Card('4', 'clubs')
+card4 = Card('4', 'spades')
 card5 = Card('5', 'spades')
 river.append(card1)
 river.append(card2)
