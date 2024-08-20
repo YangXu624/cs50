@@ -83,6 +83,7 @@ def StrongestSingleCard(Combinations):
         if sum > HighestSum:
             HighestSum = sum
     indexOfStrongestSingle = ListOfSum.index(HighestSum)
+    print(indexOfStrongestSingle)
     return Combinations[indexOfStrongestSingle]
 
 def HasStrongestPair(HasPairCombination):
