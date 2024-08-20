@@ -65,6 +65,7 @@ def ReturnFullHouse(combination):
 
 def StrongestSingleCard(Combinations):
     ListOfSum = []
+    ListOfWinningHands
     for combination in Combinations:
         Count = {}
         sum = 0
