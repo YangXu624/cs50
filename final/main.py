@@ -40,11 +40,8 @@ def game(players_list):
     #You are Player 1
     player1 = players_list[0]
 
-    #Dictionary of players {NAME: BALANCE}
-    players_dict = {}
+    #Reset fold boolean
     for player in players:
-        players_dict[player.name] = player.balance
-        #Reset fold boolean
         player.fold = False
 
     #Initiate pot
@@ -139,17 +136,22 @@ def game(players_list):
     if len(winner_list) == 1:
         winner = winner_list[0]
         print(f"Winner is {winner}!\n")
-        players_dict[winner] += pot
+        for player in players:
+            if player.name in winner_list:
+                player.balance += split_pot
         pot = 0
 
     else:
         no_of_winners = len(winner_list)
         split_pot = int(pot / no_of_winners)
+
+        for player in players:
+            if player.name in winner_list:
+                player.balance += split_pot
+
         pot = 0
         print(f"Winners are {winner_list}")
 
-        for winner in winner_list:
-            players_dict[winner] += split_pot
 
     #Convert card.rank from int back to J Q K A
     for player in players:
@@ -159,6 +161,9 @@ def game(players_list):
     #Reveal bot's hand
     for player in players:
         print(f"{player.name}'s hand was {player.hand}, forming a strongest handstrength of {PlayersStrongestHand[player.name]}")
+
+
+###################################################################################################################################
 
 
 def main():
@@ -177,7 +182,9 @@ def main():
         players_list.append(bot)
 
     for i in range(games):
-        print("------- Game {i + 1} -------\n")
+        print(f"\n------- Game {i + 1} -------\n")
+        for player in players_list:
+            print(f"{player.name}'s balance: {player.balance}")
         game(players_list)
 
 
