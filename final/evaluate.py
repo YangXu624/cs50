@@ -349,7 +349,7 @@ def ReturnWinner(players, PlayersStrongestHand):
 
     elif score == 8:
         HasLargestFourOfAKind = HasSecondStrongestPair(playersCombi)
-        best_hand = StrongestSingleCard(lHasLargestFourOfAKind)
+        best_hand = StrongestSingleCard(HasLargestFourOfAKind)
 
     best_hand_rank = []
     for card in best_hand:
