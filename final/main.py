@@ -88,6 +88,11 @@ def game(players_list):
     #Iterate rounds
     river = []
     for i in range(5):
+        for player in players:
+            if player.balance < 0:
+                players.remove(player)
+                print(f"{player.name} HAS BANKRUPTED")
+
         print(f"Round {i + 1}")
         #Deal a card to the river
         river, deck = round(river, deck)
