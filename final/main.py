@@ -132,22 +132,27 @@ def game(players_list):
 
     #Returns a list of players who share the STRONGEST HANDSTRENGTH
     winner_list = ReturnWinner(players, PlayersStrongestHand)
+
+    WinnerList
+    #Ensure players who folded cannot win (CORRECT THIS)
+    for player in players:
+        if player.name in winner_list and player.fold == False:
+            WinnerList.append(player)
+
     #If there is only 1 player with the strongest hand, he is the winner
-    if len(winner_list) == 1:
-        winner = winner_list[0]
+    if len(WinnerList) == 1:
+        winner = WinnerList[0]
         print(f"Winner is {winner}!\n")
-        for player in players:
-            if player.name in winner_list:
-                player.balance += split_pot
+        for player in WinnerList:
+            player.balance += pot
         pot = 0
 
     else:
-        no_of_winners = len(winner_list)
+        no_of_winners = len(WinnerList)
         split_pot = int(pot / no_of_winners)
 
-        for player in players:
-            if player.name in winner_list:
-                player.balance += split_pot
+        for player in WinnerList:
+            player.balance += split_pot
 
         pot = 0
         print(f"Winners are {winner_list}")
