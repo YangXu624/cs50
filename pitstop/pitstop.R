@@ -1,2 +1,2 @@
-filename <- readline("URL: ")
+filename <- readline("File: ")
 pitstops <- read.csv(filename)
