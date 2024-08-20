@@ -121,7 +121,8 @@ def game(players_list):
                     raised_count = 1
                 else:
                     raised_count += 1
-                current = player.current_bet
+                if player.fold == False:
+                    current = player.current_bet
                 pot += added
                 print(f"Pot value: {pot}\n")
 
