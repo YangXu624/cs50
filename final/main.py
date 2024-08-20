@@ -91,7 +91,6 @@ def game(players_list):
         for player in players:
             if player.balance < 0:
                 players.remove(player)
-                bankrupted_players.append(player)
                 print(f"{player.name} HAS BANKRUPTED")
 
         print(f"Round {i + 1}")
