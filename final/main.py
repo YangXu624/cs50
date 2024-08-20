@@ -149,7 +149,6 @@ def game(players_list):
     winner_list = ReturnWinner(PlayersStillInGame, PlayersStrongestHand)
 
     WinnerList = []
-    #Ensure players who folded cannot win (CORRECT THIS)
     for player in players:
         if player.name in winner_list and player.fold == False:
             WinnerList.append(player)
