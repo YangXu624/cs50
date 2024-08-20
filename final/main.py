@@ -128,10 +128,13 @@ def game(players_list):
     winner_list = ReturnWinner(players,PlayersStrongestHand)
     #If there is only 1 player with the strongest hand, he is the winner
     if len(winner_list) == 1:
-        print(f"Winner is {winner_list[0]}!")
-    #Else, REQUIRE FUNCTION TO COMPARE WITHIN ONE HANDSTRENGTH TIER
-    #Can access players' strongest hand using dictionary 'PlayersStrongestHand'
+        winner = winner_list[0]
+        print(f"Winner is {winner}!")
+        winner.bal += pot
+        pot = 0
+
     else:
+        no_of_winners = len(winner_list)
         print(f"Winners are {winner_list}")
 
     #Convert card.rank from int back to J Q K A
