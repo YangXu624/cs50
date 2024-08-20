@@ -359,7 +359,7 @@ def ReturnWinner(players, PlayersStrongestHand):
         for card in PlayersStrongestHand[player.name]:
             playerRank.append(card.rank)
         if playerRank == best_hand_rank:
-            list_of_winners.append(player.name)
+            list_of_winners.append(player)
 
     return list_of_winners
 

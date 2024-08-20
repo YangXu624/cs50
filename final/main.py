@@ -140,8 +140,8 @@ def game(players_list):
         split_pot = int(pot / no_of_winners)
         print(f"Winners are {winner_list}")
 
-        for winner in winner_list:
-            winner.balance += split_pot
+        for player in winner_list:
+            player.balance += split_pot
 
     #Convert card.rank from int back to J Q K A
     for player in players:
