@@ -36,9 +36,14 @@ def game(players_list):
     #Add players into a list called 'players'
     players = players_list
     no_of_players = len(players)
+
     #You are Player 1
     player1 = players_list[0]
 
+    #Dictionary of players {NAME: BALANCE}
+    players_dict = {}
+    for player in players:
+        players_dict[player.name] = player.balance
 
     #Initiate pot
     pot = 0
@@ -130,19 +135,19 @@ def game(players_list):
     winner_list = ReturnWinner(players, PlayersStrongestHand)
     #If there is only 1 player with the strongest hand, he is the winner
     if len(winner_list) == 1:
-        print(winner_list)
         winner = winner_list[0]
         print(f"Winner is {winner}!\n")
-        winner.balance += pot
+        players_dict[winner] += pot
         pot = 0
 
     else:
         no_of_winners = len(winner_list)
         split_pot = int(pot / no_of_winners)
+        pot = 0
         print(f"Winners are {winner_list}")
 
-        for player in winner_list:
-            player.balance += split_pot
+        for winner in winner_list:
+            players_dict[winner] += split_pot
 
     #Convert card.rank from int back to J Q K A
     for player in players:
@@ -166,7 +171,7 @@ def main():
 
     #Add bot into game
     for i in range(bot):
-        bot = Bot(name=f"Bot {i}", balance=bal)
+        bot = Bot(name=f"Bot {i + 1}", balance=bal)
         players_list.append(bot)
 
     for i in range(games):
