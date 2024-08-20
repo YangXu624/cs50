@@ -175,6 +175,7 @@ def main():
         players_list.append(bot)
 
     for i in range(games):
+        print("-------Game)
         game(players_list)
 
 
