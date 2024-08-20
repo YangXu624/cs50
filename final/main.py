@@ -133,7 +133,7 @@ def game(players_list):
     #Returns a list of players who share the STRONGEST HANDSTRENGTH
     winner_list = ReturnWinner(players, PlayersStrongestHand)
 
-    WinnerList
+    WinnerList = []
     #Ensure players who folded cannot win (CORRECT THIS)
     for player in players:
         if player.name in winner_list and player.fold == False:
