@@ -181,17 +181,16 @@ def game(players_list):
 
 def main():
     games = int(input("Number of games: "))
-    bal = int(input("Player Balance: "))
     bot = int(input("Number of Bots: "))
 
     players_list = []
     #Add user into game
-    player1 = Player(name="Player 1", balance=bal)
+    player1 = Player(name="Player 1")
     players_list.append(player1)
 
     #Add bot into game
     for i in range(bot):
-        bot = Bot(name=f"Bot {i + 1}", balance=bal)
+        bot = Bot(name=f"Bot {i + 1}")
         players_list.append(bot)
 
     for i in range(games):
