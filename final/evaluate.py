@@ -330,6 +330,7 @@ def ReturnWinner(players, PlayersStrongestHand):
                 playersCombi.append(PlayersStrongestHand[player.name])
 
     if score == 1 or score == 5 or score == 6 or score == 9:
+        print("PLAYERSCOMBI: ", playersCombi)
         best_hand = StrongestSingleCard(playersCombi)
 
     elif score == 2:
