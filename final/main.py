@@ -141,13 +141,11 @@ def game():
     else:
         print(f"Winners are {winner_list}")
 
-    #Require a function that returns winner
-
-    #Pseudocode: winner.balance += pot then reset pot to 0
-
+    #Convert card.rank from int back to J Q K A
     for player in players:
         ConvertJQKA(player.hand)
     ConvertJQKA(PlayersStrongestHand[player.name])
+
     #Reveal bot's hand
     for player in players:
         print(f"{player.name}'s hand was {player.hand}, forming a strongest handstrength of {PlayersStrongestHand[player.name]}")
