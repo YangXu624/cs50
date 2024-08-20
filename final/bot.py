@@ -24,15 +24,15 @@ class Bot:
                     print(f"{self.name} checks!")
                     return self.balance
                 else:
-                    amt = diff + 10
+                    amt = diff + 5
                     self.balance = self.balance - amt
-                    print(f"{self.name} raises by 10!")
+                    print(f"{self.name} raises by 5!")
                     return self.balance
 
             if number > 0 and number < 31:
-                amt = diff + 10
+                amt = diff + 5
                 self.balance = self.balance - amt
-                print(f"{self.name} raises by 10!")
+                print(f"{self.name} raises by 5!")
                 return self.balance
 
             elif number > 30 and number < 91:
