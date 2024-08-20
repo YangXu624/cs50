@@ -36,9 +36,6 @@ def game(players_list):
     #Add players into a list called 'players'
     players = players_list
     no_of_players = len(players)
-    bankrupted_players = []
-    for player in bankrupted_players:
-        print(f"{player.name} HAS BANKRUPTED")
 
     #You are Player 1
     player1 = players_list[0]
