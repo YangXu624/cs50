@@ -182,7 +182,10 @@ def game(players_list):
 
     #Reveal bot's hand
     for player in players:
-        print(f"{player.name}'s hand was {player.hand}, forming a strongest handstrength of {PlayersStrongestHand[player.name]}")
+        if player.fold == True:
+            print(f"{player.name} HAS FOLDED")
+        else:
+            print(f"{player.name}'s hand was {player.hand}, forming a strongest handstrength of {PlayersStrongestHand[player.name]}")
         player.hand = []
 
 
