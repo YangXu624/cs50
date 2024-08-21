@@ -1,7 +1,7 @@
 """
 Project Title: Pokerface._.
 Names: Yang Xu, Tan Yu Jun
-Usernames (Github/edX): YangXu624, j-unn-y/Junny_
+Usernames (Github/edX): YangXu624/YangXu624, j-unn-y/Junny_
 Country: Singapore
 Date: 21/08/24
 """
