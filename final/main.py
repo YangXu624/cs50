@@ -83,6 +83,7 @@ def game(players_list):
                 raised_count += 1
             current = player.current_bet
             pot += added
+            print("CURRENT: ", current)
             print(f"Pot value: {pot}\n")
 
     #Iterate rounds
