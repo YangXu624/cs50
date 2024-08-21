@@ -1,4 +1,10 @@
-
+"""
+Project Title: Pokerface._.
+Names: Yang Xu, Tan Yu Jun
+Usernames (Github/edX): YangXu624, j-unn-y/Junny_
+Country: Singapore
+Date: 21/08/24
+"""
 
 from cards import Card
 from random import choice
