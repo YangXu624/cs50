@@ -100,7 +100,7 @@ def game(players_list):
         print(f"Round {i + 1}")
         #Deal a card to the river
         river, deck = round(river, deck)
-        print(f"River: {river}")
+        print(f"River: {river}\nYour hand: {player1.hand}\n")
 
         #Reset everyone's current bet to 0
         for player in players:
