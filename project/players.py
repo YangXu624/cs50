@@ -1,7 +1,7 @@
 from re import search
 
 class Player:
-    def __init__(self, name, hand=None, current_bet=0, balance=100, fold=False, handstrength=0):
+    def __init__(self, name, hand=None, current_bet=0, balance=1000, fold=False, handstrength=0):
         self.name = name
         self.hand = hand if hand is not None else []
         #Within a specific round, keeps track of how much the player has already betted
