@@ -198,8 +198,13 @@ def game(players_list):
 
 
 def main():
-    games = int(input("Number of games: "))
-    bot = int(input("Number of Bots: "))
+    while True:
+        try:
+            games = int(input("Number of games: "))
+            bot = int(input("Number of Bots: "))
+            break
+        except ValueError:
+            print("Invalid input: Integers only")
 
     players_list = []
     #Add user into game
