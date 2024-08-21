@@ -87,10 +87,9 @@ def game(players_list):
 
     #Iterate rounds
     river = []
-    for i in range(3):
+    for i in range(2):
         #Deal a card to the river
         river, deck = round(river, deck)
-    print(f"River: {river}")
 
     for i in range(2):
         for player in players:
