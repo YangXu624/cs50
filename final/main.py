@@ -68,23 +68,26 @@ def game(players_list):
     #Initiate endround variable to end loop when round ends
     endround = False
     while endround == False:
-        #Each player takes turns to perform action
-        for player in players:
-            if raised_count == no_of_players:
-                endround = True
-                break
+            #Each player takes turns to perform action
+            for player in players:
+                if raised_count == no_of_players:
+                    endround = True
+                    break
 
-            added = bet(player, current)
-            player.current_bet += added
-            print(f"{player.name} balance: {player.balance}")
-            if player.current_bet > current:
-                raised_count = 1
-            else:
-                raised_count += 1
-            current = player.current_bet
-            pot += added
-            print("CURRENT: ", current)
-            print(f"Pot value: {pot}\n")
+                added = bet(player, current)
+                player.current_bet += added
+                print(f"{player.name} balance: {player.balance}")
+                if player.current_bet > current:
+                    raised_count = 1
+                else:
+                    raised_count += 1
+                if player.fold == False:
+                    current = player.current_bet
+                pot += added
+                print(f"Pot value: {pot}\n")
+
+            if endround == True:
+                break
 
     #Iterate rounds
     river = []
