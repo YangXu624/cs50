@@ -91,7 +91,7 @@ def game(players_list):
         #Deal a card to the river
         river, deck = round(river, deck)
 
-    for i in range(2):
+    for i in range(3):
         for player in players:
             if player.balance < 0:
                 players.remove(player)
