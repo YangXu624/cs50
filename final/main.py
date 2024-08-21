@@ -188,6 +188,7 @@ def game(players_list):
         else:
             print(f"{player.name}'s hand was {player.hand}, forming a strongest handstrength of {PlayersStrongestHand[player.name]}")
         player.hand = []
+        player.current_bet = 0
 
 
 ###################################################################################################################################
