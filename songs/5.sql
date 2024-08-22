@@ -1,3 +1,7 @@
 SELECT name
 FROM songs
-IF artist_id ;
+WHERE artist_id IN (
+    SELECT id
+    FROM artists
+    WHERE name == "Post Malone"
+);
