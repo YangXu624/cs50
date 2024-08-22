@@ -1,2 +1,3 @@
-SELECT AVG(energy)
-FROM songs;
+SELECT name
+FROM songs
+IF artist_id ;
