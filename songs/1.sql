@@ -1,0 +1,2 @@
+SELECT songs
+FROM songs
