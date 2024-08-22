@@ -1,7 +1,7 @@
-SELECT AVG(energy)
+SELECT name
 FROM songs
 WHERE artist_id IN (
     SELECT id
     FROM artists
-    WHERE name == "Drake"
+    WHERE name == "Post Malone"
 );
