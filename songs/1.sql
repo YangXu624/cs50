@@ -1,2 +1,2 @@
-SELECT songs
-FROM songs
+SELECT name
+FROM songs;
