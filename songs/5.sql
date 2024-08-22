@@ -1,0 +1,3 @@
+SELECT AVERAGE
+FROM songs
+AVERAGE(energy);
