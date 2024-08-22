@@ -1,1 +1,5 @@
-Hello
+To characterize the listener's audio aura based on their top 100 songs from 2018, calculate the average values for attributes like energy, tempo, danceability, and valence. This gives a general sense of their musical preferences.
+
+Limitations: The top 100 songs may not fully represent their overall taste and may not reflect changes in their preferences since 2018.
+
+Better Approach: Analyze a larger and more diverse sample of songs over a longer period to get a more accurate picture of the listener's preferences.
