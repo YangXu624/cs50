@@ -1,4 +1,4 @@
-SELECT DISTINCT name
+SELECT DISTINCT name, title, year
 FROM people
 JOIN stars ON people.id = stars.person_id
 JOIN movies ON movies.id = stars.movie_id
