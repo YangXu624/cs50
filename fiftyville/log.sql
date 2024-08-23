@@ -31,6 +31,10 @@ WHERE account_number IN (
 );
 -- List of person_id that fit description of interview 2
 
+-- Using above info (from interview 2)
+SELECT * FROM phone_calls
+WHERE year = 2023 AND month = 7 AND day = 28 AND duration < 60;
+
 -- Using interview 3
 SELECT *
 FROM passengers
@@ -69,6 +73,10 @@ AND passport_number IN (
           AND day = 29
         ORDER BY hour
         LIMIT 1
+    )
+AND phone_number IN (
+    SELECT caller FROM phone_calls
+    WHERE year = 2023 AND month = 7 AND day = 28 AND duration < 60
     )
 );
 
