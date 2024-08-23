@@ -93,3 +93,19 @@ AND id IN (
     )
 );
 
+-- City he escaped to
+SELECT full_name
+FROM airports
+WHERE id IN (
+    SELECT destination_airport_id
+    FROM passengers
+    WHERE flight_id IN (
+        SELECT id
+        FROM flights
+        WHERE year = 2023
+          AND month = 7
+          AND day = 29
+        ORDER BY hour
+        LIMIT 1
+    )
+);
