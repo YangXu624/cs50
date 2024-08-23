@@ -18,5 +18,5 @@ WHERE year = 2023 AND month = 7 AND day = 28 AND hour = 10 AND minute > 15 AND m
 -- List of potential liscence plates within 10 mins time frame
 
 -- Using interview 2
-SELECT * FROM crime_scene_reports
-WHERE street = "Leggett Street" AND year = 2023 AND month = 7 AND day = 28;
+SELECT * FROM atm_transactions
+WHERE atm_location = "Leggett Street" AND year = 2023 AND month = 7 AND day = 28;
