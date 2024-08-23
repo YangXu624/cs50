@@ -50,7 +50,7 @@ WHERE flight_id IN (
 -- List of passport numbers
 
 -- Putting everything together
-SELECT name
+SELECT *
 FROM people
 WHERE license_plate IN (
     SELECT license_plate
