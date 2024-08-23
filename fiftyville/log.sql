@@ -33,9 +33,9 @@ WHERE account_number IN (
 
 -- Using interview 3
 SELECT *
-FROM airports
-WHERE id IN (
-    SELECT destination_airport_id 
+FROM passengers
+WHERE flight_id IN (
+    SELECT id
     FROM flights
     WHERE year = 2023
       AND month = 7
@@ -43,4 +43,13 @@ WHERE id IN (
     ORDER BY hour
     LIMIT 1
 );
+-- List of passport numbers
 
+-- Putting everything together
+SELECT name
+FROM people
+WHERE lisence_plate IN (
+    SELECT * FROM bakery_security_logs
+WHERE year = 2023 AND month = 7 AND day = 28 AND hour = 10 AND minute > 15 AND minute < 25;
+)
+AND 
