@@ -33,7 +33,11 @@ WHERE account_number IN (
 
 -- Using interview 3
 SELECT *
-FROM flights
-WHERE year = 2023 AND month = 7 AND day = 29
-ORDER BY hour
-LIMIT 1;
+FROM airports
+WHERE id IN (
+    SELECT *
+    FROM flights
+    WHERE year = 2023 AND month = 7 AND day = 29
+    ORDER BY hour
+    LIMIT 1
+);
