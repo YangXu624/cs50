@@ -29,6 +29,7 @@
             function check_mcq(button) {
                 if (button.value === "Tanzania") {
                     button.style.backgroundColor = 'lightgreen'
+                    console.log('Correct!')
                 } else {
                     button.style.backgroundColor = 'lightcoral'
                 }
@@ -46,10 +47,10 @@
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
                 <h3>In which country is Mount Kilimanjaro?</h3>
-                <button onclick="check_mcq(this)">Tanzania</button>
-                <button onclick="check_mcq(this)">Niger</button>
-                <button onclick="check_mcq(this)">Indonesia</button>
-                <button onclick="check_mcq(this)">USA</button>
+                <button value="Tanzania" onclick="check_mcq(this)">Tanzania</button>
+                <button value="Niger" onclick="check_mcq(this)">Niger</button>
+                <button value="Indonesia" onclick="check_mcq(this)">Indonesia</button>
+                <button value="USA" onclick="check_mcq(this)">USA</button>
             </div>
 
             <div class="section">
