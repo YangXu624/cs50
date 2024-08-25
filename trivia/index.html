@@ -14,16 +14,28 @@
                 // Get the value of the input field
                 const answer = answerField.value.trim();
 
+                let messageContainer = document.querySelector('#message-container');
+
+                // If no message container exists, create one
+                if (!messageContainer) {
+                    messageContainer = document.createElement('p');
+                    messageContainer.id = 'message-container'; // Assign an ID for future reference
+                    document.querySelector('form').appendChild(messageContainer); // Append it to the form
+                }
+
                 // Check if the answer is correct
                 if (answer.toLowerCase() === 'k2') {
-                    alert('Correct!');
                     // Change the background color of the input field to green
                     answerField.style.backgroundColor = 'lightgreen';
-                    
+                    // Update the message container
+                    messageContainer.textContent = 'Correct!';
+                    messageContainer.style.color = 'green';
                 } else {
-                    alert('Incorrect!');
-                    // Optionally, you can reset the background color if the answer is incorrect
+                    // Change the background color of the input field to coral
                     answerField.style.backgroundColor = 'lightcoral';
+                    // Update the message container
+                    messageContainer.textContent = 'Incorrect!';
+                    messageContainer.style.color = 'red';
                 }
             }
 
