@@ -44,9 +44,9 @@
 
                 // If no message container exists, create one
                 if (!messageContainer) {
-                    messageContainer = document.createElement('q');
+                    messageContainer = document.createElement('p');
                     messageContainer.id = 'message-container'; // Assign an ID for future reference
-                    document.querySelector('form').appendChild(messageContainer); // Append it to the form
+                    document.querySelector('button').appendChild(messageContainer); // Append it to the form
                 }
 
                 if (button.value === "Tanzania") {
