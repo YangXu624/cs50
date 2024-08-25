@@ -14,12 +14,12 @@
                 // Get the value of the input field
                 const answer = answerField.value.trim();
 
-                let messageContainer = document.querySelector('#message-container');
+                let messageContainer = document.querySelector('#message-container1');
 
                 // If no message container exists, create one
                 if (!messageContainer) {
                     messageContainer = document.createElement('p');
-                    messageContainer.id = 'message-container'; // Assign an ID for future reference
+                    messageContainer.id = 'message-container1'; // Assign an ID for future reference
                     document.querySelector('form').appendChild(messageContainer); // Append it to the form
                 }
 
@@ -40,13 +40,13 @@
             }
 
             function check_mcq(button) {
-                let messageContainer = document.querySelector('#message-container');
+                let messageContainer = document.querySelector('#message-container2');
 
                 // If no message container exists, create one
                 if (!messageContainer) {
                     messageContainer = document.createElement('p');
-                    messageContainer.id = 'message-container'; // Assign an ID for future reference
-                    document.querySelector('button').appendChild(messageContainer); // Append it to the form
+                    messageContainer.id = 'message-container2'; // Assign an ID for future reference
+                    document.querySelector('.section').appendChild(messageContainer); // Append it to the section
                 }
 
                 if (button.value === "Tanzania") {
