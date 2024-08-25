@@ -40,11 +40,23 @@
             }
 
             function check_mcq(button) {
+                let messageContainer = document.querySelector('#message-container');
+
+                // If no message container exists, create one
+                if (!messageContainer) {
+                    messageContainer = document.createElement('q');
+                    messageContainer.id = 'message-container'; // Assign an ID for future reference
+                    document.querySelector('form').appendChild(messageContainer); // Append it to the form
+                }
+
                 if (button.value === "Tanzania") {
                     button.style.backgroundColor = 'lightgreen'
-                    console.log('Correct!')
+                    messageContainer.textContent = 'Correct!';
+                    messageContainer.style.color = 'green';
                 } else {
                     button.style.backgroundColor = 'lightcoral'
+                    messageContainer.textContent = 'Inorrect!';
+                    messageContainer.style.color = 'red';
                 }
             }
         </script>
