@@ -26,3 +26,14 @@ body {
 .section {
     padding: 0.5rem 2rem 1rem 2rem;
 }
+.accordion-button {
+    cursor: pointer;
+}
+
+.accordion-collapse {
+    display: none;
+}
+
+.accordion-collapse.open {
+    display: block;
+}
