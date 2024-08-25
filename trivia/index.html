@@ -7,7 +7,7 @@
         <title>Trivia!</title>
         <script>
             // TODO: Add code to check answers to questions
-            function get_answer()
+            function check_answer()
             {
                 answer = document.querySelector()
             }
@@ -34,7 +34,11 @@
                 <h2>Part 2: Free Response</h2>
                 <hr>
                 <!-- TODO: Add free response question here -->
-                 <h3>What is the second tallest mountain in the world?</h3>
+                <h3>What is the second tallest mountain in the world?</h3>
+                <form onsubmit="check_answer(); return false>
+                    <input autocomplete="off" autofocus id="name" placeholder="Answer" type="text">
+                    <input type="submit">
+                </form>
             </div>
         </div>
     </body>
