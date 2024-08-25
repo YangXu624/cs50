@@ -11,7 +11,11 @@
             {
                 answer = document.querySelector('#ans').value
 
-                if (answer === 'k2' || answer === 'K2')
+                if (answer === 'k2' || answer === 'K2') {
+                    alert('Correct!')
+                } else {
+                    alert('Incorrect!')
+                }
             }
         </script>
     </head>
@@ -37,7 +41,7 @@
                 <hr>
                 <!-- TODO: Add free response question here -->
                 <h3>What is the second tallest mountain in the world?</h3>
-                <form onsubmit="check_answer(); return false>
+                <form onsubmit="check_answer(); return false">
                     <input autocomplete="off" autofocus id="ans" placeholder="Answer" type="text">
                     <input type="submit">
                 </form>
