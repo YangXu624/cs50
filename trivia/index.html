@@ -7,13 +7,22 @@
         <title>Trivia!</title>
         <script>
             // TODO: Add code to check answers to questions
-            function check_answer()
-            {
-                answer = document.querySelector('#ans').value
-                if (answer === 'k2' || answer === 'K2') {
-                    alert('Correct!')
+            function check_answer() {
+                // Get the input field element
+                const answerField = document.querySelector('#ans');
+
+                // Get the value of the input field
+                const answer = answerField.value.trim();
+
+                // Check if the answer is correct
+                if (answer.toLowerCase() === 'k2') {
+                    alert('Correct!');
+                    // Change the background color of the input field to green
+                    answerField.style.backgroundColor = 'lightgreen';
                 } else {
-                    alert('Incorrect!')
+                    alert('Incorrect!');
+                    // Optionally, you can reset the background color if the answer is incorrect
+                    answerField.style.backgroundColor = 'lightcoral';
                 }
             }
         </script>
@@ -29,10 +38,10 @@
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
                 <h3>In which country is Mount Kilimanjaro?</h3>
-                <button onclick="this.style.backgroundColor = 'green'">Tanzania</button>
-                <button onclick="this.style.backgroundColor = 'red'">Niger</button>
-                <button onclick="this.style.backgroundColor = 'red'">Indonesia</button>
-                <button onclick="this.style.backgroundColor = 'red'">USA</button>
+                <button onclick="this.style.backgroundColor = 'lightgreen'">Tanzania</button>
+                <button onclick="this.style.backgroundColor = 'lightcoral'">Niger</button>
+                <button onclick="this.style.backgroundColor = 'lightcoral'">Indonesia</button>
+                <button onclick="this.style.backgroundColor = 'lightcoral'">USA</button>
             </div>
 
             <div class="section">
