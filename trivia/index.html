@@ -25,6 +25,14 @@
                     answerField.style.backgroundColor = 'lightcoral';
                 }
             }
+
+            function check_mcq(button) {
+                if (button.value === "Tanzania") {
+                    button.style.backgroundColor = 'lightgreen'
+                } else {
+                    button.style.backgroundColor = 'lightcoral'
+                }
+            }
         </script>
     </head>
     <body>
@@ -38,10 +46,10 @@
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
                 <h3>In which country is Mount Kilimanjaro?</h3>
-                <button onclick="this.style.backgroundColor = 'lightgreen'">Tanzania</button>
-                <button onclick="this.style.backgroundColor = 'lightcoral'">Niger</button>
-                <button onclick="this.style.backgroundColor = 'lightcoral'">Indonesia</button>
-                <button onclick="this.style.backgroundColor = 'lightcoral'">USA</button>
+                <button onclick="check_mcq(this)">Tanzania</button>
+                <button onclick="check_mcq(this)">Niger</button>
+                <button onclick="check_mcq(this)">Indonesia</button>
+                <button onclick="check_mcq(this)">USA</button>
             </div>
 
             <div class="section">
