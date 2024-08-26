@@ -28,7 +28,9 @@ def index():
 
         # TODO: Add the user's entry into the database
         name = request.form.get("name")
-        db
+        month =
+        day =
+        db.
 
         return redirect("/")
 
