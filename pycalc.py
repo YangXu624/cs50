@@ -1,22 +1,14 @@
 import math
 
-n = int(input("n: "))
-h = float(input("h: "))
-x = float(input("x: "))
-y = float(input("y: "))
+angles = [8, 10, 12, 14]
 
-def f(x, y):
-    return (x + y - 1)
+for angle in angles:
+    theta = float(angle * math.pi / 180)
 
-for i in range(n):
+    ux = 63 * math.cos(theta)
+    uy = 63 * math.sin(theta)
 
-    k1 = h * f(x, y)
-    k2 = h * f((x + h), (y + k1))
+    vx = ux
+    vy = 4.9 * 9.81 - uy
 
-    print(f"n = {i}, x = {x}, y = {y}, k1 = {k1}, k2 = {k2}")
-
-    y += (k1 + k2) / 2
-    x += h
-
-
-
+    print(math.degrees(math.atan(vy / vx)))
