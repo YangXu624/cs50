@@ -30,9 +30,8 @@ def index():
         month = request.form.get("month")
         day = request.form.get("day")
 
-        # Insert the new entry into the database
-        db.execute("INSERT INTO birthdays (name, month, day) VALUES (?, ?, ?)", (name, month, day))
-
+        db.execute("INSERT INTO birthdays (name, month, day) VALUES (:name, :month, :day)",
+           {"name": name, "month": month, "day": day})
     else:
         # Fetch all entries from the database
         rows = db.execute("SELECT name, month, day FROM birthdays")
