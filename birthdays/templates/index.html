@@ -24,7 +24,6 @@
             </div>
 
             <div class="section">
-
                 <h2>All Birthdays</h2>
                 <table>
                     <thead>
@@ -34,8 +33,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- TODO: Loop through the database entries to display them in this table -->
-                         <tr>{{ person_name }} {{ day }}/{{ month }}</tr>
+                        <!-- Loop through the database entries to display them in this table -->
+                        {% for row in birthdays %}
+                        <tr>
+                            <td>{{ row['name'] }}</td>
+                            <td>{{ row['month'] }}/{{ row['day'] }}</td>
+                        </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
