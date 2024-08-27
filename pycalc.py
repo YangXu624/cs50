@@ -3,7 +3,7 @@ import math
 angles = [8, 10, 12, 14]
 
 for angle in angles:
-    theta = float(angle * math.pi / 180)
+    theta = math.radians(angle)
 
     ux = 63 * math.cos(theta)
     uy = 63 * math.sin(theta)
