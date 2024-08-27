@@ -1,6 +1,6 @@
 import math
 
-angles = [8, 10, 12, 14, 40.79]
+angles = [8, 10, 12, 14, 40.84]
 
 for angle in angles:
     theta = math.radians(angle)
