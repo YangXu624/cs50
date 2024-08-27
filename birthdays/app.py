@@ -39,9 +39,7 @@ def index():
     else:
 
         # TODO: Display the entries in the database on index.html
-        db.execute("SELECT * FROM birthdays")
-
-        return render_template("index.html")
+        return render_template("index.html", person_name = name, month = month, day = day)
 
 if __name__=="__main__": app.run()
 
