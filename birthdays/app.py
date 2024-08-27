@@ -33,15 +33,13 @@ def index():
         # Insert the new entry into the database
         db.execute("INSERT INTO birthdays (name, month, day) VALUES (?, ?, ?)", (name, month, day))
 
-        # Redirect to avoid form resubmission
-        return redirect("/")
-
     else:
         # Fetch all entries from the database
         rows = db.execute("SELECT name, month, day FROM birthdays")
 
         # Render the template and pass the data to it
         return render_template("index.html", birthdays=rows)
+
 
 if __name__=="__main__": app.run()
 
