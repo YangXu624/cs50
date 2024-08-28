@@ -42,6 +42,12 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
+    if request.method != "POST":
+        return render_template("buy.html")
+
+    symbol = request.form.get("symbol")
+    quantity = request.form.get("quantity")
+    if 
     return apology("TODO")
 
 
