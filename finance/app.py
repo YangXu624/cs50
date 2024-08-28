@@ -51,7 +51,8 @@ def buy():
     if not (isinstance(quantity, int) and value > 0):
         return apology("Quantity has to be an integer")
 
-    
+    query = lookup(symbol)
+    payment = 
 
 @app.route("/history")
 @login_required
