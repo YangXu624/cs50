@@ -108,6 +108,9 @@ def quote():
     """Get stock quote."""
     if not request.method == "POST":
         return render_template("quote.html")
+
+    symbol = request.form.get("symbol")
+    query = lookup(symbol)
     return apology("TODO")
 
 
