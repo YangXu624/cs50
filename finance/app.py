@@ -54,7 +54,15 @@ def buy():
     query = lookup(symbol)
     payment = query['price'] * quantity
 
-    db.execute("SELECT cash FROM users WHERE username=?", username = username)
+    db.execute("SELECT cash FROM users WHERE username=?", username = session['user_id'])
+    cash = int(db.fetchone())
+
+    if payment > cash:
+        return apology("Insufficient balance :(")
+    else:
+        cash -= payment
+
+    return render_template("buy.html")
 
 @app.route("/history")
 @login_required
