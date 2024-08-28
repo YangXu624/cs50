@@ -6,6 +6,7 @@
 
 {% block main %}
     <div class="mb-3">
-        <p>{{ query['price'] }} {{ ['symbol'] }}</p>
+        <p>Symbol: {{ query['symbol'] }}</p>
+        <p>Price: USD{{ query['price'] }}</p>
     </div>
 {% endblock %}
