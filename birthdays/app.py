@@ -24,16 +24,13 @@ def after_request(response):
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    i = 3
     if request.method == "POST":
         # Get form data
         name = request.form.get("name")
         month = request.form.get("month")
         day = request.form.get("day")
 
-        db.execute("INSERT INTO birthdays (id, name, month, day) VALUES (:id, :name, :month, :day)",
-           {"id": i, "name": name, "month": month, "day": day})
-        i += 1
+        db.execute("INSERT INTO birthdays (name, month, day) VALUES (?, ?, ?)", name, month, day)
 
     else:
         # Fetch all entries from the database
