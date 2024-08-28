@@ -112,14 +112,15 @@ def quote():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
-    if request.method == "POST":
-        username = request.form.get("username")
-        password = request.form.get("password")
-        try:
-            db.execute("INSERT INTO users (user, hash) VALUES (?, ?)", username, password)
-        except ValueError:
-            return apology("Username already taken!")
-    return apology("OKBRO!")
+    if not request.method == "POST":
+        return apology("OKBRO!")
+    
+    username = request.form.get("username")
+    password = request.form.get("password")
+    try:
+        db.execute("INSERT INTO users (user, hash) VALUES (?, ?)", username, password)
+    except ValueError:
+        return apology("Username already taken!")
 
 
 @app.route("/sell", methods=["GET", "POST"])
