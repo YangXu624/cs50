@@ -117,6 +117,9 @@ def register():
 
     username = request.form.get("username")
     password = request.form.get("password")
+    confirmation = request.form.get("confirmation")
+    if password != confirmation:
+        return apology("Passwords do not match!")
     try:
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, password)
         return redirect("/")
