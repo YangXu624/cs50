@@ -54,7 +54,7 @@ def buy():
     query = lookup(symbol)
     payment = query['price'] * quantity
 
-    db.execute("SELECT cash FROM users WHERE username=?", username = session['user_id'])
+    db.execute("SELECT cash FROM users WHERE username=(?)", (session['user_id']))
     cash = int(db.fetchone())
 
     if payment > cash:
