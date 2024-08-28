@@ -47,9 +47,11 @@ def buy():
 
     symbol = request.form.get("symbol")
     quantity = request.form.get("quantity")
-    if 
-    return apology("TODO")
 
+    if not (isinstance(quantity, int) and value > 0):
+        return apology("Quantity has to be an integer")
+
+    
 
 @app.route("/history")
 @login_required
