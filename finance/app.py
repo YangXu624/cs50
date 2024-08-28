@@ -48,7 +48,7 @@ def buy():
     symbol = request.form.get("symbol")
     quantity = request.form.get("quantity")
 
-    if not (isinstance(quantity, int) and value > 0):
+    if isinstance(quantity, int) and value > 0:
         return apology("Quantity has to be an integer")
 
     query = lookup(symbol)
