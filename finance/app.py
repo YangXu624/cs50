@@ -52,7 +52,7 @@ def buy():
         return apology("Quantity has to be an integer")
 
     query = lookup(symbol)
-    payment = 
+    payment = query['price'] * quantity
 
 @app.route("/history")
 @login_required
