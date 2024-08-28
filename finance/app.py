@@ -118,7 +118,8 @@ def register():
     username = request.form.get("username")
     password = request.form.get("password")
     try:
-        db.execute("INSERT INTO users (user, hash) VALUES (?, ?)", username, password)
+        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, password)
+        return redirect("/")
     except ValueError:
         return apology("Username already taken!")
 
