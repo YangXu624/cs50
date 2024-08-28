@@ -30,9 +30,12 @@ def index():
         month = request.form.get("month")
         day = request.form.get("day")
 
-        db.execute("INSERT INTO birthdays (name, month, day) VALUES (?, ?, ?)", name, month, day)
+    else:
+        name = request.args.get("name")
+        month = request.args.get("month")
+        day = request.args.get("day")
 
-
+    db.execute("INSERT INTO birthdays (name, month, day) VALUES (?, ?, ?)", name, month, day)
     # Fetch all entries from the database
     rows = db.execute("SELECT name, month, day FROM birthdays")
 
