@@ -54,6 +54,8 @@ def buy():
     query = lookup(symbol)
     payment = query['price'] * quantity
 
+    db.execute("SELECT cash FROM users WHERE username=?", username = username)
+
 @app.route("/history")
 @login_required
 def history():
