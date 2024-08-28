@@ -32,12 +32,12 @@ def index():
 
         db.execute("INSERT INTO birthdays (name, month, day) VALUES (?, ?, ?)", name, month, day)
 
-    else:
-        # Fetch all entries from the database
-        rows = db.execute("SELECT name, month, day FROM birthdays")
 
-        # Render the template and pass the data to it
-        return render_template("index.html", birthdays=rows)
+    # Fetch all entries from the database
+    rows = db.execute("SELECT name, month, day FROM birthdays")
+
+    # Render the template and pass the data to it
+    return render_template("index.html", birthdays=rows)
 
 
 if __name__=="__main__": app.run()
