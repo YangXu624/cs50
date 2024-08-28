@@ -112,7 +112,7 @@ def quote():
     symbol = request.form.get("symbol")
     query = lookup(symbol)
 
-    return redirect("/quoted")
+    return render_template("quoted.html", query=query)
 
 
 @app.route("/register", methods=["GET", "POST"])
