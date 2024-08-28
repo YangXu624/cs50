@@ -48,8 +48,8 @@ def buy():
     symbol = request.form.get("symbol")
     quantity = int(request.form.get("quantity"))
 
-    if quantity < 0:
-        return apology("Quantity has to be an integer")
+    if not (isinstance(quantity, int) and quantity > 0):
+        return apology("Quantity has to be a positive integer")
 
     query = lookup(symbol)
     payment = query['price'] * quantity
