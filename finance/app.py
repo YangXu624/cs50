@@ -121,7 +121,7 @@ def register():
     if password != confirmation:
         return apology("Passwords do not match!")
     try:
-        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, password)
+        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, generate_password_hash(password))
         return redirect("/")
     except ValueError:
         return apology("Username already taken!")
