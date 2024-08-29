@@ -36,11 +36,13 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     userinfo = db.execute("SELECT username, cash FROM users WHERE id=?", session['user_id'])
+    array = userinfo[0]
+    array['cash'] = usd(array['cash'])
     stocks = db.execute("SELECT symbol, amount FROM stocks WHERE user_id=?", session['user_id'])
     for stock in stocks:
         look = lookup(stock['symbol'])
         stock['value'] = usd(stock['amount'] * look['price'])
-    return render_template("index.html", userinfo = userinfo[0], stocks = stocks)
+    return render_template("index.html", userinfo = array, stocks = stocks)
 
 
 @app.route("/buy", methods=["GET", "POST"])
