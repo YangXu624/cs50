@@ -85,7 +85,7 @@ def buy():
 def history():
     """Show history of transactions"""
     info = db.execute("SELECT symbol, quantity, transaction_type, time FROM records WHERE user_id = ?", session['user_id'])
-    return render_template("history.html", info)
+    return render_template("history.html", info = info)
 
 
 @app.route("/login", methods=["GET", "POST"])
