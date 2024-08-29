@@ -54,12 +54,15 @@ def buy():
     query = lookup(symbol)
     payment = query['price'] * quantity
 
-    cash = db.execute("SELECT cash FROM users WHERE username=(?)", (session['user_id']))
+    cash = db.execute("SELECT cash FROM users WHERE id=(?)", (session['user_id']))
+    dct = cash[0]
+    amt = dct['cash']
 
-    if payment > cash['cash']:
+    if payment > amt:
         return apology("Insufficient balance :(")
     else:
-        cash -= payment
+        amt -= payment
+        db.execute
 
     return render_template("buy.html")
 
