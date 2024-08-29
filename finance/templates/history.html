@@ -17,12 +17,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for items in info %}
+                    {% for item in info %}
                     <tr>
-                        <td style="border: 1px solid black; padding: 8px;">{{ info['symbol'] }}</td>
-                        <td style="border: 1px solid black; padding: 8px;">{{ info['quantity'] }}</td>
-                        <td style="border: 1px solid black; padding: 8px;">{{ info['transaction_type'] }}</td>
-                        <td style="border: 1px solid black; padding: 8px;">{{ info['time'] }}</td>
+                        <td style="border: 1px solid black; padding: 8px;">{{ item['symbol'] }}</td>
+                        <td style="border: 1px solid black; padding: 8px;">{{ item['quantity'] }}</td>
+                        <td style="border: 1px solid black; padding: 8px;">{{ item['transaction_type'] }}</td>
+                        <td style="border: 1px solid black; padding: 8px;">{{ item['time'] }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
