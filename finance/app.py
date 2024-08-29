@@ -190,6 +190,7 @@ def sell():
             if quantity < 1:
                 return apology("Cannot sell negative stocks")
 
+    symbol = symbol.upper()
     amt = db.execute("SELECT amount FROM stocks WHERE user_id=? AND symbol=?", session['user_id'], symbol)
     dct = amt[0]
     amt = dct['amount']
@@ -198,7 +199,7 @@ def sell():
         return apology("Insufficient stocks to sell")
 
     amt -= quantity
-    db.execute("UPDATE stocks SET amount = ? WHERE user_id = ?", amt, session['user_id'])
+    db.execute("UPDATE stocks SET amount = ? WHERE user_id = ? AND symbol = ?", amt, session['user_id'], symbol)
 
     cash = db.execute("SELECT cash FROM users WHERE id=?", session['user_id'])
     dct = cash[0]
