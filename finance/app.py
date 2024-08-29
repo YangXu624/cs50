@@ -67,7 +67,7 @@ def buy():
         db.execute("UPDATE users SET cash = ? WHERE id = ?", amt, session['user_id'])
         db.execute("INSERT INTO records (user_id, symbol, quantity, transaction_type, time) VALUES (?, ?, ?, ?, ?)", session['user_id'], symbol.upper(), quantity, 'BUY', datetime.now())
 
-    stock = db.execute("SELECT amount FROM stocks WHERE user_id=?", session['user_id'])
+    stock = db.execute("SELECT amount FROM stocks WHERE user_id=? AND symbol=?", session['user_id'], symbol)
     if stock == []:
         db.execute("INSERT INTO stocks (user_id, symbol, amount) VALUES (?, ?, ?)", session['user_id'], symbol.upper(), quantity)
     else:

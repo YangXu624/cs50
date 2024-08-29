@@ -7,11 +7,11 @@
 {% block main %}
     <div action="/">
         <div class="mb-3">
-            Username: {{ username['username'] }}
+            <p>Username: {{ username['username'] }}</p>
 
             {% for stock in stocks %}
 
-            {{ stock['symbol'] }} {{ stock['amount'] }}
+            <p>{{ stock['symbol'] }} {{ stock['amount'] }}</p>
 
             {% endfor %}
         </div>
