@@ -37,7 +37,8 @@ def index():
     """Show portfolio of stocks"""
     userinfo = db.execute("SELECT username, cash FROM users WHERE id=?", session['user_id'])
     array = userinfo[0]
-    array['cash'] = usd(float(array['cash'].replace("$", "").replace(",", "")))
+    if isinstance(array['cash'], str):
+        array['cash'] = usd(float(array['cash'].replace("$", "").replace(",", "")))
     stocks = db.execute("SELECT symbol, amount FROM stocks WHERE user_id=?", session['user_id'])
     for stock in stocks:
         look = lookup(stock['symbol'])
