@@ -63,7 +63,7 @@ def buy():
     else:
         amt -= payment
         db.execute("UPDATE users SET cash = ? WHERE id = ?", amt, session['user_id'])
-        db.execute("INSERT INTO stocks (user_id, username, symbol, quantity, transaction_type, time) VALUES (?, ?, ?, ?, ?, ?)", session['user_id'], 'username', symbol, quantity, 'BUY', datetime.now())
+        db.execute("INSERT INTO stocks (user_id, username, symbol, quantity, transaction_type, time) VALUES (?, ?, ?, ?, ?, ?)", session['user_id'], 'username', symbol.upper(), quantity, 'BUY', datetime.now())
 
     return render_template("buy.html")
 
