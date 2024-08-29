@@ -51,9 +51,16 @@ def buy():
         return render_template("buy.html")
 
     symbol = request.form.get("symbol")
-    quantity = int(request.form.get("shares"))
+    if not symbol:
+        return apology("Missing symbol")
+    try:
+        quantity = int(request.form.get("shares"))
+    except ValueError:
+        return apology("Missing number")
 
-    if not (isinstance(quantity, int) and quantity > 0):
+    if not lookup(symbol):
+        return apology("Invalid symbol")
+    if not isinstance(quantity, int) or quantity < 0:
         return apology("Quantity has to be a positive integer")
 
     query = lookup(symbol)
