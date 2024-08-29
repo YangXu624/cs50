@@ -153,11 +153,12 @@ def quote():
         return render_template("quote.html")
 
     symbol = request.form.get("symbol")
+    if not symbol:
+        return apology("Missing symbol")
     query = lookup(symbol)
-    query['price'] = usd(query['price'])
-
     if not query:
         return apology("Invalid symbol")
+    query['price'] = usd(query['price'])
 
     return render_template("quoted.html", query=query)
 
