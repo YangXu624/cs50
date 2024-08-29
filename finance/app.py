@@ -36,13 +36,11 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     userinfo = db.execute("SELECT username, cash FROM users WHERE id=?", session['user_id'])
-    array = userinfo[0]
-    array['cash'] = f"{float(array['cash']):.2f}"
     stocks = db.execute("SELECT symbol, amount FROM stocks WHERE user_id=?", session['user_id'])
     for stock in stocks:
         look = lookup(stock['symbol'])
-        stock['value'] = f"{(stock['amount'] * look['price']):,.2f}"
-    return render_template("index.html", userinfo = array, stocks = stocks)
+        stock['value'] = stock['amount'] * look['price']
+    return render_template("index.html", userinfo = userinfo[0], stocks = stocks)
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -72,10 +70,10 @@ def buy():
     dct = cash[0]
     amt = dct['cash']
 
-    if payment > float(amt):
-        return apology("Insufficient balance")
+    if payment > amt:
+        return apology("Insufficient balance :(")
     else:
-        amt = f"{(amt - payment):,.2f}"
+        amt -= payment
         db.execute("UPDATE users SET cash = ? WHERE id = ?", amt, session['user_id'])
         db.execute("INSERT INTO records (user_id, symbol, quantity, transaction_type, time) VALUES (?, ?, ?, ?, ?)", session['user_id'], symbol.upper(), quantity, 'BUY', datetime.now())
 
@@ -223,7 +221,7 @@ def sell():
     bal = dct['cash']
     look = lookup(symbol)
     add = quantity * look['price']
-    bal = f"{(bal + add):,.2f}"
+    bal += add
     db.execute("UPDATE users SET cash = ? WHERE id = ?", bal, session['user_id'])
     db.execute("INSERT INTO records (user_id, symbol, quantity, transaction_type, time) VALUES (?, ?, ?, ?, ?)", session['user_id'], symbol.upper(), quantity, 'SELL', datetime.now())
 
