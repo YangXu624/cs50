@@ -148,6 +148,9 @@ def quote():
     symbol = request.form.get("symbol")
     query = lookup(symbol)
 
+    if not query:
+        return apology("Invalid symbol")
+
     return render_template("quoted.html", query=query)
 
 
