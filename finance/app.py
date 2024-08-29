@@ -73,7 +73,7 @@ def buy():
     if payment > amt:
         return apology("Insufficient balance :(")
     else:
-        amt -= payment
+        amt = f"${(amt - payment):,.2f}"
         db.execute("UPDATE users SET cash = ? WHERE id = ?", amt, session['user_id'])
         db.execute("INSERT INTO records (user_id, symbol, quantity, transaction_type, time) VALUES (?, ?, ?, ?, ?)", session['user_id'], symbol.upper(), quantity, 'BUY', datetime.now())
 
