@@ -55,8 +55,9 @@ def buy():
     payment = query['price'] * quantity
 
     cash = db.execute("SELECT cash FROM users WHERE username=(?)", (session['user_id']))
+    print(cash)
 
-    if payment > cash:
+    if payment > float(cash[0]):
         return apology("Insufficient balance :(")
     else:
         cash -= payment
