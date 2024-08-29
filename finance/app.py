@@ -209,5 +209,6 @@ def sell():
     add = quantity * look['price']
     bal += add
     db.execute("UPDATE users SET cash = ? WHERE id = ?", bal, session['user_id'])
+    db.execute("INSERT INTO records (user_id, symbol, quantity, transaction_type, time) VALUES (?, ?, ?, ?, ?)", session['user_id'], symbol.upper(), quantity, 'SELL', datetime.now())
 
     return redirect("/")
