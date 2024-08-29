@@ -51,7 +51,7 @@ def buy():
         return render_template("buy.html")
 
     symbol = request.form.get("symbol")
-    quantity = int(request.form.get("quantity"))
+    quantity = int(request.form.get("shares"))
 
     if not (isinstance(quantity, int) and quantity > 0):
         return apology("Quantity has to be a positive integer")
@@ -160,6 +160,10 @@ def register():
     username = request.form.get("username")
     password = request.form.get("password")
     confirmation = request.form.get("confirmation")
+
+    if not (username or password or confirmation):
+        return apology("Make sure to fill up all fields")
+
     if password != confirmation:
         return apology("Passwords do not match!")
     try:
