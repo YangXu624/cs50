@@ -185,11 +185,11 @@ def sell():
         if not request.form.get("quantity"):
             return apology("Input quantity")
         else:
-            quantity = request.form.get("quantity")
+            quantity = int(request.form.get("quantity"))
             if quantity < 1:
                 return apology("Cannot sell negative stocks")
 
-    amt = db.execute("SELECT amount FROM stocks WHERE id=? AND symbol=?", session['user_id'], symbol)
+    amt = db.execute("SELECT amount FROM stocks WHERE user_id=? AND symbol=?", session['user_id'], symbol)
     dct = amt[0]
     amt = dct['amount']
 
@@ -197,4 +197,14 @@ def sell():
         return apology("Insufficient stocks to sell")
 
     amt -= quantity
-    db.execute("UPDATE stocks SET amount = ? WHERE id = ?", amt, session['user_id'])
+    db.execute("UPDATE stocks SET amount = ? WHERE user_id = ?", amt, session['user_id'])
+
+    cash = db.execute("SELECT cash FROM users WHERE id=?", session['user_id'])
+    dct = cash[0]
+    bal = dct['cash']
+    look = lookup(symbol)
+    add = quantity * look['price']
+    bal += add
+    db.execute("UPDATE users SET cash = ? WHERE id = ?", bal, session['user_id'])
+
+    return redirect("/")
