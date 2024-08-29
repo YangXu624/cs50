@@ -7,7 +7,13 @@
 {% block main %}
     <div action="/">
         <div class="mb-3">
-            ABCDEFGH {{ username }} {{ bought }}
+            Username: {{ username['username'] }}
+
+            {% for stock in stocks %}
+
+            {{ stock['symbol'] }} {{ stock['amount'] }}
+
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
