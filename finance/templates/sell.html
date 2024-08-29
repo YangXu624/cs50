@@ -9,8 +9,9 @@
         <div class="mb-3">
             <select name="Symbol">
                 <option disabled selected value="">Symbol</option>
-                <option>Yes</option>
-                <option>No</option>
+                {% for symbol in symbols %}
+                <option>{{ symbol }}</option>
+                {% endfor %}
         </div>
         <div class="mb-3">
             <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="quantity" placeholder="Shares" type="number">
