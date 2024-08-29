@@ -39,7 +39,7 @@ def index():
     stocks = db.execute("SELECT symbol, amount FROM stocks WHERE user_id=?", session['user_id'])
     for stock in stocks:
         look = lookup(stock['symbol'])
-        stock['value'] = stock['amount'] * look['price']
+        stock['value'] = usd(stock['amount'] * look['price'])
     return render_template("index.html", userinfo = userinfo[0], stocks = stocks)
 
 
