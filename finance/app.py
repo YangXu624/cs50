@@ -172,7 +172,10 @@ def register():
 def sell():
     """Sell shares of stock"""
     if request.method != "POST":
-        return apology("POST Only!")
-
-    
-    return render_template("sell.html")
+        symbols = []
+        stocks = db.execute("SELECT symbol FROM stocks WHERE user_id=?", session['user_id'])
+        for stock in stocks:
+            symbols.append(stock['symbol'])
+        return render_template("sell.html", symbols = symbols)
+    else:
+        
