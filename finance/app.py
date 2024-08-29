@@ -67,6 +67,8 @@ def buy():
         db.execute("UPDATE users SET cash = ? WHERE id = ?", amt, session['user_id'])
         db.execute("INSERT INTO records (user_id, symbol, quantity, transaction_type, time) VALUES (?, ?, ?, ?, ?)", session['user_id'], symbol.upper(), quantity, 'BUY', datetime.now())
 
+    stock = db.execute("SELECT amount FROM stocks WHERE id=?", session['user_id'])
+
     return render_template("buy.html")
 
 @app.route("/history")
