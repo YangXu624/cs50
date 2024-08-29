@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block main %}
-    <div action="/sell" method="post">
+    <form action="/sell" method="post">
         <div class="mb-3">
             <select name="Symbol">
                 <option disabled selected value="">Symbol</option>
@@ -17,5 +17,5 @@
             <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="quantity" placeholder="Shares" type="number">
         </div>
         <button class="btn btn-primary" type="submit">Sell</button>
-    </div>
+    </form>
 {% endblock %}
