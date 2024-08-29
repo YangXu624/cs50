@@ -4,7 +4,7 @@ from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
-
+from datetime import datetime
 from helpers import apology, login_required, lookup, usd
 
 # Configure application
@@ -63,7 +63,7 @@ def buy():
     else:
         amt -= payment
         db.execute("UPDATE users SET cash = ? WHERE id = ?", amt, session['user_id'])
-        db.execute("INSERT INTO stocks (user_id, symbol, quantity, transaction_type, time) VALUES = (?, ?, ?, ?, ?)", session['user_id'], symbol, quantity, 'BUY', )
+        db.execute("INSERT INTO stocks (user_id, username, symbol, quantity, transaction_type, time) VALUES (?, ?, ?, ?, ?, ?)", session['user_id'], 'username', symbol, quantity, 'BUY', datetime.now())
 
     return render_template("buy.html")
 
