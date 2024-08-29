@@ -178,4 +178,23 @@ def sell():
             symbols.append(stock['symbol'])
         return render_template("sell.html", symbols = symbols)
     else:
-        symbol = request.
+        if not request.form.get("symbol"):
+            return apology("Select your stock")
+        else:
+            symbol = request.form.get("symbol")
+        if not request.form.get("quantity"):
+            return apology("Input quantity")
+        else:
+            quantity = request.form.get("quantity")
+            if quantity < 1:
+                return apology("Cannot sell negative stocks")
+
+    amt = db.execute("SELECT amount FROM stocks WHERE id=? AND symbol=?", session['user_id'], symbol)
+    dct = amt[0]
+    amt = dct['amount']
+
+    if quantity > amt:
+        return apology("Insufficient stocks to sell")
+
+    amt -= quantity
+    db.execute("UPDATE stocks SET amount = ? WHERE id = ?", amt, session['user_id'])
