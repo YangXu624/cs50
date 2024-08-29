@@ -205,7 +205,7 @@ def sell():
         if not request.form.get("quantity"):
             return apology("Input quantity")
         else:
-            quantity = int(request.form.get("quantity"))
+            quantity = int(request.form.get("shares"))
             if quantity < 1:
                 return apology("Cannot sell negative stocks")
 
