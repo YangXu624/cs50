@@ -178,4 +178,4 @@ def sell():
             symbols.append(stock['symbol'])
         return render_template("sell.html", symbols = symbols)
     else:
-        
+        symbol = request.
