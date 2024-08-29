@@ -18,10 +18,17 @@
                 </tr>
             </table>
             <table>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Quantity</th>
+                    <th>Total Value</th>
+                </tr>
                 {% for stock in stocks %}
-
-                <p>{{ stock['symbol'] }} {{ stock['amount'] }}</p>
-
+                <tr>
+                    <td>{{ stock['symbol'] }}</td>
+                    <td>{{ stock['amount'] }}</td>
+                    <td>{{ stock['value'] }}</td>
+                </tr>
                 {% endfor %}
             </table>
         </div>

@@ -37,6 +37,9 @@ def index():
     """Show portfolio of stocks"""
     userinfo = db.execute("SELECT username, cash FROM users WHERE id=?", session['user_id'])
     stocks = db.execute("SELECT symbol, amount FROM stocks WHERE user_id=?", session['user_id'])
+    for stock in stocks:
+        look = lookup(stock['symbol'])
+        stock['value'] = stock['amount'] * look['price']
     return render_template("index.html", userinfo = userinfo[0], stocks = stocks)
 
 
