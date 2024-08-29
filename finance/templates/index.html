@@ -7,7 +7,8 @@
 {% block main %}
     <div action="/">
         <div class="mb-3">
-            <p>Username: {{ username['username'] }}</p>
+            <p>Username: {{ userinfo }}</p>
+            <p>Balance: {{ userinfo['cash'] }}</p>
 
             {% for stock in stocks %}
 

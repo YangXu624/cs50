@@ -35,9 +35,9 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    username = db.execute("SELECT username FROM users WHERE id=?", session['user_id'])
+    userinfo = db.execute("SELECT username, cash FROM users WHERE id=?", session['user_id'])
     stocks = db.execute("SELECT symbol, amount FROM stocks WHERE user_id=?", session['user_id'])
-    return render_template("index.html", username = username, stocks = stocks)
+    return render_template("index.html", username = userinfo, stocks = stocks)
 
 
 @app.route("/buy", methods=["GET", "POST"])
