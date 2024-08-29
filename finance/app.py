@@ -77,7 +77,7 @@ def buy():
         number = stock[0] + quantity
         db.execute("UPDATE stocks SET amount = ? WHERE id = ?", number, session['user_id'])
 
-    return render_template("buy.html")
+    return redirect("/")
 
 @app.route("/history")
 @login_required
