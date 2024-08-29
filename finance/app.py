@@ -154,6 +154,7 @@ def quote():
 
     symbol = request.form.get("symbol")
     query = lookup(symbol)
+    query['price'] = usd(query['price'])
 
     if not query:
         return apology("Invalid symbol")
