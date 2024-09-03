@@ -58,10 +58,45 @@ body {
 .buttons button:nth-child(18) {
     background-color: #ff9500;
     color: white;
-    grid-column: span 2;
 }
 
 .buttons button:nth-child(18):hover {
+    background-color: #ffab40;
+}
+
+.buttons button:nth-child(15) {
+    background-color: #ff9500;
+    color: white;
+}
+
+.buttons button:nth-child(15):hover {
+    background-color: #ffab40;
+}
+
+.buttons button:nth-child(11) {
+    background-color: #ff9500;
+    color: white;
+}
+
+.buttons button:nth-child(11):hover {
+    background-color: #ffab40;
+}
+
+.buttons button:nth-child(7) {
+    background-color: #ff9500;
+    color: white;
+}
+
+.buttons button:nth-child(7):hover {
+    background-color: #ffab40;
+}
+
+.buttons button:nth-child(3) {
+    background-color: #ff9500;
+    color: white;
+}
+
+.buttons button:nth-child(3):hover {
     background-color: #ffab40;
 }
 
@@ -69,3 +104,6 @@ body {
     grid-column: span 2;
 }
 
+.buttons button:nth-child(16) {
+    grid-column: span 2;
+}
