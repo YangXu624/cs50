@@ -101,7 +101,7 @@ body {
 }
 
 .buttons button:nth-child(1) {
-    background-color: #d3d3d3;
+    background-color: #b3b3b3;
     color: white;
     grid-column: span 2;
 }
