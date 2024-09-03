@@ -101,10 +101,12 @@ body {
 }
 
 .buttons button:nth-child(1) {
-    background-color: #b3b3b3;
+    background-color: #a3a3a3;
     color: white;
     grid-column: span 2;
 }
+
+.buttons button:hover
 
 .buttons button:nth-child(16) {
     grid-column: span 2;
