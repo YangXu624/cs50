@@ -106,7 +106,9 @@ body {
     grid-column: span 2;
 }
 
-.buttons button:hover
+.buttons button:nth-child(1):hover {
+    background-color: #cccccc;
+}
 
 .buttons button:nth-child(16) {
     grid-column: span 2;
