@@ -55,47 +55,19 @@ body {
     background-color: #777;
 }
 
-.buttons button:nth-child(18) {
-    background-color: #ff9500;
-    color: white;
-}
-
-.buttons button:nth-child(18):hover {
-    background-color: #ffab40;
-}
-
-.buttons button:nth-child(15) {
-    background-color: #ff9500;
-    color: white;
-}
-
-.buttons button:nth-child(15):hover {
-    background-color: #ffab40;
-}
-
-.buttons button:nth-child(11) {
-    background-color: #ff9500;
-    color: white;
-}
-
-.buttons button:nth-child(11):hover {
-    background-color: #ffab40;
-}
-
-.buttons button:nth-child(7) {
-    background-color: #ff9500;
-    color: white;
-}
-
-.buttons button:nth-child(7):hover {
-    background-color: #ffab40;
-}
-
+.buttons button:nth-child(18),
+.buttons button:nth-child(15),
+.buttons button:nth-child(11),
+.buttons button:nth-child(7),
 .buttons button:nth-child(3) {
     background-color: #ff9500;
     color: white;
 }
 
+.buttons button:nth-child(18):hover,
+.buttons button:nth-child(15):hover,
+.buttons button:nth-child(11):hover,
+.buttons button:nth-child(7):hover,
 .buttons button:nth-child(3):hover {
     background-color: #ffab40;
 }
@@ -106,7 +78,14 @@ body {
     grid-column: span 2;
 }
 
-.buttons button:nth-child(1):hover {
+
+.buttons button:nth-child(2){
+    background-color: #a3a3a3;
+    color: white;
+}
+
+.buttons button:nth-child(1):hover,
+.buttons button:nth-child(2):hover {
     background-color: #cccccc;
 }
 
