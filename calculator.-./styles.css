@@ -55,12 +55,17 @@ body {
     background-color: #777;
 }
 
-.buttons button:nth-child(17) { /* The equals button */
+.buttons button:nth-child(18) {
     background-color: #ff9500;
     color: white;
     grid-column: span 2;
 }
 
-.buttons button:nth-child(17):hover {
+.buttons button:nth-child(18):hover {
     background-color: #ffab40;
 }
+
+.buttons button:nth-child(1) {
+    grid-column: span 2;
+}
+
