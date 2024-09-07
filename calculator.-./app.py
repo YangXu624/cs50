@@ -12,7 +12,6 @@ def index():
     if request.method == "POST":
         current = request.form.get("result", "0")
         button = request.form.get("number")
-        return render_template("index.html", result=current)
 
 
 
