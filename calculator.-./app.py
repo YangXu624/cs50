@@ -6,7 +6,8 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    result = "0"
+    if request.method == "GET":
+        result = "0"
 
 
     if request.method == "POST":
