@@ -6,25 +6,28 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #f0f0f0;
-}
+ }
 
-.calculator {
+
+ .calculator {
     border-radius: 10px;
     overflow: hidden;
     width: 320px;
     background-color: #333;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
+    box-shadow: 0 0 20px rgba(0,0,0, 0.2);
+ }
 
-.display {
+
+ .display {
     background-color: #222;
     color: #fff;
-    padding: 20px;
+    padding:20px;
     text-align: right;
     font-size: 2rem;
-}
+ }
 
-.display input {
+
+ .display input {
     width: 100%;
     border: none;
     background: none;
@@ -32,16 +35,18 @@ body {
     font-size: inherit;
     text-align: right;
     outline: none;
-}
+ }
 
-.buttons {
+
+ .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1px;
     background-color: #444;
-}
+ }
 
-.buttons button {
+
+ .buttons button {
     padding: 20px;
     border: none;
     background-color: #555;
@@ -49,46 +54,154 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
+    position: relative;
+ }
 
-.buttons button:hover {
+
+ .buttons button:hover {
     background-color: #777;
-}
+ }
 
-.buttons button:nth-child(18),
-.buttons button:nth-child(15),
-.buttons button:nth-child(11),
-.buttons button:nth-child(7),
-.buttons button:nth-child(3) {
+
+ .buttons button:nth-child(20),
+ .buttons button:nth-child(17),
+ .buttons button:nth-child(13),
+ .buttons button:nth-child(9),
+ .buttons button:nth-child(5) {
     background-color: #ff9500;
-    color: white;
-}
+    color:white;
+ }
 
-.buttons button:nth-child(18):hover,
-.buttons button:nth-child(15):hover,
-.buttons button:nth-child(11):hover,
-.buttons button:nth-child(7):hover,
-.buttons button:nth-child(3):hover {
+
+ .buttons button:nth-child(20):hover,
+ .buttons button:nth-child(17):hover,
+ .buttons button:nth-child(13):hover,
+ .buttons button:nth-child(9):hover,
+ .buttons button:nth-child(5):hover {
     background-color: #ffab40;
-}
+ }
 
-.buttons button:nth-child(1) {
+
+ .buttons button:nth-child(3) {
     background-color: #a3a3a3;
     color: white;
     grid-column: span 2;
-}
+ }
 
 
-.buttons button:nth-child(2){
+ .buttons button:nth-child(4) {
     background-color: #a3a3a3;
     color: white;
-}
+ }
 
-.buttons button:nth-child(1):hover,
-.buttons button:nth-child(2):hover {
+
+ .buttons button:nth-child(1):hover,
+ .buttons button:nth-child(2):hover {
     background-color: #cccccc;
-}
+ }
 
-.buttons button:nth-child(16) {
+
+ .buttons button:nth-child(18) {
     grid-column: span 2;
-}
+ }
+
+
+ .buttons button:nth-child(1) {
+    color: #e5f00a;
+    grid-column: span 2;
+ }
+
+
+ .buttons button:nth-child(2) {
+    color: #cc3333;
+    grid-column: span 2;
+ }
+
+
+ .buttons button:nth-child(5)::before,
+ .buttons button:nth-child(5)::after,
+ .buttons button:nth-child(9)::before,
+ .buttons button:nth-child(9)::after,
+ .buttons button:nth-child(13)::before,
+ .buttons button:nth-child(13)::after,
+ .buttons button:nth-child(17)::before,
+ .buttons button:nth-child(17)::after,
+ .buttons button:nth-child(20)::before,
+ .buttons button:nth-child(20)::after {
+    position: absolute;
+    font-size: 15px;
+    top: 5px;
+ }
+
+
+ .buttons button:nth-child(5)::before {
+    content: "sin";
+    left: 7.5px;
+    color: #e5f00a;
+ }
+
+
+ .buttons button:nth-child(5)::after {
+    content: "x";
+    right: 10px;
+    color: #cc3333;
+ }
+
+
+ .buttons button:nth-child(9)::before {
+    content: "cos";
+    left: 7.5px;
+    color: #e5f00a;
+ }
+
+
+ .buttons button:nth-child(9)::after {
+    content: "y";
+    right: 10px;
+    color: #cc3333;
+ }
+
+
+ .buttons button:nth-child(13)::before {
+    content: "tan";
+    left: 7.5px;
+    color: #e5f00a;
+ }
+
+
+ .buttons button:nth-child(13)::after {
+    content: "A";
+    right: 10px;
+    color: #cc3333;
+ }
+
+
+ .buttons button:nth-child(17)::before {
+    content: "√";
+    left: 10px;
+    color: #e5f00a;
+ }
+
+
+ .buttons button:nth-child(17)::after {
+    content: "B";
+    right: 10px;
+    color: #cc3333;
+ }
+
+
+ .buttons button:nth-child(20)::before {
+    content: "∛";
+    left: 10px;
+    color: #e5f00a;
+ }
+
+
+ .buttons button:nth-child(20)::after {
+    content: "C";
+    right: 10px;
+    color: #cc3333;
+ }
+
+
+
