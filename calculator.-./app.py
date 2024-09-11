@@ -4,6 +4,9 @@ from math import sin, cos, sqrt
 
 app = Flask(__name__)
 
+def dp(number):
+    return round(number, 5)
+
 #Global variable named pv to pass value from one route to another
 pv = "0"
 
@@ -45,7 +48,7 @@ def index():
         result = pv
 
 
-    return render_template("main.html", result=result)
+    return render_template("main.html", result=dp(float(result)))
 
 @app.route("/shift", methods=["GET", "POST"])
 def shift():
@@ -78,7 +81,7 @@ def shift():
         result = pv
 
 
-    return render_template("shift.html", result=result)
+    return render_template("shift.html", result=dp(result))
 
 
 @app.route("/alpha", methods=["GET", "POST"])
@@ -118,4 +121,4 @@ def alpha():
         result = pv
 
 
-    return render_template("alpha.html", result=result)
+    return render_template("alpha.html", result=dp(result))
