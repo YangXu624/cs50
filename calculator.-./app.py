@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, redirect, request
 
 
 app = Flask(__name__)
@@ -14,7 +14,7 @@ def index():
         button = request.form.get("button")
 
         if button == "shift":
-            redirect
+            return redirect("/shift")
 
         if button == "C":
             result = "0"
