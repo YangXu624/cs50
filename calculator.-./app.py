@@ -84,7 +84,7 @@ def shift():
 @app.route("/alpha", methods=["GET", "POST"])
 def alpha():
     result = "0"
-
+    global pv
 
     if request.method == "POST":
         current = request.form.get("result", "0")
