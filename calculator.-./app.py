@@ -60,18 +60,15 @@ def shift():
 
         if button == "sin":
             result = sin(float(current))
-        elif button == "cos":
+        if button == "cos":
             result = cos(float(current))
-        elif button == "=":
+        if button == "√":
             try:
-                result = str(eval(current.replace("×", "*").replace("÷", "/")))
+                result = sqrt(float(current))
             except Exception:
                 result = "Error"
-        else:
-            if current == "0":
-                result = button
-            else:
-                result = current + button
+        if button == "∛":
+            result = float(current) ** (1/3)
     else:
         result = pv
 
