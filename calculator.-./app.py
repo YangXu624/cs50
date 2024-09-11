@@ -118,14 +118,17 @@ def alpha():
         elif button == "cube":
             result = dp(float(current) ** 3)
         elif button == "ln":
-            result = dp(ln(float(current)))
+            try:
+                result = dp(ln(float(current)))
+            except Exception:
+                result = "Error"
         elif button == "!":
             try:
                 result = dp(factorial(float(current)))
             except Exception:
                 result = "Error"
-        elif button == "∛":
-            result = dp(float(current) ** (1/3))
+        elif button == "Abs":
+            result = dp(abs(float(current)))
         else:
             if button == "C":
                 result = "0"
