@@ -8,6 +8,7 @@ pv = "0"
 @app.route("/", methods=["GET", "POST"])
 def index():
     result = "0"
+    global pv
 
 
     if request.method == "POST":
@@ -44,6 +45,7 @@ def index():
 @app.route("/shift", methods=["GET", "POST"])
 def shift():
     result = "0"
+    global pv
 
 
     if request.method == "POST":
@@ -73,7 +75,7 @@ def shift():
             else:
                 result = current + button
     else:
-        result = request.args.get("result")
+        result = pv
 
 
     return render_template("shift.html", result=result)
