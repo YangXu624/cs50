@@ -57,7 +57,7 @@ def shift():
         if button == "alpha":
             return redirect("/alpha")
 
-        if button == "C":
+        if button == "sin":
             result = "0"
         elif button == "←":
             if len(current) > 1:
