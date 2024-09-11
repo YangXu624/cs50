@@ -3,10 +3,10 @@ from flask import Flask, render_template, redirect, request, url_for
 
 app = Flask(__name__)
 
-
+result = "0"
 @app.route("/", methods=["GET", "POST"])
 def index():
-    result = "0"
+
 
 
     if request.method == "POST":
@@ -41,7 +41,6 @@ def index():
 
 @app.route("/shift", methods=["GET", "POST"])
 def shift():
-    result = "0"
 
 
     if request.method == "POST":
@@ -77,7 +76,6 @@ def shift():
 
 @app.route("/alpha", methods=["GET", "POST"])
 def alpha():
-    result = "0"
 
 
     if request.method == "POST":
