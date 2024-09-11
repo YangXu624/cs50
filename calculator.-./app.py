@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 
 @app.route("/", methods=["GET", "POST"])
-def main():
+def index():
     result = "0"
 
 
@@ -37,4 +37,10 @@ def main():
 
     return render_template("main.html", result=result)
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/shift", methods=["GET", "POST"])
+def shift():
+    if request.method == "GET":
+        return render_template("shift.html")
+
+    button = request
+    if button == "shift"
