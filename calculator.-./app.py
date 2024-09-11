@@ -1,4 +1,5 @@
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request
+from math import sin, cos, sqrt
 
 
 app = Flask(__name__)
@@ -58,12 +59,9 @@ def shift():
             return redirect("/alpha")
 
         if button == "sin":
-            result = "0"
-        elif button == "←":
-            if len(current) > 1:
-                result = current[:-1]
-            else:
-                result = "0"
+            result = sin(float(current))
+        elif button == "cos":
+            result = cos(float(current))
         elif button == "=":
             try:
                 result = str(eval(current.replace("×", "*").replace("÷", "/")))
