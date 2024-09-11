@@ -39,8 +39,33 @@ def index():
 
 @app.route("/shift", methods=["GET", "POST"])
 def shift():
-    if request.method == "GET":
-        return render_template("shift.html")
+    result = "0"
 
-    button = request.form.get()
-    if button == "shift"
+
+    if request.method == "POST":
+        current = request.form.get("result", "0")
+        button = request.form.get("button")
+
+        if button == "shift":
+            return redirect("/")
+
+        if button == "C":
+            result = "0"
+        elif button == "←":
+            if len(current) > 1:
+                result = current[:-1]
+            else:
+                result = "0"
+        elif button == "=":
+            try:
+                result = str(eval(current.replace("×", "*").replace("÷", "/")))
+            except Exception:
+                result = "Error"
+        else:
+            if current == "0":
+                result = button
+            else:
+                result = current + button
+
+
+    return render_template("shift.html", result=result)
