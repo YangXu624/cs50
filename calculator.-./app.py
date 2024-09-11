@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, request
-from math import sin, cos, tan, sqrt
+from math import sin, cos, tan, sqrt, log, factorial
 
 
 app = Flask(__name__)
@@ -119,7 +119,7 @@ def alpha():
             result = dp(float(current) ** 3)
         elif button == "ln":
             try:
-                result = dp(ln(float(current)))
+                result = dp(log(float(current)))
             except Exception:
                 result = "Error"
         elif button == "!":
