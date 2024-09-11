@@ -76,7 +76,7 @@ def shift():
 
 
 @app.route("/alpha", methods=["GET", "POST"])
-def shift():
+def alpha():
     result = "0"
 
 
