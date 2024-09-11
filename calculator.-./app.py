@@ -42,5 +42,5 @@ def shift():
     if request.method == "GET":
         return render_template("shift.html")
 
-    button = request
+    button = request.form.get()
     if button == "shift"
