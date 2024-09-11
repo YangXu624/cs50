@@ -45,7 +45,7 @@ def index():
         result = pv
 
 
-    return render_template("main.html", result=round(float(result, 2))
+    return render_template("main.html", result=round(float(result), 2))
 
 @app.route("/shift", methods=["GET", "POST"])
 def shift():
@@ -80,7 +80,7 @@ def shift():
         result = pv
 
 
-    return render_template("shift.html", result=round(float(result, 2))
+    return render_template("shift.html", result=round(float(result), 2))
 
 
 @app.route("/alpha", methods=["GET", "POST"])
