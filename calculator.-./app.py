@@ -66,14 +66,6 @@ def shift():
         if button == "alpha":
             return redirect("/alpha")
 
-        if button == "C":
-            result = "0"
-        elif button == "←":
-            if len(current) > 1:
-                result = current[:-1]
-            else:
-                result = "0"
-
         if button == "sin":
             result = dp(sin(float(current)))
         elif button == "cos":
@@ -86,7 +78,15 @@ def shift():
         elif button == "∛":
             result = dp(float(current) ** (1/3))
         else:
-            result = current + button
+            if button == "C":
+                result = "0"
+            elif button == "←":
+                if len(current) > 1:
+                    result = current[:-1]
+                else:
+                    result = "0"
+            else:
+                result = current + button
     else:
         result = pv
 
