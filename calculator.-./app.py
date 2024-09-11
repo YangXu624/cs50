@@ -35,5 +35,5 @@ def index():
                 result = current + button
 
 
-    return render_template("index.html", result=result)
+    return render_template("main.html", result=result)
 
