@@ -15,7 +15,7 @@ def index():
 
         if button == "shift":
             return redirect("/shift")
-        if button == "shift":
+        if button == "alpha":
             return redirect("/alpha")
 
         if button == "C":
