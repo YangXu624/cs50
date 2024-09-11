@@ -4,6 +4,9 @@ from math import sin, cos, sqrt
 
 app = Flask(__name__)
 
+def dp(num):
+    return round(num, 5)
+
 #Global variable named pv to pass value from one route to another
 pv = "0"
 
@@ -64,16 +67,16 @@ def shift():
             return redirect("/alpha")
 
         if button == "sin":
-            result = sin(float(current))
+            result = dp(sin(float(current)))
         elif button == "cos":
-            result = cos(float(current))
+            result = dp(cos(float(current)))
         elif button == "√":
             try:
-                result = sqrt(float(current))
+                result = dp(sqrt(float(current)))
             except Exception:
                 result = "Error"
         elif button == "∛":
-            result = float(current) ** (1/3)
+            result = dp(float(current) ** (1/3))
         else:
             result = current + button
     else:
