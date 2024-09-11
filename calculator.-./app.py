@@ -16,7 +16,7 @@ def index():
         button = request.form.get("button")
 
         if button == "shift":
-            pv = result
+            pv = current
             return redirect("/shift")
         if button == "alpha":
             return redirect("/alpha")
