@@ -184,7 +184,7 @@ body {
 
 
  .buttons button:nth-child(17)::after {
-    content: "B";
+    content: "!";
     right: 10px;
     color: #cc3333;
  }
@@ -198,7 +198,7 @@ body {
 
 
  .buttons button:nth-child(20)::after {
-    content: "C";
+    content: "Abs";
     right: 10px;
     color: #cc3333;
  }
