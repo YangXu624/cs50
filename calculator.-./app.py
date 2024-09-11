@@ -113,21 +113,27 @@ def alpha():
             pv = current
             return redirect("/")
 
-        if button == "C":
-            result = "0"
-        elif button == "←":
-            if len(current) > 1:
-                result = current[:-1]
-            else:
-                result = "0"
-        elif button == "=":
+        if button == "square":
+            result = dp(float(current) ** 2)
+        elif button == "cube":
+            result = dp(float(current) ** 3)
+        elif button == "ln":
+            result = dp(ln(float(current)))
+        elif button == "!":
             try:
-                result = str(eval(current.replace("×", "*").replace("÷", "/")))
+                result = dp(factorial(float(current)))
             except Exception:
                 result = "Error"
+        elif button == "∛":
+            result = dp(float(current) ** (1/3))
         else:
-            if current == "0":
-                result = button
+            if button == "C":
+                result = "0"
+            elif button == "←":
+                if len(current) > 1:
+                    result = current[:-1]
+                else:
+                    result = "0"
             else:
                 result = current + button
     else:
