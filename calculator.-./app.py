@@ -14,7 +14,7 @@ def index():
         button = request.form.get("button")
 
         if button == "shift":
-            return redirect(url_for('shift', result=result))
+            return redirect("/shift")
         if button == "alpha":
             return redirect("/alpha")
 
@@ -41,6 +41,8 @@ def index():
 
 @app.route("/shift", methods=["GET", "POST"])
 def shift():
+    result = "0"
+
 
     if request.method == "POST":
         current = request.form.get("result", "0")
