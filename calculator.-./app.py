@@ -3,7 +3,7 @@ from flask import Flask, render_template, redirect, request, url_for
 
 app = Flask(__name__)
 
-passvalue = "0"
+pv = "0"
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -15,8 +15,8 @@ def index():
         button = request.form.get("button")
 
         if button == "shift":
-            passvalue = result
-            return redirect(url_for("shift", result=result))
+            pv = result
+            return redirect("/shift")
         if button == "alpha":
             return redirect("/alpha")
 
