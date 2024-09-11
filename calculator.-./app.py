@@ -124,7 +124,7 @@ def alpha():
                 result = "Error"
         elif button == "!":
             try:
-                result = dp(factorial(float(current)))
+                result = dp(factorial(int(current)))
             except Exception:
                 result = "Error"
         elif button == "Abs":
