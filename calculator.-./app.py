@@ -4,6 +4,7 @@ from math import sin, cos, sqrt
 
 app = Flask(__name__)
 
+#Global variable named pv to pass value from one route to another
 pv = "0"
 
 @app.route("/", methods=["GET", "POST"])
@@ -20,6 +21,7 @@ def index():
             pv = current
             return redirect("/shift")
         if button == "alpha":
+            pv = current
             return redirect("/alpha")
 
         if button == "C":
@@ -39,6 +41,8 @@ def index():
                 result = button
             else:
                 result = current + button
+    else:
+        result = pv
 
 
     return render_template("main.html", result=result)
@@ -54,6 +58,7 @@ def shift():
         button = request.form.get("button")
 
         if button == "shift":
+            pv = current
             return redirect("/")
         if button == "alpha":
             return redirect("/alpha")
@@ -86,8 +91,10 @@ def alpha():
         button = request.form.get("button")
 
         if button == "shift":
+            pv = current
             return redirect("/shift")
         if button == "alpha":
+            pv = current
             return redirect("/")
 
         if button == "C":
@@ -107,6 +114,8 @@ def alpha():
                 result = button
             else:
                 result = current + button
+    else:
+        result = pv
 
 
     return render_template("alpha.html", result=result)
