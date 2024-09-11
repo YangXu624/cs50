@@ -14,7 +14,7 @@ def index():
         button = request.form.get("button")
 
         if button == "shift":
-            return redirect(url_for("shift", result="60"))
+            return redirect(url_for("shift", result=result))
         if button == "alpha":
             return redirect("/alpha")
 
@@ -70,6 +70,8 @@ def shift():
                 result = button
             else:
                 result = current + button
+    else:
+        result = request.args.get("result")
 
 
     return render_template("shift.html", result=result)
