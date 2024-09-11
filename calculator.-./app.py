@@ -63,7 +63,7 @@ def shift():
         if button == "alpha":
             return redirect("/alpha")
 
-        if button == "sin":
+        if button == "x":
             result = sin(float(current))
         elif button == "cos":
             result = cos(float(current))
