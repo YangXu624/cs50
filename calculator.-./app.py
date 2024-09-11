@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, request
-from math import sin, cos, sqrt
+from math import sin, cos, tan, sqrt
 
 
 app = Flask(__name__)
