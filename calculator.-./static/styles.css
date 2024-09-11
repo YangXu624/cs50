@@ -142,7 +142,7 @@ body {
 
 
  .buttons button:nth-child(5)::after {
-    content: "x";
+    content: "x²";
     right: 10px;
     color: #cc3333;
  }
@@ -156,7 +156,7 @@ body {
 
 
  .buttons button:nth-child(9)::after {
-    content: "y";
+    content: "x³";
     right: 10px;
     color: #cc3333;
  }
@@ -170,7 +170,7 @@ body {
 
 
  .buttons button:nth-child(13)::after {
-    content: "A";
+    content: "ln";
     right: 10px;
     color: #cc3333;
  }
