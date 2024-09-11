@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request
+from flask import Flask, render_template, redirect, request, url_for
 
 
 app = Flask(__name__)
@@ -14,7 +14,7 @@ def index():
         button = request.form.get("button")
 
         if button == "shift":
-            return redirect("/shift")
+            return redirect(url_for('shift', result=result))
         if button == "alpha":
             return redirect("/alpha")
 
@@ -41,8 +41,6 @@ def index():
 
 @app.route("/shift", methods=["GET", "POST"])
 def shift():
-    result = "0"
-
 
     if request.method == "POST":
         current = request.form.get("result", "0")
