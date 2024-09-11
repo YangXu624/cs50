@@ -70,6 +70,8 @@ def shift():
             result = dp(sin(float(current)))
         elif button == "cos":
             result = dp(cos(float(current)))
+        elif button == "tan":
+            result = dp(tan(float(current)))
         elif button == "√":
             try:
                 result = dp(sqrt(float(current)))
