@@ -1,5 +1,5 @@
 Title: Calculator.py
-Video Demo:  <URL https://youtu.be/udmRjlP1CrM?si=mjBkeZFe2BBPkJqH>
+Video Demo:  <https://youtu.be/udmRjlP1CrM?si=mjBkeZFe2BBPkJqH>
 Description:
 
 This project is a web-based calculator application built using the Flask framework. The calculator allows users to perform basic arithmetic operations, advanced mathematical functions, and trigonometric calculations. It features three distinct modes: main, shift, and alpha, each offering a set of functionalities tailored for specific mathematical tasks.
