@@ -1,3 +1,11 @@
+"""
+Project Title: CALCULATOR
+Names: Yang Xu, Min Wenn
+Usernames (Github/edX): YangXu624/YangXu624, minweed/minweed
+Country: Singapore
+Date: 12/09/24
+"""
+
 from flask import Flask, render_template, redirect, request
 from math import sin, cos, tan, sqrt, log, factorial
 
