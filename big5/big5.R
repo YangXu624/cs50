@@ -6,7 +6,29 @@ results[, 2] <- factor(
   labels = c("gender" ,"Male", "Female")
 )
 
-results[5, 4:6] <- lapply(results[5, 4:6], as.numeric)
-print(class(results[5, 4:6]))
-ex <- sum(results[5, 4:6]) / 15
-results$extroversion <-c("ex")
+results$extroversion[1] <- "extroversion"
+for (i in 2:nrow(results)){
+  sum <- 0
+  for (j in 4:6) {
+    sum <- sum + as.numeric(results[i, j])
+  }
+  results$extroversion[i] <- sum
+}
+
+results$extroversion[1] <- "extroversion"
+for (i in 2:nrow(results)){
+  sum <- 0
+  for (j in 4:6) {
+    sum <- sum + as.numeric(results[i, j])
+  }
+  results$extroversion[i] <- sum
+}
+
+df <- results
+new_header <- df[1, ]
+df <- df[-1, ]  # Remove the first row from the data frame
+colnames(df) <- new_header  # Set new column names
+colnames(df)[colnames(df) == "1"] <- "gender"
+write.csv(df, file = "analysis.csv", row.names = FALSE)
+
+table <- read.csv("analysis.csv")
