@@ -6,4 +6,4 @@ results[ , 2] <- factor(
   labels = c("gender" ,"Male", "Female")
 )
 
-results$extroversion <-
+results$extroversion <- sum(results[2, 3:5])
