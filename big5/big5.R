@@ -12,16 +12,43 @@ for (i in 2:nrow(results)){
   for (j in 4:6) {
     sum <- sum + as.numeric(results[i, j])
   }
-  results$extroversion[i] <- sum
+  results$extroversion[i] <- round(sum / 15, 2)
 }
 
-results$extroversion[1] <- "extroversion"
+results$neuroticism[1] <- "neuroticism"
 for (i in 2:nrow(results)){
   sum <- 0
-  for (j in 4:6) {
+  for (j in 7:9) {
     sum <- sum + as.numeric(results[i, j])
   }
-  results$extroversion[i] <- sum
+  results$neuroticism[i] <- round(sum / 15, 2)
+}
+
+results$agreeableness[1] <- "agreeableness"
+for (i in 2:nrow(results)){
+  sum <- 0
+  for (j in 10:12) {
+    sum <- sum + as.numeric(results[i, j])
+  }
+  results$agreeableness[i] <- round(sum / 15, 2)
+}
+
+results$conscientiousness[1] <- "conscientiousness"
+for (i in 2:nrow(results)){
+  sum <- 0
+  for (j in 13:15) {
+    sum <- sum + as.numeric(results[i, j])
+  }
+  results$conscientiousness[i] <- round(sum / 15, 2)
+}
+
+results$openness[1] <- "openness"
+for (i in 2:nrow(results)){
+  sum <- 0
+  for (j in 16:18) {
+    sum <- sum + as.numeric(results[i, j])
+  }
+  results$openness[i] <- round(sum / 15, 2)
 }
 
 df <- results
@@ -32,3 +59,4 @@ colnames(df)[colnames(df) == "1"] <- "gender"
 write.csv(df, file = "analysis.csv", row.names = FALSE)
 
 table <- read.csv("analysis.csv")
+View(table)
