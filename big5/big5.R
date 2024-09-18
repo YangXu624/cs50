@@ -60,3 +60,4 @@ write.csv(df, file = "analysis.csv", row.names = FALSE)
 
 table <- read.csv("analysis.csv")
 View(table)
+quit()
