@@ -45,10 +45,3 @@ colnames(df)[colnames(df) == "1"] <- "gender"  # If "1" is a column, replace wit
 
 # Step 5: Write the cleaned-up data to a CSV file
 write.csv(df, file = "analysis.csv", row.names = FALSE)
-
-# Optional: View the result in RStudio viewer (useful for checking the data)
-table <- read.csv("analysis.csv")
-View(table)
-
-# The quit() function can be omitted in many cases, but if required:
-# quit(save = "no") # Uncomment if you want to terminate the R session
