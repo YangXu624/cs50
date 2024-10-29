@@ -13,9 +13,9 @@ if (nrow(query_rail) > 0) {
   off_peak <- subset(query_rail, peak == "OFF_PEAK")
   off_peak_mean <- round(mean(100 * off_peak$numerator / off_peak$denominator, na.rm = TRUE), 0)
 
-  cat("On time", peak_mean, "% of the time during peak hours.\n")
-  cat("Off peak mean: ", off_peak_mean, "\n")
-} else {
+  cat("On time ", peak_mean, "% of the time during peak hours.\n", sep = "")
+  cat("On time ", off_peak_mean, "% of the time during off peak hours.\n", sep = "")
+} else if (nrow(query_bus) == 0) {
   cat("No such route.")
 }
 
@@ -25,8 +25,8 @@ if (nrow(query_bus) > 0) {
   off_peak <- subset(query_bus, peak == "OFF_PEAK")
   off_peak_mean <- round(mean(100 * off_peak$numerator / off_peak$denominator, na.rm = TRUE), 0)
 
-  cat("Peak mean: ", peak_mean, "\n")
-  cat("Off peak mean: ", off_peak_mean, "\n")
+  cat("On time ", peak_mean, "% of the time during peak hours.\n", sep = "")
+  cat("On time ", off_peak_mean, "% of the time during off peak hours.\n", sep = "")
 } else {
   cat("No such route.")
 }
