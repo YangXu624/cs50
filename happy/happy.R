@@ -6,12 +6,9 @@ get_scores <- function(country) {
     filter <- data$country == country
     selected <- data[filter, ]
     selected <- selected[, -1]
-    cat(country, year, round(apply(selected, MARGIN = 1, FUN = sum), 2))
+    cat(country, year, round(apply(selected, MARGIN = 1, FUN = sum), 2), "\n", sep = "")
   }
 }
 
 country <- readline("Country: ")
 scores <- get_scores(country)
-for (score in scores) {
-  cat(score, "\n")
-}
