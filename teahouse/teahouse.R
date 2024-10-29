@@ -1,22 +1,24 @@
 flavor <- readline(prompt = "Flavor: ")
+caffeine <- readline(prompt = "Caffeine: ")
+
+if (flavor != "Light" & flavor != "Bold") {
+  cat("Invalid Choice. Flavor is either Light or Bold.\n")
+}
+
+if (caffeine != "Yes" & caffeine != "No") {
+  cat("Invalid Choice. Caffeine is either Yes or No.\n")
+}
+
 if (flavor == "Light") {
-  caffeine <- readline(prompt = "Caffeine: ")
   if (caffeine == "Yes") {
-    cat("Green tea")
-  } else if (caffeine == "No") {
-    cat("Chamomile tea")
+    cat("green tea")
   } else {
-    cat("Invalid Choice. Caffeine is either Yes or No.")
-  }
-} else if (flavor == "Bold") {
-  caffeine <- readline(prompt = "Caffeine: ")
-  if (caffeine == "Yes") {
-    cat("Black tea")
-  } else if (caffeine == "No") {
-    cat("Rooibos tea")
-  } else {
-    cat("Invalid Choice. Caffeine is either Yes or No.")
+    cat("chamomile tea")
   }
 } else {
-  cat("Invalid Choice. Flavor is either Light or Bold.")
+  if (caffeine == "Yes") {
+    cat("black tea")
+  } else if (caffeine == "No") {
+    cat("rooibos tea")
+  }
 }
