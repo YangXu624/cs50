@@ -13,5 +13,7 @@ traveler <- books[filter3, ]
 filter4 <- (books$pages < 300 & books$pages > 200) & (books$year == 1990 | books$year == 1992)
 painter <- books[filter4, ]
 
-filter5 <- books$title == "Quantum Mechanics"
+filter5 <- grepl("Quantum Mechanics", books$title)
 scientist <- books[filter5, ]
+
+filter6
