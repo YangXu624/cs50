@@ -1,3 +1,4 @@
-2024 <- read.csv("2024.csv")
+y2024 <- read.csv("2024.csv")
+apply(y2024, MARGIN = 1, fun = sum)
 
 country <- readline("Country: ")
