@@ -3,7 +3,8 @@ bus <- read.csv("bus.csv")
 
 query_route <- readline(prompt = "Route: ")
 
-query_rail <- subset(rail, query_route %in% rail$route)
+filter <- query_route %in% rail$route
+query_rail <- rail[filter, ]
 query_bus <- subset(bus, route == query_route)
 
 if (length(query_rail) > 0) {
