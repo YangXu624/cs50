@@ -9,16 +9,16 @@ if (caffeine != "Yes" & caffeine != "No") {
   cat("Invalid Choice. Caffeine is either Yes or No.\n")
 }
 
-if (flavor == "Light") {
+if (flavor == "Sweet") {
   if (caffeine == "Yes") {
-    cat("green tea")
+    cat("coffee bun")
   } else {
-    cat("chamomile tea")
+    cat("red bean bun")
   }
 } else {
   if (caffeine == "Yes") {
-    cat("black tea")
+    cat("sugarless coffee bun")
   } else if (caffeine == "No") {
-    cat("rooibos tea")
+    cat("sausage bun")
   }
 }
