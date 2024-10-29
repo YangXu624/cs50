@@ -17,4 +17,5 @@ filter5 <- grepl("Quantum Mechanics", books$title)
 scientist <- books[filter5, ]
 
 zenthia <- subset(authors, hometown == "Zenthia")
-filter6 <-
+filter6 <- books$author %in% zenthia$author & (books$year >= 1700 & books$year < 1800)
+teacher <- books[filter6, ]
