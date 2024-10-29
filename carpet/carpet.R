@@ -1,8 +1,5 @@
 calculate_growth_rate <- function(years, visitors) {
-  growth <- c()
-  for (i in 1:length(years) - 1) {
-    growth[i] <- (visitors[i + 1] - visitors[i]) / visi
-  }
+  growth_rate <- (visitors[length(visitors)] - visitors[1]) / (years[length(years)] - years[1])
 }
 
 predict_visitors <- function(years, visitors, year) {
