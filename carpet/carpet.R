@@ -1,5 +1,6 @@
 calculate_growth_rate <- function(years, visitors) {
-  # TODO: Calculate yearly growth of visitors
+  growth <- c()
+  for
 }
 
 predict_visitors <- function(years, visitors, year) {
