@@ -13,3 +13,6 @@ get_scores <- function(country) {
 
 country <- readline("Country: ")
 scores <- get_scores(country)
+for (score in scores) {
+  cat(score, "\n")
+}
