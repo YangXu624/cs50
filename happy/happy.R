@@ -6,7 +6,7 @@ get_scores <- function(country) {
     filter <- data$country == country
     selected <- data[filter, ]
     selected <- selected[, -1]
-    cat(country, year, round(apply(selected, MARGIN = 1, FUN = sum), 2), "\n", sep = "")
+    cat(country, " (", year, "): ", round(apply(selected, MARGIN = 1, FUN = sum), 2), "\n", sep = "")
   }
 }
 
