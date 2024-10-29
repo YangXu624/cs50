@@ -1,0 +1,1 @@
+flavor <- readline(prompt = "Flavor: ")
