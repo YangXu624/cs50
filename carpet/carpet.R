@@ -1,10 +1,11 @@
 calculate_growth_rate <- function(years, visitors) {
-  growth_rate <- (visitors[length(visitors)] - visitors[1]) / (years[length(years)] - years[1])
+  growth_rate <- (as.integer(visitors[length(visitors)]) - as.integer(visitors[1])) / (as.integer(years[length(years)]) - as.integer(years[1]))
   return(growth_rate)
 }
 
 predict_visitors <- function(years, visitors, year) {
-  # TODO: Predict visitors in given year
+  diff <- year - as.integer(years[length(years)])
+  new <- as.integer(visitors[length(visitors)]) + calculate_growth_rate(years, visitors) * diff
 }
 
 visitors <- read.csv("visitors.csv")
