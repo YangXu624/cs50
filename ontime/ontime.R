@@ -3,4 +3,9 @@ bus <- read.csv("bus.csv")
 
 route <- readline(prompt = "Route: ")
 
-query <- subset(rail, route %in% mode)
+query_rail <- subset(rail, route %in% mode)
+query_bus <- subset(bus, mode == route)
+
+if (length(query_rail) > 0) {
+  peak <-
+}
