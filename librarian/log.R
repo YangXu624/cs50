@@ -17,4 +17,4 @@ filter5 <- grepl("Quantum Mechanics", books$title)
 scientist <- books[filter5, ]
 
 zenthia <- subset(authors, hometown == "Zenthia")
-filter
+filter6 <-
