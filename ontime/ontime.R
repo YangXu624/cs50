@@ -13,7 +13,7 @@ if (nrow(query_rail) > 0) {
   off_peak <- subset(query_rail, peak == "OFF_PEAK")
   off_peak_mean <- round(mean(100 * off_peak$numerator / off_peak$denominator, na.rm = TRUE), 0)
 
-  cat("Peak mean: ", peak_mean, "\n")
+  cat("On time", peak_mean, "% of the time during peak hours.\n")
   cat("Off peak mean: ", off_peak_mean, "\n")
 } else {
   cat("No such route.")
