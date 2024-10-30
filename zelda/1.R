@@ -6,3 +6,5 @@ zelda <- pivot_wider(
   names_from = role,
   values_from = names
 )
+
+View(zelda)
