@@ -3,4 +3,4 @@ load("air.RData")
 air <- air |>
   filter(State.County == "OR - Washington")
 
-View(air)
+save(air, file = "3.RData")
