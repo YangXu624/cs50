@@ -7,8 +7,15 @@ zelda <- pivot_wider(
   values_from = names
 )
 
-zelda$year <- strsplit(zelda$release, " - ")[[1]]
-zelda$system<- strsplit(zelda$release, " - ")[[2]]
+# Assuming zelda$release contains strings like "1998 - Nintendo 64"
+
+# Split the release column
+split_release <- strsplit(zelda$release, " - ")
+
+# Extract year and system
+zelda$year <- sapply(split_release, `[`, 1)   # Get the first element (year)
+zelda$system <- sapply(split_release, `[`, 2) # Get the second element (system)
+
 
 names(zelda) <- tolower(names(zelda))
 
