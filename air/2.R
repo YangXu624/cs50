@@ -1,6 +1,7 @@
-air <- load("air.RData")
+load("air.RData")
+
 
 air <- air |>
-  arrange(desc(as.numeric(Emissions..Tons.)))
+  arrange(desc(Emissions..Tons.))
 
 View(air)
