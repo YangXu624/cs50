@@ -1,6 +1,6 @@
 air <- read.csv("air.csv")
 
-air |>
+air <- air |>
   select(!c("Pollutant.Type", "SCC.Code", "EIS.Sector", "Source.Description", "EPA.Region", "FIPS"))
 
-View(air)
+save(air, "")
