@@ -1,3 +1,3 @@
 load("zelda.RData")
 zelda <- zelda |>
-  distinct(title)
+  distinct(title, .keep_all = TRUE)
