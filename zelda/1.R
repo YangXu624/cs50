@@ -7,6 +7,9 @@ zelda <- pivot_wider(
   values_from = names
 )
 
+zelda$year <- strsplit(zelda$release, " - ")[[1]]
+zelda$system<- strsplit(zelda$release, " - ")[[2]]
+
 names(zelda) <- tolower(names(zelda))
 
 View(zelda)
