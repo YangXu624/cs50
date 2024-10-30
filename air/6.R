@@ -5,4 +5,4 @@ air <- air |>
   group_by(POLLUTANT) |>
   summarize(emissions = sum(Emissions..Tons.))
 
-View(air)
+save(air, file = "6.RData")
