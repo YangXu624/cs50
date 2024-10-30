@@ -1,7 +1,9 @@
 random_character <- function() {
-  # TODO: Return one random letter
+  return(sample(letters))
 }
 
 print_sequence <- function(length) {
-  # TODO: Print a random sequence of specified length
+  for (i in 1:20) {
+    cat(random_character)
+  }
 }
