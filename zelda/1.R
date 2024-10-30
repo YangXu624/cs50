@@ -7,4 +7,6 @@ zelda <- pivot_wider(
   values_from = names
 )
 
+names(zelda) <- tolower(names(zelda))
+
 View(zelda)
