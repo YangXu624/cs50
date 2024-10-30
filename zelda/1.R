@@ -15,10 +15,7 @@ split_release <- strsplit(zelda$release, " - ")
 # Extract year and system
 zelda$year <- sapply(split_release, `[`, 1)   # Get the first element (year)
 zelda$system <- sapply(split_release, `[`, 2) # Get the second element (system)
-zelda$release <- NULL
 
-# Step 3: Reorder the columns (optional)
-zelda <- zelda[, c("year", "system", setdiff(names(zelda), c("year", "system")))]
 
 names(zelda) <- tolower(names(zelda))
 
