@@ -1,11 +1,11 @@
 load("air.RData")
-air$Emissions..Tons. <- as.numeric(gsub(",", "", air$Emissions..Tons.))
+air$emissions <- as.numeric(gsub(",", "", air$emissions))
 
 air <- air |>
-  group_by(SCC.LEVEL.1, POLLUTANT) |>
-  summarize(emissions = sum(Emissions..Tons.))
+  group_by(level_1, pollutant) |>
+  summarize(emissions = sum(emissions))
 
 air <- air %>%
-  rename(source = SCC.LEVEL.1)
+  rename(source = level_1)
 
 save(air, file = "7.RData")

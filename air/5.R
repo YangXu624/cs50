@@ -1,8 +1,8 @@
 load("air.RData")
-air$Emissions..Tons. <- as.numeric(gsub(",", "", air$Emissions..Tons.))
+air$emissions <- as.numeric(gsub(",", "", air$emissions))
 
 air <- air |>
-  group_by(State.County) |>
-  slice_max(order_by = Emissions..Tons.)
+  group_by(county) |>
+  slice_max(order_by = emissions)
 
 save(air, file = "5.RData")
