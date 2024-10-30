@@ -1,4 +1,6 @@
 load("air.RData")
 
 air <- air |>
-  filter(State.County = "OR")
+  filter(State.County == "OR - Washington")
+
+View(air)
