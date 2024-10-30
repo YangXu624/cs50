@@ -23,4 +23,4 @@ names(zelda) <- tolower(names(zelda))
 
 zelda <- as_tibble(zelda)
 
-save(zelda, file = zel)
+save(zelda, file = "zelda.RData")
