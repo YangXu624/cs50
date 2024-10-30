@@ -5,4 +5,4 @@ air <- air |>
   group_by(State.County) |>
   slice_max(order_by = Emissions..Tons.)
 
-View(air)
+save(air, file = "5.RData")

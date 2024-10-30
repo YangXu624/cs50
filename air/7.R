@@ -6,6 +6,6 @@ air <- air |>
   summarize(emissions = sum(Emissions..Tons.))
 
 air <- air %>%
-  rename(SCC.LEVEL.1 = source)
+  rename(source = SCC.LEVEL.1)
 
-View(air)
+save(air, file = "7.RData")
