@@ -1,6 +1,13 @@
 words <- read_file("lyrics/astley.txt")
 
 words <- words |>
-  str_replace_all("\n", " ")
+  str_replace_all("\n", " ") |>
+  str_replace_all("-", " ") |>
+  str_split(" ", simplify = TRUE) |>
+  as.vector() |>
+  str_replace_all("\\(", "") |>
+  str_replace_all("\\)", "") |>
+  str_to_title()
 
-View(words)
+words_table <- tibble(word = words)
+View(words_table)
