@@ -1,6 +1,6 @@
 load("zelda.RData")
 
 zelda <- zelda |>
-  filter(producer == "Shigeru Miyamoto")
+  filter(str_detect(producers, "Shigeru Miyamoto"))
 
 View(zelda)
