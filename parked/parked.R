@@ -11,5 +11,16 @@ words <- words |>
   str_to_title()
 
 words_table <- tibble(word = words) |>
-  filter(word)
-View(words_table)
+  filter(word != "") |>
+  group_by(word) |>
+  summarize(count = n()) |>
+  arrange(desc(count))
+
+
+ggplot(words_table, aes(x = word, y = count)) +
+  geom_col(fill = word) +
+  labs = (
+    x = "Words",
+    y = "Count",
+    title = "Lyrics"
+  )
