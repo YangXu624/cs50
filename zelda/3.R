@@ -8,6 +8,7 @@ zelda2 <- zelda1 |>
   slice_head()
 
 zelda <- zelda1 |>
-  semi_join(zelda2, by = c("title", "year"))
+  semi_join(zelda2, by = c("title", "year")) |>
+  arrange(year, title, system)
 
 save(zelda, file = "3.RData")
