@@ -1,3 +1,6 @@
+library(ggplot2)
+library(dplyr)
+
 words <- read_file("lyrics/astley.txt")
 
 words <- words |>
@@ -18,7 +21,7 @@ words_table <- tibble(word = words) |>
 
 
 ggplot(words_table, aes(x = word, y = count)) +
-  geom_col(fill = word) +
+  geom_col(fill = "steelblue") +
   labs = (
     x = "Words",
     y = "Count",
