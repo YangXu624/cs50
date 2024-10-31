@@ -22,8 +22,9 @@ words_table <- tibble(word = words) |>
 
 ggplot(words_table, aes(x = word, y = count)) +
   geom_col(fill = "steelblue") +
-  labs = (
+  labs(
     x = "Words",
     y = "Count",
     title = "Lyrics"
-  )
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
