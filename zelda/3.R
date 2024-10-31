@@ -1,6 +1,8 @@
 load("zelda.RData")
+
 zelda <- zelda |>
   arrange(year) |>
-  # distinct(title, .keep_all = TRUE)
+  group_by(title) |>
+  distinct(title, year, .keep_all = TRUE)
 
 View(zelda)
