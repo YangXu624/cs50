@@ -1,3 +1,6 @@
 load("zelda.RData")
 zelda <- zelda |>
-  distinct(title, .keep_all = TRUE)
+  arrange(year) |>
+  # distinct(title, .keep_all = TRUE)
+
+View(zelda)
