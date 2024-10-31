@@ -7,7 +7,9 @@ words <- words |>
   as.vector() |>
   str_replace_all("\\(", "") |>
   str_replace_all("\\)", "") |>
+  str_replace_all(",", "") |>
   str_to_title()
 
-words_table <- tibble(word = words)
+words_table <- tibble(word = words) |>
+  filter(word)
 View(words_table)
