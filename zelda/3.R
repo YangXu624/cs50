@@ -1,10 +1,13 @@
 load("zelda.RData")
 
-zelda <- zelda |>
+zelda1 <- zelda |>
   arrange(year) |>
   group_by(title)
 
+zelda2 <- zelda1 |>
+  slice_head()
 
-  filter(year == slice_head()$year)
+zelda <- zelda1 |>
+  semi_join(zelda2, by = c("title", "year"))
 
-View(zelda)
+save(zelda, file = "3.RData")
