@@ -1,4 +1,4 @@
-num_darts <- 100
+num_darts <- 1000
 num_in_circle <- 0
 
 pi_est <- numeric(num_darts)
@@ -17,7 +17,7 @@ for (i in 1:num_darts) {
 plot(
   x = 1:num_darts,
   y = pi_est,
-  ylim = c()
+  ylim = c(0, 5),
   type = "l",
   xlab = "Number of Darts Thrown",
   ylab = "Pi Estimate",
