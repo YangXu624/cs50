@@ -26,7 +26,7 @@ data <- data.frame(
 plot <- ggplot(data, aes(x = darts, y = pi_est)) +
   geom_line() +
   geom_hline(yintercept = pi, color = "red", linetype = "dashed") +
-  labs(x = "Number of Darts Thrown", y = "Pi Estimate", title = "Graph") +
+  labs(x = "Number of Darts Thrown", y = "Pi Estimate", title = "Law of Large Numbers using Monte Carlo") +
   ylim(0, 5)
 
 ggsave("visualization.png", plot = plot, width = 10, height = 6, dpi = 300)
