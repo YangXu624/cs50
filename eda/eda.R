@@ -1,3 +1,5 @@
+library(ggplot2)
+
 num_darts <- 1000
 num_in_circle <- 0
 
@@ -14,14 +16,17 @@ for (i in 1:num_darts) {
   pi_est[i] <- 4 * num_in_circle / i
 }
 
-plot(
-  x = 1:num_darts,
-  y = pi_est,
-  ylim = c(0, 5),
-  type = "l",
-  xlab = "Number of Darts Thrown",
-  ylab = "Pi Estimate",
-  main = "Graph"
+# Create a data frame for ggplot2
+data <- data.frame(
+  darts = 1:num_darts,
+  pi_est = pi_est
 )
 
-abline(h = pi, col = "red", lty = 2)
+# Create the plot
+plot <- ggplot(data, aes(x = darts, y = pi_est)) +
+  geom_line() +
+  geom_hline(yintercept = pi, color = "red", linetype = "dashed") +
+  labs(x = "Number of Darts Thrown", y = "Pi Estimate", title = "Graph") +
+  ylim(0, 5)
+
+ggsave("visualization.png", plot = plot, width = 10, height = 6, dpi = 300)
