@@ -125,7 +125,7 @@ class Sentence():
         a cell is known to be a mine.
         """
         if cell in self.cells:
-            
+            self.cells.remove(cell)
 
 
     def mark_safe(self, cell):
