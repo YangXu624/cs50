@@ -223,6 +223,7 @@ class MinesweeperAI():
         This function may use the knowledge in self.mines, self.safes
         and self.moves_made, but should not modify any of those values.
         """
+        for i on range()
         if self.safes:
             return self.safes.pop()
         else:
