@@ -208,6 +208,7 @@ class MinesweeperAI():
                     cells.add((i, j))
 
         sentence = Sentence(cells, count)
+        self.mines.add(sentence.known_)
         self.knowledge.add()
         raise NotImplementedError
 
