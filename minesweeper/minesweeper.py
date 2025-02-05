@@ -212,7 +212,7 @@ class MinesweeperAI():
         self.safes.add(sentence.known_safes)
         sentence.mark_mine
         sentence.mark_safe
-        self.knowledge.add(sentence)
+        self.knowledge.append(sentence)
 
     def make_safe_move(self):
         """
