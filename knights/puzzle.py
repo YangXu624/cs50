@@ -53,7 +53,8 @@ knowledge2 = And(
 # C says "A is a knight."
 knowledge3 = And(
     knowledgeBase,
-    AKnight,
+    Implication(AKnight, Or(AKnight, AKnave)),
+    Implication(AKnave, Or(AKnave, AKnight)),
     Implication(AKnight, Or(AKnight, AKnave)),
     Implication(BKnight, And(AKnave, CKnave)),
     Implication(BKnave, And(AKnight, CKnight)),
