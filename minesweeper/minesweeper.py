@@ -224,6 +224,9 @@ class MinesweeperAI():
         and self.moves_made, but should not modify any of those values.
         """
         if self.safes:
+            return self.safes.pop()
+        else:
+            return None
 
     def make_random_move(self):
         """
