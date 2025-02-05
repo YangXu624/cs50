@@ -194,7 +194,9 @@ class MinesweeperAI():
         """
         self.moves_made.add(cell)
         self.safes.add(cell)
-        self.knowledge.add(Sentence())
+        
+        sentence = Sentence(cells, count)
+        self.knowledge.add()
         raise NotImplementedError
 
     def make_safe_move(self):
