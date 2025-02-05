@@ -195,7 +195,18 @@ class MinesweeperAI():
         self.moves_made.add(cell)
         self.safes.add(cell)
 
-        for i in range()
+        cells = set()
+        for i in range(cell[0] - 1, cell[0] + 2):
+            for j in range(cell[1] - 1, cell[1] + 2):
+
+                # Ignore the cell itself
+                if (i, j) == cell:
+                    continue
+
+                # Update count if cell in bounds and is mine
+                if 0 <= i < self.height and 0 <= j < self.width:
+                    cells.add((i, j))
+
         sentence = Sentence(cells, count)
         self.knowledge.add()
         raise NotImplementedError
