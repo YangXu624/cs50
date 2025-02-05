@@ -127,6 +127,7 @@ class Sentence():
         if cell in self.cells:
             
 
+
     def mark_safe(self, cell):
         """
         Updates internal knowledge representation given the fact that
