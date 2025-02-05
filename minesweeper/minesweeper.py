@@ -195,6 +195,7 @@ class MinesweeperAI():
         self.moves_made.add(cell)
         self.safes.add(cell)
 
+        known_mines_count = 0
         cells = set()
         for i in range(cell[0] - 1, cell[0] + 2):
             for j in range(cell[1] - 1, cell[1] + 2):
@@ -205,9 +206,13 @@ class MinesweeperAI():
 
                 # Update count if cell in bounds and is mine
                 if 0 <= i < self.height and 0 <= j < self.width:
-                    cells.add((i, j))
+                    if (i, j) in self.mines:
+                        known_mines_count += 1
+                    elif (i, j) not in self.safes:
+                        cells.add((i, j))
+        adjusted_count = count - known_mines_count
 
-        sentence = Sentence(cells, count)
+        sentence = Sentence(cells, adjusted_count)
         self.mines.add(sentence.known_mines)
         self.safes.add(sentence.known_safes)
         sentence.mark_mine
