@@ -218,20 +218,16 @@ class MinesweeperAI():
         new_mines = set()
         new_safes = set()
 
-        while True:
-            for sentence in self.knowledge:
-                new_mines.update(sentence.known_mines())
-                new_safes.update(sentence.known_safes())
+        for sentence in self.knowledge:
+            new_mines.update(sentence.known_mines())
+            new_safes.update(sentence.known_safes())
 
-            if not new_mines and not new_safes:
-                break
+        self.mines.update(new_mines)
+        self.safes.update(new_safes)
 
-            self.mines.update(new_mines)
-            self.safes.update(new_safes)
-
-            for sentence in self.knowledge:
-                sentence.cells -= self.mines
-                sentence.cells -= self.safes
+        for sentence in self.knowledge:
+            sentence.cells -= self.mines
+            sentence.cells -= self.safes
 
         for sentence1 in self.knowledge:
             for sentence2 in self.knowledge:
@@ -241,10 +237,6 @@ class MinesweeperAI():
                     new_sentence = Sentence(sentence2.cells - sentence1.cells, sentence2.count - sentence1.count)
                     if new_sentence not in self.knowledge:
                         self.knowledge.append(new_sentence)
-
-        for sentence in self.knowledge:
-            self.mines.update(sentence.known_mines())
-            self.safes.update(sentence.known_safes())
 
     def make_safe_move(self):
         """
