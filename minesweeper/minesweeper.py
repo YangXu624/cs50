@@ -215,8 +215,6 @@ class MinesweeperAI():
         sentence = Sentence(cells, adjusted_count)
         self.mines.add(sentence.known_mines)
         self.safes.add(sentence.known_safes)
-        sentence.mark_mine
-        sentence.mark_safe
         self.knowledge.append(sentence)
 
     def make_safe_move(self):
