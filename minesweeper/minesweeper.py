@@ -219,7 +219,11 @@ class MinesweeperAI():
 
         for sentence1 in self.knowledge:
             for sentence2 in self.knowledge:
-                if sentence1 != sentence2 and sentence1
+                if sentence1 == sentence2:
+                    continue
+                if sentence1.cells.issubset(sentence2.cells) and sentence1.count == sentence2.count:
+                    self.knowledge.append(Sentence(sentence2.cells - sentence1.cells, 0))
+                    self.safes.add(sentence2.cells - sentence1.cells)
 
     def make_safe_move(self):
         """
