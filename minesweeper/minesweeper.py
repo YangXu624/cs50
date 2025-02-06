@@ -227,10 +227,8 @@ class MinesweeperAI():
                         self.knowledge.append(new_sentence)
 
         for sentence in self.knowledge:
-            if sentence.count == 0:
-                self.safes.update(sentence.cells)
-            if len(sentence.cells) == sentence.count:
-                self.mines.update(sentence.cells)
+            self.mines.update(sentence.known_mines())
+            self.safes.update(sentence.known_safes())
 
     def make_safe_move(self):
         """
