@@ -217,7 +217,9 @@ class MinesweeperAI():
         self.safes.add(sentence.known_safes)
         self.knowledge.append(sentence)
 
-        for sentence
+        for sentence1 in self.knowledge:
+            for sentence2 in self.knowledge:
+                if sentence1 != sentence2 and sentence1
 
     def make_safe_move(self):
         """
