@@ -222,7 +222,9 @@ class MinesweeperAI():
                 if sentence1 == sentence2:
                     continue
                 if sentence1.cells.issubset(sentence2.cells):
-                    self.knowledge.append(Sentence(sentence2.cells - sentence1.cells, sentence2.count - sentence1.count))
+                    new_sentence = Sentence(sentence2.cells - sentence1.cells, sentence2.count - sentence1.count)
+                    if new_sentence not in self.knowledge:
+                        self.knowledge.append(new_sentence)
 
     def make_safe_move(self):
         """
