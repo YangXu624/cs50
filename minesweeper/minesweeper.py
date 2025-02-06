@@ -219,7 +219,8 @@ class MinesweeperAI():
         new_safes = set()
 
         for sentence in self.knowledge:
-            
+            new_mines.update(sentence.known_mines())
+            new_safes.update(sentence.known_safes())
 
         for sentence1 in self.knowledge:
             for sentence2 in self.knowledge:
