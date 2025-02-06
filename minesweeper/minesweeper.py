@@ -213,8 +213,8 @@ class MinesweeperAI():
         adjusted_count = count - known_mines_count
 
         sentence = Sentence(cells, adjusted_count)
-        self.mines.add(sentence.known_mines())
-        self.safes.add(sentence.known_safes())
+        self.mines.update(sentence.known_mines())
+        self.safes.update(sentence.known_safes())
         self.knowledge.append(sentence)
 
         for sentence1 in self.knowledge:
