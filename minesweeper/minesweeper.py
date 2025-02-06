@@ -217,6 +217,8 @@ class MinesweeperAI():
         self.safes.add(sentence.known_safes)
         self.knowledge.append(sentence)
 
+        for sentence
+
     def make_safe_move(self):
         """
         Returns a safe cell to choose on the Minesweeper board.
