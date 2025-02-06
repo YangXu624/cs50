@@ -218,9 +218,20 @@ class MinesweeperAI():
         new_mines = set()
         new_safes = set()
 
-        for sentence in self.knowledge:
-            new_mines.update(sentence.known_mines())
-            new_safes.update(sentence.known_safes())
+        while True:
+            for sentence in self.knowledge:
+                new_mines.update(sentence.known_mines())
+                new_safes.update(sentence.known_safes())
+
+            if not new_mines and not new_safes:
+                break
+
+            self.mines.update(new_mines)
+            self.safes.update(new_safes)
+
+            for sentence in self.knowledge:
+                sentence.cells -= self.mines
+                sentence.cells -= self.safes
 
         for sentence1 in self.knowledge:
             for sentence2 in self.knowledge:
