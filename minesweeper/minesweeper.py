@@ -226,6 +226,12 @@ class MinesweeperAI():
                     if new_sentence not in self.knowledge:
                         self.knowledge.append(new_sentence)
 
+        for sentence in self.knowledge:
+            if sentence.count == 0:
+                self.safes.update(sentence.cells)
+            if len(sentence.cells) == sentence.count:
+                self.mines.update(sentence.cells)
+
     def make_safe_move(self):
         """
         Returns a safe cell to choose on the Minesweeper board.
