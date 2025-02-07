@@ -71,7 +71,7 @@ def transition_model(corpus, page, damping_factor):
     for p in corpus:
         if p not in array:
             result[p] = const
-    
+
     return result
 
 
@@ -84,7 +84,12 @@ def sample_pagerank(corpus, damping_factor, n):
     their estimated PageRank value (a value between 0 and 1). All
     PageRank values should sum to 1.
     """
-    raise NotImplementedError
+    result = {}
+
+    # Randomly choose first sample
+    start = 
+
+    # Process for choosing the rest of the samples
 
 
 def iterate_pagerank(corpus, damping_factor):
