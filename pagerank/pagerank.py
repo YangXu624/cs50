@@ -68,7 +68,7 @@ def transition_model(corpus, page, damping_factor):
         result[p] = const + d / l
 
     # For pages not linked to by the current page
-    for 
+    for p in corpus:
     return result
 
 
