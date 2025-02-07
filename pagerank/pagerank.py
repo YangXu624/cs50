@@ -87,9 +87,13 @@ def sample_pagerank(corpus, damping_factor, n):
     result = {}
 
     # Randomly choose first sample
-    start = 
+    current = random.choice(list(corpus))
+    result[current]] = 1
+    n -= 1
 
     # Process for choosing the rest of the samples
+    while n > 0:
+        corpus[current]
 
 
 def iterate_pagerank(corpus, damping_factor):
