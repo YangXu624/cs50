@@ -60,14 +60,15 @@ def transition_model(corpus, page, damping_factor):
     result = {}
     N = len(corpus)
     const = (1 - damping_factor) / N
-    # Adding the 
-    result[page] = const
 
+    # For pages linked to by the current page
     array = list(corpus[page])
     l = len(array)
     for p in array:
         result[p] = const + d / l
 
+    # For pages not linked to by the current page
+    for 
     return result
 
 
