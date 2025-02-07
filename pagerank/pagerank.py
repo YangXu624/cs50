@@ -120,28 +120,34 @@ def iterate_pagerank(corpus, damping_factor):
     their estimated PageRank value (a value between 0 and 1). All
     PageRank values should sum to 1.
     """
-    results = {}
     N = len(corpus)
-    for page in corpus:
-        results[page] = 1 / N
+    results = {page: 1 / N for page in corpus}
 
     # Iterative algorithm
     loop = True
     while loop:
         loop = False
-        for p in results:
-            results[p] = (1 - damping_factor) / N
+        new_results = {}
+
+        for p in corpus:
+            new_rank = (1 - damping_factor) / N
             for q in corpus:
-                array = corpus[q]
-                if len(array) == 0:
-                    results[p] += damping_factor * results[q] / N
-                elif p in array:
-                    diff = damping_factor * results[q] / len(array)
-                    results[p] += diff
-                    # Ensure all changes are 0.001 or less before breaking from loop
-                    if diff > 0.001:
-                        loop = True
+                if len(corpus[q]) == 0:
+                    new_rank += damping_factor * results[q] / N
+                elif p in corpus[q]:
+                    new_rank += damping_factor * results[q] / len(corpus[q])
+
+            new_results[p] = new_rank
+
+        # Check convergence
+        max_change = max(abs(new_results[p] - results[p]) for p in corpus)
+        if max_change > 0.001:
+            loop = True
+
+        results = new_results  # Update the results after iteration
+
     return results
+
 
 
 if __name__ == "__main__":
