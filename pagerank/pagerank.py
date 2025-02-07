@@ -127,7 +127,12 @@ def iterate_pagerank(corpus, damping_factor):
 
     # Iterative algorithm
     while True:
-        for p in 
+        for p in results:
+            results[p] = (1 - damping_factor) / N
+            for q in corpus:
+                array = corpus[q]
+                if p in array:
+                    results[p] += damping_factor * results[q] / len(array)
 
 
 if __name__ == "__main__":
