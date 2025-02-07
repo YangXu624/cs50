@@ -126,7 +126,7 @@ def iterate_pagerank(corpus, damping_factor):
         results[page] = 1 / N
 
     # Iterative algorithm
-    loop = True
+    loop = False
     while loop:
         loop = False
         for p in results:
@@ -141,6 +141,7 @@ def iterate_pagerank(corpus, damping_factor):
                     # Ensure all changes are 0.001 or less before breaking from loop
                     if diff > 0.001:
                         loop = True
+    return results
 
 
 if __name__ == "__main__":
