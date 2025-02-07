@@ -95,7 +95,7 @@ def sample_pagerank(corpus, damping_factor, n):
     while n > 0:
         # Pick next sample according to transition model
         options = transition_model(corpus, current, damping_factor)
-        current = random.choices(list(options), weight = options.values())
+        current = random.choices(list(options), weight = options.values())[0]
 
         # Update results dict
         if current in results:
