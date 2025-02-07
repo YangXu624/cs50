@@ -104,6 +104,9 @@ def sample_pagerank(corpus, damping_factor, n):
             results[current] = 1
         n -= 1
 
+    for page in results:
+        results[page] = results[page] / 
+
 
 def iterate_pagerank(corpus, damping_factor):
     """
