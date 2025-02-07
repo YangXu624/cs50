@@ -69,6 +69,9 @@ def transition_model(corpus, page, damping_factor):
 
     # For pages not linked to by the current page
     for p in corpus:
+        if p not in array:
+            result[p] = const
+    
     return result
 
 
