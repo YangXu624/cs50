@@ -65,7 +65,7 @@ def transition_model(corpus, page, damping_factor):
     array = list(corpus[page])
     l = len(array)
     for p in array:
-        result[p] = const + d / l
+        result[p] = const + damping_factor / l
 
     # For pages not linked to by the current page
     for p in corpus:
@@ -84,15 +84,16 @@ def sample_pagerank(corpus, damping_factor, n):
     their estimated PageRank value (a value between 0 and 1). All
     PageRank values should sum to 1.
     """
-    result = {}
+    results = {}
+    count = n
 
     # Randomly choose first sample
     current = random.choice(list(corpus))
-    result[current]] = 1
-    n -= 1
+    results[current] = 1
+    count -= 1
 
     # Process for choosing the rest of the samples
-    while n > 0:
+    while count > 0:
         # Pick next sample according to transition model
         options = transition_model(corpus, current, damping_factor)
         current = random.choices(list(options), weight = options.values())[0]
@@ -102,10 +103,12 @@ def sample_pagerank(corpus, damping_factor, n):
             results[current] += 1
         else:
             results[current] = 1
-        n -= 1
+        count -= 1
 
     for page in results:
-        results[page] = results[page] / 
+        results[page] = results[page] / n
+
+    return results
 
 
 def iterate_pagerank(corpus, damping_factor):
