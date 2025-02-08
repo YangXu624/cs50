@@ -225,7 +225,6 @@ def update(probabilities, one_gene, two_genes, have_trait, p):
             probabilities[person]["trait"][True] = p
         else:
             probabilities[person]["trait"][False] = p
-    raise NotImplementedError
 
 
 def normalize(probabilities):
