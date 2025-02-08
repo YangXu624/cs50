@@ -159,7 +159,8 @@ def joint_probability(people, one_gene, two_genes, have_trait):
             mom = people[person]["mother"]
             dad = people[person]["father"]
             if gene_copies == 0:
-                if mom in two_genes:
+                if mom in two_genes and dad in two_genes:
+                    p = 0.01 * 0.01
 
     raise NotImplementedError
 
