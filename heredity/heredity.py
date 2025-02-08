@@ -163,9 +163,13 @@ def joint_probability(people, one_gene, two_genes, have_trait):
                     p = 0.01 * 0.01
                 elif (mom in one_gene and dad in two_genes) or (dad in one_gene and mom in two_genes):
                     p = 0.5 * 0.99 * 0.01 + 0.5 * 0.01 * 0.01
+                elif mom in two_genes or dad in two_genes:
+                    p = 0.99 * 0.01
                 elif mom in one_gene and dad in one_gene:
                     p = 0.5 * 0.99 * 0.5 * 0.99 + 2 * (0.5 * 0.01 * 0.5 * 0.99) + 0.5 * 0.01 * 0.5 * 0.01
-                elif
+                elif mom in one_gene or dad in one_gene:
+                    p = 0.5 * 0.99 * 0.99 + 0.5 * 0.01 * 0.99
+                else:
 
 
     raise NotImplementedError
