@@ -139,9 +139,10 @@ def joint_probability(people, one_gene, two_genes, have_trait):
         * everyone in set `have_trait` has the trait, and
         * everyone not in set` have_trait` does not have the trait.
     """
-    for person in one_gene:
-        mother = people[person]["mother"] or None
-        father = people[person]["father"] or None
+    probability = 1
+
+    for person in people:
+        gene_copies = no_of_genes()
     raise NotImplementedError
 
 
