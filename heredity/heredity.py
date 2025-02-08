@@ -233,8 +233,10 @@ def normalize(probabilities):
     is normalized (i.e., sums to 1, with relative proportions the same).
     """
     for person in probabilities:
-        
-    raise NotImplementedError
+        for item in ["gene", "trait"]:
+            sums = sum(probabilities[person][item])
+            for entries in probabilities[person][item]:
+                entries = entries / sums
 
 
 if __name__ == "__main__":
