@@ -157,6 +157,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
         else:
             mom = people[person]["mother"]
             dad = people[person]["father"]
+            
 
     raise NotImplementedError
 
