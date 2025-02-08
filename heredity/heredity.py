@@ -234,9 +234,12 @@ def normalize(probabilities):
     """
     for person in probabilities:
         for item in ["gene", "trait"]:
-            sums = sum(probabilities[person][item])
-            for entries in probabilities[person][item]:
-                entries = entries / sums
+            sums = sum(probabilities[person][item].values())  # Sum of probabilities
+
+            if sums > 0:  # Prevent division by zero
+                for key in probabilities[person][item]:
+                    probabilities[person][item][key] /= sums  # Normalize in-place
+
 
 
 if __name__ == "__main__":
