@@ -232,6 +232,8 @@ def normalize(probabilities):
     Update `probabilities` such that each probability distribution
     is normalized (i.e., sums to 1, with relative proportions the same).
     """
+    for person in probabilities:
+        
     raise NotImplementedError
 
 
