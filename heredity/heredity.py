@@ -140,6 +140,8 @@ def joint_probability(people, one_gene, two_genes, have_trait):
         * everyone not in set` have_trait` does not have the trait.
     """
     for person in one_gene:
+        mother = people["mother"] or None
+        father = people["father"] or None
     raise NotImplementedError
 
 
