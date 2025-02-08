@@ -213,6 +213,10 @@ def update(probabilities, one_gene, two_genes, have_trait, p):
     Which value for each distribution is updated depends on whether
     the person is in `have_gene` and `have_trait`, respectively.
     """
+    for person in probabilities:
+        if person in one_gene:
+            if person in have_trait:
+                
     raise NotImplementedError
 
 
