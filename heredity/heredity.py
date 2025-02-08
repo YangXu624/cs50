@@ -181,7 +181,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
                 elif mom in one_gene and dad in one_gene:
                     p = 2 * (0.5 * 0.99 * 0.5 * 0.99) + 2 * 2 * (0.5 * 0.99 * 0.5 * 0.01)
                 elif mom in one_gene or dad in one_gene:
-                    p = 0.5 * 0.99 * 0.99 + 0.5 * 0.01 * 0.01 + 0.5 * 0.01 + 0.99
+                    p = 0.5 * 0.99 * 0.99 + 0.5 * 0.01 * 0.01 + 0.5 * 0.01 * 0.99
                 else:
                     p = 2 * 0.99 * 0.01
             else:
