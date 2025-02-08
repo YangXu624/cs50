@@ -198,7 +198,12 @@ def joint_probability(people, one_gene, two_genes, have_trait):
                 else:
                     p = 0.01 * 0.01
 
-    return probability * p * 
+            if person in have_trait:
+                probability *= PROBS["trait"][gene_copies][True] * p
+            else:
+                probability *= PROBS["trait"][gene_copies][False] * p
+
+    return probability
 
 
 def update(probabilities, one_gene, two_genes, have_trait, p):
