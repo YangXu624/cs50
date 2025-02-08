@@ -142,7 +142,20 @@ def joint_probability(people, one_gene, two_genes, have_trait):
     probability = 1
 
     for person in people:
-        gene_copies = no_of_genes()
+        if person in one_gene:
+            gene_copies = 1
+        elif person in two_genes:
+            gene_copies = 2
+        else:
+            gene_copies = 0
+
+        if people[person]["mother"] == None:
+            if person in have_trait:
+                probability *= PROBS["trait"][gene_copies][True]
+            else:
+                probability *= PROBS["trait"][gene_copies][False]
+        else:
+            
     raise NotImplementedError
 
 
