@@ -179,11 +179,24 @@ def joint_probability(people, one_gene, two_genes, have_trait):
                 elif mom in two_genes or dad in two_genes:
                     p = 0.99 * 0.99 + 0.01 * 0.01
                 elif mom in one_gene and dad in one_gene:
-                    p = 2 * (0.5 * 0.99 * 0.5 * 0.99) + 2 * (0.5 * )
+                    p = 2 * (0.5 * 0.99 * 0.5 * 0.99) + 2 * 2 * (0.5 * 0.99 * 0.5 * 0.01)
                 elif mom in one_gene or dad in one_gene:
-                    p = 0.5 * 0.99 * 0.99 + 0.5 * 0.01 * 0.99
+                    p = 0.5 * 0.99 * 0.99 + 0.5 * 0.01 * 0.01 + 0.5 * 0.01 + 0.99
                 else:
+                    p = 2 * 0.99 * 0.01
+            else:
+                if mom in two_genes and dad in two_genes:
                     p = 0.99 * 0.99
+                elif (mom in one_gene and dad in two_genes) or (dad in one_gene and mom in two_genes):
+                    p = 0.5 * 0.99 * 0.01 + 0.5 * 0.01 * 0.010.5 * 0.99 * 0.99 + 0.5 * 0.01 * 0.99
+                elif mom in two_genes or dad in two_genes:
+                    p = 0.99 * 0.01
+                elif mom in one_gene and dad in one_gene:
+                    p = 0.5 * 0.99 * 0.5 * 0.99 + 2 * (0.5 * 0.01 * 0.5 * 0.99) + 0.5 * 0.01 * 0.5 * 0.01
+                elif mom in one_gene or dad in one_gene:
+                    p =
+                else:
+                    p = 0.01 * 0.01
 
 
     raise NotImplementedError
