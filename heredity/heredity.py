@@ -198,8 +198,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
                 else:
                     p = 0.01 * 0.01
 
-
-    raise NotImplementedError
+    return probability * p
 
 
 def update(probabilities, one_gene, two_genes, have_trait, p):
