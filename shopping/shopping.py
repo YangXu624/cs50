@@ -60,8 +60,11 @@ def load_data(filename):
     is 1 if Revenue is true, and 0 otherwise.
     """
     with open(filename, newline = '') as csvfile:
-        data = csv.reader(csvfile, delimiter = ',', quotechar = '"')
-        
+        reader = csv.reader(csvfile, delimiter = ',', quotechar = '"')
+        evidence = list(reader)
+        label = pop(evidence)
+
+    return (label, evidence)
 
 
 
