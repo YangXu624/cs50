@@ -59,8 +59,10 @@ def load_data(filename):
     labels should be the corresponding list of labels, where each label
     is 1 if Revenue is true, and 0 otherwise.
     """
-    with open(filename, newline = '') as data:
+    with open(filename, newline = '') as csvfile:
+        data = csv.reader(csvfile, delimiter = ',', quotechar = '"')
         
+
 
 
 def train_model(evidence, labels):
