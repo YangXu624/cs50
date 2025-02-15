@@ -97,6 +97,11 @@ def get_model():
         # Max Pooling layer
         tf.keras.layers.MaxPooling2D(pool_size = (2, 2)),
 
+        # Additional Layer
+        tf.keras.layers.Conv2D(64, (3, 3), activation="relu"),
+        tf.keras.layers.MaxPooling2D(pool_size=(2, 2)),
+
+
         # Flatten
         tf.keras.layers.Flatten(),
 
