@@ -58,7 +58,8 @@ def load_data(data_dir):
     be a list of integer labels, representing the categories for each of the
     corresponding `images`.
     """
-    images = os.listdir(data_dir)
+    directories = os.listdir(data_dir)
+    
 
 
 def get_model():
