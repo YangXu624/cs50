@@ -60,12 +60,17 @@ def load_data(data_dir):
     """
     images = []
     labels = []
-    directories = os.listdir(data_dir)
-    for directory in directories:
-        path = os.path.join(data_dir, str(directory))
-        files = os.listdir(path)
-        for file in files:
-            
+    for category in range(NUM_CATEGORIES)
+        path = os.path.join(data_dir, str(category))
+
+        if not os.path.isdir(path):
+            continue
+
+        for filename in os.listdir(path):
+            file_path = os.path.join(path, filename)
+
+        
+
 
 
 
