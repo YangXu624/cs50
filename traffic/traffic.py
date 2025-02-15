@@ -62,7 +62,10 @@ def load_data(data_dir):
     labels = []
     directories = os.listdir(data_dir)
     for directory in directories:
-        path = os.path.join(data_dir, directory)
+        path = os.path.join(data_dir, str(directory))
+        files = os.listdir(path)
+        for file in files:
+            
 
 
 
