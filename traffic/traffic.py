@@ -76,8 +76,9 @@ def load_data(data_dir):
         image = cv2.resize(image, (IMG_WIDTH, IMG_HEIGHT))
 
         images.append(image)
+        labels.append(category)
 
-
+    return (images, labels)
 
 
 def get_model():
