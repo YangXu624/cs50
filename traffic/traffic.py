@@ -60,7 +60,7 @@ def load_data(data_dir):
     """
     images = []
     labels = []
-    for category in range(NUM_CATEGORIES)
+    for category in range(NUM_CATEGORIES):
         path = os.path.join(data_dir, str(category))
 
         if not os.path.isdir(path):
