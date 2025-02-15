@@ -104,7 +104,10 @@ def get_model():
         tf.keras.layers.Dense(128, activation = "relu"),
 
         # Dropout layer to prevent overfitting, randomly dropout half of the layers
-        tf.keras.layers.Dropout(0.5)
+        tf.keras.layers.Dropout(0.5),
+
+        # Output layer, one unit for each category
+        tf.keras.layers.Dense(NUM_CATEGORIES, activation = "softmax")
     ])
 
 
