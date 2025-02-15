@@ -69,7 +69,13 @@ def load_data(data_dir):
         for filename in os.listdir(path):
             file_path = os.path.join(path, filename)
 
-        
+        image = cv2.imread(file_path)
+        if image is None:
+            continue
+
+        image = cv2.resize(image, (IMG_WIDTH, IMG_HEIGHT))
+
+        images.append(image)
 
 
 
