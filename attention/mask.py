@@ -46,11 +46,10 @@ def get_mask_token_index(mask_token_id, inputs):
     `None` if not present in the `inputs`.
     """
     # TODO: Implement this function
-    input_ids = inputs.input_ids  # List of token IDs
-    try:
-        return input_ids.index(mask_token_id)  # Find the index of mask token
-    except ValueError:
-        return None  # Mask token is not present
+    for id in inputs.input_ids:
+        if id == mask_token_id:
+            return inputs.input_ids.index(id)
+    return None
 
 
 
