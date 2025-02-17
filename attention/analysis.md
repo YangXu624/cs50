@@ -10,9 +10,9 @@ Example Sentences:
 
 ## Layer 4, Head 9
 
-TODO
+Focuses more on verbs like "watched" and "driving"
 
 Example Sentences:
-- TODO
+- We watched a touching movie about [MASK].
 - Adam could not [MASK] his driving test.
 
