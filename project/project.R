@@ -16,7 +16,7 @@ forward <- function(X, W, b, activationFunction) {
 }
 
 # Backward Propagation
-backward <- function(X, Y, A, W, activationFunction, learning_rate = 0.01) {
+backward <- function(X, Y, A, W, b, activationFunction, learning_rate = 0.01) {
   m <- nrow(X)  # Number of training examples
 
   # Calculate the derivative for output layer (for sigmoid, or softmax + cross-entropy)
@@ -37,8 +37,9 @@ backward <- function(X, Y, A, W, activationFunction, learning_rate = 0.01) {
   W <- W - learning_rate * dW  # Update weights using gradient descent
   b <- b - learning_rate * db  # Update bias using gradient descent
 
-  return(list(W = W, b = b))
+  return(list(W = W, b = b))  # Return updated weights and biases
 }
+
 
 
 # Training the Neural Network
@@ -51,11 +52,14 @@ train <- function(X, Y, W1, b1, W2, b2, activationFunction, epochs = 1000, learn
     A2 <- forward(A1, W2, b2, sigmoid)  # A2 is the output of the network
 
     # Backward pass
-    gradients <- backward(A1, Y, A2, W2, sigmoid, learning_rate)
+    gradients1 <- backward(X, Y, A2, W2, b2, sigmoid, learning_rate)  # Backpropagate through output layer
+    gradients2 <- backward(A1, Y, A2, W1, b1, sigmoid, learning_rate)  # Backpropagate through hidden layer
 
-    # Update weights and biases
-    W2 <- gradients$W
-    b2 <- gradients$b
+    # Update weights and biases for both layers
+    W1 <- gradients2$W
+    b1 <- gradients2$b
+    W2 <- gradients1$W
+    b2 <- gradients1$b
 
     # Optionally print the loss (for monitoring)
     if (epoch %% 100 == 0) {
@@ -65,6 +69,7 @@ train <- function(X, Y, W1, b1, W2, b2, activationFunction, epochs = 1000, learn
   }
   return(list(W1 = W1, b1 = b1, W2 = W2, b2 = b2))
 }
+
 
 
 # Create synthetic data for a binary classification task
